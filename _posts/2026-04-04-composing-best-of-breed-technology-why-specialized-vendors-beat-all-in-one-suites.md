@@ -2,7 +2,7 @@
 title: >-
   Composing Best-of-Breed Technology: Why Specialized Vendors Beat All-in-One
   Suites
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

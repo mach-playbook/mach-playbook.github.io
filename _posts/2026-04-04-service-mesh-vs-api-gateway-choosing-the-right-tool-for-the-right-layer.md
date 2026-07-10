@@ -1,6 +1,6 @@
 ---
 title: 'Service Mesh vs. API Gateway: Choosing the Right Tool for the Right Layer'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

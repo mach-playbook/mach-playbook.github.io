@@ -1,6 +1,6 @@
 ---
 title: 'Service Boundaries by Domain: Applying DDD Bounded Contexts to Microservices'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

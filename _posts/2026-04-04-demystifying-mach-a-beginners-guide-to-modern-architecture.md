@@ -1,6 +1,6 @@
 ---
 title: 'Demystifying MACH: A Beginner’s Guide to Modern Architecture'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - guides

@@ -1,6 +1,6 @@
 ---
 title: 'Implementing API Governance: Enforcing Consistency Across All Your Services'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - guides

@@ -2,7 +2,7 @@
 title: >-
   CI/CD Pipelines for Headless Platforms: Independent Deployments Without
   Breaking the Frontend
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

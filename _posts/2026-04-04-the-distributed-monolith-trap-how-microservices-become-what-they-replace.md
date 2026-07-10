@@ -1,6 +1,6 @@
 ---
 title: 'The Distributed Monolith Trap: How Microservices Become What They Replace'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - guides

@@ -1,6 +1,6 @@
 ---
 title: 'API Contracts First: Designing Service Boundaries Before Writing Code'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

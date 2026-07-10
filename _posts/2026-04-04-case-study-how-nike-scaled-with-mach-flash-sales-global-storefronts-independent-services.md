@@ -2,7 +2,7 @@
 title: >-
   Case Study: How Nike Scaled with MACH — Flash Sales, Global Storefronts,
   Independent Services
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

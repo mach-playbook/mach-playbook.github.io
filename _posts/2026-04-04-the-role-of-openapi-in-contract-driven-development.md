@@ -1,6 +1,6 @@
 ---
 title: The Role of OpenAPI in Contract-Driven Development
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

@@ -1,6 +1,6 @@
 ---
 title: 'Data Ownership in Microservices: Why Services Must Own Their Databases'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - guides

@@ -1,6 +1,6 @@
 ---
 title: 'Sizing Your Microservices: How to Find the Right Service Granularity'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - guides

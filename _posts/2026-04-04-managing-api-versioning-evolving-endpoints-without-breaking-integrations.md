@@ -1,6 +1,6 @@
 ---
 title: 'Managing API Versioning: Evolving Endpoints Without Breaking Integrations'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

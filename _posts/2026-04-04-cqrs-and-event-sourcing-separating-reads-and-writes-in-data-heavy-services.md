@@ -1,6 +1,6 @@
 ---
 title: 'CQRS and Event Sourcing: Separating Reads and Writes in Data-Heavy Services'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

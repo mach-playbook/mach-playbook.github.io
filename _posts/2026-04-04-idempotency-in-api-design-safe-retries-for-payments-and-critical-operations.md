@@ -1,6 +1,6 @@
 ---
 title: 'Idempotency in API Design: Safe Retries for Payments and Critical Operations'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns

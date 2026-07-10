@@ -1,6 +1,6 @@
 ---
 title: 'Bulkhead Pattern: Isolating Failures So One Service Can’t Sink the Fleet'
-author: merolhack
+author: mach-playbook
 date: '2026-04-04'
 categories:
   - patterns
