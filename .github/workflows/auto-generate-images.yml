@@ -26,8 +26,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm init -y
-          npm install dotenv gray-matter
+          npm install --no-save dotenv gray-matter
 
       - name: Run Image Generation Script
         env:
@@ -41,7 +40,7 @@ jobs:
           git add assets/img/posts/
           git add _posts/
           git status
-          if ! git diff-index --quiet HEAD; then
+          if ! git diff --cached --quiet; then
             git commit -m "Auto-generate post preview images"
             git push
             # Since GITHUB_TOKEN doesn't chain workflows, we manually trigger the deploy job
