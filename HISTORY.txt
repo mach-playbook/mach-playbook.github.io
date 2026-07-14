@@ -17,3 +17,8 @@
   * Successfully triggered GH Action to auto-compute and inject beautiful cover images into all 34 posts' frontmatter simultaneously.
   * Added programmatic `ads.txt` block in root and injected Publisher ID inside `_includes/head.html` placeholder for AdSense functionality.
   * Cleaned out `_config.yml` template bugs and added dynamic raw SVG coding for sidebar `avatar.svg` brand mapping.
+
+2026-07-13 21:39: Sidebar layout fix and GitHub link update
+  * Fixed sidebar menu overlap on multiline site subtitle by overriding `height: 3rem` to `height: auto !important` in `_includes/head.html`.
+  * Updated GitHub logo link and profile URL to `https://github.com/merolhack` in `_config.yml` and `_data/contact.yml`.
+

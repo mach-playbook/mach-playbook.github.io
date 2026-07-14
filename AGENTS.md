@@ -14,3 +14,7 @@
 - Pushed workflow to dynamically synthesize frontmatter images for all 34 posts natively.
 - Scaffolded scalable vector mapping (`avatar.svg`).
 - Un-commented and activated Google AdSense ID linking via custom headers and injected `ads.txt`.
+
+2026-07-13 21:39: Sidebar Layout & GitHub Link Fix
+- Fixed sidebar navigation menu overlap caused by multiline site subtitle (`height: 3rem` overridden to `height: auto !important` in `_includes/head.html`).
+- Updated GitHub logo/profile links to `https://github.com/merolhack` in `_config.yml` and `_data/contact.yml`.

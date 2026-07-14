@@ -29,7 +29,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://mach-playbook.github.io"
 
 github:
-  username: mach-playbook # change to your GitHub username
+  username: merolhack # change to your GitHub username
 
 twitter:
   username: mach-playbook # change to your Twitter username
@@ -42,7 +42,7 @@ social:
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/mach-playbook # change to your GitHub homepage
+    - https://github.com/merolhack # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://twitter.com/username
     # - https://www.facebook.com/username
