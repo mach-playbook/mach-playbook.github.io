@@ -22,3 +22,6 @@
   * Fixed sidebar menu overlap on multiline site subtitle by overriding `height: 3rem` to `height: auto !important` in `_includes/head.html`.
   * Updated GitHub logo link and profile URL to `https://github.com/merolhack` in `_config.yml` and `_data/contact.yml`.
 
+2026-07-13 22:20: Google Ads site verification
+  * Added `<meta name="google-adsense-account" content="ca-pub-2700240339792942">` tag to `_includes/head.html` and `head.html`.
+  * Verified AdSense script snippet (`ca-pub-2700240339792942`) and `ads.txt` file are properly configured.
