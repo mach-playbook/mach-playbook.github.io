@@ -53,39 +53,42 @@ function getTopicPrompt(title) {
   return `Professional header graphic for an architectural article about ${title}: ${subject}. Style: ${style}. High resolution, clean composition, hyperrealistic, no text.`;
 }
 
-async function generateImage(title, retries = 4) {
+async function generateImage(title, index) {
   const prompt = getTopicPrompt(title);
-  const seed = Math.floor(Math.random() * 10000000);
-  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=675&nologo=true&seed=${seed}`;
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    hash = title.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const seed = Math.abs(hash) + index * 777;
+  const pollinationsUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=675&nologo=true&seed=${seed}`;
 
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      const response = await fetch(url);
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
 
-      if (response.status === 429) {
-        console.warn(` Rate limit hit (429). Retrying attempt ${attempt}/${retries} after ${6 * attempt}s...`);
-        await new Promise(r => setTimeout(r, 6000 * attempt));
-        continue;
-      }
+    const response = await fetch(pollinationsUrl, { signal: controller.signal });
+    clearTimeout(timeoutId);
 
-      if (!response.ok) {
-        console.error(` Image generation failed (${response.status}):`, response.statusText);
-        if (attempt < retries) {
-          await new Promise(r => setTimeout(r, 4000));
-          continue;
-        }
-        return null;
-      }
-
+    if (response.ok) {
       const arrayBuffer = await response.arrayBuffer();
       return Buffer.from(arrayBuffer).toString('base64');
-    } catch (error) {
-      console.error(" Fetch error:", error.message || error);
-      if (attempt < retries) {
-        await new Promise(r => setTimeout(r, 4000));
-      }
     }
+  } catch (err) {
+    console.warn(` [Fallback] Pollinations API paused for "${title.substring(0, 30)}...", using high-res visual fallback.`);
   }
+
+  try {
+    const picsumSeed = (seed % 900) + 10;
+    const picsumUrl = `https://picsum.photos/seed/${picsumSeed}/1200/675`;
+    const response = await fetch(picsumUrl);
+    if (response.ok) {
+      const arrayBuffer = await response.arrayBuffer();
+      return Buffer.from(arrayBuffer).toString('base64');
+    }
+  } catch (err) {
+    console.error(" Fallback failed:", err);
+  }
+
   return null;
 }
 
@@ -102,15 +105,40 @@ function parseTitle(content) {
 }
 
 function setImagePath(content, imgRelPath) {
-  if (content.includes('image:')) {
-    return content.replace(/image:\s*\n\s*path:\s*.*/, `image:\n  path: ${imgRelPath}`);
-  } else {
-    return content.replace(/^(---\r?\n)/, `$1image:\n  path: ${imgRelPath}\n`);
+  const match = content.match(/^(---\r?\n)([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return content;
+
+  let yaml = match[2];
+  const body = match[3];
+
+  const lines = yaml.split(/\r?\n/);
+  const cleanYamlLines = [];
+  let inImageBlock = false;
+
+  for (const line of lines) {
+    if (line.trim().startsWith('image:')) {
+      inImageBlock = true;
+      continue;
+    }
+    if (inImageBlock) {
+      if (line.startsWith(' ') || line.startsWith('\t') || line.trim() === '') {
+        continue;
+      } else {
+        inImageBlock = false;
+      }
+    }
+    cleanYamlLines.push(line);
   }
+
+  cleanYamlLines.push('image:');
+  cleanYamlLines.push(`  path: ${imgRelPath}`);
+
+  return `---\n${cleanYamlLines.join('\n')}\n---\n${body}`;
 }
 
 async function processPosts() {
   const force = process.argv.includes('--force');
+  const fixFrontmatterOnly = process.argv.includes('--fix-frontmatter');
   const files = fs.readdirSync(POSTS_DIR).filter(file => file.endsWith('.md'));
 
   let processedCount = 0;
@@ -122,6 +150,16 @@ async function processPosts() {
 
     const fileName = file.replace(/\.md$/, '.png');
     const imgPath = path.join(IMG_DIR, fileName);
+
+    // If just fixing corrupted frontmatter
+    if (fixFrontmatterOnly) {
+      const updatedMarkdown = setImagePath(fileContent, `/assets/img/posts/${fileName}`);
+      fs.writeFileSync(filePath, updatedMarkdown, 'utf8');
+      console.log(` Cleaned frontmatter for: ${file}`);
+      processedCount++;
+      continue;
+    }
+
     const hasImageMeta = fileContent.includes('image:') && fileContent.includes('/assets/img/posts/');
 
     if (!force && fs.existsSync(imgPath) && hasImageMeta) {
@@ -129,9 +167,9 @@ async function processPosts() {
     }
 
     const postTitle = parseTitle(fileContent);
-    console.log(`[${i + 1}/${files.length}] Generating unique header for: "${postTitle}"`);
+    console.log(`[${i + 1}/${files.length}] Processing header for: "${postTitle}"`);
     
-    const base64Data = await generateImage(postTitle);
+    const base64Data = await generateImage(postTitle, i);
     
     if (base64Data) {
       fs.writeFileSync(imgPath, Buffer.from(base64Data, 'base64'));
@@ -146,11 +184,10 @@ async function processPosts() {
       console.log(` Skipped ${file} due to generation failure.`);
     }
 
-    // 4 second delay between requests to respect rate limits
-    await new Promise(resolve => setTimeout(resolve, 4000));
+    await new Promise(resolve => setTimeout(resolve, 300));
   }
 
-  console.log(`\nFinished! Generated ${processedCount} distinct topic images.`);
+  console.log(`\nFinished! Successfully processed ${processedCount} posts.`);
 }
 
 processPosts();

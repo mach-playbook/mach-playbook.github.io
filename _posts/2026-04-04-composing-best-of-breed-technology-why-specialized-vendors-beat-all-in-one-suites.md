@@ -9,7 +9,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites.png
-    /assets/img/posts/2026-04-04-composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites.png
 ---
 
 

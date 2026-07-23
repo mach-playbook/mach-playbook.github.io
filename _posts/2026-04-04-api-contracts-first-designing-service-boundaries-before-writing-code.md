@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-api-contracts-first-designing-service-boundaries-before-writing-code.png
-    /assets/img/posts/2026-04-04-api-contracts-first-designing-service-boundaries-before-writing-code.png
 ---
 
 

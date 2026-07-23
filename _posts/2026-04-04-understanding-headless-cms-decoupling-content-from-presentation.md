@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-understanding-headless-cms-decoupling-content-from-presentation.png
-    /assets/img/posts/2026-04-04-understanding-headless-cms-decoupling-content-from-presentation.png
 ---
 
 

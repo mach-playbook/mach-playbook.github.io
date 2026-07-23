@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.png
-    /assets/img/posts/2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.png
 ---
 
 

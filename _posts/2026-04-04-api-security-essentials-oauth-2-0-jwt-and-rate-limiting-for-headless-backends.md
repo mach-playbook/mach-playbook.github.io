@@ -9,7 +9,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends.png
-    /assets/img/posts/2026-04-04-api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends.png
 ---
 
 

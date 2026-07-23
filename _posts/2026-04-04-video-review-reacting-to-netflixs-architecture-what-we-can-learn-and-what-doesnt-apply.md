@@ -9,7 +9,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.png
-    /assets/img/posts/2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.png
 ---
 
 

@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.png
-    /assets/img/posts/2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.png
 ---
 
 

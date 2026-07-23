@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.png
-    /assets/img/posts/2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.png
 ---
 
 

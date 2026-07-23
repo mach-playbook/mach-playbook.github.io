@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-sizing-your-microservices-how-to-find-the-right-service-granularity.png
-    /assets/img/posts/2026-04-04-sizing-your-microservices-how-to-find-the-right-service-granularity.png
 ---
 
 

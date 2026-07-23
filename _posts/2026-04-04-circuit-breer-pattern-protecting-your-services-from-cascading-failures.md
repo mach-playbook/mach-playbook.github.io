@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-circuit-breer-pattern-protecting-your-services-from-cascading-failures.png
-    /assets/img/posts/2026-04-04-circuit-breer-pattern-protecting-your-services-from-cascading-failures.png
 ---
 
 

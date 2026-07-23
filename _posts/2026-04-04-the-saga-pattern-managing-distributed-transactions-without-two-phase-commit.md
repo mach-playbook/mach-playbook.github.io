@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-the-saga-pattern-managing-distributed-transactions-without-two-phase-commit.png
-    /assets/img/posts/2026-04-04-the-saga-pattern-managing-distributed-transactions-without-two-phase-commit.png
 ---
 
 

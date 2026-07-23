@@ -9,7 +9,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend.png
-    /assets/img/posts/2026-04-04-ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend.png
 ---
 
 

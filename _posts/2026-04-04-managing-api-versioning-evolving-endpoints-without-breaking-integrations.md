@@ -7,7 +7,6 @@ categories:
 tags: ''
 image:
   path: /assets/img/posts/2026-04-04-managing-api-versioning-evolving-endpoints-without-breaking-integrations.png
-    /assets/img/posts/2026-04-04-managing-api-versioning-evolving-endpoints-without-breaking-integrations.png
 ---
 
 
