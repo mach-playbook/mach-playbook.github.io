@@ -1,6 +1,6 @@
 ---
 title: 'API-First vs. Code-First: Why Contract-Before-Code Wins'
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - guides

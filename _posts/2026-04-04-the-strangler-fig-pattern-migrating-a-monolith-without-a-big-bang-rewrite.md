@@ -1,6 +1,6 @@
 ---
 title: 'The Strangler Fig Pattern: Migrating a Monolith Without a Big Bang Rewrite'
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

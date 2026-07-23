@@ -2,7 +2,7 @@
 title: >-
   API Security Essentials: OAuth 2.0, JWT, and Rate Limiting for Headless
   Backends
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - guides

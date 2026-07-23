@@ -1,6 +1,6 @@
 ---
 title: 'Understanding Headless CMS: Decoupling Content from Presentation'
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - guides

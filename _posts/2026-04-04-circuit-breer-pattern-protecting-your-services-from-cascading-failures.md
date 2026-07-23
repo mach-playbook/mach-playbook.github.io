@@ -1,6 +1,6 @@
 ---
 title: 'Circuit Breer Pattern: Protecting Your Services from Cascading Failures'
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

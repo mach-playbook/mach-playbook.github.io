@@ -2,7 +2,7 @@
 title: >-
   Feature Flagging in Cloud-Native Deployments: Canary Releases and
   Zero-Downtime Rollouts
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

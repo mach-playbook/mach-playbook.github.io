@@ -2,7 +2,7 @@
 title: >-
   Video Review: Reacting to Netflix’s Architecture — What We Can Learn and What
   Doesn’t Apply
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

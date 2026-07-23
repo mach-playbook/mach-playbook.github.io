@@ -1,6 +1,6 @@
 ---
 title: 'Case Study: Sephora’s Omnichannel Transformation with Headless Architecture'
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

@@ -2,7 +2,7 @@
 title: >-
   Event-Driven Architecture in E-Commerce: Async Messaging for Orders,
   Inventory, and Shipping
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

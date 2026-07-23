@@ -2,7 +2,7 @@
 title: >-
   Video Review: Configuring Your Service Mesh — Gateway API and Routing in
   Practice
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

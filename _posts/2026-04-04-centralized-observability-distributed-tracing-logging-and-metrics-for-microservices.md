@@ -2,7 +2,7 @@
 title: >-
   Centralized Observability: Distributed Tracing, Logging, and Metrics for
   Microservices
-author: mach-playbook
+author: leninmeza
 date: '2026-04-04'
 categories:
   - patterns

@@ -37,16 +37,13 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: mach-playbook
+  name: Lenin Meza
   email: merolhack@gmail.com # change to your email address
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/merolhack # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://twitter.com/username
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://merolhack.github.io/ # change to your GitHub homepage
+    - https://www.linkedin.com/in/leninmezazarco
 
 # Site Verification Settings
 webmaster_verifications:
