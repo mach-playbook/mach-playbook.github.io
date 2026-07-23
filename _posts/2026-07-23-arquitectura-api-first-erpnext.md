@@ -2,7 +2,7 @@
 layout: post
 title: "Arquitectura API-First para la Integración de Facturación Electrónica y Timbrado en Sistemas ERP"
 author: leninmeza
-date: 2026-07-23 09:00:00 -0600
+date: 2026-07-23 00:00:00 -0600
 categories: [Arquitectura Cloud, Integraciones]
 tags: [erpnext, api-first, microservicios, timbrado, finanzas]
 image:
