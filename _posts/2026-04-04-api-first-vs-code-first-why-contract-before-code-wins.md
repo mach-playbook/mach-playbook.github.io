@@ -6,7 +6,7 @@ categories:
   - guides
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-api-first-vs-code-first-why-contract-before-code-wins.png
     /assets/img/posts/2026-04-04-api-first-vs-code-first-why-contract-before-code-wins.png
 ---
 

@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-idempotency-in-api-design-safe-retries-for-payments-and-critical-operations.png
     /assets/img/posts/2026-04-04-idempotency-in-api-design-safe-retries-for-payments-and-critical-operations.png
 ---
 

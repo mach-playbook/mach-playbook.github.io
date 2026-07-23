@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices.png
     /assets/img/posts/2026-04-04-service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices.png
 ---
 

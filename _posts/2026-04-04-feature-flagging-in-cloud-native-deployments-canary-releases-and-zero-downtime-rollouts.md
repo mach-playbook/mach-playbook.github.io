@@ -8,7 +8,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.png
     /assets/img/posts/2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.png
 ---
 

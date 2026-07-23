@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.png
     /assets/img/posts/2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.png
 ---
 

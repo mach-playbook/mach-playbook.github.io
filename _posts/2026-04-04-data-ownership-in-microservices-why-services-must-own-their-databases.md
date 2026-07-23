@@ -6,7 +6,7 @@ categories:
   - guides
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-data-ownership-in-microservices-why-services-must-own-their-databases.png
     /assets/img/posts/2026-04-04-data-ownership-in-microservices-why-services-must-own-their-databases.png
 ---
 

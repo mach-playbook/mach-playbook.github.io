@@ -6,7 +6,7 @@ categories:
   - guides
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-demystifying-mach-a-beginners-guide-to-modern-architecture.png
     /assets/img/posts/2026-04-04-demystifying-mach-a-beginners-guide-to-modern-architecture.png
 ---
 

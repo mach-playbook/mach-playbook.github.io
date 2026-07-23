@@ -6,7 +6,7 @@ categories:
   - guides
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about.png
     /assets/img/posts/2026-04-04-the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about.png
 ---
 

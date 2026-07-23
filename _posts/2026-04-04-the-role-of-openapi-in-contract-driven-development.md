@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-the-role-of-openapi-in-contract-driven-development.png
     /assets/img/posts/2026-04-04-the-role-of-openapi-in-contract-driven-development.png
 ---
 

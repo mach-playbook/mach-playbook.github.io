@@ -6,7 +6,7 @@ categories:
   - guides
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.png
     /assets/img/posts/2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.png
 ---
 

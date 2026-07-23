@@ -8,7 +8,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping.png
     /assets/img/posts/2026-04-04-event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping.png
 ---
 

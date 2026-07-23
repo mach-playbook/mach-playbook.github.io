@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.png
     /assets/img/posts/2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.png
 ---
 

@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet.png
     /assets/img/posts/2026-04-04-bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet.png
 ---
 

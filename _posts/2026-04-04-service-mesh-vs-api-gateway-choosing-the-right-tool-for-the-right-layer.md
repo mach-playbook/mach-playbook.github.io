@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.png
     /assets/img/posts/2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.png
 ---
 

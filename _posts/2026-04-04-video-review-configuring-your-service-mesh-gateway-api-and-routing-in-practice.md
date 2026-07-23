@@ -8,7 +8,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice.png
     /assets/img/posts/2026-04-04-video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice.png
 ---
 

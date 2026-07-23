@@ -6,7 +6,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.png
     /assets/img/posts/2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.png
 ---
 

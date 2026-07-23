@@ -8,7 +8,7 @@ categories:
   - patterns
 tags: ''
 image:
-  path: >-
+  path: /assets/img/posts/2026-04-04-case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services.png
     /assets/img/posts/2026-04-04-case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services.png
 ---
 
