@@ -27,3 +27,20 @@
 - Updated `_tabs/privacy.md` to explicitly comply with Google AdSense cookie tracking and opt-out policies.
 - Verified `_data/contact.yml` accurately points to the `merolhack` GitHub profile.
 - Encountered a GitHub CLI authentication gotcha: Windows `gh` fails due to an invalid `GITHUB_TOKEN` environment variable in PowerShell overriding valid keyring credentials. Executing `wsl gh` bypasses this environment variable and successfully utilizes the `hosts.yml` valid token.
+
+2026-07-23 03:30: Author Attribution & Sidebar LinkedIn Integration
+- Configured `_data/authors.yml` and `_config.yml` social metadata for author **Lenin Meza** (`author: leninmeza`), linking post author titles to `https://merolhack.github.io/`.
+- Updated `_data/contact.yml` with LinkedIn profile (`https://www.linkedin.com/in/leninmezazarco`) rendering FontAwesome `fab fa-linkedin` in the sidebar footer.
+- Overhauled image generator (`scripts/generate-images.js`) to strictly produce IT, server, microchip, data center, and code editor graphics, eliminating landscape fallbacks.
+
+2026-07-23 06:12: E-E-A-T Spanish Articles & Sitemap Fix
+- Published 4 comprehensive Spanish-language technical posts: `orquestacion-mach-multi-nube.md`, `infraestructura-voip-cloud-native.md`, `arquitectura-api-first-erpnext.md`, and `finops-desmantelamiento-gcp.md`.
+- Solved Jekyll future post exclusion gotcha where posts were omitted from build/sitemap due to UTC timezone offsets by adding `future: true` in `_config.yml` and adjusting date timestamps.
+- Verified all 39 posts are indexed in the live `sitemap.xml`.
+
+2026-07-23 21:51: Docker Desktop Testing Environment & AI QA Articles
+- Published 2 additional Spanish-language technical posts: `automatizacion-inteligente-playwright-ollama.md` and `flujos-hibridos-wsl-powershell-windows.md`. Total posts: **41**.
+- Created multi-stage `Dockerfile`, `docker-compose.yml`, `.dockerignore`, and npm scripts to replicate GitHub Pages CI/CD locally (Ruby 3.4, Jekyll Chirpy, HTMLProofer, Nginx).
+- Verified HTMLProofer unit tests in Docker on 101 files / 193 links with 0 errors (`HTML-Proofer finished successfully`).
+- Started background production replica container `mach-playbook-site` listening on `http://localhost:8080` (HTTP 200 OK).
+- Verified GitHub Actions `Build and Deploy` and `Auto Generate Missing Post Images` pipelines completed with `completed | success`.

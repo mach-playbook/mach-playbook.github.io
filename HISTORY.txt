@@ -32,3 +32,20 @@
   * Amplified E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) by expanding `_tabs/about.md` with explicit Senior Solutions Architect credentials.
   * Modified `_tabs/privacy.md` with explicit AdSense tracking statements.
   * Successfully built and deployed via GH Actions after pushing to `main`.
+
+2026-07-23 03:30: Author Metadata & Sidebar LinkedIn Integration
+  * Configured author profile for Lenin Meza (`author: leninmeza`) in `_data/authors.yml` and `_config.yml`, linking all post headers to `https://merolhack.github.io/`.
+  * Added LinkedIn icon and profile link (`https://www.linkedin.com/in/leninmezazarco`) to `_data/contact.yml` sidebar footer.
+  * Rebuilt image generator (`scripts/generate-images.js`) to strictly output IT/System graphics (server racks, data centers, microchips, code editors).
+
+2026-07-23 06:12: Spanish E-E-A-T Articles & Sitemap Fix
+  * Added 4 comprehensive Spanish-language technical posts (MACH Multi-Cloud, VoIP/SIP Cloud-Native, ERPNext API-First, GCP FinOps).
+  * Added `future: true` to `_config.yml` and normalized timestamps to prevent Jekyll from excluding posts due to UTC build time offsets.
+  * Verified all 39 posts are indexed in the live `sitemap.xml`.
+
+2026-07-23 21:51: Local Docker Testing Environment & Playwright/Ollama Posts
+  * Published 2 additional Spanish-language technical articles (Playwright + Ollama E2E Testing, WSL + PowerShell Hybrid Workflows). Total post count: 41.
+  * Created multi-stage `Dockerfile` (builder, test, dev, prod), `docker-compose.yml`, and `.dockerignore`.
+  * Executed HTMLProofer unit tests in Docker container (`mach-playbook:test`) passing 101 HTML files and 193 internal links with 0 errors.
+  * Launched background container `mach-playbook-site` listening on `http://localhost:8080` (HTTP 200 OK).
+  * Confirmed GitHub Actions workflows (`Build and Deploy` and `Auto Generate Missing Post Images`) completed with `completed | success`.
