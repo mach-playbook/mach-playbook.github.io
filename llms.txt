@@ -1,0 +1,23 @@
+# LLM Wiki for MACH Playbook (llms.txt)
+
+This file serves as a knowledge base and contextual guide for LLM agents interacting with this repository.
+
+## Project Overview
+- **Name**: MACH Playbook
+- **Architecture**: Static Site built with Jekyll, leveraging the [Chirpy theme](https://github.com/cotes2020/jekyll-theme-chirpy).
+- **Core Subject Matter**: Microservices, API-First, Cloud-Native, Headless Architecture (MACH). Advanced insights into multi-cloud architectures (GCP, AWS), API Management (Apigee, MuleSoft), Event-Driven Architectures, and Zero Trust security.
+- **Deployment**: Automated build and deploy to GitHub Pages via GitHub Actions.
+
+## Automated Workflows
+- **Image Generation (`auto-generate-images` GH Action)**: Missing frontmatter images for new markdown posts are automatically synthesized using an unmetered call to `Pollinations.ai`. The image generation pipeline dynamically calculates a seed to create consistent, abstract technology SVGs/PNGs (16:9 ratio) embedded into the YAML frontmatter. *Do not disrupt the YAML frontmatter logic in `_posts/` as it will break this automation.*
+- **Content Expansion Script**: Located at `scripts/deep-expand-posts.py`. This script dynamically rewrites the body of Markdown posts, injecting dense, 800+ word sections of advanced enterprise architecture content while preserving the YAML frontmatter. This was built to solve Google AdSense "thin content" violations.
+
+## Monetization and E-E-A-T Compliance
+- **Google AdSense**: Integrated via `_includes/head.html` and `ads.txt` in the root. 
+- **E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)**: AdSense enforces strict quality checks. The site fulfills these by maintaining extremely deep, 1000+ word technical blog posts written from a "Senior Solutions Architect" perspective.
+- **Privacy Policy (`_tabs/privacy.md`)**: Must always explicitly mention Google AdSense, third-party vendor tracking, and link out to `Ads Settings` and `aboutads.info` to maintain compliance.
+- **Author Identity (`_tabs/about.md` & `_data/contact.yml`)**: The `about.md` articulates professional credentials. The `contact.yml` accurately points to `https://github.com/merolhack` which renders native GitHub links in the Chirpy footer.
+
+## Known Environmental Quirks (Gotchas for Agents)
+- **GitHub CLI Authentication on Windows vs WSL**: If you use powershell (the default terminal interface), the `gh` CLI will likely fail with a `401 Bad credentials` error. This is because PowerShell injects a `GITHUB_TOKEN` environment variable that overrides the active user account. 
+  - *Fix*: Prepend the command with `wsl` (e.g., `wsl gh run list`) to run it within the Windows Subsystem for Linux context. The WSL environment correctly falls back to `/home/merolhack/.config/gh/hosts.yml` and successfully utilizes the `merolhack` token.

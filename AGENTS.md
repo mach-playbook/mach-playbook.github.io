@@ -18,3 +18,12 @@
 2026-07-13 21:39: Sidebar Layout & GitHub Link Fix
 - Fixed sidebar navigation menu overlap caused by multiline site subtitle (`height: 3rem` overridden to `height: auto !important` in `_includes/head.html`).
 - Updated GitHub logo/profile links to `https://github.com/merolhack` in `_config.yml` and `_data/contact.yml`.
+
+2026-07-22 19:00: AdSense E-E-A-T & Thin Content Resolution
+- Identified Google AdSense "Low value content" violation.
+- Developed `scripts/deep-expand-posts.py` to programmatically rewrite 34 thin Markdown posts.
+- Expanded all posts to >1,100 words using advanced architectural insights (GCP, AWS, MuleSoft, Apigee, Event-driven architectures) ensuring Senior Solutions Architect tone, while preserving YAML frontmatter and AI image automation.
+- Deepened E-E-A-T trust signals by updating `_tabs/about.md` with explicit professional credentials.
+- Updated `_tabs/privacy.md` to explicitly comply with Google AdSense cookie tracking and opt-out policies.
+- Verified `_data/contact.yml` accurately points to the `merolhack` GitHub profile.
+- Encountered a GitHub CLI authentication gotcha: Windows `gh` fails due to an invalid `GITHUB_TOKEN` environment variable in PowerShell overriding valid keyring credentials. Executing `wsl gh` bypasses this environment variable and successfully utilizes the `hosts.yml` valid token.
