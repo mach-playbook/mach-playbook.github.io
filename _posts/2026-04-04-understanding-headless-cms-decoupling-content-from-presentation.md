@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Understanding Headless CMS: Decoupling Content from Presentation'
 author: leninmeza
 date: '2026-04-04'

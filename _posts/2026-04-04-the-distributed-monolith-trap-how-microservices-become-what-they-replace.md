@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'The Distributed Monolith Trap: How Microservices Become What They Replace'
 author: leninmeza
 date: '2026-04-04'

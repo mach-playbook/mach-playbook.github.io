@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Video Review: Configuring Your Service Mesh — Gateway API and Routing in
   Practice

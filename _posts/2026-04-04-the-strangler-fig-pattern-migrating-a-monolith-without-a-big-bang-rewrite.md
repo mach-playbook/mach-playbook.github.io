@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'The Strangler Fig Pattern: Migrating a Monolith Without a Big Bang Rewrite'
 author: leninmeza
 date: '2026-04-04'

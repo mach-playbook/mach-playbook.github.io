@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Idempotency in API Design: Safe Retries for Payments and Critical Operations'
 author: leninmeza
 date: '2026-04-04'

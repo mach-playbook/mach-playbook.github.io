@@ -1,4 +1,5 @@
 ---
+lang: es
 layout: post
 title: "Flujos de Trabajo Híbridos para Arquitectos Cloud: Orquestando Sistemas con WSL, PowerShell y Windows 11"
 author: leninmeza

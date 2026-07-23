@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Centralized Observability: Distributed Tracing, Logging, and Metrics for
   Microservices

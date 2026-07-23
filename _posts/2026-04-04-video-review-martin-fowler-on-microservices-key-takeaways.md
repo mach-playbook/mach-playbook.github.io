@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Video Review: Martin Fowler on Microservices — Key Takeaways'
 author: leninmeza
 date: '2026-04-04'

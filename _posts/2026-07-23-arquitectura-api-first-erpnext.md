@@ -1,4 +1,5 @@
 ---
+lang: es
 layout: post
 title: "Arquitectura API-First para la Integración de Facturación Electrónica y Timbrado en Sistemas ERP"
 author: leninmeza

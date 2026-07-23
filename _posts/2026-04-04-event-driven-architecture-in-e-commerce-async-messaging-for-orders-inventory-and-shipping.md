@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Event-Driven Architecture in E-Commerce: Async Messaging for Orders,
   Inventory, and Shipping

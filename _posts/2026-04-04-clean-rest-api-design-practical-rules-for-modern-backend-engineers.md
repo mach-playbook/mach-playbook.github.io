@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Clean REST API Design: Practical Rules for Modern Backend Engineers'
 author: leninmeza
 date: '2026-04-04'

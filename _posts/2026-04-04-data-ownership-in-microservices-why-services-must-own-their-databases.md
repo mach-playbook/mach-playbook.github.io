@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Data Ownership in Microservices: Why Services Must Own Their Databases'
 author: leninmeza
 date: '2026-04-04'

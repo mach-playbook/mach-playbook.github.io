@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Sizing Your Microservices: How to Find the Right Service Granularity'
 author: leninmeza
 date: '2026-04-04'

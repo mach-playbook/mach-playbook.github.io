@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Service Mesh vs. API Gateway: Choosing the Right Tool for the Right Layer'
 author: leninmeza
 date: '2026-04-04'

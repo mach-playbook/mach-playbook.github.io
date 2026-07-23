@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Case Study: Sephora’s Omnichannel Transformation with Headless Architecture'
 author: leninmeza
 date: '2026-04-04'

@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Microservices at Scale: Engineering Debt and System Complexity'
 author: leninmeza
 date: '2026-04-04'

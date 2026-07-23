@@ -1,4 +1,5 @@
 ---
+lang: en
 title: The Role of OpenAPI in Contract-Driven Development
 author: leninmeza
 date: '2026-04-04'

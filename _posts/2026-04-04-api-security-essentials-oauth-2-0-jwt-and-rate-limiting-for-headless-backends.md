@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   API Security Essentials: OAuth 2.0, JWT, and Rate Limiting for Headless
   Backends

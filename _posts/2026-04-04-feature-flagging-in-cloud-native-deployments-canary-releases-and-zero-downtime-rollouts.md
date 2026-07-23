@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Feature Flagging in Cloud-Native Deployments: Canary Releases and
   Zero-Downtime Rollouts

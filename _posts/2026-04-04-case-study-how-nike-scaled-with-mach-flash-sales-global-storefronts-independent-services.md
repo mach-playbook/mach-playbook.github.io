@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Case Study: How Nike Scaled with MACH — Flash Sales, Global Storefronts,
   Independent Services

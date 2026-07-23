@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'API-First vs. Code-First: Why Contract-Before-Code Wins'
 author: leninmeza
 date: '2026-04-04'

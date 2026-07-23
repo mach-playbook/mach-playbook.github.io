@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Demystifying MACH: A Beginner’s Guide to Modern Architecture'
 author: leninmeza
 date: '2026-04-04'

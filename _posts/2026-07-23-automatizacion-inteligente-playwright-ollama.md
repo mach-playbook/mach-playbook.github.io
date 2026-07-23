@@ -1,4 +1,5 @@
 ---
+lang: es
 layout: post
 title: "Automatización de Pruebas End-to-End Inteligentes Integrando Playwright y Modelos Locales (Ollama)"
 author: leninmeza

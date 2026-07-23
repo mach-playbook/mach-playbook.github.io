@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Service Boundaries by Domain: Applying DDD Bounded Contexts to Microservices'
 author: leninmeza
 date: '2026-04-04'

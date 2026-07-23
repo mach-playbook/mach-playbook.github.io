@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   CI/CD Pipelines for Headless Platforms: Independent Deployments Without
   Breaking the Frontend

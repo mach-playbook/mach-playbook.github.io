@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'The Saga Pattern: Managing Distributed Transactions Without Two-Phase Commit'
 author: leninmeza
 date: '2026-04-04'

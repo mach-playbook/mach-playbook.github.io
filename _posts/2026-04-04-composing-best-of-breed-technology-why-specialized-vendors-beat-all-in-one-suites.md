@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Composing Best-of-Breed Technology: Why Specialized Vendors Beat All-in-One
   Suites

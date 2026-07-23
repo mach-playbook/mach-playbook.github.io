@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Implementing API Governance: Enforcing Consistency Across All Your Services'
 author: leninmeza
 date: '2026-04-04'

@@ -1,4 +1,5 @@
 ---
+lang: en
 title: 'Circuit Breer Pattern: Protecting Your Services from Cascading Failures'
 author: leninmeza
 date: '2026-04-04'

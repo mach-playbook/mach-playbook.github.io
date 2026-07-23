@@ -1,4 +1,5 @@
 ---
+lang: es
 layout: post
 title: "FinOps y Gestión del Ciclo de Vida: Desmantelamiento Seguro de Infraestructura Serverless en GCP"
 author: leninmeza

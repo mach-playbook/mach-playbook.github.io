@@ -1,4 +1,5 @@
 ---
+lang: en
 title: >-
   Video Review: Reacting to Netflix’s Architecture — What We Can Learn and What
   Doesn’t Apply
