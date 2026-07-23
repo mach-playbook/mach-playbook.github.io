@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - '_posts/**'
+      - 'scripts/generate-images.js'
+      - '.github/workflows/auto-generate-images.yml'
   workflow_dispatch:
 
 jobs:
@@ -24,14 +26,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
-        run: |
-          npm install --no-save dotenv gray-matter
-
       - name: Run Image Generation Script
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/generate-images.js
+        run: node scripts/generate-images.js --force
 
       - name: Commit and Push Updates
         run: |
@@ -41,9 +37,8 @@ jobs:
           git add _posts/
           git status
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-generate post preview images"
+            git commit -m "Auto-generate unique post header preview images"
             git push
-            # Since GITHUB_TOKEN doesn't chain workflows, we manually trigger the deploy job
             gh workflow run pages-deploy.yml --ref main
           else
             echo "No new images generated."
