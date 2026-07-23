@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # Unit testing service matching GitHub Pages HTML-Proofer CI/CD
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    container_name: mach-playbook-test
+
+  # Local preview web server (Nginx serving production build)
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    container_name: mach-playbook-site
+    ports:
+      - "8080:80"
+
+  # Live development server with hot reload
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    container_name: mach-playbook-dev
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+      - /srv/jekyll/vendor

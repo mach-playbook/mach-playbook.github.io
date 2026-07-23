@@ -4,7 +4,10 @@
   "description": "[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;\r [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "docker build --target test -t mach-playbook:test .",
+    "docker:build": "docker build -t mach-playbook:latest .",
+    "docker:run": "docker run -p 8080:80 mach-playbook:latest",
+    "docker:test": "docker-compose run --rm test"
   },
   "keywords": [],
   "author": "",
