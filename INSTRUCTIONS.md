@@ -1,79 +1,85 @@
-Context: We need to push the next batch of Spanish-language technical blog posts to the MACH Playbook. These posts cover localized machine learning integration (Playwright/Ollama) and hybrid technical environments (WSL/PowerShell/Windows 11) to solidify the site's E-E-A-T profile for AdSense approval.
+Context: We need to push the final batch of Spanish-language technical blog posts to the MACH Playbook. These posts cover enterprise Data Cloud integration and custom AI system skills for IDEs, which will complete the content depth required for the AdSense E-E-A-T approval process.
 
 Execute the exact following steps:
 
-1. Create a new file at `_posts/2026-07-23-automatizacion-inteligente-playwright-ollama.md`.
+1. Create a new file at `_posts/2026-07-24-integracion-salesforce-data-cloud-headless.md`.
 2. Inject the following content into the file exactly as written (including the YAML frontmatter):
 ---
 layout: post
-title: "Automatización de Pruebas End-to-End Inteligentes Integrando Playwright y Modelos Locales (Ollama)"
-date: 2026-07-23 16:30:00 -0600
-categories: [Ingeniería de Software, Automatización]
-tags: [playwright, ollama, machine learning, testing, ci-cd, qa]
+title: "Orquestación de Datos de Clientes: Integrando Salesforce Data Cloud en Arquitecturas Headless"
+date: 2026-07-24 09:00:00 -0600
+categories: [Arquitectura Cloud, Datos]
+tags: [mach, headless, salesforce data cloud, mulesoft, api-first]
 ---
 
-En el ecosistema de las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless), la velocidad de despliegue debe ir acompañada de una cobertura de pruebas impecable. Las herramientas tradicionales de pruebas de interfaz de usuario (UI) a menudo sufren de fragilidad: cambios menores en el DOM rompen los scripts de automatización. 
+El componente "Headless" de la arquitectura MACH permite a las empresas ofrecer experiencias de usuario altamente optimizadas al desacoplar completamente la capa de presentación (frontend) de la lógica de negocio (backend). Sin embargo, el desafío crítico en estos ecosistemas es cómo alimentar el frontend con perfiles de clientes unificados y en tiempo real sin introducir cuellos de botella de latencia.
 
-En este análisis, abordaremos cómo la combinación de Playwright con modelos de lenguaje grande (LLMs) ejecutados localmente transforma las pruebas End-to-End (E2E) en procesos adaptativos e inteligentes.
+Este análisis detalla la implementación de Salesforce Data Cloud como el motor central de perfiles de clientes dentro de un entorno headless, utilizando integraciones API-first.
 
-## La Evolución del Testing E2E con Playwright
+## El Reto de los Datos Fragmentados
 
-Playwright se ha consolidado como el estándar moderno para la automatización web, superando a predecesores gracias a su arquitectura fuera de proceso que se comunica directamente con el navegador mediante el protocolo DevTools. Esto permite interceptar red, emular dispositivos móviles y gestionar múltiples contextos de navegación de forma asíncrona.
+En ecosistemas empresariales complejos, los datos de los clientes suelen residir en múltiples sistemas de registro: CRMs tradicionales, plataformas de comercio electrónico, y sistemas de soporte técnico. Consultar estos sistemas individualmente desde un frontend (como una aplicación React o Next.js) genera múltiples llamadas de red, degradando el rendimiento y complicando la lógica del lado del cliente.
 
-Sin embargo, el verdadero desafío en el desarrollo frontend *headless* es la aserción semántica. ¿Cómo validamos que un mensaje de error no solo existe en el DOM, sino que su tono y contexto son correctos para el usuario final?
+## Salesforce Data Cloud como Única Fuente de Verdad
 
-## Integración de Modelos Locales mediante Ollama
+Salesforce Data Cloud actúa como un CDP (Customer Data Platform) de nivel empresarial que ingiere, armoniza y unifica estos datos fragmentados. Para integrarlo en una arquitectura MACH:
 
-Depender de APIs de IA de terceros para validaciones de pruebas en pipelines de CI/CD introduce latencia, costos recurrentes y riesgos de privacidad de datos. La solución es desplegar modelos de aprendizaje automático localizados.
+1.  **Ingesta de Datos Multicanal:** Se configuran conectores para ingerir telemetría de navegación, historiales de compra y tickets de soporte en tiempo real hacia Data Cloud.
+2.  **Resolución de Identidad:** El motor de Data Cloud consolida registros anónimos y conocidos en un perfil de cliente unificado utilizando reglas de coincidencia determinísticas y probabilísticas.
+3.  **Activación vía APIs:** En lugar de sincronizaciones por lotes (batch), los segmentos y perfiles unificados se exponen a través de APIs RESTful.
 
-Ollama permite gestionar y ejecutar LLMs (como Llama 3 o Mistral) directamente en la infraestructura de CI o en máquinas de desarrollo local. Al integrar la API REST local de Ollama dentro de los scripts de Playwright, podemos implementar "Aserciones Inteligentes":
+## Middleware y Orquestación con MuleSoft
 
-1.  **Extracción de Contexto:** Playwright extrae el texto visible o la estructura de un componente complejo (por ejemplo, un resumen de carrito de compras generado dinámicamente).
-2.  **Evaluación Semántica:** El script envía este texto al modelo localizado a través de Ollama con un prompt específico: *"Valida si el siguiente texto representa una confirmación de compra exitosa. Responde solo con true o false"*.
-3.  **Resolución de la Prueba:** El modelo devuelve una evaluación basada en el significado, no en selectores CSS rígidos, haciendo que la prueba sea resistente a cambios cosméticos en el código fuente.
+Para mantener el principio de bajo acoplamiento, el frontend no debe comunicarse directamente con Salesforce Data Cloud. En su lugar, se implementa una capa de orquestación, idealmente utilizando MuleSoft.
 
-## Beneficios en Entornos Cloud-Native
-
-Desplegar esta arquitectura en contenedores Docker (ejecutando tanto los *runners* de Playwright como la instancia de Ollama) garantiza que los entornos de prueba sean reproducibles y eficientes en costos. Esta sinergia no solo reduce el mantenimiento de los tests, sino que eleva la ingeniería de QA a un nivel donde el software puede verificar el comportamiento del sistema casi con juicio humano, manteniendo los datos sensibles estrictamente dentro del perímetro de seguridad de la empresa.
-
-3. Create a second file at `_posts/2026-07-23-flujos-hibridos-wsl-powershell-windows.md`.
-4. Inject the following content into the file exactly as written (including the YAML frontmatter):
----
-layout: post
-title: "Flujos de Trabajo Híbridos para Arquitectos Cloud: Orquestando Sistemas con WSL, PowerShell y Windows 11"
-date: 2026-07-23 18:45:00 -0600
-categories: [DevOps, Herramientas]
-tags: [windows 11, wsl, powershell, linux, cloud-native, scripting]
----
-
-Para los ingenieros de software y arquitectos de soluciones que diseñan infraestructuras multi-nube y plataformas de telecomunicaciones, la elección del sistema operativo es un debate constante. Mientras que el despliegue de microservicios y servidores (como bases de datos o nodos de señalización SIP) ocurre invariablemente en Linux, el entorno de escritorio corporativo suele estar dominado por Windows.
-
-La verdadera eficiencia operativa no se logra eligiendo un bando, sino dominando la gestión de entornos técnicos cruzados. Este artículo detalla cómo estructurar un flujo de trabajo de grado empresarial unificando las capacidades de Windows 11 con el núcleo de Linux.
-
-## El Subsistema de Windows para Linux (WSL) como Entorno Nativo
-
-Históricamente, los desarrolladores dependían de máquinas virtuales pesadas o configuraciones de arranque dual. Hoy, la arquitectura de WSL en Windows 11 permite ejecutar un kernel de Linux real junto al sistema operativo anfitrión. 
-
-Para arquitecturas MACH, esto es invaluable:
-*   **Contenedorización Transparente:** Herramientas como Docker Desktop se integran directamente con el backend de WSL, permitiendo compilar imágenes de contenedores nativas de Linux con tiempos de E/S del disco drásticamente reducidos en comparación con la virtualización tradicional.
-*   **Diagnóstico de Red Avanzado:** Los ingenieros pueden ejecutar binarios de red nativos de Linux directamente contra los servidores de producción (utilizando SSH, `tcpdump` o utilidades específicas de VoIP) sin abandonar su entorno de productividad principal.
-
-## Automatización y Gestión mediante PowerShell
-
-Mientras que Bash es el rey del entorno Linux, PowerShell ofrece un modelo de automatización orientado a objetos que es excepcionalmente potente para gestionar la infraestructura subyacente y los servicios en la nube (como Azure o herramientas CLI de AWS/GCP para Windows).
-
-Un flujo de trabajo híbrido avanzado implica:
-1.  **Scripts de Interoperabilidad:** Es posible invocar comandos de Linux desde PowerShell y viceversa. Por ejemplo, un script de PowerShell puede consultar el estado de los servicios de Windows y pasar esos datos a una herramienta de análisis de registros en Linux dentro de WSL utilizando tuberías estándar (`|`).
-2.  **Gestión de Perfiles y Aliases:** Configurar el archivo de perfil de PowerShell para unificar las utilidades cruzadas. Puedes mapear comandos habituales de Linux para que funcionen dentro de la consola de Windows, reduciendo la fricción cognitiva al cambiar entre los subsistemas de archivos (`\\wsl.localhost\`).
+*   **APIs de Experiencia (MuleSoft):** Exponen endpoints GraphQL o REST optimizados específicamente para el frontend, solicitando únicamente los campos de datos necesarios para renderizar la vista (por ejemplo, preferencias de producto o estado de lealtad).
+*   **Transformación y Caché:** MuleSoft se encarga de transformar las respuestas complejas de Salesforce Data Cloud en cargas útiles JSON ligeras. Además, puede implementar políticas de caché en el borde para perfiles que no cambian con alta frecuencia, reduciendo la carga sobre las APIs subyacentes.
 
 ## Conclusión
 
-El perfil de un Ingeniero Full-Stack o Arquitecto Cloud moderno exige adaptabilidad. Al configurar Windows 11 no solo como una interfaz de usuario, sino como un puente hipervisor optimizado mediante WSL y automatizado con PowerShell, se elimina la sobrecarga operativa, permitiendo un enfoque absoluto en la construcción de arquitecturas escalables y resilientes.
+Integrar Salesforce Data Cloud mediante una capa de mediación robusta permite a las arquitecturas headless consumir datos de clientes hiper-personalizados a escala. Esta topología garantiza que la capa de presentación se mantenga rápida y ágil, mientras el backend gestiona la complejidad de la unificación de datos de forma segura y centralizada.
+
+3. Create a second file at `_posts/2026-07-24-habilidades-sistema-ia-ides-modernos.md`.
+4. Inject the following content into the file exactly as written (including the YAML frontmatter):
+---
+layout: post
+title: "Ingeniería Asistida por IA: Desarrollo de Habilidades de Sistema Personalizadas para IDEs Modernos"
+date: 2026-07-24 14:00:00 -0600
+categories: [Ingeniería de Software, Inteligencia Artificial]
+tags: [ia, automatizacion, ide, scripts, flujos de trabajo, productividad]
+---
+
+La automatización del ciclo de vida del desarrollo de software (SDLC) ha trascendido los pipelines de integración continua (CI/CD) y se ha adentrado directamente en el entorno de desarrollo integrado (IDE). Con la llegada de asistentes de programación impulsados por inteligencia artificial, la verdadera ventaja competitiva radica en la capacidad de extender estos entornos.
+
+Este documento explora la creación y gestión de habilidades de sistema (system skills) personalizadas para IDEs avanzados, como Antigravity IDE, con el objetivo de optimizar flujos de trabajo repetitivos en la ingeniería de software.
+
+## Más Allá del Autocompletado de Código
+
+Los asistentes de IA estándar son eficientes para generar bloques de código genéricos. No obstante, en arquitecturas empresariales, las soluciones requieren un contexto profundo sobre las convenciones de nomenclatura internas, las políticas de seguridad y la topología de la infraestructura específica de la organización.
+
+Aquí es donde entran las habilidades de sistema personalizadas: scripts y prompts orquestados que enseñan a la IA del IDE a interactuar con el ecosistema de herramientas del desarrollador.
+
+## Arquitectura de una Habilidad de Sistema (System Skill)
+
+Desarrollar una habilidad personalizada implica conectar el modelo de lenguaje subyacente del IDE con el sistema de archivos local y el intérprete de comandos (como Bash o PowerShell). 
+
+Casos de uso avanzados incluyen:
+1.  **Andamiaje de Microservicios Consciente del Contexto:** Una habilidad personalizada puede instruir al IDE para que, al solicitar la creación de un nuevo microservicio, la IA lea primero los repositorios existentes, replique la estructura de carpetas (controladores, modelos, servicios), e inyecte automáticamente el middleware de autenticación estándar de la empresa.
+2.  **Generación Automatizada de Casos de Estudio:** Se pueden escribir habilidades que analicen los archivos de configuración de infraestructura (como Terraform o Kubernetes YAMLs) y generen automáticamente documentación técnica estructurada en formato Markdown, lista para ser publicada en plataformas de conocimiento interno o playbooks de arquitectura.
+3.  **Auditoría de Dependencias Locales:** Habilidades que combinan la ejecución de comandos (por ejemplo, `npm audit` o validación de paquetes Python) con el análisis de la IA para sugerir y aplicar automáticamente parches de seguridad en el código fuente.
+
+## Seguridad y Aislamiento
+
+Al otorgar a los modelos de IA la capacidad de ejecutar comandos y modificar archivos, el aislamiento es fundamental. Las habilidades de sistema deben diseñarse con permisos estrictos, requiriendo confirmación explícita del ingeniero antes de ejecutar operaciones destructivas (como el borrado de bases de datos o modificaciones masivas en el repositorio).
+
+## Conclusión
+
+Escribir habilidades de sistema personalizadas transforma el IDE de un simple editor de texto a un agente de desarrollo automatizado. Los ingenieros de software que dominan la creación de estas herramientas no solo aceleran su propia productividad, sino que establecen flujos de trabajo estandarizados y resistentes a errores para toda su organización.
 
 5. Verify that the filenames strictly follow the Jekyll date-prefix convention (`YYYY-MM-DD-title.md`) to ensure the CI/CD pipeline correctly handles the dynamic cover image generation.
 6. Open a terminal and run the following Git commands sequentially to push the changes:
-   - `git add _posts/2026-07-23-automatizacion-inteligente-playwright-ollama.md _posts/2026-07-23-flujos-hibridos-wsl-powershell-windows.md`
-   - `git commit -m "feat: add advanced automation and hybrid workflow Spanish articles for AdSense compliance"`
+   - `git add _posts/2026-07-24-integracion-salesforce-data-cloud-headless.md _posts/2026-07-24-habilidades-sistema-ia-ides-modernos.md`
+   - `git commit -m "feat: add Salesforce Data Cloud and custom AI IDE skills articles for AdSense compliance"`
    - `git push origin main`
 
 Monitor the console output, wait for the push to complete, and confirm that the GitHub Pages deployment action has triggered.
