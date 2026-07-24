@@ -46,9 +46,31 @@ layout: default
   {% endfor %}
 {% endif %}
 
+<!-- Language Filter Bar -->
+<div class="d-flex align-items-center justify-content-between mb-4 px-1 pb-2 border-bottom">
+  <div class="d-flex align-items-center gap-2">
+    <span class="text-muted small font-weight-bold uppercase me-1"><i class="fas fa-filter me-1 text-primary"></i>Language:</span>
+    <div class="btn-group btn-group-sm" role="group" id="home-lang-pills">
+      <button type="button" class="btn btn-outline-secondary lang-pill active" data-lang-target="all" style="border-radius: 20px 0 0 20px; font-weight: 500;">
+        All (43)
+      </button>
+      <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="es" style="font-weight: 500;">
+        🇲🇽/🇪🇸 Español (8)
+      </button>
+      <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="en" style="border-radius: 0 20px 20px 0; font-weight: 500;">
+        🇺🇸 English (35)
+      </button>
+    </div>
+  </div>
+  <div id="lang-filter-status" class="small text-muted d-none d-md-block">
+    Showing all posts
+  </div>
+</div>
+
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
-    <article class="card-wrapper card">
+    {% assign post_lang = post.lang | default: 'en' %}
+    <article class="card-wrapper card post-card-item" data-post-lang="{{ post_lang }}">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
 
@@ -118,7 +140,6 @@ layout: default
                 {% endif %}
 
                 <!-- language flag badge -->
-                {% assign post_lang = post.lang | default: 'en' %}
                 {% if post_lang == 'es' %}
                   <span class="badge border border-primary text-primary ms-2" style="font-weight: 500; font-size: 0.75rem; padding: 0.2em 0.55em; border-radius: 4px;">
                     🇲🇽/🇪🇸 Español
@@ -147,6 +168,99 @@ layout: default
 </div>
 <!-- #post-list -->
 
+<div id="no-lang-results" class="text-center py-5 d-none">
+  <i class="fas fa-globe-americas fa-3x text-muted mb-3"></i>
+  <h5>No posts found for this language filter on this page</h5>
+  <p class="text-muted small">Try switching to another language or click "All".</p>
+  <button class="btn btn-primary btn-sm mt-2" onclick="setLanguageFilter('all')">Show All Posts</button>
+</div>
+
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
 {% endif %}
+
+<!-- Client-Side Language Filter Script -->
+<script>
+  function setLanguageFilter(lang) {
+    localStorage.setItem('mach_playbook_lang', lang);
+    
+    // Update Topbar Dropdown UI
+    const currentText = document.getElementById('current-lang-text');
+    if (currentText) {
+      if (lang === 'es') currentText.textContent = 'Español';
+      else if (lang === 'en') currentText.textContent = 'English';
+      else currentText.textContent = 'All';
+    }
+
+    document.querySelectorAll('.lang-select-opt').forEach(opt => {
+      if (opt.getAttribute('data-lang') === lang) {
+        opt.classList.add('active');
+      } else {
+        opt.classList.remove('active');
+      }
+    });
+
+    // Update Home Filter Pills UI
+    document.querySelectorAll('.lang-pill').forEach(pill => {
+      if (pill.getAttribute('data-lang-target') === lang) {
+        pill.classList.add('active', 'btn-primary');
+        pill.classList.remove('btn-outline-secondary');
+      } else {
+        pill.classList.remove('active', 'btn-primary');
+        pill.classList.add('btn-outline-secondary');
+      }
+    });
+
+    const statusEl = document.getElementById('lang-filter-status');
+    if (statusEl) {
+      if (lang === 'es') statusEl.textContent = 'Filtered by: Spanish posts only';
+      else if (lang === 'en') statusEl.textContent = 'Filtered by: English posts only';
+      else statusEl.textContent = 'Showing all posts';
+    }
+
+    // Filter Post Cards
+    const cards = document.querySelectorAll('.post-card-item');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardLang = card.getAttribute('data-post-lang');
+      if (lang === 'all' || cardLang === lang) {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const noResults = document.getElementById('no-lang-results');
+    if (noResults) {
+      if (visibleCount === 0 && cards.length > 0) {
+        noResults.classList.remove('d-none');
+      } else {
+        noResults.classList.add('d-none');
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('mach_playbook_lang') || 'all';
+    setLanguageFilter(savedLang);
+
+    // Bind click events on Topbar options
+    document.querySelectorAll('.lang-select-opt').forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const selected = this.getAttribute('data-lang');
+        setLanguageFilter(selected);
+      });
+    });
+
+    // Bind click events on Home Pills
+    document.querySelectorAll('.lang-pill').forEach(pill => {
+      pill.addEventListener('click', function() {
+        const selected = this.getAttribute('data-lang-target');
+        setLanguageFilter(selected);
+      });
+    });
+  });
+</script>
