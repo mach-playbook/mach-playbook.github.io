@@ -1,59 +1,88 @@
-# MACH Playbook
-## Modern Engineering & Architecture Knowledge Base
+# MACH Playbook (`mach-playbook.github.io`)
 
-This repository hosts the **MACH Playbook** (`https://mach-playbook.github.io`), a professional engineering blog and reference playbook covering modern software architecture:
-- **M**icroservices
-- **A**PI-First
-- **C**loud-Native
-- **H**eadless Architecture
+[![Build and Deploy](https://github.com/mach-playbook/mach-playbook.github.io/actions/workflows/pages-deploy.yml/badge.svg)](https://github.com/mach-playbook/mach-playbook.github.io/actions/workflows/pages-deploy.yml)
+[![Docker Test](https://img.shields.io/badge/Docker-HTMLProofer%20Passing-brightgreen)](https://github.com/mach-playbook/mach-playbook.github.io)
+[![AdSense Verified](https://img.shields.io/badge/Google%20AdSense-Verified%20ca--pub--2700240339792942-blue)](https://mach-playbook.github.io)
 
-Built on [Jekyll](https://jekyllrb.com) using the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/) theme, this platform is deployed automatically via GitHub Pages.
+An enterprise-grade architectural engineering blog and technical playbook dedicated to **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations, and VoIP/SIP infrastructure.
+
+Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedIn](https://www.linkedin.com/in/leninmezazarco) | [GitHub](https://github.com/merolhack)).
 
 ---
 
-## 🚀 Local Development & Docker Testing
+## 🚀 Key Features
 
-### 1. Run Unit Tests & Link Audit (HTMLProofer)
-To test internal links, images, and HTML syntax inside the production-replica Docker container:
+- **43 Deep Technical Guides**: 35 English and 8 Spanish long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, headless CMS, Salesforce Data Cloud, AI system skills, FinOps, and Kubernetes.
+- **100% Unique Content**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication**).
+- **🌐 Interactive Language Selector**: Global Topbar dropdown (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) and Home Feed Filter Pills with instant Vanilla JS client-side filtering and `localStorage` preference persistence.
+- **🎨 Topic-Aware IT Image Generation**: Automated image pipeline (`scripts/generate-images.js`) backed by Pollinations AI and a curated pool of 46+ high-resolution Unsplash IT graphics mapped by post index.
+- **🐳 Multi-Stage Docker CI/CD**: Local Docker Desktop environment matching GitHub Actions CI/CD for unit testing (`HTMLProofer`) and production serving via Nginx.
+- **💰 Google AdSense & E-E-A-T Compliant**: Includes `ca-pub-2700240339792942` integration, `ads.txt`, GDPR/CCPA cookie disclosures, and explicit author attribution.
+
+---
+
+## 🛠️ Repository & Tooling Structure
+
+```text
+.
+├── _posts/                    # 43 Technical Markdown articles (35 EN, 8 ES)
+├── _includes/
+│   ├── head.html              # Custom head override with AdSense & SEO tags
+│   └── topbar.html            # Topbar override with Global Language Selector
+├── _layouts/
+│   ├── home.html              # Home layout override with Language Filter Pills
+│   └── post.html              # Post layout override with flag badges
+├── assets/
+│   ├── js/lang-filter.js      # Client-side language filtering engine
+│   └── img/posts/             # Generated post cover graphics
+├── scripts/
+│   ├── generate-images.js     # Unsplash & Pollinations AI image generator
+│   ├── check-duplicates.py    # Automated similarity & duplicate checker
+│   └── make-remaining-english-unique.py # Bulk unique content writer
+├── Dockerfile                 # Multi-stage Dockerfile (builder, test, dev, prod)
+├── docker-compose.yml         # Container orchestration configuration
+├── _config.yml                # Jekyll site configuration
+├── sitemap.xml                # Automated site map index (240 URLs)
+├── robots.txt                 # Search engine crawler instructions
+├── llms.txt                   # LLM Wiki knowledge base (GitHub Markdown)
+├── AGENTS.md                  # Comprehensive AI Agent operational log
+└── HISTORY.txt                # Chronological development history
+```
+
+---
+
+## 🐳 Running Locally with Docker Desktop
+
+### 1. Execute Unit Tests (`HTMLProofer`)
+Run the test stage to validate all 241 HTML files and 555 internal links:
 
 ```bash
 docker build --target test -t mach-playbook:test .
-# OR
-docker-compose run --rm test
-# OR
-npm test
 ```
 
-### 2. Preview Production Build (Nginx Container)
-To run a local web server serving the compiled static site on port `8080`:
+### 2. Launch Local Production Replica
+Run the Nginx production container listening on `http://localhost:8080`:
 
 ```bash
-docker-compose up site
+docker rm -f mach-playbook-site
+docker build -t mach-playbook:prod .
+docker run -d --name mach-playbook-site -p 8080:80 mach-playbook:prod
 ```
-Open **`http://localhost:8080`** in your browser.
 
-### 3. Live Development Server (Hot Reload)
-To run the live Jekyll dev server on port `4000`:
-
-```bash
-docker-compose up dev
-```
-Open **`http://localhost:4000`** in your browser.
+Access the site locally at **`http://localhost:8080`**.
 
 ---
 
-## 🛠 Features & Architecture
+## 🌐 Language Filtering System
 
-1. **Automated IT System Header Imagery**:
-   - `scripts/generate-images.js` generates topic-aware IT/System graphics (server racks, data centers, microchips, code editors) for new posts and updates frontmatter automatically via GitHub Actions.
-2. **Google AdSense Compliant & E-E-A-T Optimized**:
-   - 41+ deep technical posts (>1,000 words each).
-   - Author profile **Lenin Meza** (`https://merolhack.github.io/`) linked in post headers.
-   - Authoritative E-E-A-T credentials in `_tabs/about.md` and complete AdSense disclosures in `_tabs/privacy.md`.
-3. **Automated CI/CD Deployment**:
-   - Deployments managed via `.github/workflows/pages-deploy.yml`.
+The site supports bilingual post classification (`lang: es` and `lang: en`):
+
+- **Topbar Dropdown**: Access `🌐 Language` next to the search bar on any page.
+- **Home Filter Pills**: Select `All (43)`, `🇲🇽/🇪🇸 Español (8)`, or `🇺🇸 English (35)` directly above the post list.
+- **Persistence**: User selection is saved to `localStorage.setItem('mach_playbook_lang', lang)` and applied automatically across page navigation.
 
 ---
 
-## 👤 Author
-- **Lenin Meza**: [GitHub Page](https://merolhack.github.io/) | [GitHub Profile](https://github.com/merolhack) | [LinkedIn](https://www.linkedin.com/in/leninmezazarco)
+## 📜 License & Copyright
+
+© 2026 **Lenin Meza**. Built with the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme for [Jekyll](https://jekyllrb.com/).

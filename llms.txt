@@ -1,82 +1,109 @@
-# LLM Wiki & Knowledge Base for MACH Playbook (`llms.txt`)
+# LLM Wiki & Knowledge Base (`llms.txt`)
 
-This file acts as a structured LLM Wiki (inspired by Andrej Karpathy's LLM Wiki specification) containing authoritative context, architectural patterns, workflow automation rules, and environment gotchas for AI agents operating within this repository.
+> Authoritative repository context, architectural patterns, workflow automation rules, environment gotchas, and technical specifications for AI agents operating within the **MACH Playbook** codebase.
+> 
+> *Format: Karpathy-style LLM Wiki (Markdown formatted for GitHub UI navigation).*
 
 ---
 
 ## 1. Project Overview & Architecture
+
 - **Repository Name**: `mach-playbook` (`mach-playbook.github.io`)
-- **Base Domain**: `https://mach-playbook.github.io`
+- **Live Production URL**: [https://mach-playbook.github.io](https://mach-playbook.github.io)
+- **Local Replica URL**: `http://localhost:8080` (Nginx Docker container)
 - **Framework**: Static Site Generator built on **Jekyll** with the [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy) (v7.5+).
-- **Core Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (Microservices, API-First, Cloud-Native, Headless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations, and VoIP/SIP infrastructure.
-- **Total Posts**: 41 deep technical posts written in English and Spanish.
+- **Core Domain & Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations, and VoIP/SIP infrastructure.
+- **Content Inventory**: **43 deep technical guides** (>1,000 words each):
+  - **35 English Articles** (`lang: en`)
+  - **8 Spanish Articles** (`lang: es`)
+- **Author Identity & E-E-A-T**:
+  - **Author Name**: **Lenin Meza** (`author: leninmeza` / `lenin`)
+  - **Personal Portfolio**: [https://merolhack.github.io/](https://merolhack.github.io/)
+  - **LinkedIn Profile**: [https://www.linkedin.com/in/leninmezazarco](https://www.linkedin.com/in/leninmezazarco)
+  - **GitHub Profile**: [https://github.com/merolhack](https://github.com/merolhack)
 
 ---
 
-## 2. Monetization & E-E-A-T Policy Adherence
-- **Google AdSense Integration**:
-  - **Publisher ID**: `ca-pub-2700240339792942`
-  - **Meta Verification**: `<meta name="google-adsense-account" content="ca-pub-2700240339792942">` configured in `_includes/head.html`.
-  - **Root Ads File**: `ads.txt` present at root containing `google.com, pub-2700240339792942, DIRECT, f08c47fec0942fa0`.
-- **E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)**:
-  - **Author Profile**: **Lenin Meza** (`author: leninmeza` / `lenin`).
-  - **Author Website**: `https://merolhack.github.io/` (linked in post headers via `_data/authors.yml`).
-  - **Social Links**: GitHub (`https://github.com/merolhack`) and LinkedIn (`https://www.linkedin.com/in/leninmezazarco`) in `_data/contact.yml`.
-  - **Depth Requirement**: All articles are >1,000 words each, featuring Senior Solutions Architect insights, structured code blocks, and diagrams to avoid AdSense "Thin Content" / "Low Value Content" rejections.
-  - **Privacy Compliance (`_tabs/privacy.md`)**: Must disclose Google AdSense cookie tracking, third-party vendor disclosures (GDPR/CCPA), and opt-out links (`Ads Settings`, `aboutads.info`).
+## 2. Global Language Selector & Filtering System
+
+The site implements dynamic bilingual post classification (`lang: es` and `lang: en`) backed by a client-side filtering engine:
+
+### A. UI Placement Architecture
+1. **Global Topbar Selector (`_includes/topbar.html`)**:
+   - Globe icon dropdown button (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) positioned next to `#search`.
+   - Displays real-time post count badges (`All: 43`, `Español: 8`, `English: 35`).
+2. **Home Feed Filter Pills (`_layouts/home.html`)**:
+   - Filter pill group positioned directly above `#post-list`.
+   - Renders `Filter: [ All (43) | 🇲🇽/🇪🇸 Español (8) | 🇺🇸 English (35) ]`.
+3. **Card & Header Badges**:
+   - Each post card and article header renders explicit language badges (`🇲🇽/🇪🇸 Español` vs `🇺🇸 English`).
+
+### B. Client-Side Script Engine (`assets/js/lang-filter.js`)
+- **Function**: `setLanguageFilter(lang)`
+- **Behavior**: Real-time card visibility toggle (`data-post-lang="es"` vs `data-post-lang="en"`).
+- **State Persistence**: Saves selection to `localStorage.setItem('mach_playbook_lang', lang)` to maintain user language preference across page navigation and page reloads.
 
 ---
 
-## 3. Automation Scripts & Pipelines
+## 3. Monetization & E-E-A-T Adherence
 
-### A. Topic-Aware IT Image Generator (`scripts/generate-images.js`)
-- **Script Location**: `scripts/generate-images.js`
+### A. Google AdSense Integration
+- **Publisher ID**: `ca-pub-2700240339792942`
+- **Meta Verification Tag**: `<meta name="google-adsense-account" content="ca-pub-2700240339792942">` configured in `_includes/head.html`.
+- **Root Ads File**: `ads.txt` present at root containing:
+  ```text
+  google.com, pub-2700240339792942, DIRECT, f08c47fec0942fa0
+  ```
+
+### B. E-E-A-T & Quality Guidelines
+- **Zero-Duplication Guarantee**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication** across all 43 posts).
+- **Article Depth**: All articles exceed 1,000 words, featuring concrete architectural diagrams, code snippets, and Senior Solutions Architect insights (GCP, AWS, MuleSoft, Apigee, Kubernetes, Data Cloud, AI System Skills).
+- **Privacy Compliance (`_tabs/privacy.md`)**: Fully discloses Google AdSense cookie tracking, third-party vendor disclosures (GDPR/CCPA), and opt-out links (`aboutads.info`).
+
+---
+
+## 4. Automated Image Generation Pipeline
+
+### Script: `scripts/generate-images.js`
 - **CI/CD Workflow**: `.github/workflows/auto-generate-images.yml`
-- **Behavior**:
-  1. Scans `_posts/` for posts missing `image.path` in frontmatter.
-  2. Queries Pollinations.ai API with topic-aware prompts (`server room`, `datacenter`, `microchip`, `code editor`).
-  3. Falls back to a curated list of high-resolution Unsplash IT graphics if Pollinations is rate-limited.
-  4. Saves PNG to `assets/img/posts/` and updates post YAML frontmatter cleanly.
-
-### B. Deep Content Expansion Script (`scripts/deep-expand-posts.py`)
-- **Script Location**: `scripts/deep-expand-posts.py`
-- **Behavior**: Programmatically expands post body paragraphs with Senior Solutions Architect insights (GCP, AWS, Apigee, MuleSoft, microservices) while leaving frontmatter intact.
+- **Primary Generator**: Pollinations AI API with topic-aware prompts (`server room`, `datacenter`, `microchip`, `code editor`).
+- **Fallback Pool**: Expanded to **46+ verified high-resolution Unsplash IT graphics**.
+- **Mapping Logic**: `index % unsplashITPhotos.length`, guaranteeing **100% unique cover graphics** across all 43 posts.
 
 ---
 
-## 4. Local Testing & Docker Desktop Environment
+## 5. Local Docker Testing & CI/CD Workflow
 
-### Docker CI/CD Replica
-The repository includes a multi-stage `Dockerfile` and `docker-compose.yml` matching `.github/workflows/pages-deploy.yml` (Ruby 3.4, Jekyll Chirpy, HTMLProofer, Nginx):
+The repository includes a multi-stage `Dockerfile` and `docker-compose.yml` mirroring GitHub Actions CI/CD (Ruby 3.4, Jekyll Chirpy, HTMLProofer, Nginx):
 
 ```bash
-# 1. Run Unit Tests (HTMLProofer & Link Audit)
+# 1. Run HTMLProofer Unit Tests (241 HTML files, 555 internal links)
 docker build --target test -t mach-playbook:test .
-# OR
-docker-compose run --rm test
-# OR
-npm test
 
-# 2. Run Production Web Server (Nginx) on http://localhost:8080
-docker-compose up site
-
-# 3. Run Live Development Server on http://localhost:4000
-docker-compose up dev
+# 2. Rebuild and Launch Local Production Container on http://localhost:8080
+docker rm -f mach-playbook-site
+docker build -t mach-playbook:prod .
+docker run -d --name mach-playbook-site -p 8080:80 mach-playbook:prod
 ```
 
 ---
 
-## 5. Critical Environmental Gotchas for AI Agents
+## 6. Technical SEO & Google Search Console Guide
 
-### Gotcha #1: Windows PowerShell vs WSL GitHub CLI Auth
-- **Symptom**: Executing `gh` directly in a Windows PowerShell prompt throws `401 Bad credentials` because PowerShell injects a broken `GITHUB_TOKEN` environment variable.
-- **Fix**: ALWAYS run `wsl gh` (e.g. `wsl gh run list --limit 2`). Inside WSL, `gh` reads credentials directly from `~/.config/gh/hosts.yml` and succeeds.
+- **Sitemap Location**: `https://mach-playbook.github.io/sitemap.xml` (HTTP 200 OK, 240 URLs).
+- **Robots.txt Location**: `https://mach-playbook.github.io/robots.txt` (authorizes `sitemap.xml`).
+- **Google Search Console (GSC) Behavior**:
+  - **Sitemap Status**: `"Sitemap could not be read"` occurs on initial GSC submission before background worker executes. Resolves automatically to **Success (240 discovered pages)** within 12–24 hours.
+  - **Live URL Inspection for XML**: Inspecting `.xml` files in GSC displays `"URL is not on Google"` and `"Something went wrong"` because GSC inspects HTML DOM pages, not raw XML data feeds.
+  - **Live URL Inspection for HTML**: Inspecting `https://mach-playbook.github.io/` or post URLs returns **"URL is available to Google"** with indexing requested.
 
-### Gotcha #2: Jekyll Future Timestamp Exclusion (`sitemap.xml`)
-- **Symptom**: Newly added posts do not render in `_site` or `sitemap.xml` after a GitHub Actions build.
-- **Cause**: Jekyll suppresses posts whose `date:` timestamp is in the future relative to the build server's UTC time.
-- **Fix**: `_config.yml` MUST contain `future: true`. Post frontmatter dates should use `00:00:00 -0600` or past UTC timestamps to guarantee immediate inclusion in `sitemap.xml`.
+---
 
-### Gotcha #3: Frontmatter Parsing Corruptions
-- **Symptom**: Overwriting frontmatter during post generation can strip the opening `---` line or duplicate image paths.
-- **Fix**: Always test modified scripts against `bundle exec htmlproofer _site` or `npm test` inside Docker before pushing.
+## 7. Known Environment Gotchas & Solutions
+
+| Gotcha | Root Cause | Solution |
+| :--- | :--- | :--- |
+| **GitHub CLI Auth Failure on Windows** | PowerShell sets invalid `GITHUB_TOKEN` environment variable | Run `wsl gh` to bypass env var and use valid `hosts.yml` token |
+| **Jekyll Missing Future Dated Posts** | UTC build time offset excludes posts with local timestamps | Set `future: true` in `_config.yml` |
+| **Sidebar Menu Subtitle Overlap** | Chirpy theme `height: 3rem` hardcoded constraint | Override with `height: auto !important` in `_includes/head.html` |
+| **Inline Script Liquid Minification Error** | Inline `<script>` tags in `_layouts/home.html` cause syntax truncation | Load external script `assets/js/lang-filter.js` |

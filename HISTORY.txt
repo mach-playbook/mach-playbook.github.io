@@ -49,3 +49,16 @@
   * Executed HTMLProofer unit tests in Docker container (`mach-playbook:test`) passing 101 HTML files and 193 internal links with 0 errors.
   * Launched background container `mach-playbook-site` listening on `http://localhost:8080` (HTTP 200 OK).
   * Confirmed GitHub Actions workflows (`Build and Deploy` and `Auto Generate Missing Post Images`) completed with `completed | success`.
+
+2026-07-24 17:00: Salesforce & AI IDE Posts, Deduplication & Unsplash Expansion
+  * Published 2 final Spanish technical articles: `integracion-salesforce-data-cloud-headless.md` and `habilidades-sistema-ia-ides-modernos.md`. Total posts: 43.
+  * Created `scripts/check-duplicates.py` and completely rewrote 35 English posts via `scripts/make-remaining-english-unique.py` to eliminate all shared boilerplate. Achieved 0% title and 0% body duplication.
+  * Expanded `scripts/generate-images.js` Unsplash fallback pool to 46+ verified IT photos mapped via post index to guarantee zero duplicate cover graphics.
+  * Ran HTMLProofer in Docker container (`mach-playbook:test`) passing 241 files / 555 internal links with 0 errors.
+
+2026-07-24 17:45: Global Language Selector UI, GSC & Sitemap Verification
+  * Added Global Language Selector dropdown (`_includes/topbar.html`) and Home Feed Filter Pills (`_layouts/home.html`) displaying `Filter: [ All (43) | 🇲🇽/🇪🇸 Español (8) | 🇺🇸 English (35) ]`.
+  * Implemented `assets/js/lang-filter.js` for real-time Vanilla JS language filtering and `localStorage` state persistence.
+  * Verified live `https://mach-playbook.github.io/sitemap.xml` returning HTTP 200 OK with 240 URLs.
+  * Audited Google Search Console: resolved `/sitemap.xm` submission typo, explained non-HTML XML live test behavior ("Something went wrong" / "URL is not on Google"), and verified priority queue status.
+  * Rebuilt local Docker container `mach-playbook-site` (`http://localhost:8080`) and verified GitHub Actions deployment `30113525500` succeeded.
