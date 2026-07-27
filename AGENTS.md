@@ -45,16 +45,16 @@
 - Started background production replica container `mach-playbook-site` listening on `http://localhost:8080` (HTTP 200 OK).
 - Verified GitHub Actions `Build and Deploy` and `Auto Generate Missing Post Images` pipelines completed with `completed | success`.
 
-2026-07-24 17:00: Salesforce & AI IDE Posts, Zero-Duplication Overhaul & Image Pool Expansion
-- Published 2 final Spanish-language technical articles: `integracion-salesforce-data-cloud-headless.md` and `habilidades-sistema-ia-ides-modernos.md`. Total posts: **43**.
-- Conducted exhaustive content deduplication analysis using `scripts/check-duplicates.py`.
-- Re-wrote Clusters A, B, C, D (15 posts) and all remaining 20 English posts via `scripts/make-remaining-english-unique.py` to ensure 100% unique, domain-specific content. Achieved **0% title duplication and 0% body duplication across all 43 posts**.
-- Expanded Unsplash photo fallback pool in `scripts/generate-images.js` to 46+ verified high-res IT photos mapped via post index (`index % length`) to guarantee zero duplicate cover graphics.
-- Verified HTMLProofer unit tests in Docker container (`mach-playbook:test`) passing 241 files / 555 internal links with 0 errors.
-
 2026-07-24 17:45: Dual Language Selector UI, Sitemap & GSC Audit
 - Built interactive Global Language Selector dropdown (`_includes/topbar.html` override) and Home Feed Filter Pills (`_layouts/home.html` override) displaying `Filter: [ All (43) | 🇲🇽/🇪🇸 Español (8) | 🇺🇸 English (35) ]`.
 - Implemented `assets/js/lang-filter.js` for instant Vanilla JS filtering and `localStorage` preference persistence.
 - Verified live `https://mach-playbook.github.io/sitemap.xml` returns `HTTP 200 OK` with 240 URLs and verified `robots.txt` authorization.
 - Conducted Google Search Console audit: resolved sitemap typo (`/sitemap.xm` -> `/sitemap.xml`), explained "URL is not on Google" / "Something went wrong" live test behavior for XML files, and verified priority crawl queue status.
 - Rebuilt local Docker container `mach-playbook-site` (`http://localhost:8080`) and verified GitHub Actions deployment `30113525500` completed with `completed | success`.
+
+2026-07-27 16:30: DB Migration & VoIP Posts, Automated AdSense Compliance Suite
+- Published 2 additional Spanish technical articles: `estrategias-migracion-bases-datos-multi-nube.md` and `trazabilidad-avanzada-traduccion-gateways-voip.md`. Total posts: **45** (35 EN, 10 ES).
+- Created `scripts/test-adsense-compliance.py` unit testing suite validating `ads.txt`, `<head>` Publisher ID, Privacy disclosures, E-E-A-T credentials, and non-thin word counts (>1,000 words per article).
+- Auto-generated 100% unique cover graphics via `scripts/generate-images.js`.
+- Verified HTMLProofer in Docker container (`mach-playbook:test`) passing 251 files / 579 internal links with 0 errors.
+- Pushed commit `f7241c9` to `main`, with GitHub Actions `Build and Deploy` workflow `30285213779` executing successfully.
