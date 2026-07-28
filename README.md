@@ -45,7 +45,7 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 ├── _config.yml                # Jekyll site configuration
 ├── sitemap.xml                # Automated site map index (250+ URLs)
 ├── robots.txt                 # Search engine crawler instructions
-├── llms.txt                   # LLM Wiki knowledge base (GitHub Markdown)
+├── llm-wiki.md                 # LLM Wiki knowledge base (GitHub Markdown)
 ├── AGENTS.md                  # Comprehensive AI Agent operational log
 └── HISTORY.txt                # Chronological development history
 ```

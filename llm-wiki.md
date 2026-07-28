@@ -1,4 +1,4 @@
-# LLM Wiki & Knowledge Base (`llms.txt`)
+# LLM Wiki & Knowledge Base (`llm-wiki.md`)
 
 > Authoritative repository context, architectural patterns, workflow automation rules, environment gotchas, and technical specifications for AI agents operating within the **MACH Playbook** codebase.
 > 
