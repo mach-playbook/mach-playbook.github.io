@@ -5,6 +5,8 @@ date: 2026-07-30 09:00:00 -0600
 categories: [Arquitectura Cloud, Rendimiento]
 tags: [headless, cdn, redis, edge computing, gcp, mach, performance]
 lang: es
+image:
+  path: /assets/img/posts/2026-07-30-estrategias-cache-distribuida-edge-headless.png
 ---
 
 

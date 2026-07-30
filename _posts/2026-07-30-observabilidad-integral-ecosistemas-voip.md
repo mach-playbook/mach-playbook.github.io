@@ -5,6 +5,8 @@ date: 2026-07-30 13:30:00 -0600
 categories: [Telecomunicaciones, DevOps]
 tags: [voip, sip, prometheus, grafana, qos, monitoring, linux]
 lang: es
+image:
+  path: /assets/img/posts/2026-07-30-observabilidad-integral-ecosistemas-voip.png
 ---
 
 
