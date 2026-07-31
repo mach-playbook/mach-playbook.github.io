@@ -5,6 +5,8 @@ date: 2026-07-31 15:00:00 -0600
 lang: es
 categories: [DevOps, Cloud Computing]
 tags: [cloud run, ci-cd, blue-green, github actions, gcp, serverless]
+image:
+  path: /assets/img/posts/2026-07-31-infraestructura-inmutable-despliegues-blue-green-cloud-run.png
 ---
 
 La promesa de los servicios serverless como Google Cloud Run es la escalabilidad instantánea. Sin embargo, en entornos de producción de misión crítica, desplegar nuevas versiones de una aplicación directamente sobre el tráfico en vivo es una receta para interrupciones del servicio. 
