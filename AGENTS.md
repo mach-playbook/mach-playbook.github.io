@@ -58,3 +58,10 @@
 - Auto-generated 100% unique cover graphics via `scripts/generate-images.js`.
 - Verified HTMLProofer in Docker container (`mach-playbook:test`) passing 251 files / 579 internal links with 0 errors.
 - Pushed commit `f7241c9` to `main`, with GitHub Actions `Build and Deploy` workflow `30285213779` executing successfully.
+
+2026-07-31 23:12: CFDI Cloud-Native Cryptography & Cloud Run Blue/Green Articles
+- Published 2 specialized Spanish-language technical posts: `2026-07-31-gestion-segura-certificados-cfdi-cloud-native.md` and `2026-07-31-infraestructura-inmutable-despliegues-blue-green-cloud-run.md`. Total posts: **51** (37 EN, 14 ES).
+- Verified zero content duplication via `scripts/check-duplicates.py` and 100% Google AdSense policy compliance via `scripts/test-adsense-compliance.py`.
+- Tested site generation and HTML-Proofer unit tests in Docker container (`mach-playbook:test`) passing 279 files and 627 internal links with 0 errors.
+- Committed, rebased, and pushed changes to `main`.
+- Validated GitHub Actions `Auto Generate Missing Post Images` (`30672188420`) and `Build and Deploy` (`30672221791`) workflows completed successfully (`completed | success`).
