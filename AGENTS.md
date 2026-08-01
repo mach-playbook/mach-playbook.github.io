@@ -72,3 +72,9 @@
 - Tested site generation and HTML-Proofer unit tests in Docker container (`mach-playbook:test`) passing 287 files and 644 internal links with 0 errors.
 - Committed, rebased, and pushed changes to `main`.
 - Validated GitHub Actions `Auto Generate Missing Post Images` (`30716592803`) and `Build and Deploy` (`30716592844`) workflows completed successfully (`completed | success`).
+
+2026-08-01 21:01: Circuit Breaker Typo Fix in Post Slug & Cover Image Asset
+- Corrected typo in post slug from `_posts/2026-04-04-circuit-breer-pattern-protecting-your-services-from-cascading-failures.md` to `_posts/2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.md`.
+- Updated `image: path:` frontmatter reference and renamed `assets/img/posts/2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.png`.
+- Verified HTML-Proofer unit tests in Docker container (`mach-playbook:test`) passing 287 files and 646 internal links with 0 errors.
+- Pushed commit `68fec55` to `main`, with GitHub Actions `Build and Deploy` workflow `30718198685` executing successfully (`completed | success`).
