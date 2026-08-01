@@ -5,6 +5,8 @@ date: 2026-08-01 14:00:00 -0600
 lang: es
 categories: [Telecomunicaciones, Seguridad]
 tags: [voip, opensips, sip, ciberseguridad, asterisk, ruteo]
+image:
+  path: /assets/img/posts/2026-08-01-mitigacion-fraude-voip-opensips.png
 ---
 
 En el sector de las telecomunicaciones, exponer infraestructura SIP (Session Initiation Protocol) a la internet pública atrae inevitablemente tráfico malicioso. Los escáneres automatizados y los ataques de fuerza bruta buscan constantemente PBXs vulnerables para perpetrar fraudes telefónicos (Toll Fraud), generando pérdidas económicas devastadoras en cuestión de horas.
