@@ -65,3 +65,10 @@
 - Tested site generation and HTML-Proofer unit tests in Docker container (`mach-playbook:test`) passing 279 files and 627 internal links with 0 errors.
 - Committed, rebased, and pushed changes to `main`.
 - Validated GitHub Actions `Auto Generate Missing Post Images` (`30672188420`) and `Build and Deploy` (`30672221791`) workflows completed successfully (`completed | success`).
+
+2026-08-01 20:16: Next.js/Supabase Headless & OpenSIPS VoIP Fraud Mitigation Articles
+- Published 2 final Spanish-language technical articles: `2026-08-01-desarrollo-headless-nextjs-supabase.md` and `2026-08-01-mitigacion-fraude-voip-opensips.md`. Total posts: **53** (35 EN, 18 ES).
+- Verified zero content duplication via `scripts/check-duplicates.py` and 100% Google AdSense policy compliance via `scripts/test-adsense-compliance.py`.
+- Tested site generation and HTML-Proofer unit tests in Docker container (`mach-playbook:test`) passing 287 files and 644 internal links with 0 errors.
+- Committed, rebased, and pushed changes to `main`.
+- Validated GitHub Actions `Auto Generate Missing Post Images` (`30716592803`) and `Build and Deploy` (`30716592844`) workflows completed successfully (`completed | success`).
