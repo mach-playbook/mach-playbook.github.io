@@ -78,3 +78,11 @@
 - Updated `image: path:` frontmatter reference and renamed `assets/img/posts/2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.png`.
 - Verified HTML-Proofer unit tests in Docker container (`mach-playbook:test`) passing 287 files and 646 internal links with 0 errors.
 - Pushed commit `68fec55` to `main`, with GitHub Actions `Build and Deploy` workflow `30718198685` executing successfully (`completed | success`).
+
+2026-08-01 21:50: GSC Sitemap Audit, Manual Indexing & Agent Skills Registration
+- Conducted Google Search Console sitemap audit: verified `sitemap.xml` returns `HTTP 200 OK` (287 URLs) and `robots.txt` authorization. Re-submitted `sitemap.xml` in GSC to trigger crawler queue.
+- Executed manual URL Inspection & Request Indexing via `browser_subagent` for top site pages and blog posts up to GSC daily quota limit.
+- Registered two specialized Agent Workflows in `.agents/skills/`:
+  1. `.agents/skills/add-new-post-test-deploy/SKILL.md`: 7-step post creation, compliance check, Docker testing & CI/CD deployment workflow.
+  2. `.agents/skills/gsc-manual-url-submission/SKILL.md`: Sitemap extraction, header validation & Search Console URL inspection workflow.
+- Ingested comprehensive repository context, architecture, gotchas, and skills into `llm-wiki.md`, `README.md`, and `HISTORY.txt`.

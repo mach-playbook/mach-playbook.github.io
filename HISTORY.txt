@@ -63,3 +63,18 @@
   * Auto-generated 100% unique cover graphics via `scripts/generate-images.js`.
   * Executed HTMLProofer in Docker container (`mach-playbook:test`) passing 251 files / 579 internal links with 0 errors.
   * Rebuilt local container `mach-playbook-site` (`http://localhost:8080`) and pushed commit `f7241c9` to GitHub `main`.
+
+2026-07-31 23:12: CFDI Cloud Cryptography & Cloud Run Blue/Green Spanish Articles
+  * Published 2 specialized Spanish technical articles: CFDI Secret Manager Microservices Cryptography and Cloud Run Blue/Green Immutable Revisions. Total posts: 49 (35 EN, 14 ES).
+  * Verified zero content duplication via `scripts/check-duplicates.py` and 100% Google AdSense compliance via `scripts/test-adsense-compliance.py`.
+  * Executed HTMLProofer unit tests in Docker container (`mach-playbook:test`) passing 279 files and 627 internal links with 0 errors.
+
+2026-08-01 20:16: Next.js/Supabase Headless & OpenSIPS VoIP Fraud Articles
+  * Published 2 specialized Spanish technical articles: Next.js/Supabase MACH Serverless Architecture and OpenSIPS VoIP Fraud Mitigation. Total posts: 53 (35 EN, 18 ES).
+  * Corrected `circuit-breaker` post slug typo and cover image asset path.
+  * Executed HTMLProofer unit tests in Docker container (`mach-playbook:test`) passing 287 files and 646 internal links with 0 errors.
+
+2026-08-01 21:50: GSC Sitemap Audit, Manual Indexing & Agent Skills Registration
+  * Audited Google Search Console: re-submitted `sitemap.xml` (287 URLs, HTTP 200 OK) and requested priority indexing for core URLs via browser subagent.
+  * Created two custom Agent Workflows in `.agents/skills/`: `add-new-post-test-deploy` and `gsc-manual-url-submission`.
+  * Fully updated `llm-wiki.md`, `README.md`, and `HISTORY.txt` with Karpathy-style knowledge base architecture.
