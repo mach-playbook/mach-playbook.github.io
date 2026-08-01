@@ -5,6 +5,8 @@ date: 2026-07-28 14:15:00 -0600
 lang: es
 categories: [Seguridad, API Management]
 tags: [zero trust, ciberseguridad, apigee, mtls, microservicios, mach]
+image:
+  path: /assets/img/posts/2026-07-28-seguridad-zero-trust-microservicios-mach.png
 ---
 
 El perímetro de red tradicional ha desaparecido. En las implementaciones modernas de Microservicios, API-first, Cloud-native y Headless (MACH), las aplicaciones están distribuidas a través de múltiples clústeres, nubes públicas e infraestructuras de terceros. Confiar en un microservicio simplemente porque reside dentro de la red corporativa (VPC) es una vulnerabilidad crítica.
