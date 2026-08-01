@@ -2,11 +2,9 @@
 layout: post
 title: "Arquitecturas Orientadas a Eventos en Entornos Multi-Nube: Orquestando GCP Pub/Sub y AWS SQS"
 date: 2026-07-28 09:30:00 -0600
+lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [event-driven, gcp, aws, pub-sub, sqs, multi-cloud, asincrono]
-lang: es
-image:
-  path: /assets/img/posts/2026-07-28-arquitecturas-orientadas-eventos-multi-nube.png
 ---
 
 El paradigma de la computación síncrona (petición-respuesta) es insuficiente cuando se escalan plataformas de alto rendimiento. En las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless), la resiliencia se logra mediante el desacoplamiento agresivo de los servicios. 

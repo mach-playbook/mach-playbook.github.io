@@ -2,11 +2,9 @@
 layout: post
 title: "Implementación de Seguridad Zero Trust en Arquitecturas MACH y APIs Nativas de la Nube"
 date: 2026-07-28 14:15:00 -0600
+lang: es
 categories: [Seguridad, API Management]
 tags: [zero trust, ciberseguridad, apigee, mtls, microservicios, mach]
-lang: es
-image:
-  path: /assets/img/posts/2026-07-28-seguridad-zero-trust-microservicios-mach.png
 ---
 
 El perímetro de red tradicional ha desaparecido. En las implementaciones modernas de Microservicios, API-first, Cloud-native y Headless (MACH), las aplicaciones están distribuidas a través de múltiples clústeres, nubes públicas e infraestructuras de terceros. Confiar en un microservicio simplemente porque reside dentro de la red corporativa (VPC) es una vulnerabilidad crítica.
@@ -28,7 +26,7 @@ Implementar un Service Mesh (como Istio o Linkerd) resuelve este problema sin mo
 
 1.  **Proxies Sidecar:** El Service Mesh inyecta un proxy ligero junto a cada microservicio en el clúster. 
 2.  **Mutual TLS (mTLS):** Toda la comunicación de red entre los microservicios es encriptada y autenticada bidireccionalmente. El microservicio A debe probar su identidad criptográfica al microservicio B, y viceversa.
-3.  **Autorización de Mínimo Privilegio:** Se aplican políticas de red strictly. Por ejemplo, el microservicio de "Recomendaciones" puede estar autorizado para comunicarse por mTLS con el servicio de "Catálogo", pero se le deniega explícitamente el acceso al servicio de "Facturación", incluso si ambos residen en el mismo clúster de Kubernetes.
+3.  **Autorización de Mínimo Privilegio:** Se aplican políticas de red estrictas. Por ejemplo, el microservicio de "Recomendaciones" puede estar autorizado para comunicarse por mTLS con el servicio de "Catálogo", pero se le deniega explícitamente el acceso al servicio de "Facturación", incluso si ambos residen en el mismo clúster de Kubernetes.
 
 ## Conclusión
 
