@@ -4,6 +4,8 @@ title: "De Monolito a Estático: Migrando de WordPress a Arquitecturas SSG con J
 date: 2026-08-03 10:00:00 -0600
 categories: [Arquitectura Cloud, Desarrollo Web]
 tags: [wordpress, jekyll, github actions, ssg, ci-cd, migracion, mach]
+image:
+  path: /assets/img/posts/2026-08-03-migracion-wordpress-jekyll-github-actions.png
 ---
 
 Durante la última década, WordPress democratizó la publicación web. Sin embargo, en el contexto de las arquitecturas empresariales modernas (MACH), acoplar estrechamente la base de datos, el motor de renderizado PHP y la capa de presentación introduce vulnerabilidades de seguridad, cuellos de botella en el rendimiento y una pesada carga de mantenimiento.

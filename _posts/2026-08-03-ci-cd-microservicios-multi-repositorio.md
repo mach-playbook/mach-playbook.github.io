@@ -4,6 +4,8 @@ title: "Orquestación de Microservicios: Estrategias de CI/CD en Entornos Multi-
 date: 2026-08-03 14:00:00 -0600
 categories: [DevOps, Ingeniería de Software]
 tags: [microservicios, ci-cd, multi-repo, github actions, automatizacion]
+image:
+  path: /assets/img/posts/2026-08-03-ci-cd-microservicios-multi-repositorio.png
 ---
 
 A medida que las organizaciones escalan sus arquitecturas nativas de la nube, el debate entre utilizar un Monorepo (un único repositorio para todo el código) o un enfoque Multi-Repositorio (un repositorio por microservicio) se vuelve central. 
