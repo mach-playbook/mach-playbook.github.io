@@ -4,6 +4,8 @@ title: "Analítica Web y Core Web Vitals en Arquitecturas Headless: Integrando G
 date: 2026-08-04 14:00:00 -0600
 categories: [Desarrollo Web, Rendimiento]
 tags: [seo, google analytics, search console, headless, core web vitals, mach, ssr]
+image:
+  path: /assets/img/posts/2026-08-04-analitica-web-seo-arquitecturas-headless.png
 ---
 
 El divorcio entre el frontend y el backend en las arquitecturas Headless (utilizando frameworks como Next.js, Nuxt o Jekyll) proporciona una libertad de diseño sin precedentes. Sin embargo, esta separación introduce una complejidad notable a la hora de gestionar el SEO (Search Engine Optimization) técnico y la inyección de herramientas de telemetría como Google Analytics o plataformas de monetización.
