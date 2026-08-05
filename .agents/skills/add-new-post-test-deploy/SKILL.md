@@ -71,7 +71,13 @@ Verify output ends with: `HTML-Proofer finished successfully.`
    wsl --cd /home/merolhack/fl/mach-playbook git push origin main
    ```
 
-## Step 5: Validate GitHub Actions Deployment
+## Step 5: Update Codebase Memory Knowledge Graph
+
+Query `codebase-memory` MCP tools to check `index_status` and update the graph:
+1. Verify `index_status` for project `home-merolhack-fl-mach-playbook`.
+2. Execute `index_repository` or `detect_changes` to ingest new/updated posts and code changes into the knowledge graph.
+
+## Step 6: Validate GitHub Actions Deployment
 
 1. Check active workflow runs:
    ```bash
@@ -82,3 +88,4 @@ Verify output ends with: `HTML-Proofer finished successfully.`
    wsl --cd /home/merolhack/fl/mach-playbook gh run watch <RUN_ID>
    ```
 3. Confirm both workflows finish with status `completed | success`.
+
