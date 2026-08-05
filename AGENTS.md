@@ -85,4 +85,13 @@
 - Registered two specialized Agent Workflows in `.agents/skills/`:
   1. `.agents/skills/add-new-post-test-deploy/SKILL.md`: 7-step post creation, compliance check, Docker testing & CI/CD deployment workflow.
   2. `.agents/skills/gsc-manual-url-submission/SKILL.md`: Sitemap extraction, header validation & Search Console URL inspection workflow.
-- Ingested comprehensive repository context, architecture, gotchas, and skills into `llm-wiki.md`, `README.md`, and `HISTORY.txt`.
+88: - Ingested comprehensive repository context, architecture, gotchas, and skills into `llm-wiki.md`, `README.md`, and `HISTORY.txt`.
+89: 
+90: 2026-08-05 11:55: Apigee/MuleSoft Integration & Playwright/Ollama E2E Testing Articles
+91: - Published 2 Spanish-language technical articles: `2026-08-05-gestion-apis-apigee-mulesoft-salesforce.md` and `2026-08-05-automatizacion-e2e-playwright-ollama.md`. Total posts: **59** (35 EN, 24 ES).
+92: - Fixed `lang: es` frontmatter tags across newly published and recent Spanish posts.
+93: - Verified zero content duplication via `scripts/check-duplicates.py` and 100% Google AdSense policy compliance via `scripts/test-adsense-compliance.py`.
+94: - Executed Docker unit testing (`mach-playbook:test`), passing 309 files / 693 internal links with 0 errors (`HTML-Proofer finished successfully`).
+95: - Verified automatic inclusion of new article URLs in dynamic `sitemap.xml`.
+96: - Committed and pushed commit `c361e88` to `main`.
+97: - Validated GitHub Actions `Auto Generate Missing Post Images` (`31032141220`) and `Build and Deploy` (`31032197440`) workflows completed with status `completed | success`.
