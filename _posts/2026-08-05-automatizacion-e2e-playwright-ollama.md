@@ -5,6 +5,8 @@ date: 2026-08-05 14:00:00 -0600
 lang: es
 categories: [Ingeniería de Software, QA]
 tags: [playwright, ollama, ia, machine-learning, e2e-testing, automatizacion, ci-cd]
+image:
+  path: /assets/img/posts/2026-08-05-automatizacion-e2e-playwright-ollama.png
 ---
 
 Las pruebas End-to-End (E2E) tradicionales suelen ser frágiles. Pequeños cambios en el DOM o en los selectores CSS pueden romper cientos de *scripts* de prueba, generando falsos positivos y cuellos de botella en los flujos de Integración Continua (CI). 

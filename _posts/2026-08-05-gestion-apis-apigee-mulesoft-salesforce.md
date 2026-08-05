@@ -5,6 +5,8 @@ date: 2026-08-05 09:00:00 -0600
 lang: es
 categories: [Arquitectura Cloud, Integración]
 tags: [apigee, mulesoft, salesforce, data-cloud, api-gateway, mach, gcp]
+image:
+  path: /assets/img/posts/2026-08-05-gestion-apis-apigee-mulesoft-salesforce.png
 ---
 
 En arquitecturas empresariales modernas (MACH), la proliferación de microservicios exige una estrategia de integración y exposición de datos altamente disciplinada. A menudo, los equipos confunden el rol de un API Gateway con el de un Bus de Servicio Empresarial (ESB) o plataforma de integración (iPaaS). 
