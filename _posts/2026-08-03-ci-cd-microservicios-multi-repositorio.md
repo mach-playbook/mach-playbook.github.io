@@ -2,6 +2,7 @@
 layout: post
 title: "Orquestación de Microservicios: Estrategias de CI/CD en Entornos Multi-Repositorio"
 date: 2026-08-03 14:00:00 -0600
+lang: es
 categories: [DevOps, Ingeniería de Software]
 tags: [microservicios, ci-cd, multi-repo, github actions, automatizacion]
 image:

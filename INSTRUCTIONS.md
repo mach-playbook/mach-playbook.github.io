@@ -1,86 +1,94 @@
-Context: We need to push the next set of highly technical Spanish-language blog posts to the MACH Playbook. These posts focus on Event-Driven Architectures in multi-cloud environments (GCP/AWS) and Zero Trust security for microservices (Apigee/mTLS), cementing the E-E-A-T depth for our Google AdSense application.
+Context: We need to push two new Spanish-language technical blog posts to the MACH Playbook to strengthen the site's E-E-A-T profile for AdSense. The first article covers enterprise API integration using Apigee, MuleSoft, and Salesforce Data Cloud. The second article focuses on intelligent E2E test automation using Playwright combined with local machine learning models via Ollama. 
 
 Execute the exact following steps:
 
-1. Create a new file at `_posts/2026-07-28-arquitecturas-orientadas-eventos-multi-nube.md`.
+1. Create a new file at `_posts/2026-08-05-gestion-apis-apigee-mulesoft-salesforce.md`.
 2. Inject the following content into the file exactly as written (including the YAML frontmatter):
 ---
 layout: post
-title: "Arquitecturas Orientadas a Eventos en Entornos Multi-Nube: Orquestando GCP Pub/Sub y AWS SQS"
-date: 2026-07-28 09:30:00 -0600
-categories: [Arquitectura Cloud, Microservicios]
-tags: [event-driven, gcp, aws, pub-sub, sqs, multi-cloud, asincrono]
+title: "Gestión de APIs Empresariales: Integrando Apigee, MuleSoft y Salesforce Data Cloud"
+date: 2026-08-05 09:00:00 -0600
+categories: [Arquitectura Cloud, Integración]
+tags: [apigee, mulesoft, salesforce, data-cloud, api-gateway, mach, gcp]
 ---
 
-El paradigma de la computación síncrona (petición-respuesta) es insuficiente cuando se escalan plataformas de alto rendimiento. En las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless), la resiliencia se logra mediante el desacoplamiento agresivo de los servicios. 
+En arquitecturas empresariales modernas (MACH), la proliferación de microservicios exige una estrategia de integración y exposición de datos altamente disciplinada. A menudo, los equipos confunden el rol de un API Gateway con el de un Bus de Servicio Empresarial (ESB) o plataforma de integración (iPaaS). 
 
-En este análisis, abordaremos cómo construir una Arquitectura Orientada a Eventos (EDA - Event-Driven Architecture) que cruza las fronteras de los proveedores de nube, integrando la alta capacidad de ingestión de Google Cloud Pub/Sub con los fiables mecanismos de encolado de Amazon SQS.
+Este artículo detalla un patrón arquitectónico donde Google Cloud Apigee, MuleSoft y Salesforce Data Cloud operan en conjunto, aprovechando las fortalezas específicas de cada plataforma para crear un ecosistema unificado y seguro.
 
-## El Límite de las APIs RESTful Síncronas
+## La Separación de Responsabilidades: Apigee vs. MuleSoft
 
-Cuando un microservicio de pedidos (Order Service) necesita notificar al servicio de inventario (Inventory Service) y al de facturación (Billing Service), realizar llamadas HTTP RESTful en cadena introduce puntos únicos de fallo. Si el servicio de facturación experimenta latencia, toda la transacción del pedido se retrasa. 
+Para evitar cuellos de botella y arquitecturas monolíticas disfrazadas de microservicios, es crucial delimitar las funciones de la capa de red y la capa de integración.
 
-La solución es transicionar hacia la comunicación asíncrona mediante buses de eventos.
+1.  **Apigee como la Puerta de Enlace Perimetral (Edge Gateway):** 
+    Apigee se posiciona en el borde de la red (típicamente en GCP) y actúa como el escudo de seguridad y control de tráfico. Su responsabilidad principal no es transformar datos complejos, sino aplicar políticas:
+    *   **Validación de Tokens (OAuth 2.0 / JWT):** Intercepta y valida credenciales antes de que el tráfico toque la red interna.
+    *   **Protección contra Amenazas (Spike Arrest / Quotas):** Previene ataques de denegación de servicio (DDoS) limitando la tasa de peticiones por cliente.
+    *   **Monetización y Analítica:** Rastrea el uso de las APIs por parte de desarrolladores externos o *partners* para facturación.
+2.  **MuleSoft como el Motor de Integración (iPaaS):**
+    Detrás del firewall protector de Apigee se encuentra MuleSoft. Aquí es donde ocurre el levantamiento pesado (heavy lifting). MuleSoft conecta sistemas dispares (ERP, bases de datos legadas, servicios SOAP) utilizando su vasta biblioteca de conectores y transforma los formatos de datos (ej. XML a JSON) mediante DataWeave. 
+    *   MuleSoft orquesta las llamadas a múltiples microservicios internos y consolida las respuestas en un único *payload* optimizado que luego devuelve a Apigee.
 
-## Ingestión Global con GCP Pub/Sub
+## Ingesta hacia Salesforce Data Cloud
 
-Google Cloud Pub/Sub es ideal como el enrutador de eventos global (Event Router) debido a su naturaleza verdaderamente *serverless* y su escalabilidad automática sin necesidad de particionado manual (a diferencia de Apache Kafka).
+El objetivo final de esta arquitectura suele ser la unificación del perfil del cliente. Salesforce Data Cloud requiere ingestas de datos masivas y precisas en tiempo real para segmentación y marketing automatizado.
 
-1.  **Publicación de Eventos:** El servicio de pedidos actúa como *Publisher*, enviando un evento inmutable (`OrderCreated`) a un tema (Topic) central en GCP.
-2.  **Fan-out:** Pub/Sub replica este mensaje a múltiples suscripciones (Subscriptions), asegurando que cada microservicio interesado reciba su propia copia del evento de manera independiente.
-
-## Consumo y Procesamiento Seguro con AWS SQS
-
-Mientras Pub/Sub maneja la distribución masiva, AWS SQS (Simple Queue Service) brilla en la gestión del flujo de trabajo de los *Workers* locales alojados en AWS (por ejemplo, funciones Lambda o contenedores ECS).
-
-Para conectar ambos mundos:
-1.  **Suscripciones Push a Webhooks Seguros:** Se configura Pub/Sub para que realice envíos HTTP Push hacia un API Gateway en AWS. 
-2.  **Encolado Local:** El API Gateway de AWS deposita el mensaje directamente en una cola SQS. 
-3.  **Dead Letter Queues (DLQ):** SQS permite un control granular sobre los reintentos de procesamiento. Si un evento no puede procesarse después de 5 intentos debido a un fallo en la base de datos de destino, el mensaje se mueve automáticamente a una DLQ para su inspección manual, evitando el bloqueo de la cola principal.
+*   **Flujo de Datos:** Cuando ocurre un evento transaccional (ej. una compra procesada por un microservicio interno), MuleSoft captura el evento, aplica reglas de normalización de datos (resolución de identidades) y utiliza la API de Ingesta de Salesforce para inyectar el registro en Data Cloud.
+*   **Exposición Segura:** Si Salesforce necesita consultar el estado de inventario en tiempo real, realiza una petición saliente que es recibida e inspeccionada por Apigee. Apigee valida la identidad de Salesforce y enruta la petición a MuleSoft, quien finalmente consulta la base de datos de inventario.
 
 ## Conclusión
 
-Diseñar topologías orientadas a eventos en entornos multi-nube permite a las organizaciones aprovechar lo mejor de ambos ecosistemas: la ingestión analítica global de GCP y el robusto ecosistema de procesamiento transaccional de AWS. Esta estrategia garantiza que los sistemas MACH permanezcan altamente disponibles, incluso frente a interrupciones parciales en servicios dependientes.
+Integrar Apigee para la gestión y seguridad perimetral, MuleSoft para la orquestación profunda y Salesforce Data Cloud como el cerebro de datos del cliente, crea una topología robusta. Esta separación de intereses garantiza que las políticas de seguridad perimetral no entorpezcan la lógica de integración, logrando una arquitectura verdaderamente escalable a nivel global.
 
-3. Create a second file at `_posts/2026-07-28-seguridad-zero-trust-microservicios-mach.md`.
+3. Create a second file at `_posts/2026-08-05-automatizacion-e2e-playwright-ollama.md`.
 4. Inject the following content into the file exactly as written (including the YAML frontmatter):
 ---
 layout: post
-title: "Implementación de Seguridad Zero Trust en Arquitecturas MACH y APIs Nativas de la Nube"
-date: 2026-07-28 14:15:00 -0600
-categories: [Seguridad, API Management]
-tags: [zero trust, ciberseguridad, apigee, mtls, microservicios, mach]
+title: "Automatización Inteligente: Pruebas E2E con Playwright y Modelos Locales mediante Ollama"
+date: 2026-08-05 14:00:00 -0600
+categories: [Ingeniería de Software, QA]
+tags: [playwright, ollama, ia, machine-learning, e2e-testing, automatizacion, ci-cd]
 ---
 
-El perímetro de red tradicional ha desaparecido. En las implementaciones modernas de Microservicios, API-first, Cloud-native y Headless (MACH), las aplicaciones están distribuidas a través de múltiples clústeres, nubes públicas e infraestructuras de terceros. Confiar en un microservicio simplemente porque reside dentro de la red corporativa (VPC) es una vulnerabilidad crítica.
+Las pruebas End-to-End (E2E) tradicionales suelen ser frágiles. Pequeños cambios en el DOM o en los selectores CSS pueden romper cientos de *scripts* de prueba, generando falsos positivos y cuellos de botella en los flujos de Integración Continua (CI). 
 
-La seguridad de grado empresarial exige la adopción del modelo *Zero Trust* (Confianza Cero). Este artículo detalla cómo proteger las comunicaciones internas y externas utilizando API Gateways avanzados y Service Meshes.
+Para mitigar la "fatiga de mantenimiento" en QA, los ingenieros de software están combinando frameworks de automatización de última generación, como Playwright, con la inferencia de Modelos de Lenguaje Grande (LLMs) ejecutados localmente a través de Ollama.
 
-## Validación Perimetral con Apigee (Autenticación North-South)
+## Playwright: Estabilidad y Ejecución Cross-Browser
 
-Todo tráfico externo que ingresa a la arquitectura (tráfico Norte-Sur) debe ser interceptado, inspeccionado y validado antes de tocar cualquier clúster de microservicios. Google Cloud Apigee actúa como este punto de aplicación de políticas (*Enforcement Point*).
+Playwright ha superado a herramientas legacy gracias a su arquitectura fuera de proceso (out-of-process) y su comunicación directa con el navegador mediante el protocolo DevTools.
 
-*   **OAuth 2.0 y OIDC:** Apigee debe configurarse para no solo verificar la existencia de un JSON Web Token (JWT), sino para validar criptográficamente la firma contra el proveedor de identidad (IdP) y verificar que los *scopes* (permisos) del token correspondan a los recursos solicitados.
-*   **Defensa contra Amenazas:** Mediante políticas de protección contra picos de tráfico (Spike Arrest) y validación de esquemas JSON/XML, el API Gateway filtra cargas útiles maliciosas o ataques de inyección antes de que el motor de la base de datos de backend sea siquiera contactado.
+*   **Auto-espera (Auto-waiting):** A diferencia de *Selenium*, Playwright espera de forma inherente a que los elementos sean interactivos (visibles, habilitados, sin animaciones) antes de realizar una acción (clic, escritura). Esto elimina la necesidad de `Thread.sleep()` artificiales en el código.
+*   **Aislamiento de Contextos:** Permite levantar múltiples contextos de navegador anónimos en milisegundos dentro de la misma instancia, ideal para probar flujos multi-usuario simultáneos en tiempo real (ej. aplicaciones de chat o juegos estratégicos sincronizados).
 
-## Seguridad Interna mediante Service Mesh (Autenticación East-West)
+## Inyectando Inteligencia Artificial Local con Ollama
 
-Una vez que la petición supera el API Gateway, la comunicación entre microservicios (tráfico Este-Oeste) también debe asegurarse bajo los principios de Zero Trust. Una red privada virtual (VPC) no es suficiente.
+La dependencia estricta de selectores (`xpath`, `css`) es el talón de Aquiles de las pruebas. Al integrar Ollama, podemos correr modelos como `Llama 3` o `Mistral` directamente en el agente de CI (sin costos de API ni problemas de privacidad) para dotar al *script* de razonamiento heurístico.
 
-Implementar un Service Mesh (como Istio o Linkerd) resuelve este problema sin modificar el código de la aplicación:
+### Casos de Uso Avanzados
 
-1.  **Proxies Sidecar:** El Service Mesh inyecta un proxy ligero junto a cada microservicio en el clúster. 
-2.  **Mutual TLS (mTLS):** Toda la comunicación de red entre los microservicios es encriptada y autenticada bidireccionalmente. El microservicio A debe probar su identidad criptográfica al microservicio B, y viceversa.
-3.  **Autorización de Mínimo Privilegio:** Se aplican políticas de red estrictas. Por ejemplo, el microservicio de "Recomendaciones" puede estar autorizado para comunicarse por mTLS con el servicio de "Catálogo", pero se le deniega explícitamente el acceso al servicio de "Facturación", incluso si ambos residen en el mismo clúster de Kubernetes.
+1.  **Validación de Datos No Estructurados:**
+    Supongamos que el test debe verificar que un ticket de soporte autogenerado tenga un tono "amable y resolutivo". En lugar de aserciones de cadenas de texto rígidas, Playwright extrae el texto del DOM y lo envía al modelo local en Ollama:
+    ```javascript
+    // Pseudo-código de Playwright + Ollama
+    const ticketText = await page.locator('.ticket-body').innerText();
+    const evaluation = await ollama.chat({
+      model: 'mistral',
+      messages: [{ role: 'user', content: `Evalúa si este texto es amable y resolutivo respondiendo solo YES o NO: "${ticketText}"` }]
+    });
+    expect(evaluation.message.content).toBe('YES');
+    ```
+2.  **Auto-reparación (Self-Healing) Básica:**
+    Si un selector estricto falla, el *script* de Playwright puede capturar el HTML del componente actual, enviarlo a Ollama y pedirle que identifique el nuevo selector semántico más probable basándose en roles de accesibilidad (ARIA) o texto visible, permitiendo que la prueba continúe y reporte el cambio.
 
 ## Conclusión
 
-En arquitecturas MACH distribuidas, la seguridad no puede ser una idea de último momento. Al combinar las capacidades de un API Gateway perimetral robusto como Apigee con el cifrado bidireccional y las políticas de acceso granular de un Service Mesh, los arquitectos pueden establecer una postura Zero Trust inquebrantable que protege los datos corporativos frente a vectores de ataque internos y externos.
+La sinergia entre el motor de automatización determinista de Playwright y las capacidades heurísticas locales de Ollama está redefiniendo los límites del Quality Assurance. Las pruebas E2E ya no se limitan a verificar que un botón exista; ahora pueden interpretar, razonar y adaptarse a interfaces dinámicas, manteniendo los datos sensibles completamente dentro de la red corporativa.
 
-5. Verify that the filenames strictly follow the Jekyll date-prefix convention (`YYYY-MM-DD-title.md`) to ensure the CI/CD pipeline correctly handles the dynamic cover image generation.
+5. Verify that the filenames strictly follow the Jekyll date-prefix convention (`YYYY-MM-DD-title.md`). Ensure the date matches today: `2026-08-05`.
 6. Open a terminal and run the following Git commands sequentially to push the changes:
-   - `git add _posts/2026-07-28-arquitecturas-orientadas-eventos-multi-nube.md _posts/2026-07-28-seguridad-zero-trust-microservicios-mach.md`
-   - `git commit -m "feat: add Event-Driven and Zero Trust architecture Spanish articles for AdSense compliance"`
+   - `git add _posts/2026-08-05-gestion-apis-apigee-mulesoft-salesforce.md _posts/2026-08-05-automatizacion-e2e-playwright-ollama.md`
+   - `git commit -m "feat: add Apigee/MuleSoft integration and Playwright/Ollama automation articles in Spanish"`
    - `git push origin main`
 
 Monitor the console output, wait for the push to complete, and confirm that the GitHub Pages deployment action has triggered successfully.

@@ -2,6 +2,7 @@
 layout: post
 title: "Arquitecturas MACH Serverless: Orquestando NestJS y PostgreSQL en Google Cloud Run"
 date: 2026-08-04 09:00:00 -0600
+lang: es
 categories: [Ingeniería de Software, Backend]
 tags: [nestjs, postgresql, cloud run, gcp, serverless, mach, microservicios]
 image:
