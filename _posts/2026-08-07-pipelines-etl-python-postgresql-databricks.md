@@ -5,6 +5,8 @@ date: 2026-08-07 09:00:00 -0600
 lang: es
 categories: [Ingeniería de Datos, Backend]
 tags: [etl, python, postgresql, databricks, data-engineering, cloud]
+image:
+  path: /assets/img/posts/2026-08-07-pipelines-etl-python-postgresql-databricks.png
 ---
 
 El manejo de grandes volúmenes de datos transaccionales y de catálogos exige pipelines de Extracción, Transformación y Carga (ETL) que no solo sean rápidos, sino altamente tolerantes a fallos. En ecosistemas empresariales, es común enfrentar el desafío de mover datos masivos desde bases de datos operativas hacia almacenes analíticos (Data Lakes o Data Warehouses) sin impactar el rendimiento del entorno de producción.

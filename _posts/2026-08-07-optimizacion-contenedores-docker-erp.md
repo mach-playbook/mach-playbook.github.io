@@ -5,6 +5,8 @@ date: 2026-08-07 14:00:00 -0600
 lang: es
 categories: [DevOps, Infraestructura]
 tags: [docker, erpnext, devops, cloud-vm, backups, smtp, linux]
+image:
+  path: /assets/img/posts/2026-08-07-optimizacion-contenedores-docker-erp.png
 ---
 
 Desplegar sistemas de Planificación de Recursos Empresariales (ERP) completos (como ERPNext u Odoo) en la nube ha dejado de ser un proceso manual sobre servidores de metal desnudo (*bare-metal*). La contenedorización con Docker es el estándar de facto, proporcionando aislamiento, portabilidad y consistencia entre entornos.
