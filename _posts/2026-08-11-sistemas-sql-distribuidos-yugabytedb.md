@@ -2,6 +2,7 @@
 layout: post
 title: "Escalabilidad Geográfica: Implementación de Sistemas SQL Distribuidos con YugabyteDB"
 date: 2026-08-11 09:00:00 -0600
+lang: es
 categories: [Bases de Datos, Arquitectura Cloud]
 tags: [yugabyte, postgresql, distributed-sql, multi-cloud, alta-disponibilidad, bases-de-datos]
 image:
