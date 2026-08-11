@@ -100,3 +100,13 @@
 - Created `.agents/AGENTS.md` defining strict project-scoped rules for AI agents:
   1. ALWAYS query `codebase-memory` knowledge graph tools (`search_graph`, `trace_path`, `get_code_snippet`, `get_architecture`, `query_graph`) before performing broad file reads or grepping.
   2. ALWAYS check `index_status` and update the knowledge graph using `index_repository` / `detect_changes` whenever files are modified or added.
+
+2026-08-11 18:55: YugabyteDB & Local Graph Indexing Articles, AdSense Status & LLM Wiki Ingestion
+- Published 2 Spanish-language technical articles: `2026-08-11-sistemas-sql-distribuidos-yugabytedb.md` and `2026-08-11-indexacion-grafos-locales-ia-ides.md`. Total posts: **63** (35 EN, 28 ES).
+- Fixed missing `lang: es` frontmatter metadata tags and ran `scripts/test-adsense-compliance.py` to achieve 100% AdSense Policy Compliance PASS.
+- Tested site build & internal links via Docker container (`mach-playbook:test`), passing 331 HTML files and 729 links with 0 errors.
+- Verified Google AdSense Console status: Site Ownership Verified, Review Requested ("Getting ready").
+- Updated `codebase-memory` knowledge graph (`home-merolhack-fl-mach-playbook`) via `detect_changes` and `index_status`.
+- Updated Karpathy-style `llm-wiki.md`, `.agents/AGENTS.md`, `.agents/skills/add-new-post-test-deploy/SKILL.md`, `README.md`, and `HISTORY.txt`.
+- Established strict mandate across all AGENTS and SKILLS to ALWAYS consult `llm-wiki.md` first for project knowledge and rules.
+

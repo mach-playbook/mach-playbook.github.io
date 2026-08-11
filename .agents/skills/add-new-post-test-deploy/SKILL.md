@@ -7,6 +7,10 @@ description: Standardized workflow to create new Jekyll Markdown blog posts, per
 
 Follow this procedure whenever creating, updating, or publishing new blog posts to the **MACH Playbook** codebase (`mach-playbook.github.io`).
 
+## Step 0: Consult LLM Wiki
+
+Before beginning, always consult [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md) for full project architecture, E-E-A-T guidelines, language selector specifications, and environment gotchas.
+
 ## Step 1: Create Post Markdown File
 
 Create a new file under `_posts/YYYY-MM-DD-title.md` following Jekyll date-prefix naming conventions.

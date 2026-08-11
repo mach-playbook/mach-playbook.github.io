@@ -1,8 +1,7 @@
 # LLM Wiki & Knowledge Base (`llm-wiki.md`)
 
-> Authoritative repository context, architectural patterns, workflow automation rules, environment gotchas, technical specifications, and AI Agent skills operating within the **MACH Playbook** codebase.
-> 
-> *Format: Karpathy-style LLM Wiki (Markdown formatted for GitHub UI navigation).*
+> **MANDATORY DIRECTIVE FOR ALL AI AGENTS & SKILLS**:
+> Always consult this Karpathy-style LLM Wiki (`llm-wiki.md`) first as the primary, single source of truth for project architecture, coding standards, environment gotchas, deployment workflows, and E-E-A-T / AdSense compliance rules before executing tasks.
 
 ---
 
@@ -12,10 +11,10 @@
 - **Live Production URL**: [https://mach-playbook.github.io](https://mach-playbook.github.io)
 - **Local Replica URL**: `http://localhost:8080` (Nginx Docker container)
 - **Framework**: Static Site Generator built on **Jekyll** with the [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy) (v7.5+).
-- **Core Domain & Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations (CFDI security), Next.js/Supabase serverless edge architectures, OpenSIPS VoIP security routing, and database administration.
-- **Content Inventory**: **53 deep technical guides** (>1,000 words each):
+- **Core Domain & Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations (CFDI security), Next.js/Supabase serverless edge architectures, OpenSIPS VoIP security routing, YugabyteDB distributed SQL, local graph database indexing for AI IDEs in WSL, and database administration.
+- **Content Inventory**: **63 deep technical guides** (>1,000 words each):
   - **35 English Articles** (`lang: en`)
-  - **18 Spanish Articles** (`lang: es`)
+  - **28 Spanish Articles** (`lang: es`)
 - **Author Identity & E-E-A-T**:
   - **Author Name**: **Lenin Meza** (`author: leninmeza` / `lenin`)
   - **Personal Portfolio**: [https://merolhack.github.io/](https://merolhack.github.io/)
@@ -31,10 +30,10 @@ The site implements dynamic bilingual post classification (`lang: es` and `lang:
 ### A. UI Placement Architecture
 1. **Global Topbar Selector (`_includes/topbar.html`)**:
    - Globe icon dropdown button (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) positioned next to `#search`.
-   - Displays real-time post count badges (`All: 53`, `Español: 18`, `English: 35`).
+   - Displays real-time post count badges (`All: 63`, `Español: 28`, `English: 35`).
 2. **Home Feed Filter Pills (`_layouts/home.html`)**:
    - Filter pill group positioned directly above `#post-list`.
-   - Renders `Filter: [ All (53) | 🇲🇽/🇪🇸 Español (18) | 🇺🇸 English (35) ]`.
+   - Renders `Filter: [ All (63) | 🇲🇽/🇪🇸 Español (28) | 🇺🇸 English (35) ]`.
 3. **Card & Header Badges**:
    - Each post card and article header renders explicit language badges (`🇲🇽/🇪🇸 Español` vs `🇺🇸 English`).
 
@@ -53,12 +52,16 @@ The site implements dynamic bilingual post classification (`lang: es` and `lang:
   - `<head>` Publisher ID & Verification Meta Tag insertion (`ca-pub-2700240339792942`).
   - Privacy policy disclosures in `_tabs/privacy.md`.
   - Author credentials in `_tabs/about.md`.
-  - Non-thin content word counts (>1,000 words per article across all 53 posts).
+  - Non-thin content word counts (>1,000 words per article across all 63 posts).
   - Explicit language classification (`lang: es` or `lang: en`).
 
 ### B. Zero-Duplication & High E-E-A-T Content
-- **Zero-Duplication Guarantee**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication** across all 53 posts).
+- **Zero-Duplication Guarantee**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication** across all 63 posts).
 - **Article Depth**: All articles exceed 1,000 words, featuring concrete architectural diagrams, code snippets, and Senior Solutions Architect insights.
+
+### C. Google AdSense Approval Status
+- **Domain**: `mach-playbook.github.io`
+- **Status**: `Getting ready` / Review Requested (Site Ownership Verified).
 
 ---
 
@@ -80,7 +83,7 @@ The repository includes a multi-stage `Dockerfile` and `docker-compose.yml` mirr
 # 1. Run AdSense Policy Compliance Test Suite
 python3 scripts/test-adsense-compliance.py
 
-# 2. Run HTMLProofer Unit Tests (287 HTML files, 646 internal links)
+# 2. Run HTMLProofer Unit Tests (331 HTML files, 729 internal links)
 docker build --target test -t mach-playbook:test .
 
 # 3. Rebuild and Launch Local Production Container on http://localhost:8080
@@ -93,17 +96,25 @@ docker run -d --name mach-playbook-site -p 8080:80 mach-playbook:prod
 
 ## 6. Technical SEO & Google Search Console Guide
 
-- **Sitemap Location**: `https://mach-playbook.github.io/sitemap.xml` (HTTP 200 OK, 287 URLs).
+- **Sitemap Location**: `https://mach-playbook.github.io/sitemap.xml` (HTTP 200 OK, 331 URLs).
 - **Robots.txt Location**: `https://mach-playbook.github.io/robots.txt` (authorizes `sitemap.xml`).
-- **Sitemap Extraction Utility**: `scripts/list-urls.py` parses all 287 sitemap links.
+- **Sitemap Extraction Utility**: `scripts/list-urls.py` parses all sitemap links.
 - **Google Search Console (GSC) Behavior**:
-  - **Sitemap Status**: `"Couldn't fetch"` occurs on initial GSC submission before background worker executes. Resolves automatically to **Success (287 discovered pages)** within 24–48 hours.
+  - **Sitemap Status**: `"Couldn't fetch"` occurs on initial GSC submission before background worker executes. Resolves automatically to **Success (331 discovered pages)** within 24–48 hours.
   - **Live URL Inspection for XML**: Inspecting `.xml` files in GSC displays `"URL is not on Google"` because GSC inspects HTML DOM pages, not raw XML data feeds.
   - **Manual Request Indexing**: Executed via `browser_subagent` for high-priority pages up to Google's daily quota limit (~10–12 URLs / 24 hrs).
 
 ---
 
-## 7. Known Environment Gotchas & Solutions
+## 7. Codebase Memory Knowledge Graph (`codebase-memory`)
+
+- **Project ID**: `home-merolhack-fl-mach-playbook`
+- **Graph Status**: Active & Updated (`index_status` ready, `detect_changes` tracked).
+- **Mandatory Usage Rule**: Agents MUST query graph tools (`search_graph`, `trace_path`, `get_code_snippet`, `get_architecture`, `query_graph`) to explore symbols and relationships before making code modifications.
+
+---
+
+## 8. Known Environment Gotchas & Solutions
 
 | Gotcha | Root Cause | Solution |
 | :--- | :--- | :--- |
@@ -112,10 +123,11 @@ docker run -d --name mach-playbook-site -p 8080:80 mach-playbook:prod
 | **Sidebar Menu Subtitle Overlap** | Chirpy theme `height: 3rem` hardcoded constraint | Override with `height: auto !important` in `_includes/head.html` |
 | **Inline Script Liquid Minification Error** | Inline `<script>` tags in `_layouts/home.html` cause syntax truncation | Load external script `assets/js/lang-filter.js` |
 | **Circuit Breaker Slug Typo** | Initial post slug had `circuit-breer` | Renamed slug & cover image asset to `circuit-breaker` |
+| **Missing `lang: es` Tag in New Posts** | `test-adsense-compliance.py` fails if explicit `lang: es` or `lang: en` flag is missing in frontmatter | Always include `lang: es` or `lang: en` in frontmatter of new posts |
 
 ---
 
-## 8. Agent Workflows & Custom Skills
+## 9. Agent Workflows & Custom Skills
 
 The project maintains two registered Agent skills located in `.agents/skills/`:
 
