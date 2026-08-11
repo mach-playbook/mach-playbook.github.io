@@ -4,6 +4,8 @@ title: "Escalabilidad Geográfica: Implementación de Sistemas SQL Distribuidos 
 date: 2026-08-11 09:00:00 -0600
 categories: [Bases de Datos, Arquitectura Cloud]
 tags: [yugabyte, postgresql, distributed-sql, multi-cloud, alta-disponibilidad, bases-de-datos]
+image:
+  path: /assets/img/posts/2026-08-11-sistemas-sql-distribuidos-yugabytedb.png
 ---
 
 A medida que las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless) maduran y se despliegan a escala global, la capa de persistencia de datos se convierte en el principal cuello de botella. Las bases de datos relacionales tradicionales, como PostgreSQL de nodo único, no fueron diseñadas para la distribución geográfica activa-activa sin incurrir en compromisos severos de latencia o consistencia.
