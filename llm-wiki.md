@@ -129,10 +129,15 @@ docker run -d --name mach-playbook-site -p 8080:80 mach-playbook:prod
 
 ## 9. Agent Workflows & Custom Skills
 
-The project maintains two registered Agent skills located in `.agents/skills/`:
+The project maintains registered Agent skills and autonomous CI/CD pipelines:
 
 1. **`add-new-post-test-deploy`** (`.agents/skills/add-new-post-test-deploy/SKILL.md`):
    - Standardized workflow to create new Jekyll Markdown posts, check duplicate content, run AdSense policy tests, execute Docker HTML-Proofer unit tests, commit, push, and validate GitHub Actions deployment.
 
 2. **`gsc-manual-url-submission`** (`.agents/skills/gsc-manual-url-submission/SKILL.md`):
    - Automated workflow for sitemap URL extraction (`scripts/list-urls.py`), HTTP header verification, and manual URL Inspection & Request Indexing via `browser_subagent` in Google Search Console.
+
+3. **`daily-blog-post` Autonomous Publishing Pipeline** (`.github/workflows/daily-blog-post.yml` & `scripts/publish_daily_jekyll_post.py`):
+   - Daily cron (`0 13 * * *` = 07:00 AM America/Mexico_City) and `workflow_dispatch` trigger.
+   - Automatically executes Gemini API calls (`gemini-2.5-flash` / `gemini-2.0-flash` / `gemini-1.5-flash`), scans `_posts/` for deduplication, generates 1,500-2,200 words Senior Architect articles across 5 MACH pillars, runs AdSense compliance tests, and pushes to `main`.
+   - Granular `permissions: contents: write` configured at the workflow level to allow git write operations even when repo default token is set to read-only.

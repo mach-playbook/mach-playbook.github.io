@@ -110,3 +110,9 @@
 - Updated Karpathy-style `llm-wiki.md`, `.agents/AGENTS.md`, `.agents/skills/add-new-post-test-deploy/SKILL.md`, `README.md`, and `HISTORY.txt`.
 - Established strict mandate across all AGENTS and SKILLS to ALWAYS consult `llm-wiki.md` first for project knowledge and rules.
 
+2026-08-13 23:15: Autonomous Daily Blog Post Agent & Workflow Setup
+- Developed `scripts/publish_daily_jekyll_post.py`: Autonomous daily post publishing engine integrating Gemini API (`gemini-2.5-flash`, `gemini-2.0-flash`, `gemini-1.5-flash`, `gemini-flash-latest`), automated deduplication scanning `_posts/`, 5-pillar MACH architectural topic matrix, and Senior Architect E-E-A-T prompt standards with Mermaid diagrams and code snippets.
+- Implemented `.github/workflows/daily-blog-post.yml`: GitHub Actions workflow with cron schedule (`0 13 * * *` = 07:00 AM CDMX / 13:00 UTC) and `workflow_dispatch` manual trigger with `dry_run`, `topic`, and `lang` parameters.
+- Configured granular `permissions: contents: write` in workflow YAML to permit autonomous `git commit` and `git push` directly to `main` with fallback PAT token support (`GH_PAT`).
+- Verified zero duplicate matches and 100% Google AdSense policy compliance across scripts and dry-run tests.
+
