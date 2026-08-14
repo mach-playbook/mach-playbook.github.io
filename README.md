@@ -95,3 +95,12 @@ Access the site locally at **`http://localhost:8080`**.
 ## 📜 License & Copyright
 
 © 2026 **Lenin Meza**. Built with the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme for [Jekyll](https://jekyllrb.com/).
+
+
+## 🌐 Google Search Console & AdSense Architecture
+
+- **Canonical Sitemap**: `https://mach-playbook.github.io/sitemap.xml` (**117 high-value URLs**; 62 deep technical articles, 22 tag hubs, 21 category pillars, 12 core pages).
+- **Robots Policy**: `https://mach-playbook.github.io/robots.txt` (authorizes Googlebot and links directly to `sitemap.xml`).
+- **E-E-A-T Compliance**: Dedicated in-article Author Bio Cards (Lenin Meza, Senior Solutions Architect) with verified LinkedIn, GitHub, and Portfolio credentials.
+- **Automated Policy Suite**: `python3 scripts/test-adsense-compliance.py` enforces 11 quality vectors (>800 words/post, ads.txt, head tags, legal tabs, zero duplication).
+- **48-Hour Audit Workflow**: `.agents/skills/gsc-48h-indexation-audit/SKILL.md` and `scripts/audit-gsc-indexation.py` for automated indexation and sitemap verification.
