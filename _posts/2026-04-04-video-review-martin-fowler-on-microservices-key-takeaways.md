@@ -4,8 +4,8 @@ layout: post
 title: "Video Review: Martin Fowler on Microservices — Key Takeaways"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Video Review, Architecture]
-tags: [martin-fowler, microservices, architecture, design-principles, best-practices]
+categories: [Architecture, Microservices]
+tags: [architecture, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.png
 ---

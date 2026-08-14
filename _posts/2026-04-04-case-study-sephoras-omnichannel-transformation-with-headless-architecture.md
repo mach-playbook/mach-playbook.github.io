@@ -4,8 +4,8 @@ layout: post
 title: "Case Study: Sephora's Omnichannel Transformation with Headless Architecture"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Case Study, Omnichannel]
-tags: [sephora, headless, omnichannel, case-study, e-commerce, architecture]
+categories: [Headless & Frontend, Architecture]
+tags: [architecture, cloud-native, headless]
 image:
   path: /assets/img/posts/2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.png
 ---

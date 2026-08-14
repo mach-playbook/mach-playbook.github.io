@@ -4,8 +4,8 @@ layout: post
 title: "Video Review: Reacting to Netflix’s Architecture — What We Can Learn and What Doesn’t Apply"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Video Review, Cloud Architecture]
-tags: [netflix, architecture, chaos-engineering, aws, microservices, scale]
+categories: [Architecture, Microservices]
+tags: [architecture, aws, cloud-native, microservices, observability]
 image:
   path: /assets/img/posts/2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.png
 ---

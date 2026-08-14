@@ -4,8 +4,8 @@ layout: post
 title: "Automatización de Pruebas End-to-End Inteligentes Integrando Playwright y Modelos Locales (Ollama)"
 author: leninmeza
 date: 2026-07-23 00:00:00 -0600
-categories: [Ingeniería de Software, Automatización]
-tags: [playwright, ollama, machine learning, testing, ci-cd, qa]
+categories: [DevOps & CI/CD, Automatización]
+tags: [ai-engineering, ci-cd, qa-automation]
 image:
   path: /assets/img/posts/2026-07-23-automatizacion-inteligente-playwright-ollama.png
 ---

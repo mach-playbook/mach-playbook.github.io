@@ -4,8 +4,8 @@ layout: post
 title: "Microservices at Scale: Engineering Debt and System Complexity"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Engineering Management, Microservices]
-tags: [microservices, technical-debt, scale, complexity, devops]
+categories: [Enterprise Architecture, FinOps]
+tags: [architecture, cloud-native, devops, microservices]
 image:
   path: /assets/img/posts/2026-04-04-microservices-at-scale-engineering-debt-and-system-complexity.png
 ---

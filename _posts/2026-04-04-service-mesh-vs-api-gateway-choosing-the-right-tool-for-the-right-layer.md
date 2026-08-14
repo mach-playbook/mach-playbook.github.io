@@ -4,8 +4,8 @@ layout: post
 title: "Service Mesh vs. API Gateway: Choosing the Right Tool for the Right Layer"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Infrastructure]
-tags: [api-gateway, service-mesh, envoy, kong, istio, microservices]
+categories: [Architecture, Microservices]
+tags: [api-first, kubernetes, microservices]
 image:
   path: /assets/img/posts/2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.png
 ---

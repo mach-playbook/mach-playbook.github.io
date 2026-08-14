@@ -4,8 +4,8 @@ layout: post
 title: "When NOT to Use Microservices: A Decision Framework"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Strategy]
-tags: [microservices, monolith, modular-monolith, architecture, decision-framework]
+categories: [Enterprise Architecture, FinOps]
+tags: [architecture, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-04-04-when-not-to-use-microservices-a-decision-framework.png
 ---

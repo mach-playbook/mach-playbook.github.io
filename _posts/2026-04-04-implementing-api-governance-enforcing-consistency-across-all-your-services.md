@@ -4,8 +4,8 @@ layout: post
 title: "Implementing API Governance: Enforcing Consistency Across All Your Services"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Governance, Architecture]
-tags: [api-governance, openapi, spectral, devops, standards]
+categories: [API Design, Microservices]
+tags: [api-first, architecture, cloud-native, devops]
 image:
   path: /assets/img/posts/2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.png
 ---

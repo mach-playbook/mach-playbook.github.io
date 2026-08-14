@@ -4,8 +4,8 @@ layout: post
 title: "Case Study: How Nike Scaled with MACH — Flash Sales, Global Storefronts, Independent Services"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Case Study, E-Commerce]
-tags: [nike, mach, case-study, flash-sales, microservices, scaling]
+categories: [Architecture, Microservices]
+tags: [architecture, cloud-native, headless, microservices]
 image:
   path: /assets/img/posts/2026-04-04-case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services.png
 ---

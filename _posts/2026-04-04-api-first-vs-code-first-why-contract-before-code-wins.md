@@ -4,8 +4,8 @@ layout: post
 title: "API-First vs. Code-First: Why Contract-Before-Code Wins in Distributed Systems"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Strategy]
-tags: [api-first, code-first, openapi, microservices, architecture]
+categories: [API Design, Microservices]
+tags: [api-first, architecture, microservices]
 image:
   path: /assets/img/posts/2026-04-04-api-first-vs-code-first-why-contract-before-code-wins.png
 ---

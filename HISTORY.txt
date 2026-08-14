@@ -167,3 +167,11 @@
   * Updated `_tabs/privacy.md` with active links to Contact and Terms tabs.
   * Upgraded `scripts/test-adsense-compliance.py` to enforce strict >800 words/post requirement and verify contact/terms page presence (100% PASS).
   * Verified zero content/title duplication via `scripts/check-duplicates.py`.
+
+2026-08-13 22:35: Taxonomy Consolidation, Author Bio E-E-A-T Box & Daily Publishing Workflow Hardening
+  * Consolidated 55 fragmented categories into 7 unified MACH pillars across all 62 articles (34 EN, 28 ES).
+  * Consolidated 201 sparse tags down to 21 high-density technical tags (eliminating 230+ thin 1-post archive crawl targets).
+  * Injected responsive, high-aesthetic Author E-E-A-T Bio Box at the bottom of `_layouts/post.html` with Lenin Meza's Senior Solutions Architect credentials, avatar, and direct links to GitHub, LinkedIn, and Portfolio.
+  * Hardened `scripts/publish_daily_jekyll_post.py` with automatic taxonomy normalization to ensure all future Gemini-generated daily posts inherit canonical categories and tags.
+  * Upgraded `scripts/test-adsense-compliance.py` to 11 automated compliance checks covering ads.txt, head tags, privacy/terms/contact/about pages, author bio cards, >800 words/post, lang flags, and structured taxonomy (100% PASS).
+  * Validated zero duplication via `scripts/check-duplicates.py`.

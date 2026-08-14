@@ -3,8 +3,8 @@ layout: post
 title: "Ingeniería Asistida por IA: Indexación de Grafos Locales para Entornos de Desarrollo Modernos"
 date: 2026-08-11 14:00:00 -0600
 lang: es
-categories: [Ingeniería de Software, Inteligencia Artificial]
-tags: [ide, antigravity, cursor, copilot, wsl, grafos, automatizacion]
+categories: [DevOps & CI/CD, Automatización]
+tags: [ai-engineering, devops, qa-automation]
 image:
   path: /assets/img/posts/2026-08-11-indexacion-grafos-locales-ia-ides.png
 ---

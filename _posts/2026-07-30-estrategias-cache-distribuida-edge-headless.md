@@ -2,8 +2,8 @@
 layout: post
 title: "Estrategias de Caché Distribuida y Edge Computing en Arquitecturas Headless"
 date: 2026-07-30 09:00:00 -0600
-categories: [Arquitectura Cloud, Rendimiento]
-tags: [headless, cdn, redis, edge computing, gcp, mach, performance]
+categories: [Arquitectura Cloud, Microservicios]
+tags: [cloud-native, distributed-systems, gcp, headless, nextjs, observability]
 lang: es
 image:
   path: /assets/img/posts/2026-07-30-estrategias-cache-distribuida-edge-headless.png

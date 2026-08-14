@@ -443,8 +443,30 @@ def generate_post_image(title: str, slug: str, api_key: str, output_path: str, d
         return False
 
 
+
+APPROVED_CATEGORIES_ES = [
+    ["Arquitectura Cloud", "Microservicios"],
+    ["Diseño de APIs", "Microservicios"],
+    ["DevOps & CI/CD", "Automatización"],
+    ["Headless & Frontend", "Arquitectura Cloud"],
+    ["Seguridad & Observabilidad", "Cloud-Native"],
+    ["Bases de Datos", "Sistemas Distribuidos"],
+    ["Telecomunicaciones", "Infraestructura Cloud"],
+    ["Inteligencia Artificial", "Automatización"]
+]
+
+APPROVED_CATEGORIES_EN = [
+    ["Architecture", "Microservices"],
+    ["API Design", "Microservices"],
+    ["DevOps & CI/CD", "Cloud-Native"],
+    ["Headless & Frontend", "Architecture"],
+    ["Security & Observability", "Cloud-Native"],
+    ["Data & AI", "Distributed Systems"],
+    ["Enterprise Architecture", "FinOps"]
+]
+
 def sanitize_markdown_post(raw_markdown: str, post_date_str: str, slug: str, lang: str = "es") -> str:
-    """Ensure raw LLM output has valid Jekyll Front Matter and clean Markdown formatting."""
+    """Ensure raw LLM output has valid Jekyll Front Matter, clean Markdown formatting, and canonical taxonomy."""
     content = raw_markdown.strip()
 
     if content.startswith("```markdown"):
@@ -458,14 +480,14 @@ def sanitize_markdown_post(raw_markdown: str, post_date_str: str, slug: str, lan
         content = content[:-3].strip()
 
     if not content.startswith("---"):
-        title = "Arquitectura Composable y Patrones MACH en Producción"
+        default_cat = "Arquitectura Cloud, Microservicios" if lang == "es" else "Architecture, Microservices"
         front_matter = f"""---
 layout: post
-title: "{title}"
+title: "{slug.replace('-', ' ').title()}"
 date: {post_date_str} 09:00:00 -0600
 lang: {lang}
-categories: [Arquitectura Cloud, Microservicios]
-tags: [mach, microservicios, api-first, cloud-native, headless, enterprise]
+categories: [{default_cat}]
+tags: [cloud-native, microservices, architecture, api-first, devops]
 image:
   path: /assets/img/posts/{slug}.png
 ---
@@ -473,10 +495,16 @@ image:
 """
         content = front_matter + content
     else:
+        # Ensure image path is present
         if "image:" not in content and "path:" not in content:
             content = content.replace("---", f"""---
 image:
   path: /assets/img/posts/{slug}.png""", 1)
+
+        # Ensure lang flag is present
+        if not re.search(r"^lang:\s*(es|en)", content, re.MULTILINE):
+            content = content.replace("---", f"""---
+lang: {lang}""", 1)
 
     return content
 

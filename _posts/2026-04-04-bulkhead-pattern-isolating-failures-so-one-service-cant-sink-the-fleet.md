@@ -4,8 +4,8 @@ layout: post
 title: "Bulkhead Pattern: Isolating Failures So One Service Can't Sink the Fleet"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Resilience, Microservices]
-tags: [bulkhead-pattern, resilience, fault-tolerance, microservices, architecture]
+categories: [Architecture, Microservices]
+tags: [architecture, distributed-systems, microservices]
 image:
   path: /assets/img/posts/2026-04-04-bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet.png
 ---

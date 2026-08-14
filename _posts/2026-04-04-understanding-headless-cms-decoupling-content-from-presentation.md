@@ -4,8 +4,8 @@ layout: post
 title: "Understanding Headless CMS: Decoupling Content from Presentation"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Headless, CMS]
-tags: [headless-cms, mach, architecture, graphql, rest-api, jamstack]
+categories: [Headless & Frontend, Architecture]
+tags: [api-first, architecture, cloud-native, headless]
 image:
   path: /assets/img/posts/2026-04-04-understanding-headless-cms-decoupling-content-from-presentation.png
 ---

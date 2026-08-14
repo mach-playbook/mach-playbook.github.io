@@ -4,8 +4,8 @@ layout: post
 title: "The Enterprise MACH Architecture Handbook: Foundations, Trade-offs, and Migration Strategy"
 author: leninmeza
 date: 2024-01-01 12:00:00 +0000
-categories: [Architecture, Enterprise]
-tags: [mach, architecture, cloud-native, microservices, headless, api-first]
+categories: [Architecture, Microservices]
+tags: [api-first, architecture, cloud-native, headless, microservices]
 image:
   path: /assets/img/posts/2024-01-01-welcome-to-mach.png
 ---

@@ -167,6 +167,48 @@ script_includes:
       </div>
     {% endif %}
 
+    <!-- Author E-E-A-T Bio Card -->
+    <div class="author-bio-card card my-4 p-3 border rounded-3 bg-body-tertiary shadow-sm">
+      <div class="d-flex align-items-center gap-3">
+        <img
+          src="{{ '/assets/img/avatar.svg' | relative_url }}"
+          alt="Lenin Meza"
+          class="rounded-circle border"
+          width="64"
+          height="64"
+          style="object-fit: cover;"
+        >
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <h6 class="mb-0 fw-bold">
+              Lenin Meza
+              <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1" style="font-size: 0.75rem; font-weight: 500;">
+                Senior Solutions Architect
+              </span>
+            </h6>
+            <div class="d-flex gap-2">
+              <a href="https://github.com/merolhack" target="_blank" rel="noopener noreferrer" class="text-secondary" title="GitHub Profile">
+                <i class="fab fa-github fa-lg"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/leninmezazarco" target="_blank" rel="noopener noreferrer" class="text-primary" title="LinkedIn Profile">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+              <a href="https://merolhack.github.io/" target="_blank" rel="noopener noreferrer" class="text-success" title="Personal Portfolio">
+                <i class="fas fa-globe fa-lg"></i>
+              </a>
+            </div>
+          </div>
+          <p class="small text-muted mb-0 mt-1">
+            {% if page_lang == 'es' %}
+              Senior Solutions Architect y Lead Platform Engineer con más de 10 años de experiencia diseñando arquitecturas MACH, microservicios distribuidos, DevOps y plataformas cloud-native escalables.
+            {% else %}
+              Senior Solutions Architect and Lead Platform Engineer with 10+ years of hands-on experience architecting MACH systems, distributed microservices, DevOps pipelines, and enterprise cloud platforms.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div
       class="
         post-tail-bottom

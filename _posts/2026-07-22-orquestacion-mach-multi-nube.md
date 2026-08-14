@@ -4,8 +4,8 @@ layout: post
 title: "Orquestación de Arquitecturas MACH en Entornos Multi-Nube: Integrando Apigee y MuleSoft"
 author: leninmeza
 date: 2026-07-22 10:00:00 -0600
-categories: [Arquitectura Cloud, API Management]
-tags: [mach, microservicios, gcp, aws, apigee, mulesoft]
+categories: [Diseño de APIs, Microservicios]
+tags: [api-first, aws, cloud-native, gcp, microservices]
 image:
   path: /assets/img/posts/2026-07-22-orquestacion-mach-multi-nube.png
 ---

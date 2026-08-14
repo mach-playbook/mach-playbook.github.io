@@ -3,8 +3,8 @@ layout: post
 title: "Implementación de Seguridad Zero Trust en Arquitecturas MACH y APIs Nativas de la Nube"
 date: 2026-07-28 14:15:00 -0600
 lang: es
-categories: [Seguridad, API Management]
-tags: [zero trust, ciberseguridad, apigee, mtls, microservicios, mach]
+categories: [Seguridad & Observabilidad, Cloud-Native]
+tags: [api-first, cloud-native, microservices, security]
 image:
   path: /assets/img/posts/2026-07-28-seguridad-zero-trust-microservicios-mach.png
 ---

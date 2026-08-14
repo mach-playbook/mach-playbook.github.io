@@ -4,8 +4,8 @@ layout: post
 title: "Flujos de Trabajo Híbridos para Arquitectos Cloud: Orquestando Sistemas con WSL, PowerShell y Windows 11"
 author: leninmeza
 date: 2026-07-23 00:00:00 -0600
-categories: [DevOps, Herramientas]
-tags: [windows 11, wsl, powershell, linux, cloud-native, scripting]
+categories: [DevOps & CI/CD, Automatización]
+tags: [architecture, cloud-native, devops]
 image:
   path: /assets/img/posts/2026-07-23-flujos-hibridos-wsl-powershell-windows.png
 ---

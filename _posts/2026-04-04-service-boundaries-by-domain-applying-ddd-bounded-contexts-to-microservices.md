@@ -4,8 +4,8 @@ layout: post
 title: "Service Boundaries by Domain: Applying DDD Bounded Contexts to Microservices"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, DDD]
-tags: [ddd, bounded-context, microservices, domain-driven-design, architecture]
+categories: [Architecture, Microservices]
+tags: [architecture, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-04-04-service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices.png
 ---

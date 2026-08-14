@@ -3,8 +3,8 @@ layout: post
 title: "Ingeniería de Datos Avanzada: Construyendo Pipelines ETL Escalables con Python, PostgreSQL y Databricks"
 date: 2026-08-07 09:00:00 -0600
 lang: es
-categories: [Ingeniería de Datos, Backend]
-tags: [etl, python, postgresql, databricks, data-engineering, cloud]
+categories: [Bases de Datos, Sistemas Distribuidos]
+tags: [cloud-native, data-engineering, postgresql]
 image:
   path: /assets/img/posts/2026-08-07-pipelines-etl-python-postgresql-databricks.png
 ---

@@ -4,8 +4,8 @@ layout: post
 title: "FinOps y Gestión del Ciclo de Vida: Desmantelamiento Seguro de Infraestructura Serverless en GCP"
 author: leninmeza
 date: 2026-07-23 00:00:00 -0600
-categories: [DevOps, Cloud Computing]
-tags: [gcp, cloud run, cloud sql, finops, automatizacion, bases de datos]
+categories: [DevOps & CI/CD, Automatización]
+tags: [cloud-native, data-engineering, finops, gcp, postgresql, qa-automation]
 image:
   path: /assets/img/posts/2026-07-23-finops-desmantelamiento-gcp.png
 ---

@@ -2,8 +2,8 @@
 layout: post
 title: "Trazabilidad Avanzada y Traducción de Gateways en Redes VoIP Core"
 date: 2026-07-27 14:00:00 -0600
-categories: [Telecomunicaciones, Redes]
-tags: [voip, sip, sngrep, troubleshooting, gateways, sems, asterisk]
+categories: [Telecomunicaciones, Infraestructura Cloud]
+tags: [architecture, cloud-native, observability, telecom]
 lang: es
 image:
   path: /assets/img/posts/2026-07-27-trazabilidad-avanzada-traduccion-gateways-voip.png

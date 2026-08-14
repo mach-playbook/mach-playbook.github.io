@@ -44,6 +44,20 @@ The site implements dynamic bilingual post classification (`lang: es` and `lang:
 
 ---
 
+
+### B. Taxonomy & Category Architecture
+- **7 Core MACH Pillars**:
+  1. `Architecture` / `Arquitectura Cloud` (Microservices, DDD, System Boundaries)
+  2. `Microservices` / `Microservicios` (Sagas, CQRS, Circuit Breaking, Service Mesh)
+  3. `API Design` / `Diseño de APIs` (OpenAPI, GraphQL, REST, Rate Limiting, Versioning)
+  4. `DevOps & CI/CD` / `Automatización` (Docker, Kubernetes, GitHub Actions, Blue/Green)
+  5. `Headless & Frontend` / `Desarrollo Web` (Next.js, Supabase, Edge CDN, Core Web Vitals)
+  6. `Security & Observability` / `Seguridad & Observabilidad` (OAuth2, JWT, Zero-Trust, OpenTelemetry)
+  7. `Data Engineering & Distributed SQL` / `Bases de Datos` (PostgreSQL, Distributed SQL, Databricks, AI)
+- **21 High-Density Technical Tags**: `cloud-native`, `microservices`, `architecture`, `headless`, `api-first`, `devops`, `gcp`, `data-engineering`, `qa-automation`, `distributed-systems`, `postgresql`, `observability`, `ci-cd`, `finops`, `security`, `ai-engineering`, `aws`, `event-driven`, `telecom`, `kubernetes`, `nextjs`.
+
+---
+
 ## 3. Monetization & E-E-A-T Adherence
 
 ### A. Automated AdSense Policy Compliance Suite (`scripts/test-adsense-compliance.py`)

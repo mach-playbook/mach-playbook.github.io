@@ -3,8 +3,8 @@ layout: post
 title: "Gestión Segura de Certificados y Firmas Digitales (CFDI) en Arquitecturas Cloud-Native"
 date: 2026-07-31 10:00:00 -0600
 lang: es
-categories: [Seguridad, Arquitectura Cloud]
-tags: [cfdi, erpnext, criptografia, secret manager, microservicios, seguridad]
+categories: [Seguridad & Observabilidad, Cloud-Native]
+tags: [headless, microservices, security]
 image:
   path: /assets/img/posts/2026-07-31-gestion-segura-certificados-cfdi-cloud-native.png
 ---

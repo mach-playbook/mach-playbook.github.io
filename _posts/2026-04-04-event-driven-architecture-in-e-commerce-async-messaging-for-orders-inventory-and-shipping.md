@@ -4,8 +4,8 @@ layout: post
 title: "Event-Driven Architecture in E-Commerce: Async Messaging for Orders, Inventory, and Shipping"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Event-Driven]
-tags: [event-driven, kafka, e-commerce, microservices, async-messaging]
+categories: [Architecture, Microservices]
+tags: [event-driven, headless, microservices]
 image:
   path: /assets/img/posts/2026-04-04-event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping.png
 ---

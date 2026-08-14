@@ -4,8 +4,8 @@ layout: post
 title: "The Real Cost of Microservices: Operational Overhead Nobody Warns You About"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Engineering Management, Cost Optimization]
-tags: [microservices, finops, total-cost-of-ownership, devops, infrastructure]
+categories: [Enterprise Architecture, FinOps]
+tags: [devops, finops, microservices]
 image:
   path: /assets/img/posts/2026-04-04-the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about.png
 ---

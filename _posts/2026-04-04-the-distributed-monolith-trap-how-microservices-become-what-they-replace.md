@@ -4,8 +4,8 @@ layout: post
 title: "The Distributed Monolith Trap: How Microservices Become What They Replace"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Antipatterns]
-tags: [distributed-monolith, microservices, anti-patterns, refactoring, coupling]
+categories: [Architecture, Microservices]
+tags: [architecture, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.png
 ---

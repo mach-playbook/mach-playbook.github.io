@@ -4,8 +4,8 @@ layout: post
 title: "Video Review: Configuring Your Service Mesh — Gateway API and Routing in Practice"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Video Review, Service Mesh]
-tags: [kubernetes, gateway-api, istio, envoy, service-mesh, cloud-native]
+categories: [Architecture, Microservices]
+tags: [architecture, cloud-native, kubernetes]
 image:
   path: /assets/img/posts/2026-04-04-video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice.png
 ---

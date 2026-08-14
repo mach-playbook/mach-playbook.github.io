@@ -3,8 +3,8 @@ layout: post
 title: "Analítica Web y Core Web Vitals en Arquitecturas Headless: Integrando Google Analytics y Search Console"
 date: 2026-08-04 14:00:00 -0600
 lang: es
-categories: [Desarrollo Web, Rendimiento]
-tags: [seo, google analytics, search console, headless, core web vitals, mach, ssr]
+categories: [Headless & Frontend, Arquitectura Cloud]
+tags: [cloud-native, headless, observability]
 image:
   path: /assets/img/posts/2026-08-04-analitica-web-seo-arquitecturas-headless.png
 ---

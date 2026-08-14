@@ -4,8 +4,8 @@ layout: post
 title: "CQRS and Event Sourcing: Separating Reads and Writes in Data-Heavy Services"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Data]
-tags: [cqrs, event-sourcing, kafka, microservices, databases]
+categories: [Data & AI, Distributed Systems]
+tags: [data-engineering, event-driven, microservices]
 image:
   path: /assets/img/posts/2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.png
 ---

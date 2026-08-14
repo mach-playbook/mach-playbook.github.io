@@ -4,7 +4,7 @@ title: "Arquitecturas Orientadas a Eventos en Entornos Multi-Nube: Orquestando G
 date: 2026-07-28 09:30:00 -0600
 lang: es
 categories: [Arquitectura Cloud, Microservicios]
-tags: [event-driven, gcp, aws, pub-sub, sqs, multi-cloud, asincrono]
+tags: [aws, cloud-native, event-driven, gcp]
 image:
   path: /assets/img/posts/2026-07-28-arquitecturas-orientadas-eventos-multi-nube.png
 ---

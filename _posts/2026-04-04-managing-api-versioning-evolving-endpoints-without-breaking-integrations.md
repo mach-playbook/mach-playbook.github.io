@@ -5,7 +5,7 @@ title: "Managing API Versioning: Evolving Endpoints Without Breaking Integration
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
 categories: [API Design, Microservices]
-tags: [api, versioning, rest, graphql, openapi, breaking-changes]
+tags: [api-first, architecture, cloud-native]
 image:
   path: /assets/img/posts/2026-04-04-managing-api-versioning-evolving-endpoints-without-breaking-integrations.png
 ---

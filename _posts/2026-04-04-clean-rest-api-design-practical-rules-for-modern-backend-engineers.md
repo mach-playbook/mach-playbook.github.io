@@ -4,8 +4,8 @@ layout: post
 title: "Clean REST API Design: Practical Rules for Modern Backend Engineers"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Best Practices]
-tags: [rest, api-design, clean-code, backend, http]
+categories: [API Design, Microservices]
+tags: [api-first, architecture, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.png
 ---

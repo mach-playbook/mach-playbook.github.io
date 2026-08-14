@@ -4,8 +4,8 @@ layout: post
 title: "Idempotency in API Design: Safe Retries for Payments and Critical Operations"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Security]
-tags: [idempotency, api-design, payments, rest, resilience]
+categories: [Security & Observability, Cloud-Native]
+tags: [api-first, distributed-systems, finops]
 image:
   path: /assets/img/posts/2026-04-04-idempotency-in-api-design-safe-retries-for-payments-and-critical-operations.png
 ---

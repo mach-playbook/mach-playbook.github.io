@@ -4,8 +4,8 @@ layout: post
 title: "Data Ownership in Microservices: Why Services Must Own Their Databases"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Data]
-tags: [microservices, database-per-service, data-ownership, ddd, architecture]
+categories: [Data & AI, Distributed Systems]
+tags: [architecture, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-04-04-data-ownership-in-microservices-why-services-must-own-their-databases.png
 ---

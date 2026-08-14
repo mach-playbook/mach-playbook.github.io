@@ -4,8 +4,8 @@ layout: post
 title: "Centralized Observability: Distributed Tracing, Logging, and Metrics for Microservices"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Observability, DevOps]
-tags: [opentelemetry, tracing, logging, metrics, prometheus, jaeger]
+categories: [DevOps & CI/CD, Cloud-Native]
+tags: [architecture, cloud-native, observability]
 image:
   path: /assets/img/posts/2026-04-04-centralized-observability-distributed-tracing-logging-and-metrics-for-microservices.png
 ---

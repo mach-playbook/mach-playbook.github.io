@@ -4,8 +4,8 @@ layout: post
 title: "Ingeniería Asistida por IA: Desarrollo de Habilidades de Sistema Personalizadas para IDEs Modernos"
 author: leninmeza
 date: 2026-07-24 00:00:00 -0600
-categories: [Ingeniería de Software, Inteligencia Artificial]
-tags: [ia, automatizacion, ide, scripts, flujos de trabajo, productividad]
+categories: [DevOps & CI/CD, Automatización]
+tags: [ai-engineering, devops, qa-automation]
 image:
   path: /assets/img/posts/2026-07-24-habilidades-sistema-ia-ides-modernos.png
 ---

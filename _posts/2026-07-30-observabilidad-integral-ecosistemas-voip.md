@@ -2,8 +2,8 @@
 layout: post
 title: "Observabilidad Integral en Ecosistemas VoIP Altamente Distribuidos: Trazabilidad y Análisis de QoS"
 date: 2026-07-30 13:30:00 -0600
-categories: [Telecomunicaciones, DevOps]
-tags: [voip, sip, prometheus, grafana, qos, monitoring, linux]
+categories: [Telecomunicaciones, Infraestructura Cloud]
+tags: [devops, observability, telecom]
 lang: es
 image:
   path: /assets/img/posts/2026-07-30-observabilidad-integral-ecosistemas-voip.png

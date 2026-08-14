@@ -4,8 +4,8 @@ layout: post
 title: "Feature Flagging in Cloud-Native Deployments: Canary Releases and Zero-Downtime Rollouts"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [DevOps, Deployment]
-tags: [feature-flags, canary-releases, devops, launchdarkly, zero-downtime]
+categories: [DevOps & CI/CD, Cloud-Native]
+tags: [architecture, cloud-native, devops]
 image:
   path: /assets/img/posts/2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.png
 ---
