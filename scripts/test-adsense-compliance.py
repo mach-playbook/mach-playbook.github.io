@@ -59,7 +59,31 @@ def run_adsense_tests():
         else:
             failures.append("FAIL: About page content too brief for E-E-A-T!")
 
-    # Test 5: Verify Post Quality & Language Flags across _posts/
+    # Test 5: Verify Contact page exists for Trust & E-E-A-T
+    contact_path = "_tabs/contact.md"
+    if not os.path.exists(contact_path):
+        failures.append("FAIL: _tabs/contact.md is missing!")
+    else:
+        with open(contact_path, "r", encoding="utf-8") as f:
+            contact_content = f.read()
+        if "merolhack@gmail.com" in contact_content:
+            print("[PASS] Contact page verified with direct inquiry endpoints")
+        else:
+            failures.append("FAIL: Contact page missing email or contact details!")
+
+    # Test 6: Verify Terms of Service page exists
+    terms_path = "_tabs/terms.md"
+    if not os.path.exists(terms_path):
+        failures.append("FAIL: _tabs/terms.md is missing!")
+    else:
+        with open(terms_path, "r", encoding="utf-8") as f:
+            terms_content = f.read()
+        if len(terms_content.split()) > 150:
+            print("[PASS] Terms of Service page verified with full legal disclaimers")
+        else:
+            failures.append("FAIL: Terms of Service page is too brief!")
+
+    # Test 7: Verify Post Quality & Language Flags across _posts/
     posts = glob.glob("_posts/*.md")
     if len(posts) == 0:
         failures.append("FAIL: No Markdown posts found in _posts/!")
@@ -68,17 +92,14 @@ def run_adsense_tests():
     thin_posts = []
     missing_lang = []
     
-    # Exempt non-article posts from strict word count (e.g. welcome / hello world)
-    exemptions = ["2024-01-01-welcome-to-mach.md", "2026-04-03-hello-world.md"]
-
     for post_file in posts:
         base = os.path.basename(post_file)
         with open(post_file, "r", encoding="utf-8") as f:
             content = f.read()
         
-        # Word count check (>350 words for standard posts)
+        # Word count check (>800 words for strict non-thin content)
         words = len(content.split())
-        if base not in exemptions and words < 300:
+        if words < 800:
             thin_posts.append((base, words))
         
         # Check language flag
@@ -87,9 +108,9 @@ def run_adsense_tests():
 
     if thin_posts:
         for fname, wcnt in thin_posts:
-            failures.append(f"FAIL: Post '{fname}' is thin content ({wcnt} words < 300 words threshold)!")
+            failures.append(f"FAIL: Post '{fname}' is thin content ({wcnt} words < 800 words threshold)!")
     else:
-        print(f"[PASS] All {total_posts} posts meet minimum non-thin content requirements")
+        print(f"[PASS] All {total_posts} posts meet strict non-thin content requirements (>800 words)")
 
     if missing_lang:
         for fname in missing_lang:

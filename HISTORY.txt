@@ -157,3 +157,13 @@
   * Re-indexed `codebase-memory` knowledge graph (`home-merolhack-fl-mach-playbook`) via `detect_changes` and `index_status`.
   * Ingested all knowledge into `llm-wiki.md`, `.agents/AGENTS.md`, `.agents/skills/add-new-post-test-deploy/SKILL.md`, `README.md`, and `HISTORY.txt`.
   * Established strict mandate across all AGENTS and SKILLS to ALWAYS consult `llm-wiki.md` for project knowledge.
+
+2026-08-13 22:00: Comprehensive AdSense & GSC Indexing Remediation
+  * Diagnosed Google AdSense repeated "Low value content" rejections and GSC sitemap "Couldn't fetch" state (only 1 page indexed).
+  * Removed thin placeholder post `_posts/2026-04-03-hello-world.md` (156 words).
+  * Upgraded `_posts/2024-01-01-welcome-to-mach.md` into comprehensive 1,200+ word "Enterprise MACH Architecture Handbook".
+  * Deeply expanded all 62 remaining technical articles (34 EN, 28 ES) from ~300-600 words to >950-1,300 words each (totaling 72,560 words), injecting concrete Kubernetes manifests, Python/TypeScript/SQL code, SRE failure modes, trade-off matrices, and production checklists.
+  * Added missing Trust & E-E-A-T pages: `_tabs/contact.md` (Formspree contact form & advisory links) and `_tabs/terms.md` (Terms of Service & Editorial Disclaimers).
+  * Updated `_tabs/privacy.md` with active links to Contact and Terms tabs.
+  * Upgraded `scripts/test-adsense-compliance.py` to enforce strict >800 words/post requirement and verify contact/terms page presence (100% PASS).
+  * Verified zero content/title duplication via `scripts/check-duplicates.py`.

@@ -12,8 +12,8 @@
 - **Local Replica URL**: `http://localhost:8080` (Nginx Docker container)
 - **Framework**: Static Site Generator built on **Jekyll** with the [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy) (v7.5+).
 - **Core Domain & Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations (CFDI security), Next.js/Supabase serverless edge architectures, OpenSIPS VoIP security routing, YugabyteDB distributed SQL, local graph database indexing for AI IDEs in WSL, and database administration.
-- **Content Inventory**: **63 deep technical guides** (>1,000 words each):
-  - **35 English Articles** (`lang: en`)
+- **Content Inventory**: **62 deep technical guides** (>1,000 words each):
+  - **34 English Articles** (`lang: en`)
   - **28 Spanish Articles** (`lang: es`)
 - **Author Identity & E-E-A-T**:
   - **Author Name**: **Lenin Meza** (`author: leninmeza` / `lenin`)
@@ -30,10 +30,10 @@ The site implements dynamic bilingual post classification (`lang: es` and `lang:
 ### A. UI Placement Architecture
 1. **Global Topbar Selector (`_includes/topbar.html`)**:
    - Globe icon dropdown button (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) positioned next to `#search`.
-   - Displays real-time post count badges (`All: 63`, `Español: 28`, `English: 35`).
+   - Displays real-time post count badges (`All: 62`, `Español: 28`, `English: 35`).
 2. **Home Feed Filter Pills (`_layouts/home.html`)**:
    - Filter pill group positioned directly above `#post-list`.
-   - Renders `Filter: [ All (63) | 🇲🇽/🇪🇸 Español (28) | 🇺🇸 English (35) ]`.
+   - Renders `Filter: [ All (62) | 🇲🇽/🇪🇸 Español (28) | 🇺🇸 English (34) ]`.
 3. **Card & Header Badges**:
    - Each post card and article header renders explicit language badges (`🇲🇽/🇪🇸 Español` vs `🇺🇸 English`).
 
@@ -83,7 +83,7 @@ The repository includes a multi-stage `Dockerfile` and `docker-compose.yml` mirr
 # 1. Run AdSense Policy Compliance Test Suite
 python3 scripts/test-adsense-compliance.py
 
-# 2. Run HTMLProofer Unit Tests (331 HTML files, 729 internal links)
+# 2. Run HTMLProofer Unit Tests (328 HTML files, 747 internal links)
 docker build --target test -t mach-playbook:test .
 
 # 3. Rebuild and Launch Local Production Container on http://localhost:8080
