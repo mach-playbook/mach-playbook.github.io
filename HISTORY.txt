@@ -186,3 +186,9 @@
   * Documented complete chronological chronicle of all Google Search Console and AdSense review attempts, failure modes, and diagnostic breakthroughs.
   * Formulated detailed root-cause post-mortem of the 77.5% Taxonomy Crawl Bloat trap (256 thin single-item archive URLs), explaining why Googlebot crawl budget was starved and how taxonomy consolidation to 7 MACH pillars / 21 tags resolved it.
   * Synchronized full documentation across `llm-wiki.md`, `README.md`, `AGENTS.md`, and `HISTORY.txt`.
+
+2026-08-14 12:40: Fixed Daily Publishing Workflow & Auto-Published AsyncAPI Guide
+  * Diagnosed failed workflow run 31808395384: fixed HTTP 404 on deprecated model names and lack of exponential backoff retry on transient HTTP 503 high-demand spikes.
+  * Implemented prioritized 8-model fallback cascade (`gemini-2.5-flash`, `gemini-flash-latest`, `gemini-2.0-flash-001`, `gemini-2.0-flash-lite`, `gemini-2.5-pro`, `gemini-1.5-flash-latest`, `gemini-1.5-pro-latest`, `gemini-pro-latest`) with automatic jittered exponential backoff for HTTP 503/429.
+  * Triggered workflow run 31829738862: successfully synthesized, verified, and published `2026-08-14-asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real.md` (2,117 words) with matching cover image. Total posts: 63 (34 EN, 29 ES).
+  * 100% AdSense Policy Compliance verified.

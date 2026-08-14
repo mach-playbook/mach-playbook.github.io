@@ -19,7 +19,7 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 
 ## 🚀 Key Features
 
-- **62 Deep Technical Guides**: 34 English and 28 Spanish long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, YugabyteDB distributed SQL, local graph database indexing in WSL, Playwright + Ollama QA, headless CMS, Next.js/Supabase, OpenSIPS VoIP security, CFDI digital signatures, Cloud Run Blue/Green deployments, Event-Driven architectures, Zero Trust Apigee/mTLS, AWS RDS to GCP Cloud SQL migrations, VoIP call tracing, FinOps, and Kubernetes.
+- **62 Deep Technical Guides**: 34 English and 29 Spanish long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, YugabyteDB distributed SQL, local graph database indexing in WSL, Playwright + Ollama QA, headless CMS, Next.js/Supabase, OpenSIPS VoIP security, CFDI digital signatures, Cloud Run Blue/Green deployments, Event-Driven architectures, Zero Trust Apigee/mTLS, AWS RDS to GCP Cloud SQL migrations, VoIP call tracing, FinOps, and Kubernetes.
 - **100% Unique Content**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication**).
 - **🌐 Interactive Language Selector**: Global Topbar dropdown (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) and Home Feed Filter Pills with instant Vanilla JS client-side filtering and `localStorage` preference persistence.
 - **🎨 Topic-Aware IT Image Generation**: Automated image pipeline (`scripts/generate-images.js`) backed by Pollinations AI and a curated pool of 46+ high-resolution Unsplash IT graphics mapped by post index.
@@ -99,7 +99,7 @@ Access the site locally at **`http://localhost:8080`**.
 
 ## 🌐 Google Search Console & AdSense Architecture
 
-- **Canonical Sitemap**: `https://mach-playbook.github.io/sitemap.xml` (**117 high-value URLs**; 62 deep technical articles, 22 tag hubs, 21 category pillars, 12 core pages).
+- **Canonical Sitemap**: `https://mach-playbook.github.io/sitemap.xml` (**117 high-value URLs**; 63 deep technical articles, 22 tag hubs, 21 category pillars, 12 core pages).
 - **Robots Policy**: `https://mach-playbook.github.io/robots.txt` (authorizes Googlebot and links directly to `sitemap.xml`).
 - **E-E-A-T Compliance**: Dedicated in-article Author Bio Cards (Lenin Meza, Senior Solutions Architect) with verified LinkedIn, GitHub, and Portfolio credentials.
 - **Automated Policy Suite**: `python3 scripts/test-adsense-compliance.py` enforces 11 quality vectors (>800 words/post, ads.txt, head tags, legal tabs, zero duplication).
