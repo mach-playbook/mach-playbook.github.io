@@ -56,6 +56,11 @@
     </div>
 
     <div class="d-flex align-items-center gap-2">
+      <!-- Dynamic Counts for Language Selector -->
+      {% assign top_all_count = site.posts | where_exp: 'item', 'item.hidden != true' | size %}
+      {% assign top_es_count = site.posts | where: 'lang', 'es' | size %}
+      {% assign top_en_count = top_all_count | minus: top_es_count %}
+
       <!-- Global Language Selector Dropdown -->
       <div id="lang-selector-wrapper" class="dropdown">
         <button
@@ -74,20 +79,20 @@
           <li>
             <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between active" href="#" data-lang="all">
               <span><i class="fas fa-layer-group me-2 text-secondary"></i>All Posts</span>
-              <span class="badge bg-secondary rounded-pill">43</span>
+              <span class="badge bg-secondary rounded-pill">{{ top_all_count }}</span>
             </a>
           </li>
           <li><hr class="dropdown-divider my-1"></li>
           <li>
             <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between" href="#" data-lang="es">
               <span><span class="me-2">🇲🇽/🇪🇸</span>Español</span>
-              <span class="badge bg-primary rounded-pill">8</span>
+              <span class="badge bg-primary rounded-pill">{{ top_es_count }}</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between" href="#" data-lang="en">
               <span><span class="me-2">🇺🇸</span>English</span>
-              <span class="badge bg-secondary rounded-pill">35</span>
+              <span class="badge bg-secondary rounded-pill">{{ top_en_count }}</span>
             </a>
           </li>
         </ul>

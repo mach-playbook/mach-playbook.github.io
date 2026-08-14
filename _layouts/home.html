@@ -4,47 +4,10 @@ layout: default
 
 {% include lang.html %}
 
-{% assign all_pinned = site.posts | where: 'pin', 'true' %}
-{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
-
-{% assign posts = '' | split: '' %}
-
-<!-- Get pinned posts on current page -->
-
-{% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign visible_end = visible_start | plus: paginator.per_page %}
-
-{% if all_pinned.size > visible_start %}
-  {% if all_pinned.size > visible_end %}
-    {% assign pinned_size = paginator.per_page %}
-  {% else %}
-    {% assign pinned_size = all_pinned.size | minus: visible_start %}
-  {% endif %}
-
-  {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
-    {% assign posts = posts | push: all_pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_size = 0 %}
-{% endif %}
-
-<!-- Get normal posts on current page -->
-
-{% assign normal_size = paginator.posts | size | minus: pinned_size %}
-
-{% if normal_size > 0 %}
-  {% if pinned_size > 0 %}
-    {% assign normal_start = 0 %}
-  {% else %}
-    {% assign normal_start = visible_start | minus: all_pinned.size %}
-  {% endif %}
-
-  {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
-
-  {% for i in (normal_start..normal_end) %}
-    {% assign posts = posts | push: all_normal[i] %}
-  {% endfor %}
-{% endif %}
+{% assign all_posts = site.posts | where_exp: 'item', 'item.hidden != true' %}
+{% assign all_posts_count = all_posts | size %}
+{% assign es_posts_count = all_posts | where: 'lang', 'es' | size %}
+{% assign en_posts_count = all_posts_count | minus: es_posts_count %}
 
 <!-- Language Filter Bar -->
 <div class="d-flex align-items-center justify-content-between mb-4 px-1 pb-2 border-bottom">
@@ -52,23 +15,23 @@ layout: default
     <span class="text-muted small font-weight-bold uppercase me-1"><i class="fas fa-filter me-1 text-primary"></i>Filter:</span>
     <div class="btn-group btn-group-sm" role="group" id="home-lang-pills">
       <button type="button" class="btn btn-outline-secondary lang-pill active" data-lang-target="all" style="border-radius: 20px 0 0 20px; font-weight: 500;">
-        All (43)
+        All ({{ all_posts_count }})
       </button>
       <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="es" style="font-weight: 500;">
-        🇲🇽/🇪🇸 Español (8)
+        🇲🇽/🇪🇸 Español ({{ es_posts_count }})
       </button>
       <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="en" style="border-radius: 0 20px 20px 0; font-weight: 500;">
-        🇺🇸 English (35)
+        🇺🇸 English ({{ en_posts_count }})
       </button>
     </div>
   </div>
   <div id="lang-filter-status" class="small text-muted d-none d-md-block">
-    Showing all posts
+    Showing all posts ({{ all_posts_count }})
   </div>
 </div>
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in posts %}
+  {% for post in all_posts %}
     {% assign post_lang = post.lang | default: 'en' %}
     <article class="card-wrapper card post-card-item" data-post-lang="{{ post_lang }}">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
@@ -170,13 +133,12 @@ layout: default
 
 <div id="no-lang-results" class="text-center py-5 d-none">
   <i class="fas fa-globe-americas fa-3x text-muted mb-3"></i>
-  <h5>No posts found for this language filter on this page</h5>
+  <h5>No posts found for this language filter</h5>
   <p class="text-muted small">Try switching to another language or click "All".</p>
   <button class="btn btn-primary btn-sm mt-2" onclick="setLanguageFilter('all')">Show All Posts</button>
 </div>
 
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %}
-{% endif %}
+<!-- Dynamic Client-Side Pagination Container -->
+<div id="dynamic-paginator" class="d-flex justify-content-center mt-4"></div>
 
 <script src="{{ '/assets/js/lang-filter.js' | relative_url }}"></script>
