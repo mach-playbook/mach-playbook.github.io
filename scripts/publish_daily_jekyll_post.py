@@ -13,6 +13,8 @@ Description:
 """
 
 import argparse
+import time
+import random
 import base64
 import datetime
 import glob
@@ -27,9 +29,14 @@ import urllib.error
 
 # Supported Gemini text generation models in prioritized order (latest first to avoid 404s)
 DEFAULT_MODELS = [
-    "gemini-2.0-flash",
+    "gemini-2.5-flash",
     "gemini-flash-latest",
-    "gemini-1.5-flash"
+    "gemini-2.0-flash-001",
+    "gemini-2.0-flash-lite",
+    "gemini-2.5-pro",
+    "gemini-1.5-flash-latest",
+    "gemini-1.5-pro-latest",
+    "gemini-pro-latest"
 ]
 
 # 5 Core Pillars of MACH Playbook Topic Matrix
@@ -283,7 +290,7 @@ STRICT REQUIREMENTS:
 
 
 def call_gemini_api(api_key: str, system_prompt: str, user_prompt: str, preferred_model: Optional[str] = None) -> str:
-    """Call Google Gemini API using REST endpoint with prioritized models to minimize latency and eliminate 404s."""
+    """Call Google Gemini API using REST endpoint with prioritized models, exponential backoff, and retry handling for 503/429."""
     models_to_try = [preferred_model] if preferred_model else DEFAULT_MODELS
 
     last_error = None
@@ -291,50 +298,70 @@ def call_gemini_api(api_key: str, system_prompt: str, user_prompt: str, preferre
     for model in models_to_try:
         if not model:
             continue
-        print(f" Attempting generation with Gemini model: {model}...")
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
         
-        payload = {
-            "contents": [
-                {
-                    "role": "user",
-                    "parts": [
-                        {"text": f"System Context:\n{system_prompt}\n\nTask:\n{user_prompt}"}
-                    ]
+        max_retries = 3
+        for attempt in range(1, max_retries + 1):
+            print(f" Attempting generation with Gemini model: {model} (Attempt {attempt}/{max_retries})...")
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+            
+            combined_prompt = "System Context:\n" + system_prompt + "\n\nTask:\n" + user_prompt
+            payload = {
+                "contents": [
+                    {
+                        "role": "user",
+                        "parts": [
+                            {"text": combined_prompt}
+                        ]
+                    }
+                ],
+                "generationConfig": {
+                    "temperature": 0.4,
+                    "maxOutputTokens": 8192,
+                    "topP": 0.95
                 }
-            ],
-            "generationConfig": {
-                "temperature": 0.4,
-                "maxOutputTokens": 8192,
-                "topP": 0.95
             }
-        }
 
-        data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(
-            url,
-            data=data,
-            headers={"Content-Type": "application/json"}
-        )
+            data = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(
+                url,
+                data=data,
+                headers={"Content-Type": "application/json"}
+            )
 
-        try:
-            with urllib.request.urlopen(req, timeout=120) as response:
-                if response.status == 200:
-                    resp_data = json.loads(response.read().decode("utf-8"))
-                    candidates = resp_data.get("candidates", [])
-                    if candidates and "content" in candidates[0]:
-                        parts = candidates[0]["content"].get("parts", [])
-                        text_content = "".join([p.get("text", "") for p in parts])
-                        if text_content.strip():
-                            print(f" Successfully generated article using {model} ({len(text_content.split())} words)!")
-                            return text_content.strip()
-        except urllib.error.HTTPError as e:
-            err_body = e.read().decode("utf-8", errors="ignore")
-            print(f" Model {model} returned HTTP {e.code}: {err_body}")
-            last_error = f"HTTP {e.code}: {err_body}"
-        except Exception as e:
-            print(f" Model {model} request failed: {e}")
-            last_error = str(e)
+            try:
+                with urllib.request.urlopen(req, timeout=120) as response:
+                    if response.status == 200:
+                        resp_data = json.loads(response.read().decode("utf-8"))
+                        candidates = resp_data.get("candidates", [])
+                        if candidates and "content" in candidates[0]:
+                            parts = candidates[0]["content"].get("parts", [])
+                            text_content = "".join([p.get("text", "") for p in parts])
+                            if text_content.strip():
+                                print(f" Successfully generated article using {model} ({len(text_content.split())} words)!")
+                                return text_content.strip()
+            except urllib.error.HTTPError as e:
+                err_body = e.read().decode("utf-8", errors="ignore")
+                print(f" Model {model} returned HTTP {e.code}: {err_body}")
+                last_error = f"HTTP {e.code} ({model}): {err_body}"
+                
+                # If 404 (Model not found/deprecated), break retry loop and try next model
+                if e.code == 404:
+                    print(f" Model {model} is not supported or deprecated. Advancing to next fallback model...")
+                    break
+                
+                # If 503 (High demand) or 429 (Rate limit), apply exponential backoff
+                if e.code in [503, 429, 500, 502, 504]:
+                    if attempt < max_retries:
+                        backoff = (2 ** attempt) + random.uniform(1.0, 3.0)
+                        print(f" Transient error {e.code}. Retrying {model} in {backoff:.1f}s...")
+                        time.sleep(backoff)
+                        continue
+            except Exception as e:
+                print(f" Model {model} request failed: {e}")
+                last_error = f"{model}: {str(e)}"
+                if attempt < max_retries:
+                    time.sleep(2)
+                    continue
 
     raise RuntimeError(f"All Gemini models failed. Last error: {last_error}")
 
