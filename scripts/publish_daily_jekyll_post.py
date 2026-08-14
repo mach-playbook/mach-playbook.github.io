@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-MACH Playbook - Autonomous Daily Post Publisher with Gemini AI
+MACH Playbook - Autonomous Daily Post & Cover Image Publisher with Gemini AI
 Author: Lenin Meza (merolhack)
 Description:
   Automated agent workflow that scans existing Jekyll blog posts for deduplication,
   selects an architectural topic across 5 MACH/Composable Commerce pillars,
   prompts Google Gemini for a Senior Solutions Architect-level article (1,500-2,200 words)
-  with E-E-A-T rigor, Mermaid diagrams, and code snippets, and creates the formatted
-  Jekyll markdown file ready for GitHub Pages CI/CD.
+  with E-E-A-T rigor, Mermaid diagrams, and code snippets.
+  Simultaneously synthesizes unique matching cover images via Google Imagen 3 (Nano Banana)
+  with multi-layer fallback (Pollinations AI & Unsplash IT Photography), saving both
+  the Markdown post and PNG cover asset in a single atomic pipeline.
 """
 
 import argparse
+import base64
 import datetime
 import glob
 import json
@@ -22,12 +25,11 @@ from typing import Dict, List, Optional, Tuple
 import urllib.request
 import urllib.error
 
-# Supported Gemini models in priority fallback order
+# Supported Gemini text generation models in prioritized order (latest first to avoid 404s)
 DEFAULT_MODELS = [
-    "gemini-2.5-flash",
     "gemini-2.0-flash",
-    "gemini-1.5-flash",
-    "gemini-flash-latest"
+    "gemini-flash-latest",
+    "gemini-1.5-flash"
 ]
 
 # 5 Core Pillars of MACH Playbook Topic Matrix
@@ -94,6 +96,20 @@ TOPIC_MATRIX = {
     ]
 }
 
+# Verified high-resolution IT & architecture photos for fallback
+UNSPLASH_IT_PHOTOS = [
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=675&fit=crop", # Enterprise Server Racks
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&h=675&fit=crop", # Digital Matrix Code
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=675&fit=crop", # Analytics Dashboard
+    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&h=675&fit=crop", # High-Speed Fiber Optic
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=675&fit=crop", # Microchip Architecture
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=675&fit=crop", # Global Cloud Network
+    "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&h=675&fit=crop", # Code Editor
+    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=675&fit=crop", # Abstract Digital 3D
+    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=675&fit=crop", # Neon Network Hardware
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=675&fit=crop"  # Data Center Room
+]
+
 
 def slugify(text: str) -> str:
     """Generate a clean, SEO-friendly ASCII slug from a title string."""
@@ -112,7 +128,6 @@ def scan_existing_posts(posts_dir: str = "_posts") -> List[Dict[str, str]]:
             with open(fpath, "r", encoding="utf-8") as f:
                 content = f.read()
             
-            # Extract YAML front matter
             title_match = re.search(r"^title:\s*['\"]?(.*?)['\"]?\s*$", content, re.MULTILINE)
             lang_match = re.search(r"^lang:\s*['\"]?(.*?)['\"]?\s*$", content, re.MULTILINE)
             categories_match = re.search(r"^categories:\s*\[(.*?)\]", content, re.MULTILINE)
@@ -142,13 +157,11 @@ def select_next_topic(existing_posts: List[Dict[str, str]], manual_topic: Option
     existing_titles_lower = [p["title"].lower() for p in existing_posts if p["title"]]
     existing_slugs_lower = [p["slug"].lower() for p in existing_posts]
 
-    # Find the first untackled topic in the matrix
     for pillar, topics in TOPIC_MATRIX.items():
         for topic in topics:
             topic_clean = topic.lower()
             topic_slug = slugify(topic)
             
-            # Check if title or slug overlaps significantly
             is_covered = any(
                 topic_slug in s or s in topic_slug or
                 any(word in s for word in topic_slug.split("-") if len(word) > 5)
@@ -158,7 +171,6 @@ def select_next_topic(existing_posts: List[Dict[str, str]], manual_topic: Option
             if not is_covered:
                 return topic, pillar
 
-    # Fallback to an advanced dynamic variation if all standard topics are covered
     timestamp_seed = datetime.datetime.now().strftime("%Y%m%d")
     fallback_topic = f"Patrones Avanzados de Resiliencia y Consistencia en Arquitecturas MACH - Edición {timestamp_seed}"
     return fallback_topic, "Arquitectura Cloud & Microservicios"
@@ -193,7 +205,7 @@ tags: [tag1, tag2, tag3, tag4, tag5, tag6]
 image:
   path: /assets/img/posts/YYYY-MM-DD-slug.png
 ---
-5. **Idioma:** Español técnico impecable, fluido y profesional, utilizando la terminología estándar de la industria cloud/software (ej: 'throughput', 'bounded context', 'event-driven', 'failover', 'dead-letter queue').
+5. **Idioma:** Español técnico impecable, fluido y profesional, utilizando la terminología estándar de la industria cloud/software.
 """
     else:
         return """You are a Principal Enterprise Solutions Architect and MACH Alliance Certified Specialist (Microservices, API-first, Cloud-native, Headless) and Composable Commerce expert.
@@ -271,7 +283,7 @@ STRICT REQUIREMENTS:
 
 
 def call_gemini_api(api_key: str, system_prompt: str, user_prompt: str, preferred_model: Optional[str] = None) -> str:
-    """Call Google Gemini API using REST endpoint with automatic fallback across supported models."""
+    """Call Google Gemini API using REST endpoint with prioritized models to minimize latency and eliminate 404s."""
     models_to_try = [preferred_model] if preferred_model else DEFAULT_MODELS
 
     last_error = None
@@ -327,11 +339,114 @@ def call_gemini_api(api_key: str, system_prompt: str, user_prompt: str, preferre
     raise RuntimeError(f"All Gemini models failed. Last error: {last_error}")
 
 
+def get_image_topic_prompt(title: str) -> str:
+    """Build optimized visual prompt for IT and cloud architecture imagery."""
+    t = title.lower()
+    if any(k in t for k in ["security", "oauth", "jwt", "zero trust", "seguridad", "mtls"]):
+        subject = "a high-tech cybersecurity vault with glowing digital padlock, cryptographic authentication shields, and dark metallic server hardware"
+    elif any(k in t for k in ["saga", "cqrs", "event", "kafka", "stream", "outbox", "asincrona"]):
+        subject = "an asynchronous event stream topology with glowing message queues, Kafka event bus, and database node cluster in dark space"
+    elif any(k in t for k in ["api", "openapi", "rest", "graphql", "grpc", "gateway"]):
+        subject = "an isometric 3D blueprint of API Gateway proxy routing JSON payloads between cloud microservice containers, dark glassmorphism render"
+    elif any(k in t for k in ["observability", "tracing", "metrics", "opentelemetry", "jaeger", "monitoreo"]):
+        subject = "a futuristic holographic observability monitoring console displaying OpenTelemetry traces, latency graphs, and system metrics"
+    elif any(k in t for k in ["ci/cd", "deploy", "pipeline", "argocd", "kubernetes", "canary"]):
+        subject = "an automated DevOps software deployment pipeline with glowing code blocks moving through continuous integration stages"
+    elif any(k in t for k in ["headless", "cms", "frontend", "next.js", "nuxt", "storefront"]):
+        subject = "decoupled headless CMS layers floating in 3D space above glowing glass mobile and web displays"
+    elif any(k in t for k in ["commerce", "checkout", "pbc", "pago", "sap", "magento", "monolito"]):
+        subject = "a global high-speed digital commerce cloud network with thousands of microservice transactions and high tech server nodes"
+    elif any(k in t for k in ["sql", "yugabyte", "postgres", "sharding", "database", "base de datos"]):
+        subject = "distributed database cluster nodes synchronizing data shards across geographic regions with glowing fiber optic links"
+    else:
+        subject = "an enterprise data center server rack room with glowing fiber optic cables, ultra detailed IT infrastructure photography"
+
+    return f"Professional IT computer system graphic: {subject}. Dark technological background, ultra high resolution, clean architectural design, 16:9 aspect ratio, no text."
+
+
+def generate_post_image(title: str, slug: str, api_key: str, output_path: str, dry_run: bool = False) -> bool:
+    """Generate high-res cover image using Google Imagen 3 (Nano Banana) with Pollinations & Unsplash fallback."""
+    print(f"\n--- Generating Matching Cover Image for: '{slug}' ---")
+    prompt = get_image_topic_prompt(title)
+    print(f" Image Prompt: {prompt}")
+
+    if dry_run:
+        print(" Dry-run mode: Skipping disk write for cover image.")
+        return True
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    # 1. Attempt Google Imagen 3 (Nano Banana) via Gemini API if API key is provided
+    if api_key and api_key != "MOCK_KEY":
+        imagen_model = "imagen-3.0-generate-002"
+        print(f" Attempting image synthesis with Google Imagen 3 ({imagen_model})...")
+        imagen_url = f"https://generativelanguage.googleapis.com/v1beta/models/{imagen_model}:predict?key={api_key}"
+        payload = {
+            "instances": [{"prompt": prompt}],
+            "parameters": {
+                "sampleCount": 1,
+                "aspectRatio": "16:9",
+                "outputOptions": {"mimeType": "image/png"}
+            }
+        }
+        try:
+            req = urllib.request.Request(
+                imagen_url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={"Content-Type": "application/json"}
+            )
+            with urllib.request.urlopen(req, timeout=30) as response:
+                if response.status == 200:
+                    resp_data = json.loads(response.read().decode("utf-8"))
+                    predictions = resp_data.get("predictions", [])
+                    if predictions and "bytesBase64Encoded" in predictions[0]:
+                        img_bytes = base64.b64decode(predictions[0]["bytesBase64Encoded"])
+                        with open(output_path, "wb") as f:
+                            f.write(img_bytes)
+                        print(f" Successfully generated cover image via Google Imagen 3 ({len(img_bytes)} bytes) -> {output_path}")
+                        return True
+        except Exception as e:
+            print(f" Imagen 3 image generation failed ({e}). Proceeding to Pollinations AI fallback...")
+
+    # 2. Attempt Pollinations AI (Free FLUX / SD engine)
+    seed = abs(hash(slug)) % 100000
+    pollinations_url = f"https://image.pollinations.ai/prompt/{urllib.parse.quote(prompt)}?width=1200&height=675&nologo=true&seed={seed}"
+    print(f" Attempting image synthesis with Pollinations AI...")
+    try:
+        req = urllib.request.Request(pollinations_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=12) as response:
+            if response.status == 200:
+                img_bytes = response.read()
+                if len(img_bytes) > 5000:
+                    with open(output_path, "wb") as f:
+                        f.write(img_bytes)
+                    print(f" Successfully generated cover image via Pollinations AI ({len(img_bytes)} bytes) -> {output_path}")
+                    return True
+    except Exception as e:
+        print(f" Pollinations AI generation failed ({e}). Proceeding to Unsplash fallback...")
+
+    # 3. Fallback: Curated Verified High-Resolution Unsplash IT Photo
+    photo_index = abs(hash(slug)) % len(UNSPLASH_IT_PHOTOS)
+    unsplash_url = UNSPLASH_IT_PHOTOS[photo_index]
+    print(f" Downloading verified IT fallback photo from Unsplash...")
+    try:
+        req = urllib.request.Request(unsplash_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            if response.status == 200:
+                img_bytes = response.read()
+                with open(output_path, "wb") as f:
+                    f.write(img_bytes)
+                print(f" Successfully saved verified cover photo from Unsplash -> {output_path}")
+                return True
+    except Exception as e:
+        print(f" Error saving fallback image: {e}")
+        return False
+
+
 def sanitize_markdown_post(raw_markdown: str, post_date_str: str, slug: str, lang: str = "es") -> str:
     """Ensure raw LLM output has valid Jekyll Front Matter and clean Markdown formatting."""
     content = raw_markdown.strip()
 
-    # Remove enclosing markdown backticks if returned (e.g. ```markdown ... ```)
     if content.startswith("```markdown"):
         content = content[len("```markdown"):].strip()
     elif content.startswith("```md"):
@@ -342,9 +457,7 @@ def sanitize_markdown_post(raw_markdown: str, post_date_str: str, slug: str, lan
     if content.endswith("```"):
         content = content[:-3].strip()
 
-    # Ensure it starts with front matter delimiter
     if not content.startswith("---"):
-        # Synthesize front matter
         title = "Arquitectura Composable y Patrones MACH en Producción"
         front_matter = f"""---
 layout: post
@@ -360,7 +473,6 @@ image:
 """
         content = front_matter + content
     else:
-        # Verify image path is populated correctly inside front matter
         if "image:" not in content and "path:" not in content:
             content = content.replace("---", f"""---
 image:
@@ -370,7 +482,7 @@ image:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Publish daily autonomous technical blog post to Jekyll with Gemini AI.")
+    parser = argparse.ArgumentParser(description="Publish daily autonomous technical blog post and cover image to Jekyll with Gemini AI.")
     parser.add_argument("--dry-run", action="store_true", help="Generate post in memory and validate without writing to disk.")
     parser.add_argument("--topic", type=str, default=None, help="Custom topic to override automatic matrix selection.")
     parser.add_argument("--lang", type=str, default="es", choices=["es", "en"], help="Article language (default: es).")
@@ -410,13 +522,16 @@ def main():
     print(f" Selected Topic: '{selected_topic}'")
     print(f" Pillar: [{pillar}] | Target Language: [{args.lang.upper()}]")
 
-    # 5. Generate Slug and Filename
+    # 5. Generate Slug and Filenames
     clean_slug = slugify(selected_topic)
     filename = f"{post_date_str}-{clean_slug}.md"
     filepath = os.path.join(posts_dir, filename)
     slug_with_date = f"{post_date_str}-{clean_slug}"
+    image_rel_path = f"/assets/img/posts/{slug_with_date}.png"
+    image_file_path = os.path.join("assets/img/posts", f"{slug_with_date}.png")
 
     print(f" Target Filename: {filepath}")
+    print(f" Target Cover Image: {image_file_path}")
 
     # 6. Build Prompts
     system_prompt = build_system_prompt(args.lang)
@@ -433,7 +548,7 @@ lang: {args.lang}
 categories: [Arquitectura Cloud, Microservicios]
 tags: [mach, microservicios, cloud-native, api-first, resiliencia, patrones]
 image:
-  path: /assets/img/posts/{slug_with_date}.png
+  path: {image_rel_path}
 ---
 
 En los ecosistemas empresariales modernos, la transición hacia arquitecturas composables requiere patrones robustos y desacoplados.
@@ -480,7 +595,10 @@ La adopción de {selected_topic} permite una mayor agilidad y escalabilidad sin 
     words = len(post_content.split())
     print(f" Generated article word count: {words} words.")
 
-    # 8. Dry Run vs Save
+    # 8. Generate Matching Cover Image
+    generate_post_image(selected_topic, slug_with_date, api_key, image_file_path, args.dry_run)
+
+    # 9. Dry Run vs Save
     if args.dry_run:
         print("\n--- [DRY RUN PREVIEW - FIRST 35 LINES] ---")
         preview_lines = post_content.splitlines()[:35]
