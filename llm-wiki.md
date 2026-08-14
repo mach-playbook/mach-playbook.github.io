@@ -145,6 +145,13 @@ docker run -d --name mach-playbook-site -p 8080:80 mach-playbook:prod
 
 The project maintains registered Agent skills and autonomous CI/CD pipelines:
 
+4. **`gsc-48h-indexation-audit`** (`.agents/skills/gsc-48h-indexation-audit/SKILL.md`):
+   - Autonomous 48-hour audit workflow for Google Search Console and Google AdSense:
+   - Executes pre-flight HTTP diagnostics (`scripts/audit-gsc-indexation.py`).
+   - Dispatches browser subagent to verify GSC sitemap status transition from `Couldn't fetch` to `Success` with ~117 discovered pages.
+   - Inspects the Page Indexing report for indexed vs non-indexed growth.
+   - Tests unindexed pillar URLs via live inspection and checks Google AdSense Console review status.
+
 1. **`add-new-post-test-deploy`** (`.agents/skills/add-new-post-test-deploy/SKILL.md`):
    - Standardized workflow to create new Jekyll Markdown posts, check duplicate content, run AdSense policy tests, execute Docker HTML-Proofer unit tests, commit, push, and validate GitHub Actions deployment.
 

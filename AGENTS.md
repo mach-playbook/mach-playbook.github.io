@@ -116,3 +116,9 @@
 - Configured granular `permissions: contents: write` in workflow YAML to permit autonomous `git commit` and `git push` directly to `main` with fallback PAT token support (`GH_PAT`).
 - Verified zero duplicate matches and 100% Google AdSense policy compliance across scripts and dry-run tests.
 
+
+2026-08-14 00:50: GSC 48-Hour Indexation & AdSense Audit Workflow Registered
+- Registered new specialized Agent Workflow in `.agents/skills/gsc-48h-indexation-audit/SKILL.md`.
+- Implemented automated pre-flight audit script `scripts/audit-gsc-indexation.py` validating live HTTP 200 responses for `sitemap.xml` (117 URLs), `robots.txt`, and core trust tabs.
+- Configured step-by-step browser subagent verification protocols for GSC sitemap transition (`Couldn't fetch` -> `Success`), Page Indexing growth tracking, priority URL live inspection, and Google AdSense approval status monitoring.
+- Updated `llm-wiki.md`, `AGENTS.md`, and `HISTORY.txt`.
