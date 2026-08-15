@@ -2,6 +2,7 @@
 title: Resources
 icon: fas fa-compass
 order: 4
+mermaid: true
 ---
 
 # MACH Ecosystem & External Resources
