@@ -150,4 +150,11 @@
 - Upgraded `assets/js/lang-filter.js` to manage global localization state (`localStorage`), page text swaps, and home post filtering.
 - Validated with Docker HTML-Proofer (599 links, 142 files, 0 errors) and 100% Google AdSense compliance.
 
+2026-08-15 17:45: Markdown Parsing Fix, Global Script Loading & High-Contrast Mermaid Dark Mode
+- Resolved Kramdown markdown skipping inside HTML blocks by adding `markdown="1"` to all bilingual `.lang-block` containers in `_tabs/about.md`, `_tabs/contact.md`, `_tabs/privacy.md`, and `_tabs/terms.md`.
+- Added global `assets/js/lang-filter.js` loading via `_includes/head.html` with `defer`, ensuring flag switcher and language persistence work across 100% of pages.
+- Added comprehensive CSS styling for Mermaid sequence diagrams and flowcharts in `_includes/head.html` for high contrast on `#1b1b1e` dark theme.
+- Added `scripts/test-site-integrity.py` and embedded into `Dockerfile` Stage 2 test runner (19/19 checks passed).
+
+
 

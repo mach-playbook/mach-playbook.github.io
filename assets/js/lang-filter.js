@@ -10,6 +10,19 @@
   var currentPage = 1;
   var currentLang = 'es'; // Spanish is default
 
+  var TAB_LOCALIZATIONS = {
+    'home': { es: 'Inicio', en: 'Home' },
+    'categories': { es: 'Categorías', en: 'Categories' },
+    'tags': { es: 'Etiquetas', en: 'Tags' },
+    'archives': { es: 'Archivo', en: 'Archives' },
+    'resources': { es: 'Recursos', en: 'Resources' },
+    'glossary': { es: 'Glosario', en: 'Glossary' },
+    'about': { es: 'Acerca de', en: 'About' },
+    'contact': { es: 'Contacto', en: 'Contact' },
+    'privacy': { es: 'Privacidad', en: 'Privacy Policy' },
+    'terms': { es: 'Términos', en: 'Terms' }
+  };
+
   function getUrlParam(param) {
     try {
       var urlParams = new URLSearchParams(window.location.search);
@@ -156,6 +169,23 @@
         el.classList.add('d-none');
       }
     });
+
+    // 3. Update topbar title & breadcrumb if on a tab page
+    var currentPath = window.location.pathname.replace(/^\/|\/$/g, '');
+    if (TAB_LOCALIZATIONS[currentPath]) {
+      var localizedTabName = isEnglish ? TAB_LOCALIZATIONS[currentPath].en : TAB_LOCALIZATIONS[currentPath].es;
+      var topbarTitle = document.getElementById('topbar-title');
+      if (topbarTitle) {
+        topbarTitle.textContent = localizedTabName;
+      }
+      var breadcrumb = document.getElementById('breadcrumb');
+      if (breadcrumb) {
+        var lastSpan = breadcrumb.querySelector('span:last-child');
+        if (lastSpan) {
+          lastSpan.textContent = localizedTabName;
+        }
+      }
+    }
   }
 
   function setLanguage(lang) {

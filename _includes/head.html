@@ -99,6 +99,140 @@
       height: auto !important;
       margin-bottom: 0.5rem;
     }
+
+    /* =========================================================
+       Mermaid Diagrams - High Contrast Dark & Light Mode Theme
+       ========================================================= */
+    .mermaid {
+      text-align: center;
+      margin: 1.75rem 0;
+      overflow-x: auto;
+    }
+
+    [data-bs-theme="dark"] .mermaid svg {
+      background-color: transparent !important;
+    }
+
+    /* Sequence Diagram: Actors */
+    [data-bs-theme="dark"] .mermaid rect.actor,
+    [data-bs-theme="dark"] .mermaid .actor {
+      stroke: #58a6ff !important;
+      fill: #161b22 !important;
+      stroke-width: 1.5px !important;
+    }
+    [data-bs-theme="dark"] .mermaid text.actor,
+    [data-bs-theme="dark"] .mermaid text.actor > tspan,
+    [data-bs-theme="dark"] .mermaid .actor > text {
+      fill: #f0f6fc !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+
+    /* Sequence Diagram: Lifelines & Activations */
+    [data-bs-theme="dark"] .mermaid line.actor-line,
+    [data-bs-theme="dark"] .mermaid .actor-line {
+      stroke: #8b949e !important;
+      stroke-width: 1.5px !important;
+      stroke-dasharray: 4, 4 !important;
+    }
+    [data-bs-theme="dark"] .mermaid rect.activation0,
+    [data-bs-theme="dark"] .mermaid rect.activation1,
+    [data-bs-theme="dark"] .mermaid rect.activation2 {
+      fill: #21262d !important;
+      stroke: #58a6ff !important;
+    }
+
+    /* Sequence Diagram: Messages & Arrows */
+    [data-bs-theme="dark"] .mermaid line.messageLine0,
+    [data-bs-theme="dark"] .mermaid line.messageLine1,
+    [data-bs-theme="dark"] .mermaid .messageLine0,
+    [data-bs-theme="dark"] .mermaid .messageLine1 {
+      stroke: #58a6ff !important;
+      stroke-width: 1.75px !important;
+    }
+    [data-bs-theme="dark"] .mermaid text.messageText,
+    [data-bs-theme="dark"] .mermaid .messageText {
+      fill: #79c0ff !important;
+      stroke: none !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+    }
+    [data-bs-theme="dark"] .mermaid #arrowhead path,
+    [data-bs-theme="dark"] .mermaid #crosshead path,
+    [data-bs-theme="dark"] .mermaid #filled-head path,
+    [data-bs-theme="dark"] .mermaid marker path {
+      fill: #58a6ff !important;
+      stroke: #58a6ff !important;
+    }
+
+    /* Sequence Diagram: Notes */
+    [data-bs-theme="dark"] .mermaid rect.note,
+    [data-bs-theme="dark"] .mermaid .note {
+      fill: #1f2937 !important;
+      stroke: #d29922 !important;
+      stroke-width: 1.5px !important;
+    }
+    [data-bs-theme="dark"] .mermaid text.noteText,
+    [data-bs-theme="dark"] .mermaid text.noteText > tspan,
+    [data-bs-theme="dark"] .mermaid .noteText {
+      fill: #f0f6fc !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+    }
+
+    /* Sequence Diagram: Loops / Alt / Group Frames */
+    [data-bs-theme="dark"] .mermaid rect.loopLine,
+    [data-bs-theme="dark"] .mermaid .loopLine {
+      stroke: #8b949e !important;
+      stroke-width: 1px !important;
+      stroke-dasharray: 3, 3 !important;
+      fill: rgba(56, 139, 253, 0.05) !important;
+    }
+    [data-bs-theme="dark"] .mermaid rect.labelBox,
+    [data-bs-theme="dark"] .mermaid .labelBox {
+      fill: #21262d !important;
+      stroke: #30363d !important;
+    }
+    [data-bs-theme="dark"] .mermaid text.labelText,
+    [data-bs-theme="dark"] .mermaid text.labelText > tspan,
+    [data-bs-theme="dark"] .mermaid text.loopText,
+    [data-bs-theme="dark"] .mermaid text.loopText > tspan,
+    [data-bs-theme="dark"] .mermaid .labelText,
+    [data-bs-theme="dark"] .mermaid .loopText {
+      fill: #f0f6fc !important;
+      font-weight: 600 !important;
+    }
+
+    /* Flowcharts & Graph Styling */
+    [data-bs-theme="dark"] .mermaid .node rect,
+    [data-bs-theme="dark"] .mermaid .node circle,
+    [data-bs-theme="dark"] .mermaid .node ellipse,
+    [data-bs-theme="dark"] .mermaid .node polygon,
+    [data-bs-theme="dark"] .mermaid .node path {
+      stroke: #58a6ff !important;
+      fill: #161b22 !important;
+    }
+    [data-bs-theme="dark"] .mermaid .node .label {
+      color: #f0f6fc !important;
+      fill: #f0f6fc !important;
+    }
+    [data-bs-theme="dark"] .mermaid .edgePath .path {
+      stroke: #8b949e !important;
+      stroke-width: 1.5px !important;
+    }
+    [data-bs-theme="dark"] .mermaid .edgeLabel {
+      background-color: #161b22 !important;
+      color: #79c0ff !important;
+      fill: #79c0ff !important;
+    }
+    [data-bs-theme="dark"] .mermaid .cluster rect {
+      fill: rgba(33, 38, 45, 0.6) !important;
+      stroke: #30363d !important;
+    }
+    [data-bs-theme="dark"] .mermaid .cluster text {
+      fill: #58a6ff !important;
+      font-weight: 600 !important;
+    }
   </style>
 
   <!-- Web Font -->
@@ -127,6 +261,9 @@
   <script src="{{ '/assets/js/dist/theme.min.js' | relative_url }}"></script>
 
   {% include js-selector.html lang=lang %}
+
+  <!-- Global i18n & Post Filter Engine -->
+  <script defer src="{{ '/assets/js/lang-filter.js' | relative_url }}"></script>
 
   {% if jekyll.environment == 'production' %}
     <!-- PWA -->

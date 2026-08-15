@@ -31,9 +31,12 @@ ENV JEKYLL_ENV=production
 RUN bundle exec jekyll build -d _site
 
 # ---------------------------------------------------
-# Stage 2: Unit Testing (HTMLProofer & Link Audit)
+# Stage 2: Unit Testing (HTMLProofer & Site Integrity Validation)
 # ---------------------------------------------------
 FROM builder AS test
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-bs4 && \
+    python3 scripts/test-site-integrity.py && \
+    rm -rf /var/lib/apt/lists/*
 RUN bundle exec htmlproofer _site \
     --disable-external \
     --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"

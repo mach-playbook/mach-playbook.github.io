@@ -4,7 +4,7 @@ icon: fas fa-envelope
 order: 7
 ---
 
-<div class="lang-block lang-es">
+<div class="lang-block lang-es" markdown="1">
 
 # Contacto & Asesoría Técnica
 
@@ -50,7 +50,7 @@ Revisamos consultas con regularidad y respondemos en un plazo de 24 a 48 horas h
 
 </div>
 
-<div class="lang-block lang-en d-none">
+<div class="lang-block lang-en d-none" markdown="1">
 
 # Contact & Enterprise Advisory
 

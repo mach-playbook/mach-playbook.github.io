@@ -4,7 +4,7 @@ icon: fas fa-shield-alt
 order: 8
 ---
 
-<div class="lang-block lang-es">
+<div class="lang-block lang-es" markdown="1">
 
 # Política de Privacidad
 
@@ -48,7 +48,7 @@ Para consultas sobre privacidad o ejercicio de derechos ARCO, contáctanos en la
 
 </div>
 
-<div class="lang-block lang-en d-none">
+<div class="lang-block lang-en d-none" markdown="1">
 
 # Privacy Policy
 

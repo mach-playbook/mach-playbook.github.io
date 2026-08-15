@@ -4,7 +4,7 @@ icon: fas fa-file-contract
 order: 9
 ---
 
-<div class="lang-block lang-es">
+<div class="lang-block lang-es" markdown="1">
 
 # Términos de Servicio y Descargo Editorial
 
@@ -46,7 +46,7 @@ Para dudas sobre estos términos, comunícate a través de nuestra [Página de C
 
 </div>
 
-<div class="lang-block lang-en d-none">
+<div class="lang-block lang-en d-none" markdown="1">
 
 # Terms of Service & Editorial Disclaimer
 

@@ -219,3 +219,11 @@
   * Upgraded `assets/js/lang-filter.js` into a unified Global i18n & Post Filter Engine with `es` as default.
   * Validated with Docker HTML-Proofer (599 links, 142 files, 0 errors) and 100% AdSense compliance.
 
+2026-08-15 17:45: Fixed Markdown Parsing in Bilingual Tabs, Global Script Loading, and High-Contrast Mermaid Dark Mode
+  * Fixed Markdown rendering in `_tabs/about.md`, `_tabs/contact.md`, `_tabs/privacy.md`, and `_tabs/terms.md`: added `markdown="1"` to HTML `<div>` blocks so Kramdown parses headings, lists, bold text, and horizontal rules into proper HTML.
+  * Injected `assets/js/lang-filter.js` globally into `_includes/head.html` with `defer`, ensuring the language toggle functions seamlessly across all pages (Home, Tabs, Posts, Archives).
+  * Implemented comprehensive high-contrast Mermaid Sequence Diagram & Flowchart styling in `_includes/head.html` for dark mode (`.actor`, `.actor-line`, `.messageLine0`, `.messageText`, `.note`, `.noteText`, `.loopLine`, `.labelBox`, `.labelText`), guaranteeing readability on dark `#1b1b1e` background.
+  * Created automated validator `scripts/test-site-integrity.py` checking 19 integrity points across rendered HTML files (markdown parse check, script inclusion, bilingual classes, mermaid CSS).
+  * Integrated site integrity test into `Dockerfile` Stage 2 test runner, verifying 19/19 checks and HTML-Proofer across 629 internal links and 142 files with 0 errors.
+
+

@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 6
 ---
 
-<div class="lang-block lang-es">
+<div class="lang-block lang-es" markdown="1">
 
 # Acerca de MACH Playbook
 
@@ -28,7 +28,7 @@ Los sistemas monolíticos tradicionales son rígidos ante el ritmo vertiginoso d
 
 </div>
 
-<div class="lang-block lang-en d-none">
+<div class="lang-block lang-en d-none" markdown="1">
 
 # About MACH Playbook
 
