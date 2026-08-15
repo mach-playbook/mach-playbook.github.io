@@ -141,3 +141,13 @@
   2. Matching cover image asset physically present at `/assets/img/posts/<date-slug>.png`.
   3. Mermaid architecture diagram syntax and client-side vector SVG rendering.
 
+2026-08-15 15:45: Spanish Primary Language Setup, Global Flag Switcher & Bilingual Static Pages
+- Configured Spanish as the default site language (`lang: es` in `_config.yml`, Spanish tagline and description).
+- Added `_data/locales/es.yml`, `_data/locales/es-ES.yml`, and `en.yml` for navigation and Chirpy locale support.
+- Overhauled topbar with a compact Flag language toggle (`🇲🇽 ES` / `🇺🇸 EN`).
+- Added dynamic `data-i18n-es` / `data-i18n-en` client switching to `_includes/sidebar.html` and bilingual blocks to `_tabs/about.md`, `_tabs/contact.md`, `_tabs/privacy.md`, and `_tabs/terms.md`.
+- Injected in-article contextual language notice and Google Translate bridge in `_layouts/post.html`.
+- Upgraded `assets/js/lang-filter.js` to manage global localization state (`localStorage`), page text swaps, and home post filtering.
+- Validated with Docker HTML-Proofer (599 links, 142 files, 0 errors) and 100% Google AdSense compliance.
+
+

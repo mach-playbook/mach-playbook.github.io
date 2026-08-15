@@ -6,7 +6,7 @@ theme: jekyll-theme-chirpy
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: en
+lang: es
 
 # Change to your timezone › https://zones.arilyn.cc
 timezone: America/Mexico_City
@@ -18,12 +18,12 @@ future: true
 title: MACH Playbook # the main title
 
 tagline: >-
-  Learn MACH fundamentals through concrete service boundaries, clean APIs,
-  and deployment examples, so architecture decisions feel tangible, not theoretical.
+  Aprende los fundamentos de la arquitectura MACH con límites de servicio concretos, APIs limpias
+  y ejemplos de despliegue, para que las decisiones arquitectónicas sean tangibles y no teóricas.
 
 description: >- # used by seo meta and the atom feed
-  Practical guides and patterns for Microservices, API-first, Cloud-native,
-  and Headless architecture.
+  Guías prácticas y patrones para Microservicios, API-First, Cloud-Native
+  y Arquitectura Headless.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

@@ -61,31 +61,24 @@
       {% assign top_es_count = site.posts | where: 'lang', 'es' | size %}
       {% assign top_en_count = top_all_count | minus: top_es_count %}
 
-      <!-- Global Language Selector Dropdown -->
+      <!-- Global Site Language Switcher with Flags -->
       <div id="lang-selector-wrapper" class="dropdown">
         <button
-          class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center gap-1"
+          class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center gap-1 shadow-none"
           type="button"
           id="langSelectorBtn"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-          style="border-radius: 20px; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-color: rgba(255,255,255,0.2);"
-          title="Filter Posts by Language"
+          style="border-radius: 20px; font-size: 0.8rem; padding: 0.25rem 0.65rem; border-color: rgba(255,255,255,0.2);"
+          title="Seleccionar Idioma / Select Language"
         >
-          <i class="fas fa-globe text-primary me-1"></i>
-          <span id="current-lang-text">All</span>
+          <span id="current-lang-flag" class="me-1">🇲🇽</span>
+          <span id="current-lang-text" class="fw-bold">ES</span>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="langSelectorBtn" style="font-size: 0.85rem; min-width: 170px;">
+        <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="langSelectorBtn" style="font-size: 0.85rem; min-width: 155px;">
           <li>
-            <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between active" href="#" data-lang="all">
-              <span><i class="fas fa-layer-group me-2 text-secondary"></i>All Posts</span>
-              <span class="badge bg-secondary rounded-pill">{{ top_all_count }}</span>
-            </a>
-          </li>
-          <li><hr class="dropdown-divider my-1"></li>
-          <li>
-            <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between" href="#" data-lang="es">
-              <span><span class="me-2">🇲🇽/🇪🇸</span>Español</span>
+            <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between active" href="#" data-lang="es">
+              <span><span class="me-2">🇲🇽</span>Español</span>
               <span class="badge bg-primary rounded-pill">{{ top_es_count }}</span>
             </a>
           </li>
@@ -93,6 +86,13 @@
             <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between" href="#" data-lang="en">
               <span><span class="me-2">🇺🇸</span>English</span>
               <span class="badge bg-secondary rounded-pill">{{ top_en_count }}</span>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider my-1"></li>
+          <li>
+            <a class="dropdown-item lang-select-opt d-flex align-items-center justify-content-between" href="#" data-lang="all">
+              <span><i class="fas fa-layer-group me-2 text-muted"></i>Todos / All</span>
+              <span class="badge bg-dark rounded-pill">{{ top_all_count }}</span>
             </a>
           </li>
         </ul>

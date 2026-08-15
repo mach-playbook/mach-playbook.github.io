@@ -23,24 +23,26 @@
 
 ---
 
-## 2. Global Language Selector & Filtering System
+## 2. Spanish Primary Language & Global i18n Architecture
 
-The site implements dynamic bilingual post classification (`lang: es` and `lang: en`) backed by a client-side filtering engine:
+The site establishes **Spanish as its primary language (`lang: es`)** while offering a seamless bilingual experience for global readers:
 
 ### A. UI Placement Architecture
-1. **Global Topbar Selector (`_includes/topbar.html`)**:
-   - Globe icon dropdown button (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) positioned next to `#search`.
-   - Displays real-time post count badges (`All: 63`, `Español: 28`, `English: 35`).
+1. **Global Flag Language Switcher (`_includes/topbar.html`)**:
+   - Compact button (`🇲🇽 ES ▼` / `🇺🇸 EN ▼` / `🌐 ALL ▼`) positioned in the global topbar.
+   - Triggers `setGlobalLanguage(lang)` to instantly toggle sidebar tagline, menu titles, and static page content blocks without page reload.
 2. **Home Feed Filter Pills (`_layouts/home.html`)**:
-   - Filter pill group positioned directly above `#post-list`.
-   - Renders `Filter: [ All (63) | 🇲🇽/🇪🇸 Español (29) | 🇺🇸 English (34) ]`.
-3. **Card & Header Badges**:
-   - Each post card and article header renders explicit language badges (`🇲🇽/🇪🇸 Español` vs `🇺🇸 English`).
+   - Filter pill group positioned directly above `#post-list`: `[ 🇲🇽 Español (31) | 🇺🇸 English (34) | Todos (65) ]`.
+3. **In-Article Language Notice Banner (`_layouts/post.html`)**:
+   - Contextual alert banner atop each post providing language context and a direct one-click bridge to Google Translate.
+4. **Bilingual Static Trust Pages (`_tabs/about.md`, `_tabs/contact.md`, `_tabs/privacy.md`, `_tabs/terms.md`)**:
+   - Structured with `.lang-block.lang-es` and `.lang-block.lang-en.d-none` blocks that toggle in real-time when the user switches language.
 
 ### B. Client-Side Script Engine (`assets/js/lang-filter.js`)
-- **Function**: `setLanguageFilter(lang)`
-- **Behavior**: Real-time card visibility toggle (`data-post-lang="es"` vs `data-post-lang="en"`).
-- **State Persistence**: Saves selection to `localStorage.setItem('mach_playbook_lang', lang)` to maintain user language preference across page navigation and page reloads.
+- **Default Language**: `es` (Spanish).
+- **Priority Resolution**: URL parameter (`?lang=es|en`) &rarr; `localStorage.getItem('mach_playbook_lang')` &rarr; Default `es`.
+- **Dynamic Localization**: Updates all `[data-i18n-es]` and `[data-i18n-en]` attributes across the DOM (sidebar subtitle, navigation links, breadcrumbs).
+- **Post Feed Filtering**: Filters `.post-card-item` elements on the Home page and updates pagination dynamically.
 
 ---
 

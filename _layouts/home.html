@@ -12,21 +12,21 @@ layout: default
 <!-- Language Filter Bar -->
 <div class="d-flex align-items-center justify-content-between mb-4 px-1 pb-2 border-bottom">
   <div class="d-flex align-items-center gap-2">
-    <span class="text-muted small font-weight-bold uppercase me-1"><i class="fas fa-filter me-1 text-primary"></i>Filter:</span>
+    <span class="text-muted small font-weight-bold uppercase me-1"><i class="fas fa-filter me-1 text-primary"></i><span data-i18n-es="Filtrar:" data-i18n-en="Filter:">Filtrar:</span></span>
     <div class="btn-group btn-group-sm" role="group" id="home-lang-pills">
-      <button type="button" class="btn btn-outline-secondary lang-pill active" data-lang-target="all" style="border-radius: 20px 0 0 20px; font-weight: 500;">
-        All ({{ all_posts_count }})
+      <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="es" style="border-radius: 20px 0 0 20px; font-weight: 500;">
+        🇲🇽 Español ({{ es_posts_count }})
       </button>
-      <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="es" style="font-weight: 500;">
-        🇲🇽/🇪🇸 Español ({{ es_posts_count }})
-      </button>
-      <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="en" style="border-radius: 0 20px 20px 0; font-weight: 500;">
+      <button type="button" class="btn btn-outline-secondary lang-pill" data-lang-target="en" style="font-weight: 500;">
         🇺🇸 English ({{ en_posts_count }})
+      </button>
+      <button type="button" class="btn btn-outline-secondary lang-pill active" data-lang-target="all" style="border-radius: 0 20px 20px 0; font-weight: 500;">
+        <span data-i18n-es="Todos" data-i18n-en="All">Todos</span> ({{ all_posts_count }})
       </button>
     </div>
   </div>
   <div id="lang-filter-status" class="small text-muted d-none d-md-block">
-    Showing all posts ({{ all_posts_count }})
+    Mostrando artículos en Español ({{ es_posts_count }})
   </div>
 </div>
 

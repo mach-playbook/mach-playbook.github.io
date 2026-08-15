@@ -1,7 +1,23 @@
+/**
+ * MACH Playbook - Global i18n & Post Filter Engine
+ * Handles site-wide Spanish/English language switching, UI localization,
+ * bilingual static page toggle, and home post feed filtering.
+ */
 (function() {
+  'use strict';
+
   var PAGE_SIZE = 10;
   var currentPage = 1;
-  var currentLang = 'all';
+  var currentLang = 'es'; // Spanish is default
+
+  function getUrlParam(param) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    } catch (e) {
+      return null;
+    }
+  }
 
   function renderPagination(totalItems, activePage) {
     var container = document.getElementById('dynamic-paginator');
@@ -53,20 +69,20 @@
 
   function goToPage(page) {
     currentPage = page;
-    updateView();
+    updatePostCardsView();
     var postList = document.getElementById('post-list');
     if (postList) {
       postList.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
-  function updateView() {
+  function updatePostCardsView() {
     var cards = Array.from(document.querySelectorAll('.post-card-item'));
     if (!cards.length) return;
 
     // 1. Filter matching cards
     var matchingCards = cards.filter(function(card) {
-      var cardLang = card.getAttribute('data-post-lang');
+      var cardLang = card.getAttribute('data-post-lang') || 'es';
       return currentLang === 'all' || cardLang === currentLang;
     });
 
@@ -102,11 +118,11 @@
     var statusEl = document.getElementById('lang-filter-status');
     if (statusEl) {
       if (currentLang === 'es') {
-        statusEl.textContent = 'Filtered: ' + totalMatching + ' Spanish post' + (totalMatching === 1 ? '' : 's');
+        statusEl.textContent = 'Mostrando ' + totalMatching + ' artículo' + (totalMatching === 1 ? '' : 's') + ' en Español';
       } else if (currentLang === 'en') {
-        statusEl.textContent = 'Filtered: ' + totalMatching + ' English post' + (totalMatching === 1 ? '' : 's');
+        statusEl.textContent = 'Showing ' + totalMatching + ' English post' + (totalMatching === 1 ? '' : 's');
       } else {
-        statusEl.textContent = 'Showing all ' + totalMatching + ' posts';
+        statusEl.textContent = 'Mostrando todos los ' + totalMatching + ' artículos / Showing all posts';
       }
     }
 
@@ -114,24 +130,60 @@
     renderPagination(totalMatching, currentPage);
   }
 
-  function setLanguageFilter(lang) {
-    currentLang = lang;
+  function applyLocalization(lang) {
+    var isEnglish = (lang === 'en');
+
+    // 1. Localize all data-i18n elements (sidebar, menu links, breadcrumbs)
+    document.querySelectorAll('[data-i18n-es]').forEach(function(el) {
+      var esText = el.getAttribute('data-i18n-es');
+      var enText = el.getAttribute('data-i18n-en') || esText;
+      el.textContent = isEnglish ? enText : esText;
+    });
+
+    // 2. Localize bilingual content blocks on static pages (About, Contact, Privacy, Terms)
+    document.querySelectorAll('.lang-block.lang-es').forEach(function(el) {
+      if (isEnglish) {
+        el.classList.add('d-none');
+      } else {
+        el.classList.remove('d-none');
+      }
+    });
+
+    document.querySelectorAll('.lang-block.lang-en').forEach(function(el) {
+      if (isEnglish) {
+        el.classList.remove('d-none');
+      } else {
+        el.classList.add('d-none');
+      }
+    });
+  }
+
+  function setLanguage(lang) {
+    currentLang = lang || 'es';
     currentPage = 1;
 
     try {
-      localStorage.setItem('mach_playbook_lang', lang);
-    } catch(e) {}
+      localStorage.setItem('mach_playbook_lang', currentLang);
+    } catch (e) {}
 
     // Update Topbar Dropdown UI
-    var currentText = document.getElementById('current-lang-text');
-    if (currentText) {
-      if (lang === 'es') currentText.textContent = 'Español';
-      else if (lang === 'en') currentText.textContent = 'English';
-      else currentText.textContent = 'All';
+    var flagEl = document.getElementById('current-lang-flag');
+    var textEl = document.getElementById('current-lang-text');
+    if (flagEl && textEl) {
+      if (currentLang === 'es') {
+        flagEl.textContent = '🇲🇽';
+        textEl.textContent = 'ES';
+      } else if (currentLang === 'en') {
+        flagEl.textContent = '🇺🇸';
+        textEl.textContent = 'EN';
+      } else {
+        flagEl.textContent = '🌐';
+        textEl.textContent = 'ALL';
+      }
     }
 
     document.querySelectorAll('.lang-select-opt').forEach(function(opt) {
-      if (opt.getAttribute('data-lang') === lang) {
+      if (opt.getAttribute('data-lang') === currentLang) {
         opt.classList.add('active');
       } else {
         opt.classList.remove('active');
@@ -140,7 +192,7 @@
 
     // Update Home Filter Pills UI
     document.querySelectorAll('.lang-pill').forEach(function(pill) {
-      if (pill.getAttribute('data-lang-target') === lang) {
+      if (pill.getAttribute('data-lang-target') === currentLang) {
         pill.classList.add('active', 'btn-primary');
         pill.classList.remove('btn-outline-secondary');
       } else {
@@ -149,40 +201,50 @@
       }
     });
 
-    updateView();
+    // Apply translations across UI and static page blocks
+    applyLocalization(currentLang);
+
+    // Apply card filtering on home feed
+    updatePostCardsView();
   }
 
-  window.setLanguageFilter = setLanguageFilter;
+  window.setLanguageFilter = setLanguage;
+  window.setGlobalLanguage = setLanguage;
 
-  function initLangFilter() {
-    var savedLang = 'all';
+  function init() {
+    var urlLang = getUrlParam('lang');
+    var savedLang = null;
     try {
-      savedLang = localStorage.getItem('mach_playbook_lang') || 'all';
-    } catch(e) {}
+      savedLang = localStorage.getItem('mach_playbook_lang');
+    } catch (e) {}
 
-    // Setup click listeners on options and pills
+    // Priority: URL query param > LocalStorage > Default 'es'
+    var initialLang = urlLang || savedLang || 'es';
+
+    // Setup click listeners on topbar options
     document.querySelectorAll('.lang-select-opt').forEach(function(opt) {
       opt.addEventListener('click', function(e) {
         e.preventDefault();
         var selected = this.getAttribute('data-lang');
-        setLanguageFilter(selected);
+        setLanguage(selected);
       });
     });
 
+    // Setup click listeners on home pills
     document.querySelectorAll('.lang-pill').forEach(function(pill) {
       pill.addEventListener('click', function(e) {
         e.preventDefault();
         var selected = this.getAttribute('data-lang-target');
-        setLanguageFilter(selected);
+        setLanguage(selected);
       });
     });
 
-    setLanguageFilter(savedLang);
+    setLanguage(initialLang);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLangFilter);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initLangFilter();
+    init();
   }
 })();

@@ -4,7 +4,53 @@ icon: fas fa-shield-alt
 order: 8
 ---
 
-## Privacy Policy
+<div class="lang-block lang-es">
+
+# Política de Privacidad
+
+**Última actualización: Agosto 2026**
+
+Esta Política de Privacidad describe cómo **MACH Playbook** ("nosotros" o "nuestro sitio"), gestionado por Lenin Meza en [https://mach-playbook.github.io](https://mach-playbook.github.io/), recopila, utiliza y protege la información al navegar en nuestra plataforma.
+
+---
+
+### 1. Información que Recopilamos
+Priorizamos la privacidad de nuestros usuarios y minimizamos la recolección de datos:
+* **Analítica Web:** Empleamos Google Analytics para obtener métricas anónimas y agregadas de tráfico (páginas vistas, duración de sesión, navegador, dispositivo, país). No recopilamos ni almacenamos información de identificación personal (PII).
+* **Mensajes de Contacto:** Si decides contactarnos a través de nuestra [Página de Contacto](/contact/) o correo electrónico, únicamente utilizaremos tu nombre y dirección de correo para responder a tu consulta.
+
+---
+
+### 2. Cookies y Google AdSense
+Este sitio utiliza cookies para análisis web y servicios de monetización publicitaria mediante **Google AdSense**.
+
+* Proveedores externos, incluido Google, utilizan cookies para mostrar anuncios basados en visitas anteriores de los usuarios a este o a otros sitios web.
+* El uso de cookies publicitarias por parte de Google permite a la compañía y a sus socios presentar anuncios según las visitas de los usuarios en internet.
+* **Control y Desactivación (Opt-Out):** Puedes inhabilitar la publicidad personalizada en cualquier momento visitando la [Configuración de Anuncios de Google](https://www.google.com/settings/ads). De igual manera, puedes desactivar el uso de cookies de terceros en [aboutads.info choices](https://www.aboutads.info/choices/) o [youronlinechoices.eu](https://www.youronlinechoices.eu/).
+
+---
+
+### 3. Servicios de Terceros
+* **Google Analytics y Google AdSense:** Métricas de visitas y servicio de anuncios bajo las políticas de privacidad de Google.
+* **Formspree:** Procesamiento seguro de formularios de contacto.
+* **GitHub Pages y CDN:** Alojamiento estático y distribución de contenido perimetral.
+
+---
+
+### 4. Cumplimiento GDPR y CCPA
+* Tienes el derecho de solicitar información o la eliminación de cualquier mensaje enviado voluntariamente.
+* No vendemos, alquilamos ni comercializamos datos personales a terceros bajo ninguna circunstancia.
+
+---
+
+### 5. Contacto
+Para consultas sobre privacidad o ejercicio de derechos ARCO, contáctanos en la [Página de Contacto](/contact/) o en [merolhack@gmail.com](mailto:merolhack@gmail.com).
+
+</div>
+
+<div class="lang-block lang-en d-none">
+
+# Privacy Policy
 
 **Last updated: August 2026**
 
@@ -45,3 +91,5 @@ Under GDPR (General Data Protection Regulation) and CCPA (California Consumer Pr
 
 ### 5. Contacting Us
 For any privacy inquiries, data deletion requests, or questions regarding this policy, please reach out through our [Contact Page](/contact/) or email [merolhack@gmail.com](mailto:merolhack@gmail.com).
+
+</div>

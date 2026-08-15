@@ -1,0 +1,77 @@
+# The layout text of site (Spanish - es-ES)
+
+layout:
+  post: Entrada
+  category: Categoría
+  tag: Etiqueta
+
+tabs:
+  home: Inicio
+  categories: Categorías
+  tags: Etiquetas
+  archives: Archivo
+  resources: Recursos
+  glossary: Glosario
+  about: Acerca de
+  contact: Contacto
+  privacy: Privacidad
+  terms: Términos
+
+search:
+  hint: Buscar...
+  cancel: Cancelar
+  no_results: ¡Oops! No se encuentran resultados.
+
+panel:
+  lastmod: Actualizado recientemente
+  trending_tags: Etiquetas populares
+  toc: Contenido
+
+copyright:
+  license:
+    template: Esta entrada está licenciada bajo :LICENSE_NAME por el autor.
+    name: CC BY 4.0
+    link: https://creativecommons.org/licenses/by/4.0/
+  brief: Algunos derechos reservados.
+  verbose: >-
+    Salvo que se indique explícitamente, las entradas de este blog están licenciadas
+    bajo la Creative Commons Attribution 4.0 International (CC BY 4.0) License por el autor.
+
+meta: Hecho con :PLATFORM usando el tema :THEME
+
+not_found:
+  statement: Lo sentimos, esa URL no existe o ha sido movida.
+
+notification:
+  update_found: Hay contenido nuevo
+  update: Actualizar
+
+theme:
+  light: Claro
+  dark: Oscuro
+  system: Sistema
+
+post:
+  written_by: Por
+  posted: Publicado el
+  updated: Actualizado
+  words: palabras
+  pageview_measure: visitas
+  read_time:
+    unit: min
+    prompt: " de lectura"
+  edit: Edita esta entrada
+  relate_posts: Lecturas recomendadas
+  share: Compartir
+  button:
+    next: Siguiente
+    previous: Anterior
+    copy_code:
+      succeed: ¡Copiado!
+    share_link:
+      title: Copiar enlace
+      succeed: ¡Enlace copiado!
+
+categories:
+  category_measure: categorías
+  post_measure: entradas

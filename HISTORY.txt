@@ -207,3 +207,15 @@
   * Created `_tabs/glossary.md` (order: 5, icon: `fas fa-book`) defining 30+ canonical industry terms with direct cross-links to deep-dive articles across all 5 MACH pillars.
   * Reordered sidebar navigation tabs (Categories -> Tags -> Archives -> Resources -> Glossary -> About -> Contact -> Privacy -> Terms).
   * Validated 100% AdSense Policy Compliance and 0 broken links across 615 internal links and 142 files in Docker test container (`mach-playbook-test`).
+
+2026-08-15 15:45: Established Spanish as Primary Site Language with Global Flag Switcher & Bilingual Architecture
+  * Configured `_config.yml` with `lang: es`, Spanish primary tagline, and Spanish description.
+  * Created `_data/locales/es.yml`, `_data/locales/es-ES.yml`, and `_data/locales/en.yml` with full tabs mapping.
+  * Overhauled `_includes/topbar.html` with compact global Flag language switcher (`[ 🇲🇽 ES ▼ ]` / `[ 🇺🇸 EN ▼ ]`).
+  * Updated `_includes/sidebar.html` with dynamic `data-i18n-es` / `data-i18n-en` attributes for instant client-side tagline and menu localization.
+  * Updated `_layouts/home.html` to place Spanish filter pills first (`[ 🇲🇽 Español (31) | 🇺🇸 English (34) | Todos (65) ]`).
+  * Updated `_layouts/post.html` with contextual in-article language notice and Google Translate bridge.
+  * Made static trust pages (`_tabs/about.md`, `_tabs/contact.md`, `_tabs/privacy.md`, `_tabs/terms.md`) bilingual with `.lang-block.lang-es` and `.lang-block.lang-en` toggling.
+  * Upgraded `assets/js/lang-filter.js` into a unified Global i18n & Post Filter Engine with `es` as default.
+  * Validated with Docker HTML-Proofer (599 links, 142 files, 0 errors) and 100% AdSense compliance.
+

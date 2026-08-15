@@ -131,6 +131,46 @@ script_includes:
     </dialog>
   {% endif %}
 
+  <!-- Language & Translation Bridge Banner -->
+  {% assign current_post_lang = page.lang | default: 'en' %}
+  {% if current_post_lang == 'en' %}
+    <div class="alert alert-info d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between p-3 my-3 rounded-3 border-0 bg-opacity-10 bg-info" role="alert">
+      <div class="d-flex align-items-center mb-2 mb-sm-0">
+        <i class="fas fa-globe-americas fa-lg text-info me-3"></i>
+        <div>
+          <div class="fw-bold">Artículo en Inglés (English Technical Guide)</div>
+          <div class="small text-muted">Esta publicación técnica fue redactada en inglés.</div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="{{ '/' | relative_url }}?lang=es" class="btn btn-sm btn-outline-info">
+          <i class="fas fa-arrow-left me-1"></i>Posts en Español
+        </a>
+        <a href="https://translate.google.com/translate?sl=en&tl=es&u={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-info text-white">
+          <i class="fas fa-language me-1"></i>Traducir con Google
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <div class="alert alert-primary d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between p-3 my-3 rounded-3 border-0 bg-opacity-10 bg-primary" role="alert">
+      <div class="d-flex align-items-center mb-2 mb-sm-0">
+        <i class="fas fa-globe-americas fa-lg text-primary me-3"></i>
+        <div>
+          <div class="fw-bold">Artículo en Español (Guía Canónica)</div>
+          <div class="small text-muted">Publicación técnica oficial en español.</div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="{{ '/' | relative_url }}?lang=en" class="btn btn-sm btn-outline-primary">
+          <i class="fas fa-list me-1"></i>English Posts
+        </a>
+        <a href="https://translate.google.com/translate?sl=es&tl=en&u={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary text-white">
+          <i class="fas fa-language me-1"></i>Translate to English
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
   <div class="content">
     {{ content }}
   </div>
