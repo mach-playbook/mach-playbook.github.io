@@ -32,9 +32,9 @@ image:
 
 > **E-E-A-T & Word Count Requirement**: All technical posts must exceed 1,000 words with concrete architectural analysis, code snippets, or sequence diagrams to prevent "thin content" flags.
 
-## Step 2: Validate Content Quality & AdSense Compliance
+## Step 2: Validate Content Quality, Images & Mermaid Rendering (Content Validation Trinity)
 
-Run pre-deployment compliance scripts in WSL:
+Run pre-deployment compliance and rendering checks:
 
 ```bash
 # 1. Check for duplicate post titles and body content similarity
@@ -42,9 +42,12 @@ wsl --cd /home/merolhack/fl/mach-playbook python3 scripts/check-duplicates.py
 
 # 2. Check AdSense Policy Compliance (ads.txt, Publisher ID, privacy, non-thin content, lang flags)
 wsl --cd /home/merolhack/fl/mach-playbook python3 scripts/test-adsense-compliance.py
+
+# 3. Verify Cover Image exists in assets/img/posts/
+# 4. Verify Mermaid syntax and that `mermaid: true` is active so diagrams render as interactive SVGs
 ```
 
-Ensure both scripts output `SUCCESS` with 0 issues detected.
+Ensure all validation checks output `SUCCESS` with 0 issues detected.
 
 ## Step 3: Run Docker Unit Tests (HTML-Proofer)
 

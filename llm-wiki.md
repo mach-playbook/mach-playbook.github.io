@@ -77,6 +77,24 @@ The site implements dynamic bilingual post classification (`lang: es` and `lang:
 - **Domain**: `mach-playbook.github.io`
 - **Status**: `Getting ready` / Review Requested (Site Ownership Verified).
 
+### D. Mandatory Content Validation Trinity (Antigravity IDE & GitHub Actions)
+Whenever new content is generated—whether created in **Antigravity IDE pair-programming sessions** or via the **autonomous GitHub Actions workflow (`daily-blog-post.yml`)**—the agent/system MUST always execute and verify the **Three Pillars of Content Integrity**:
+
+1. **Content Depth & E-E-A-T Quality Gate**:
+   - Article word count must exceed **>950–1,500 words** with actionable architectural analysis, trade-off matrices, and failure modes.
+   - Front matter must have valid taxonomy (`layout: post`, `title`, `date`, `lang: es` or `lang: en`, approved `categories`, structured `tags`, `image`, `mermaid: true`).
+   - Zero duplicates in title or body content (`scripts/check-duplicates.py`).
+   - 100% PASS on `scripts/test-adsense-compliance.py`.
+
+2. **Cover Image Physical Asset Verification**:
+   - Every post must resolve an explicit cover image in `image.path` pointing to `/assets/img/posts/<date-slug>.png`.
+   - The image file must physically exist in `assets/img/posts/`, match IT/cloud architectural themes, and load with HTTP 200 without 404s.
+
+3. **Mermaid Diagram Syntax & Client-Side Vector SVG Rendering**:
+   - Every post must include at least one valid Mermaid architecture/sequence diagram (```` ```mermaid ````).
+   - Node labels containing special characters (parentheses, brackets, `<br/>`) MUST be double-quoted (e.g. `A["Microservices<br/>(Bounded Context)"]`).
+   - `mermaid: true` must be enabled (in frontmatter and globally in `_config.yml` defaults) so `npm/mermaid@11/dist/mermaid.min.js` loads and the diagram renders as an interactive SVG diagram rather than raw code.
+
 ---
 
 ## 4. Automated Image Generation Pipeline

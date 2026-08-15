@@ -33,5 +33,27 @@ This workspace uses `llm-wiki.md` as its primary Karpathy-style knowledge base a
    - `get_code_snippet`: Retrieve target code snippets directly from graph nodes.
    - `index_repository`: Re-index modified files into the graph after changes.
 
+## 3. MANDATORY CONTENT VALIDATION TRINITY (ALL SESSIONS & WORKFLOWS)
+
+Whenever new content (posts, pages, tabs) is generated—whether in **Antigravity IDE pair-programming sessions** or via the **autonomous GitHub Actions workflow (`daily-blog-post.yml`)**—ALL AGENTS and AUTOMATIONS MUST ALWAYS perform and verify the **Three Pillar Content Validations**:
+
+1. **Content Depth & E-E-A-T Quality Gate**:
+   - Article word count must exceed **>950–1,500 words** of actionable, senior-level architectural analysis.
+   - Front matter must have valid taxonomy (`layout: post`, `title`, `date`, `lang: es` or `lang: en`, approved `categories`, structured `tags`, `image`, `mermaid: true`).
+   - Must pass deduplication (`scripts/check-duplicates.py`) with 0 duplicate titles/bodies.
+   - Must achieve **100% PASS** on `scripts/test-adsense-compliance.py`.
+
+2. **Cover Image Asset Verification**:
+   - Every post must resolve an explicit cover image in `image.path` pointing to `/assets/img/posts/<date-slug>.png`.
+   - The image file must physically exist on disk, match IT/cloud architectural themes, and load without 404s.
+
+3. **Mermaid Architecture Diagram Rendering**:
+   - Every post must include at least one valid Mermaid architecture/flow/sequence diagram (```` ```mermaid ````).
+   - Ensure `mermaid: true` is active (configured globally in `_config.yml` defaults and frontmatter) so `npm/mermaid@11/dist/mermaid.min.js` loads properly.
+   - Node labels containing special characters (parentheses, brackets, `<br/>`) MUST be double-quoted (e.g. `A["Microservices<br/>(Bounded Context)"]`) to prevent client-side parsing failures and ensure the diagram renders as a clean interactive SVG rather than raw code.
+
+---
+
 ## Fallback Rules
 - Only fall back to ripgrep (`grep_search`) or file list tools when searching for literal raw strings, config values, or non-code asset files where graph resolution is insufficient.
+

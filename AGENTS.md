@@ -132,3 +132,12 @@
 - Created `_tabs/resources.md` and `_tabs/glossary.md` with structured links to MACH Alliance (machalliance.org), CNCF, OpenAPI Initiative, AsyncAPI, and canonical literature.
 - Re-sequenced tab orders (1-9) for sidebar navigation.
 - Validated with Docker HTML-Proofer (615 links, 142 files, 0 errors) and 100% Google AdSense compliance.
+
+2026-08-15 15:18: Mermaid Diagram Rendering Fix & Mandatory Triple Content Validation Protocol
+- Diagnosed unrendered Mermaid code blocks: in Chirpy, `mermaid.min.js` only loads when `page.mermaid` evaluates to `true`.
+- Added `mermaid: true` globally to `_config.yml` defaults for both `posts` and `tabs`, ensuring SVG diagram rendering across all articles and resource pages.
+- Established the **Mandatory Content Validation Trinity** for all content generated via Antigravity IDE or GitHub Actions:
+  1. Content depth (>950–1,500 words, Senior Architect tone, 100% AdSense compliance, zero duplicates).
+  2. Matching cover image asset physically present at `/assets/img/posts/<date-slug>.png`.
+  3. Mermaid architecture diagram syntax and client-side vector SVG rendering.
+
