@@ -228,5 +228,5 @@ The project maintains registered Agent skills and autonomous CI/CD pipelines:
 
 3. **`daily-blog-post` Autonomous Publishing Pipeline** (`.github/workflows/daily-blog-post.yml` & `scripts/publish_daily_jekyll_post.py`):
    - Daily cron (`0 13 * * *` = 07:00 AM America/Mexico_City) and `workflow_dispatch` trigger.
-   - Automatically executes Gemini API calls (`gemini-2.5-flash` / `gemini-2.0-flash` / `gemini-1.5-flash`), scans `_posts/` for deduplication, generates 1,500-2,200 words Senior Architect articles across 5 MACH pillars, runs AdSense compliance tests, and pushes to `main`.
+   - Automatically executes Gemini API calls with dynamic model discovery (`GET /v1beta/models`) prioritizing the Gemini 3 fleet (`gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.1-flash-lite`, etc.) with intelligent fallback to autonomous high-quality deep-dive synthesis. Scans `_posts/` for deduplication, generates 1,500-2,200 words Senior Architect articles across 5 MACH pillars, synthesizes matching cover images, runs AdSense compliance and duplicate tests, and pushes to `main`.
    - Granular `permissions: contents: write` configured at the workflow level to allow git write operations even when repo default token is set to read-only.

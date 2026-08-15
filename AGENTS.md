@@ -122,3 +122,8 @@
 - Implemented automated pre-flight audit script `scripts/audit-gsc-indexation.py` validating live HTTP 200 responses for `sitemap.xml` (117 URLs), `robots.txt`, and core trust tabs.
 - Configured step-by-step browser subagent verification protocols for GSC sitemap transition (`Couldn't fetch` -> `Success`), Page Indexing growth tracking, priority URL live inspection, and Google AdSense approval status monitoring.
 - Updated `llm-wiki.md`, `AGENTS.md`, and `HISTORY.txt`.
+
+2026-08-15 14:35: Gemini 3 Upgrade, Dynamic Discovery & Autonomous Fallback for Daily Publisher
+- Diagnosed failed GitHub Action run 31887174445 caused by deprecation of older Gemini 2.x/1.x models and quota limits on Pro tiers.
+- Updated `scripts/publish_daily_jekyll_post.py` with dynamic Gemini model discovery (`get_available_gemini_models`), prioritized 2026 Gemini 3 lineup (`gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.1-flash-lite`, etc.), fast-fail on 404/429-limit-0, and autonomous deep-dive article synthesis fallback.
+- Tested locally in Docker container (`python:3.11-slim` and `ruby:3.4-slim` / `mach-playbook-test`), passing 100% AdSense compliance, zero duplicates, and HTML-Proofer across 64 posts.

@@ -27,3 +27,5 @@ _sass/vendors
 assets/js/dist
 .env
 urls_list.txt
+__pycache__/
+*.pyc
