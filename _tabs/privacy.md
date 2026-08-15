@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 icon: fas fa-shield-alt
-order: 5
+order: 8
 ---
 
 ## Privacy Policy

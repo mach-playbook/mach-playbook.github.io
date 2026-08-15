@@ -1,7 +1,7 @@
 ---
 title: Contact
 icon: fas fa-envelope
-order: 6
+order: 7
 ---
 
 Have an architectural question, technical feedback, or an inquiry regarding enterprise consulting? We welcome discussions with fellow solutions architects, software engineers, and technology leaders.

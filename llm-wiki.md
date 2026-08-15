@@ -230,3 +230,7 @@ The project maintains registered Agent skills and autonomous CI/CD pipelines:
    - Daily cron (`0 13 * * *` = 07:00 AM America/Mexico_City) and `workflow_dispatch` trigger.
    - Automatically executes Gemini API calls with dynamic model discovery (`GET /v1beta/models`) prioritizing the Gemini 3 fleet (`gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.1-flash-lite`, etc.) with intelligent fallback to autonomous high-quality deep-dive synthesis. Scans `_posts/` for deduplication, generates 1,500-2,200 words Senior Architect articles across 5 MACH pillars, synthesizes matching cover images, runs AdSense compliance and duplicate tests, and pushes to `main`.
    - Granular `permissions: contents: write` configured at the workflow level to allow git write operations even when repo default token is set to read-only.
+
+4. **Resources & Ecosystem Hub (`_tabs/resources.md`) & MACH Glossary (`_tabs/glossary.md`)**:
+   - Authoritative directory connecting MACH Playbook directly to the MACH Alliance (`machalliance.org`), CNCF landscape, OpenAPI 3.1, AsyncAPI 3.0, and Martin Fowler / Sam Newman canonical literature.
+   - Categorized A-Z technical glossary of 30+ terms cross-linked with corresponding published articles for maximum internal linking, SEO authority, and user engagement.

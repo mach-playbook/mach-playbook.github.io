@@ -1,7 +1,7 @@
 ---
 title: Terms
 icon: fas fa-file-contract
-order: 7
+order: 9
 ---
 
 ## Terms of Service & Editorial Disclaimer

@@ -127,3 +127,8 @@
 - Diagnosed failed GitHub Action run 31887174445 caused by deprecation of older Gemini 2.x/1.x models and quota limits on Pro tiers.
 - Updated `scripts/publish_daily_jekyll_post.py` with dynamic Gemini model discovery (`get_available_gemini_models`), prioritized 2026 Gemini 3 lineup (`gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.1-flash-lite`, etc.), fast-fail on 404/429-limit-0, and autonomous deep-dive article synthesis fallback.
 - Tested locally in Docker container (`python:3.11-slim` and `ruby:3.4-slim` / `mach-playbook-test`), passing 100% AdSense compliance, zero duplicates, and HTML-Proofer across 64 posts.
+
+2026-08-15 15:05: Phase 1 Quick Wins - Resources Hub & MACH Glossary Tabs Launched
+- Created `_tabs/resources.md` and `_tabs/glossary.md` with structured links to MACH Alliance (machalliance.org), CNCF, OpenAPI Initiative, AsyncAPI, and canonical literature.
+- Re-sequenced tab orders (1-9) for sidebar navigation.
+- Validated with Docker HTML-Proofer (615 links, 142 files, 0 errors) and 100% Google AdSense compliance.

@@ -201,3 +201,9 @@
     3. Added intelligent fast-fail on HTTP 404 (deprecated) and HTTP 429 (`limit: 0` / daily quota exhausted) to advance immediately to next model without wasting retries.
     4. Added autonomous deep-dive article synthesis engine (`generate_fallback_article`) ensuring 100% resilient non-blocking publishing even during external API downtime.
   * Built and validated via Docker container matching GitHub Actions CI/CD (`python:3.11-slim` and `mach-playbook-test`), passing 100% AdSense Policy Compliance and HTML-Proofer across 64 posts.
+
+2026-08-15 15:05: Phase 1 Quick Wins - Launched Resources & Ecosystem Hub + MACH Technical Glossary
+  * Created `_tabs/resources.md` (order: 4, icon: `fas fa-compass`) establishing authoritative external ecosystem links to MACH Alliance (machalliance.org), CNCF Landscape (cncf.io), OpenAPI Initiative, AsyncAPI, and canonical literature (Martin Fowler, Sam Newman, Gregor Hohpe, DORA).
+  * Created `_tabs/glossary.md` (order: 5, icon: `fas fa-book`) defining 30+ canonical industry terms with direct cross-links to deep-dive articles across all 5 MACH pillars.
+  * Reordered sidebar navigation tabs (Categories -> Tags -> Archives -> Resources -> Glossary -> About -> Contact -> Privacy -> Terms).
+  * Validated 100% AdSense Policy Compliance and 0 broken links across 615 internal links and 142 files in Docker test container (`mach-playbook-test`).
