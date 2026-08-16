@@ -226,4 +226,12 @@
   * Created automated validator `scripts/test-site-integrity.py` checking 19 integrity points across rendered HTML files (markdown parse check, script inclusion, bilingual classes, mermaid CSS).
   * Integrated site integrity test into `Dockerfile` Stage 2 test runner, verifying 19/19 checks and HTML-Proofer across 629 internal links and 142 files with 0 errors.
 
+2026-08-15 18:00: Enhanced Mermaid Diagram Card Container, Fixed Tables, and Enabled Bilingual Support for Resources & Glossary
+  * Added dedicated `.mermaid` container card styling with distinct background (`#1e242c` in dark mode, `#f6f8fa` in light mode), subtle borders (`#30363d`), border-radius (`12px`), and depth shadow (`box-shadow`), solving low-contrast readability for flowcharts, subgraphs, and sequence diagrams.
+  * Fixed Markdown table parsing in `_tabs/resources.md` by inserting blank lines before table declarations, ensuring Kramdown properly renders HTML `<table>` elements.
+  * Converted `_tabs/resources.md` and `_tabs/glossary.md` into full bilingual structures with `.lang-block.lang-es` and `.lang-block.lang-en`, enabling instant language switching when selecting Español or English.
+  * Extended `scripts/test-site-integrity.py` to 22 automated checks (validating bilingual blocks and table renders across all 6 tabs).
+  * Validated 22/22 integrity checks and 641 internal links in Docker container with 0 errors.
+
+
 

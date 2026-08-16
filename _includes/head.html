@@ -105,12 +105,96 @@
        ========================================================= */
     .mermaid {
       text-align: center;
-      margin: 1.75rem 0;
+      margin: 2rem 0;
+      padding: 1.75rem 1.25rem;
+      border-radius: 12px;
       overflow-x: auto;
+      transition: all 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .mermaid {
+      background: #1e242c !important;
+      border: 1px solid #30363d !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    [data-bs-theme="light"] .mermaid {
+      background: #f6f8fa !important;
+      border: 1px solid #d0d7de !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
     }
 
     [data-bs-theme="dark"] .mermaid svg {
       background-color: transparent !important;
+    }
+
+    /* Flowcharts & Graphs: Nodes & Shapes */
+    [data-bs-theme="dark"] .mermaid .node rect,
+    [data-bs-theme="dark"] .mermaid .node circle,
+    [data-bs-theme="dark"] .mermaid .node ellipse,
+    [data-bs-theme="dark"] .mermaid .node polygon,
+    [data-bs-theme="dark"] .mermaid .node path {
+      fill: #262c36 !important;
+      stroke: #58a6ff !important;
+      stroke-width: 1.5px !important;
+    }
+
+    /* Node Text, Labels & ForeignObjects */
+    [data-bs-theme="dark"] .mermaid .node .label,
+    [data-bs-theme="dark"] .mermaid .nodeLabel,
+    [data-bs-theme="dark"] .mermaid .nodeLabel p,
+    [data-bs-theme="dark"] .mermaid .nodeLabel span,
+    [data-bs-theme="dark"] .mermaid .node text,
+    [data-bs-theme="dark"] .mermaid .node text tspan,
+    [data-bs-theme="dark"] .mermaid text {
+      fill: #ffffff !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+
+    /* Subgraph Clusters */
+    [data-bs-theme="dark"] .mermaid .cluster rect {
+      fill: #161b22 !important;
+      stroke: #388bfd !important;
+      stroke-width: 1.5px !important;
+      stroke-dasharray: 4, 4 !important;
+    }
+
+    [data-bs-theme="dark"] .mermaid .cluster text,
+    [data-bs-theme="dark"] .mermaid .cluster .nodeLabel,
+    [data-bs-theme="dark"] .mermaid .cluster span,
+    [data-bs-theme="dark"] .mermaid .cluster .label {
+      fill: #79c0ff !important;
+      color: #79c0ff !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    /* Flowchart Edges & Labels */
+    [data-bs-theme="dark"] .mermaid .edgePath .path,
+    [data-bs-theme="dark"] .mermaid .flowchart-link {
+      stroke: #8b949e !important;
+      stroke-width: 1.75px !important;
+    }
+
+    [data-bs-theme="dark"] .mermaid .edgeLabel,
+    [data-bs-theme="dark"] .mermaid .edgeLabel span,
+    [data-bs-theme="dark"] .mermaid .edgeLabel p {
+      background-color: #21262d !important;
+      color: #c9d1d9 !important;
+      fill: #c9d1d9 !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      border-radius: 4px !important;
+      padding: 2px 6px !important;
+    }
+
+    [data-bs-theme="dark"] .mermaid marker path,
+    [data-bs-theme="dark"] .mermaid .arrowheadPath {
+      fill: #8b949e !important;
+      stroke: #8b949e !important;
     }
 
     /* Sequence Diagram: Actors */
@@ -123,7 +207,7 @@
     [data-bs-theme="dark"] .mermaid text.actor,
     [data-bs-theme="dark"] .mermaid text.actor > tspan,
     [data-bs-theme="dark"] .mermaid .actor > text {
-      fill: #f0f6fc !important;
+      fill: #ffffff !important;
       font-weight: 600 !important;
       font-size: 13px !important;
     }
@@ -159,8 +243,7 @@
     }
     [data-bs-theme="dark"] .mermaid #arrowhead path,
     [data-bs-theme="dark"] .mermaid #crosshead path,
-    [data-bs-theme="dark"] .mermaid #filled-head path,
-    [data-bs-theme="dark"] .mermaid marker path {
+    [data-bs-theme="dark"] .mermaid #filled-head path {
       fill: #58a6ff !important;
       stroke: #58a6ff !important;
     }
@@ -200,37 +283,6 @@
     [data-bs-theme="dark"] .mermaid .labelText,
     [data-bs-theme="dark"] .mermaid .loopText {
       fill: #f0f6fc !important;
-      font-weight: 600 !important;
-    }
-
-    /* Flowcharts & Graph Styling */
-    [data-bs-theme="dark"] .mermaid .node rect,
-    [data-bs-theme="dark"] .mermaid .node circle,
-    [data-bs-theme="dark"] .mermaid .node ellipse,
-    [data-bs-theme="dark"] .mermaid .node polygon,
-    [data-bs-theme="dark"] .mermaid .node path {
-      stroke: #58a6ff !important;
-      fill: #161b22 !important;
-    }
-    [data-bs-theme="dark"] .mermaid .node .label {
-      color: #f0f6fc !important;
-      fill: #f0f6fc !important;
-    }
-    [data-bs-theme="dark"] .mermaid .edgePath .path {
-      stroke: #8b949e !important;
-      stroke-width: 1.5px !important;
-    }
-    [data-bs-theme="dark"] .mermaid .edgeLabel {
-      background-color: #161b22 !important;
-      color: #79c0ff !important;
-      fill: #79c0ff !important;
-    }
-    [data-bs-theme="dark"] .mermaid .cluster rect {
-      fill: rgba(33, 38, 45, 0.6) !important;
-      stroke: #30363d !important;
-    }
-    [data-bs-theme="dark"] .mermaid .cluster text {
-      fill: #58a6ff !important;
       font-weight: 600 !important;
     }
   </style>

@@ -66,15 +66,23 @@ def main():
             print(f"[PASS] Tab '{tab}': Markdown rendered properly into HTML (no raw syntax)")
             passes += 1
 
-        # Check bilingual blocks on about, contact, terms, privacy
-        if tab in ["about", "contact", "terms", "privacy"]:
-            es_block = soup.find(class_="lang-es")
-            en_block = soup.find(class_="lang-en")
-            if es_block and en_block:
-                print(f"[PASS] Tab '{tab}': Contains bilingual blocks (.lang-es and .lang-en)")
+        # Check bilingual blocks on all tabs
+        es_block = soup.find(class_="lang-es")
+        en_block = soup.find(class_="lang-en")
+        if es_block and en_block:
+            print(f"[PASS] Tab '{tab}': Contains bilingual blocks (.lang-es and .lang-en)")
+            passes += 1
+        else:
+            failures.append(f"FAIL: Tab '{tab}' missing bilingual blocks (.lang-es or .lang-en)!")
+
+        # Check table rendering on resources tab
+        if tab == "resources":
+            tables = soup.find_all("table")
+            if len(tables) >= 2:
+                print("[PASS] Tab 'resources': Tables properly rendered into <table> elements")
                 passes += 1
             else:
-                failures.append(f"FAIL: Tab '{tab}' missing bilingual blocks (.lang-es or .lang-en)!")
+                failures.append(f"FAIL: Tab 'resources' expected at least 2 <table> elements but found {len(tables)}!")
 
         # Check lang-filter.js inclusion
         scripts = [s.get("src", "") for s in soup.find_all("script")]
