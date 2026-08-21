@@ -90,6 +90,11 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 
+  <!-- Critical Font Preloads -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+
   <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP & Zero CLS) -->
   <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
@@ -154,6 +159,16 @@
     @media (max-width: 849px) {
       #sidebar { display: none !important; }
       #main-wrapper { margin-left: 0 !important; padding: 0 1rem !important; }
+    }
+
+    /* Critical Grid & Columns for Zero CLS */
+    .row { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
+    .col-12 { flex: 0 0 100%; width: 100%; }
+    .col-md-5 { width: 100%; }
+    .col-md-7 { width: 100%; }
+    @media (min-width: 768px) {
+      .col-md-5 { width: 41.66666667% !important; flex: 0 0 41.66666667% !important; max-width: 41.66666667% !important; }
+      .col-md-7 { width: 58.33333333% !important; flex: 0 0 58.33333333% !important; max-width: 58.33333333% !important; }
     }
 
     /* Critical Post Cards Layout for Zero CLS */
