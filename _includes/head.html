@@ -90,11 +90,13 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP & Zero CLS) -->
-  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
-  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
+  <!-- Critical Font Preloads -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
 
   <!-- Hero Image Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -295,8 +297,14 @@
     [data-bs-theme="dark"] .text-muted,
     [data-mode="dark"] .post-meta,
     [data-mode="dark"] .post-meta * {
-      color: #cbd5e1 !important;
+      color: #f1f5f9 !important;
       border-color: #475569 !important;
+    }
+
+    .post-meta a,
+    .post-preview .post-meta a,
+    .categories a {
+      color: #60a5fa !important;
     }
 
     html[data-mode="dark"] .text-muted,
