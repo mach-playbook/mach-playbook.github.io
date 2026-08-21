@@ -90,13 +90,11 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 
-  <!-- Critical Font Preloads -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP & Zero CLS) -->
+  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
+  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
 
   <!-- Hero Image Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -113,7 +111,7 @@
   {% endif %}
 
   <style>
-    /* Critical Base Layout & Zero FOUC / Zero CLS Styles */
+    /* Complete Critical CSS matching Chirpy + Bootstrap exactly for Zero FOUC & Zero CLS */
     :root {
       --main-bg: #1b1b1e;
       --text-color: #cbd5e1;
@@ -123,11 +121,12 @@
     }
     *, ::after, ::before { box-sizing: border-box; }
     html, body {
-      background-color: #1b1b1e !important;
-      color: #cbd5e1 !important;
       margin: 0;
       padding: 0;
+      background-color: #1b1b1e !important;
+      color: #cbd5e1 !important;
       font-family: var(--font-family-base);
+      -webkit-text-size-adjust: 100%;
     }
     #sidebar {
       width: 260px;
@@ -137,37 +136,27 @@
       bottom: 0;
       z-index: 99;
       background: #1b1b1e;
+      border-right: 1px solid #2d2d34;
     }
     #main-wrapper {
       margin-left: 260px;
       padding: 0 1.5rem;
+      min-height: 100vh;
+      background-color: #1b1b1e;
+    }
+    #topbar-wrapper {
+      height: 3rem;
+      background-color: #1b1b1e;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     @media (max-width: 849px) {
-      #sidebar { display: none; }
-      #main-wrapper { margin-left: 0; padding: 0 1rem; }
+      #sidebar { display: none !important; }
+      #main-wrapper { margin-left: 0 !important; padding: 0 1rem !important; }
     }
 
-    /* Critical Flexbox & Grid Skeleton for Zero CLS */
-    .row { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
-    .g-0, .gx-0, .gy-0 { margin-right: 0; margin-left: 0; }
-    .flex-column { flex-direction: column !important; }
-    .d-flex { display: flex !important; }
-    .flex-grow-1 { flex-grow: 1 !important; }
-    .align-items-end { align-items: flex-end !important; }
-    .justify-content-between { justify-content: space-between !important; }
-    .me-auto { margin-right: auto !important; }
-    .w-100 { width: 100% !important; }
-    .h-100 { height: 100% !important; }
-    .col-12 { flex: 0 0 auto; width: 100%; }
-    .col-md-5 { flex: 0 0 auto; width: 100%; }
-    .col-md-7 { flex: 0 0 auto; width: 100%; }
-
-    @media (min-width: 768px) {
-      .col-md-5 { width: 41.66666667%; }
-      .col-md-7 { width: 58.33333333%; }
-      .flex-md-row-reverse { flex-direction: row-reverse !important; }
-    }
-
+    /* Critical Post Cards Layout for Zero CLS */
     .card-wrapper {
       background: #1e1e22;
       border: 1px solid #2d2d34;
@@ -186,12 +175,52 @@
       border: 1px solid #2d2d34;
       border-radius: 10px;
     }
+    .post-preview {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none !important;
+      color: inherit !important;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .post-preview {
+        flex-direction: row-reverse !important;
+      }
+    }
+    .preview-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      min-height: 180px;
+      overflow: hidden;
+      background: #232328;
+      position: relative;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) {
+      .preview-img {
+        width: 41.66666667% !important;
+      }
+    }
+    .preview-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 16/9;
+    }
     .card-body {
       flex: 1 1 auto;
       padding: 1.15rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .col-md-7 {
+        width: 58.33333333% !important;
+      }
     }
     .card-title {
-      margin-top: 0.5rem;
+      margin-top: 0.25rem;
       margin-bottom: 0.5rem;
       font-size: 1.2rem;
       font-weight: 600;
@@ -204,26 +233,6 @@
       font-size: 0.92rem;
       line-height: 1.55;
       color: #94a3b8;
-    }
-    .preview-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      min-height: 180px;
-      overflow: hidden;
-      background: #232328;
-      position: relative;
-    }
-    .preview-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      aspect-ratio: 16/9;
-    }
-    .post-preview {
-      text-decoration: none !important;
-      color: inherit !important;
-      display: flex;
     }
 
     /* Critical Pagination Skeleton for Zero CLS */
@@ -263,6 +272,60 @@
     }
 
     /* High contrast WCAG AAA accessibility rules (100/100) */
+    .lang-pill {
+      color: #cbd5e1 !important;
+      border-color: #475569 !important;
+    }
+    .lang-pill.active {
+      color: #ffffff !important;
+      background-color: #0d6efd !important;
+      border-color: #0d6efd !important;
+    }
+
+    .badge.border-primary,
+    .badge.text-primary {
+      color: #60a5fa !important;
+      border-color: #3b82f6 !important;
+    }
+
+    .text-muted,
+    .badge.border-secondary,
+    .badge.text-muted,
+    .post-meta,
+    .post-meta *,
+    .post-preview .post-meta,
+    .post-preview .post-meta *,
+    .post-meta span,
+    .post-meta time,
+    .post-meta em,
+    .post-meta i,
+    .categories,
+    .categories span,
+    [data-bs-theme="dark"] .post-meta,
+    [data-bs-theme="dark"] .post-meta *,
+    [data-bs-theme="dark"] .text-muted,
+    [data-mode="dark"] .post-meta,
+    [data-mode="dark"] .post-meta * {
+      color: #f1f5f9 !important;
+      border-color: #475569 !important;
+    }
+
+    .post-meta a,
+    .post-preview .post-meta a,
+    .categories a {
+      color: #60a5fa !important;
+    }
+
+    html[data-mode="dark"] .text-muted,
+    html:not([data-mode="light"]) .text-muted {
+      color: #cbd5e1 !important;
+    }
+
+    html[data-mode="dark"] .badge.border-secondary,
+    html:not([data-mode="light"]) .badge.border-secondary {
+      color: #cbd5e1 !important;
+      border-color: #475569 !important;
+    }
     .lang-pill {
       color: #cbd5e1 !important;
       border-color: #475569 !important;
