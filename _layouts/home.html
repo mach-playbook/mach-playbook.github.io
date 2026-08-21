@@ -71,7 +71,7 @@ layout: default
           {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
 
           <div class="col-md-5">
-            <div class="preview-img shimmer">
+            <div class="preview-img{% unless forloop.first %} shimmer{% endunless %}">
               {% assign webp_src = src | replace: '.png', '.webp' %}
               <picture>
                 <source srcset="{{ webp_src }}" type="image/webp">
@@ -80,7 +80,11 @@ layout: default
                   alt="{{ alt }}"
                   width="400"
                   height="225"
-                  {% if forloop.index <= 2 %}
+                  {% if forloop.first %}
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="sync"
+                  {% elsif forloop.index == 2 %}
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"
