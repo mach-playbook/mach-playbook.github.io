@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, distributed-systems, event-driven, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-the-saga-pattern-managing-distributed-transactions-without-two-phase-commit.png
+  path: /assets/img/posts/2026-04-04-the-saga-pattern-managing-distributed-transactions-without-two-phase-commit.webp
 ---
 
 In a monolithic application, maintaining data consistency is straightforward: a single ACID database transaction wraps multiple updates, committing or rolling back atomically. In a microservices architecture with a **Database-per-Service** pattern, executing a business transaction that spans multiple services (e.g., placing an order, charging a credit card, reserving inventory) cannot rely on traditional database transactions.

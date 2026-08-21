@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Enterprise Architecture, FinOps]
 tags: [architecture, cloud-native, devops, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-microservices-at-scale-engineering-debt-and-system-complexity.png
+  path: /assets/img/posts/2026-04-04-microservices-at-scale-engineering-debt-and-system-complexity.webp
 ---
 
 While microservices promise independent deployments and developer agility, scaling a microservice architecture to dozens or hundreds of services introduces subtle, compound technical debt. What began as a clean decoupling effort can quickly degrade into distributed complexity, where debugging a single user request requires tracing logs across 50 microservices and managing hundreds of internal repos.

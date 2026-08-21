@@ -7,7 +7,7 @@ date: 2026-07-24 00:00:00 -0600
 categories: [Bases de Datos, Sistemas Distribuidos]
 tags: [api-first, cloud-native, data-engineering, headless]
 image:
-  path: /assets/img/posts/2026-07-24-integracion-salesforce-data-cloud-headless.png
+  path: /assets/img/posts/2026-07-24-integracion-salesforce-data-cloud-headless.webp
 ---
 
 El componente "Headless" de la arquitectura MACH permite a las empresas ofrecer experiencias de usuario altamente optimizadas al desacoplar completamente la capa de presentación (frontend) de la lógica de negocio (backend). Sin embargo, el desafío crítico en estos ecosistemas es cómo alimentar el frontend con perfiles de clientes unificados y en tiempo real sin introducir cuellos de botella de latencia.

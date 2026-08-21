@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, headless, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services.png
+  path: /assets/img/posts/2026-04-04-case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services.webp
 ---
 
 Managing high-demand global e-commerce presents unique engineering challenges. During limited-edition sneaker releases (SNKRS flash sales), traffic spikes by orders of magnitude within seconds. Legacy monolithic commerce platforms often crash under such extreme load spikes, resulting in lost revenue and customer frustration.

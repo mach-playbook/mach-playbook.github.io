@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Enterprise Architecture, FinOps]
 tags: [architecture, cloud-native, finops, headless]
 image:
-  path: /assets/img/posts/2026-04-04-composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites.png
+  path: /assets/img/posts/2026-04-04-composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites.webp
 ---
 
 For decades, enterprise IT strategy was dominated by single-vendor monolithic software suites (e.g., legacy all-in-one ERPs and CMS suites). The pitch was enticing: buy your entire software stack from one vendor, and everything will work together out of the box.

@@ -6,7 +6,7 @@ categories: [Arquitectura Cloud, Microservicios]
 tags: [cloud-native, distributed-systems, gcp, headless, nextjs, observability]
 lang: es
 image:
-  path: /assets/img/posts/2026-07-30-estrategias-cache-distribuida-edge-headless.png
+  path: /assets/img/posts/2026-07-30-estrategias-cache-distribuida-edge-headless.webp
 ---
 
 

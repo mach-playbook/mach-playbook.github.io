@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices.png
+  path: /assets/img/posts/2026-04-04-service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices.webp
 ---
 
 One of the most critical challenges in microservices architecture is establishing clear service boundaries. Splitting a monolithic system by arbitrary criteria—such as database tables or UI screens—frequently results in a "distributed monolith," where services are tightly coupled, require synchronized deployments, and suffer from high network latency.

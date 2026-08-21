@@ -6,7 +6,7 @@ lang: es
 categories: [Headless & Frontend, Arquitectura Cloud]
 tags: [cloud-native, headless, nextjs, postgresql]
 image:
-  path: /assets/img/posts/2026-08-01-desarrollo-headless-nextjs-supabase.png
+  path: /assets/img/posts/2026-08-01-desarrollo-headless-nextjs-supabase.webp
 ---
 
 La transición de gestores de contenido monolíticos (como instalaciones tradicionales de WordPress) hacia arquitecturas MACH (Microservices, API-first, Cloud-native, Headless) ha redefinido el estándar de rendimiento en la web. Al desacoplar el frontend del backend, los equipos de ingeniería pueden escalar cada capa de forma independiente.

@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Enterprise Architecture, FinOps]
 tags: [devops, finops, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about.png
+  path: /assets/img/posts/2026-04-04-the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about.webp
 ---
 
 Microservices are frequently praised for their technical elegance, team autonomy, and theoretical scalability. However, many technology organizations adopt microservices without calculating the **Total Cost of Ownership (TCO)**. Moving from a monolithic application to 30 microservices increases operational overhead across infrastructure, observability, security, and developer productivity.

@@ -6,7 +6,7 @@ categories: [Telecomunicaciones, Infraestructura Cloud]
 tags: [architecture, cloud-native, observability, telecom]
 lang: es
 image:
-  path: /assets/img/posts/2026-07-27-trazabilidad-avanzada-traduccion-gateways-voip.png
+  path: /assets/img/posts/2026-07-27-trazabilidad-avanzada-traduccion-gateways-voip.webp
 ---
 
 En infraestructuras de telecomunicaciones empresariales y entornos de operadores mayoristas, la latencia en la resolución de problemas (troubleshooting) impacta directamente en los ingresos y en los Acuerdos de Nivel de Servicio (SLA). Administrar redes VoIP que procesan miles de llamadas requiere no solo enrutadores eficientes, sino una visibilidad absoluta de la señalización SIP a través de los diversos saltos de la red.

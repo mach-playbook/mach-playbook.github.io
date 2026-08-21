@@ -7,7 +7,7 @@ date: 2026-07-22 10:00:00 -0600
 categories: [Diseño de APIs, Microservicios]
 tags: [api-first, aws, cloud-native, gcp, microservices]
 image:
-  path: /assets/img/posts/2026-07-22-orquestacion-mach-multi-nube.png
+  path: /assets/img/posts/2026-07-22-orquestacion-mach-multi-nube.webp
 ---
 
 La adopción de arquitecturas MACH (Microservices, API-first, Cloud-native, Headless) ha transformado la manera en que las empresas diseñan sistemas escalables. Sin embargo, cuando estas arquitecturas se despliegan en infraestructuras multi-nube combinando Google Cloud Platform (GCP) y Amazon Web Services (AWS), la orquestación de servicios se convierte en un desafío crítico de ingeniería.

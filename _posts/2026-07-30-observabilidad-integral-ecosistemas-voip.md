@@ -6,7 +6,7 @@ categories: [Telecomunicaciones, Infraestructura Cloud]
 tags: [devops, observability, telecom]
 lang: es
 image:
-  path: /assets/img/posts/2026-07-30-observabilidad-integral-ecosistemas-voip.png
+  path: /assets/img/posts/2026-07-30-observabilidad-integral-ecosistemas-voip.webp
 ---
 
 

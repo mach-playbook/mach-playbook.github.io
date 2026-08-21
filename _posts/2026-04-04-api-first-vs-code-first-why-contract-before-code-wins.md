@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [API Design, Microservices]
 tags: [api-first, architecture, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-api-first-vs-code-first-why-contract-before-code-wins.png
+  path: /assets/img/posts/2026-04-04-api-first-vs-code-first-why-contract-before-code-wins.webp
 ---
 
 When building HTTP APIs, engineering teams generally follow one of two paradigms: **Code-First** or **API-First (Contract-First)**. While Code-First development appears faster for small prototypes, API-First is the gold standard for enterprise microservice architectures and MACH ecosystems.

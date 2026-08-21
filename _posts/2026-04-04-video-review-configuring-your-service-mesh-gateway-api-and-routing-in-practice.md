@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, kubernetes]
 image:
-  path: /assets/img/posts/2026-04-04-video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice.png
+  path: /assets/img/posts/2026-04-04-video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice.webp
 ---
 
 In this technical video review, we break down key concepts from leading cloud-native architecture presentations covering the evolution of Kubernetes ingress routing into the modern **Kubernetes Gateway API** and service mesh implementations (Istio, Linkerd, and Cilium).

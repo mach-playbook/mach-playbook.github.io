@@ -6,7 +6,7 @@ lang: es
 categories: [Frontend Moderno, Arquitectura MACH]
 tags: [pwa, offline-first, state-management, indexeddb, service-workers, headless-commerce]
 image:
-  path: /assets/img/posts/2026-08-15-state-management-y-offline-first-en-progressive-web-apps-pwa-de-alto-trafico.png
+  path: /assets/img/posts/2026-08-15-state-management-y-offline-first-en-progressive-web-apps-pwa-de-alto-trafico.webp
 ---
 
 En el ecosistema de **Composable Commerce** y arquitecturas **MACH**, la experiencia del usuario en el "edge" (el navegador) es tan crítica como la escalabilidad de los microservicios en el backend. Sin embargo, las empresas enterprise a menudo cometen el error de tratar a las Progressive Web Apps (PWA) simplemente como sitios web con un manifiesto y un Service Worker básico. 

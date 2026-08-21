@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [DevOps & CI/CD, Cloud-Native]
 tags: [architecture, cloud-native, devops]
 image:
-  path: /assets/img/posts/2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.png
+  path: /assets/img/posts/2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.webp
 ---
 
 In traditional software deployment models, code deployment and feature release occurred simultaneously. If a new feature contained a critical bug, rollback required a full application re-deployment, risking extended downtime and customer disruption.

@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [API Design, Microservices]
 tags: [api-first, architecture, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-api-contracts-first-designing-service-boundaries-before-writing-code.png
+  path: /assets/img/posts/2026-04-04-api-contracts-first-designing-service-boundaries-before-writing-code.webp
 ---
 
 In a distributed microservice architecture, API contracts serve as the explicit binding agreement between independent engineering teams and autonomous software services. Designing API contracts before writing code ensures that service boundaries are clean, domain models are decoupled, and integration friction is minimized.

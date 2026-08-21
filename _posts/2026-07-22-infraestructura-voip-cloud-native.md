@@ -7,7 +7,7 @@ date: 2026-07-22 14:00:00 -0600
 categories: [Telecomunicaciones, Infraestructura Cloud]
 tags: [architecture, cloud-native, devops, telecom]
 image:
-  path: /assets/img/posts/2026-07-22-infraestructura-voip-cloud-native.png
+  path: /assets/img/posts/2026-07-22-infraestructura-voip-cloud-native.webp
 ---
 
 La ingeniería de telecomunicaciones ha migrado de los conmutadores físicos monolíticos a infraestructuras de red nativas de la nube. Hoy en día, la gestión del enrutamiento core de Voz sobre IP (VoIP) requiere un dominio absoluto de la señalización SIP y de ecosistemas de software robustos capaces de procesar miles de llamadas por segundo (CPS) en servidores Linux.
