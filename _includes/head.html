@@ -90,11 +90,9 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP) -->
-  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
-  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
 
   <!-- Hero Image Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -176,9 +174,15 @@
     .post-preview .post-meta *,
     .post-meta span,
     .post-meta time,
+    .post-meta em,
     .post-meta i,
     .categories,
-    .categories span {
+    .categories span,
+    [data-bs-theme="dark"] .post-meta,
+    [data-bs-theme="dark"] .post-meta *,
+    [data-bs-theme="dark"] .text-muted,
+    [data-mode="dark"] .post-meta,
+    [data-mode="dark"] .post-meta * {
       color: #cbd5e1 !important;
       border-color: #475569 !important;
     }
