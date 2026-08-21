@@ -95,11 +95,9 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP & Zero CLS) -->
-  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
-  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
 
   <!-- Hero Images Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
