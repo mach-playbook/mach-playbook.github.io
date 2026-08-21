@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Security & Observability, Cloud-Native]
 tags: [api-first, headless, security]
 image:
-  path: /assets/img/posts/2026-04-04-api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends.png
+  path: /assets/img/posts/2026-04-04-api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends.webp
 ---
 
 Decoupling presentation layers from backend microservices in headless architectures exposes API endpoints directly to public internet traffic. Without a robust perimeter security architecture, headless backends are vulnerable to credential stuffing, token spoofing, DDoS attacks, and unauthorized data access.

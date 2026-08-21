@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Headless & Frontend, Architecture]
 tags: [api-first, architecture, cloud-native, headless]
 image:
-  path: /assets/img/posts/2026-04-04-understanding-headless-cms-decoupling-content-from-presentation.png
+  path: /assets/img/posts/2026-04-04-understanding-headless-cms-decoupling-content-from-presentation.webp
 ---
 
 In traditional web development, Content Management Systems (CMS) like WordPress, Drupal, or Adobe Experience Manager tightly coupled content storage with HTML page rendering. While this monolithic approach worked well when websites were the sole digital touchpoint, modern enterprises must deliver content across diverse digital surfaces—including single-page web applications (React, Next.js), native mobile apps (iOS/Android), IoT displays, and smart voice assistants.

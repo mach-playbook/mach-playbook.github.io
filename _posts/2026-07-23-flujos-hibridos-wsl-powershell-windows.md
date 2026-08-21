@@ -7,7 +7,7 @@ date: 2026-07-23 00:00:00 -0600
 categories: [DevOps & CI/CD, Automatización]
 tags: [architecture, cloud-native, devops]
 image:
-  path: /assets/img/posts/2026-07-23-flujos-hibridos-wsl-powershell-windows.png
+  path: /assets/img/posts/2026-07-23-flujos-hibridos-wsl-powershell-windows.webp
 ---
 
 Para los ingenieros de software y arquitectos de soluciones que diseñan infraestructuras multi-nube y plataformas de telecomunicaciones, la elección del sistema operativo es un debate constante. Mientras que el despliegue de microservicios y servidores (como bases de datos o nodos de señalización SIP) ocurre invariablemente en Linux, el entorno de escritorio corporativo suele estar dominado por Windows.

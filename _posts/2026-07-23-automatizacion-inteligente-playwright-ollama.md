@@ -7,7 +7,7 @@ date: 2026-07-23 00:00:00 -0600
 categories: [DevOps & CI/CD, Automatización]
 tags: [ai-engineering, ci-cd, qa-automation]
 image:
-  path: /assets/img/posts/2026-07-23-automatizacion-inteligente-playwright-ollama.png
+  path: /assets/img/posts/2026-07-23-automatizacion-inteligente-playwright-ollama.webp
 ---
 
 En el ecosistema de las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless), la velocidad de despliegue debe ir acompañada de una cobertura de pruebas impecable. Las herramientas tradicionales de pruebas de interfaz de usuario (UI) a menudo sufren de fragilidad: cambios menores en el DOM rompen los scripts de automatización. 

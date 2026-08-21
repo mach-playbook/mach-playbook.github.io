@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [ai-engineering, ci-cd, qa-automation]
 image:
-  path: /assets/img/posts/2026-08-05-automatizacion-e2e-playwright-ollama.png
+  path: /assets/img/posts/2026-08-05-automatizacion-e2e-playwright-ollama.webp
 ---
 
 Las pruebas End-to-End (E2E) tradicionales suelen ser frágiles. Pequeños cambios en el DOM o en los selectores CSS pueden romper cientos de *scripts* de prueba, generando falsos positivos y cuellos de botella en los flujos de Integración Continua (CI). 

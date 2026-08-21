@@ -7,7 +7,7 @@ date: 2026-07-24 00:00:00 -0600
 categories: [DevOps & CI/CD, Automatización]
 tags: [ai-engineering, devops, qa-automation]
 image:
-  path: /assets/img/posts/2026-07-24-habilidades-sistema-ia-ides-modernos.png
+  path: /assets/img/posts/2026-07-24-habilidades-sistema-ia-ides-modernos.webp
 ---
 
 La automatización del ciclo de vida del desarrollo de software (SDLC) ha trascendido los pipelines de integración continua (CI/CD) y se ha adentrado directamente en el entorno de desarrollo integrado (IDE). Con la llegada de asistentes de programación impulsados por inteligencia artificial, la verdadera ventaja competitiva radica en la capacidad de extender estos entornos.

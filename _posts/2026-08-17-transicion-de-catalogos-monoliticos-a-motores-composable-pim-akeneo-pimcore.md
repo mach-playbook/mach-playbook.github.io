@@ -6,7 +6,7 @@ lang: es
 categories: [Composable Commerce, Arquitectura de Datos]
 tags: [pim, mach, akeneo, pimcore, microservicios, ecommerce, headless]
 image:
-  path: /assets/img/posts/2026-08-17-transicion-de-catalogos-monoliticos-a-motores-composable-pim-akeneo-pimcore.png
+  path: /assets/img/posts/2026-08-17-transicion-de-catalogos-monoliticos-a-motores-composable-pim-akeneo-pimcore.webp
 ---
 
 En el ecosistema del comercio electrónico enterprise, el catálogo de productos es el sistema circulatorio de la operación. Sin embargo, para muchas organizaciones que aún operan bajo arquitecturas heredadas (Legacy Monoliths), este catálogo se ha convertido en un cuello de botella crítico. La dependencia de módulos de inventario rígidos dentro de un ERP o de suites de e-commerce "todo en uno" (como SAP Commerce Cloud o Adobe Commerce en sus versiones tradicionales) impide la agilidad necesaria para competir en un mercado omnicanal.

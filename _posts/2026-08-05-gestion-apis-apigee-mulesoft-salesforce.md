@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [api-first, cloud-native, data-engineering, gcp, headless]
 image:
-  path: /assets/img/posts/2026-08-05-gestion-apis-apigee-mulesoft-salesforce.png
+  path: /assets/img/posts/2026-08-05-gestion-apis-apigee-mulesoft-salesforce.webp
 ---
 
 En arquitecturas empresariales modernas (MACH), la proliferación de microservicios exige una estrategia de integración y exposición de datos altamente disciplinada. A menudo, los equipos confunden el rol de un API Gateway con el de un Bus de Servicio Empresarial (ESB) o plataforma de integración (iPaaS). 

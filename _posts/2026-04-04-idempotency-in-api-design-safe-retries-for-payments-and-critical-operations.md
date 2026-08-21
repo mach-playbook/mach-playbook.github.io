@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Security & Observability, Cloud-Native]
 tags: [api-first, distributed-systems, finops]
 image:
-  path: /assets/img/posts/2026-04-04-idempotency-in-api-design-safe-retries-for-payments-and-critical-operations.png
+  path: /assets/img/posts/2026-04-04-idempotency-in-api-design-safe-retries-for-payments-and-critical-operations.webp
 ---
 
 In distributed cloud networks, network requests can fail due to temporary connection drops, proxy timeouts, or server restarts. When a client application experiences a network timeout after sending a payment request (`POST /api/v1/charges`), it faces a dilemma: **Did the server process the payment before the connection dropped, or did it fail?**

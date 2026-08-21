@@ -6,7 +6,7 @@ lang: es
 categories: [Seguridad & Observabilidad, Cloud-Native]
 tags: [microservices, security, telecom]
 image:
-  path: /assets/img/posts/2026-08-01-mitigacion-fraude-voip-opensips.png
+  path: /assets/img/posts/2026-08-01-mitigacion-fraude-voip-opensips.webp
 ---
 
 En el sector de las telecomunicaciones, exponer infraestructura SIP (Session Initiation Protocol) a la internet pública atrae inevitablemente tráfico malicioso. Los escáneres automatizados y los ataques de fuerza bruta buscan constantemente PBXs vulnerables para perpetrar fraudes telefónicos (Toll Fraud), generando pérdidas económicas devastadoras en cuestión de horas.

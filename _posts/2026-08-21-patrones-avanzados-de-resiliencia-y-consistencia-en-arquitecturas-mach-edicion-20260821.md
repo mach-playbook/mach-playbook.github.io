@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [mach, resilience, microservices, distributed-systems, cloud-native, saga-pattern, event-driven]
 image:
-  path: /assets/img/posts/2026-08-21-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260821.png
+  path: /assets/img/posts/2026-08-21-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260821.webp
 ---
 
 En el ecosistema de Enterprise Commerce de 2026, la adopción de arquitecturas MACH (Microservices, API-first, Cloud-native, Headless) ya no es una ventaja competitiva, sino el estándar mínimo de operación. Sin embargo, a medida que las organizaciones escalan de decenas a cientos de microservicios interconectados, surge una realidad incómoda: la complejidad operativa crece de forma exponencial, no lineal. 

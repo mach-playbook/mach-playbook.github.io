@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.png
+  path: /assets/img/posts/2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.webp
 ---
 
 Organizations often adopt microservices to escape the slow release cycles and unwieldy codebase of a monolithic application. However, without strict architectural discipline, many teams end up with the worst of both worlds: a **Distributed Monolith**.

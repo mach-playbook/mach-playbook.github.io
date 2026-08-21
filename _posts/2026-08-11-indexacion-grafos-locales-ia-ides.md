@@ -6,7 +6,7 @@ lang: es
 categories: [DevOps & CI/CD, Automatización]
 tags: [ai-engineering, devops, qa-automation]
 image:
-  path: /assets/img/posts/2026-08-11-indexacion-grafos-locales-ia-ides.png
+  path: /assets/img/posts/2026-08-11-indexacion-grafos-locales-ia-ides.webp
 ---
 
 La adopción de asistentes de codificación impulsados por Inteligencia Artificial ha cambiado drásticamente el flujo de trabajo en la ingeniería de software. Sin embargo, al enfrentar repositorios empresariales complejos con cientos de miles de líneas de código, herramientas como Google Antigravity, Cursor o Copilot a menudo tropiezan con una barrera técnica ineludible: el límite de la ventana de contexto (Token Limit).

@@ -7,7 +7,7 @@ date: 2026-07-23 00:00:00 -0600
 categories: [Arquitectura Cloud, Microservicios]
 tags: [api-first, finops, headless, microservices, security]
 image:
-  path: /assets/img/posts/2026-07-23-arquitectura-api-first-erpnext.png
+  path: /assets/img/posts/2026-07-23-arquitectura-api-first-erpnext.webp
 ---
 
 La modernización de los sistemas de planificación de recursos empresariales (ERP) requiere un enfoque modular para evitar los cuellos de botella característicos del software monolítico. Al desplegar plataformas como ERPNext, uno de los mayores desafíos arquitectónicos es la integración de componentes de cumplimiento fiscal regional, como el timbrado de facturas electrónicas y el manejo de certificados de firma digital.

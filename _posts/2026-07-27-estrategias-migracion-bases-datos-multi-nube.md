@@ -6,7 +6,7 @@ categories: [Bases de Datos, Sistemas Distribuidos]
 tags: [architecture, aws, cloud-native, data-engineering, gcp, postgresql]
 lang: es
 image:
-  path: /assets/img/posts/2026-07-27-estrategias-migracion-bases-datos-multi-nube.png
+  path: /assets/img/posts/2026-07-27-estrategias-migracion-bases-datos-multi-nube.webp
 ---
 
 La administración de bases de datos en entornos multi-nube presenta desafíos arquitectónicos críticos, especialmente cuando las empresas deciden consolidar sus cargas de trabajo transaccionales. Migrar instancias relacionales completas desde Amazon Web Services (AWS RDS) hacia Google Cloud Platform (Cloud SQL) requiere una planificación minuciosa para garantizar cero pérdida de datos y un tiempo de inactividad (downtime) cercano a cero.

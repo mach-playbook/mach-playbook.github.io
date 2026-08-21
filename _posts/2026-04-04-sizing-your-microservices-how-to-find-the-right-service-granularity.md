@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-sizing-your-microservices-how-to-find-the-right-service-granularity.png
+  path: /assets/img/posts/2026-04-04-sizing-your-microservices-how-to-find-the-right-service-granularity.webp
 ---
 
 One of the most frequent questions software architects face is: *"How big or small should a microservice be?"* 

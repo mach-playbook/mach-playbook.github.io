@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, devops, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.png
+  path: /assets/img/posts/2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.webp
 ---
 
 Attempting a "Big Bang" rewrite of a critical enterprise monolithic system—where engineering freezes feature development for a year to rewrite the entire codebase from scratch—is one of the most high-risk maneuvers in software engineering. Statistics show that the majority of Big Bang rewrites exceed budget, suffer massive delays, or fail outright due to lost business logic edge cases.

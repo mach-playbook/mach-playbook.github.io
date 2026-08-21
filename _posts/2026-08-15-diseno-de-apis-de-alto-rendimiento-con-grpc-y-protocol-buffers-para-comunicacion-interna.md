@@ -6,7 +6,7 @@ lang: es
 categories: [Diseño de APIs, Microservicios]
 tags: [mach, microservicios, cloud-native, api-first, resiliencia, arquitectura, devops]
 image:
-  path: /assets/img/posts/2026-08-15-diseno-de-apis-de-alto-rendimiento-con-grpc-y-protocol-buffers-para-comunicacion-interna.png
+  path: /assets/img/posts/2026-08-15-diseno-de-apis-de-alto-rendimiento-con-grpc-y-protocol-buffers-para-comunicacion-interna.webp
 ---
 
 En el panorama del comercio digital y los sistemas distribuidos a escala empresarial, la adopción del paradigma MACH (Microservices, API-first, Cloud-native, Headless) ha dejado de ser una opción experimental para convertirse en el estándar de oro de la ingeniería de software moderna. En este análisis profundo, abordamos los principios arquitectónicos, las decisiones de diseño críticas y los patrones de implementación necesarios para ejecutar con éxito **Diseño de APIs de Alto Rendimiento con gRPC y Protocol Buffers para Comunicación Interna**.

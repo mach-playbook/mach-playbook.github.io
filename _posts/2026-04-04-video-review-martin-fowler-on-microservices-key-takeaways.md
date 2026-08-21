@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.png
+  path: /assets/img/posts/2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.webp
 ---
 
 In this architecture review, we analyze foundational talks and articles by **Martin Fowler**, Chief Scientist at ThoughtWorks and a primary pioneer of modern microservice architecture definitions.

@@ -6,7 +6,7 @@ lang: es
 categories: [Headless & Frontend, Arquitectura Cloud]
 tags: [cloud-native, headless, observability]
 image:
-  path: /assets/img/posts/2026-08-04-analitica-web-seo-arquitecturas-headless.png
+  path: /assets/img/posts/2026-08-04-analitica-web-seo-arquitecturas-headless.webp
 ---
 
 El divorcio entre el frontend y el backend en las arquitecturas Headless (utilizando frameworks como Next.js, Nuxt o Jekyll) proporciona una libertad de diseño sin precedentes. Sin embargo, esta separación introduce una complejidad notable a la hora de gestionar el SEO (Search Engine Optimization) técnico y la inyección de herramientas de telemetría como Google Analytics o plataformas de monetización.
