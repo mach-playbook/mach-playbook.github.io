@@ -109,7 +109,7 @@
               '<div class="preview-img shimmer">' +
                 '<picture>' +
                   '<source srcset="' + (post.image.webp || post.image.src) + '" type="image/webp">' +
-                  '<img src="' + post.image.src + '" alt="' + (post.image.alt || 'Preview Image') + '" width="400" height="225" loading="lazy" decoding="async" style="aspect-ratio: 16/9; object-fit: cover;">' +
+                  '<img src="' + (post.image.webp || post.image.src) + '" alt="' + (post.image.alt || 'Preview Image') + '" width="400" height="225" loading="lazy" decoding="async" style="aspect-ratio: 16/9; object-fit: cover;">' +
                 '</picture>' +
               '</div>' +
             '</div>';
