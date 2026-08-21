@@ -31,7 +31,7 @@ layout: default
 </div>
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in all_posts %}
+  {% for post in all_posts limit: 10 %}
     {% assign post_lang = post.lang | default: 'en' %}
     <article class="card-wrapper card post-card-item" data-post-lang="{{ post_lang }}">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
@@ -72,22 +72,26 @@ layout: default
 
           <div class="col-md-5">
             <div class="preview-img shimmer">
-              <img
-                src="{{ src }}"
-                alt="{{ alt }}"
-                width="400"
-                height="225"
-                {% if forloop.first %}
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                {% else %}
-                  loading="lazy"
-                  decoding="async"
-                {% endif %}
-                style="aspect-ratio: 16/9; object-fit: cover;"
-                {{ lqip_attr }}
-              >
+              {% assign webp_src = src | replace: '.png', '.webp' %}
+              <picture>
+                <source srcset="{{ webp_src }}" type="image/webp">
+                <img
+                  src="{{ webp_src }}"
+                  alt="{{ alt }}"
+                  width="400"
+                  height="225"
+                  {% if forloop.first %}
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                  {% else %}
+                    loading="lazy"
+                    decoding="async"
+                  {% endif %}
+                  style="aspect-ratio: 16/9; object-fit: cover;"
+                  {{ lqip_attr }}
+                >
+              </picture>
             </div>
           </div>
 
@@ -147,6 +151,30 @@ layout: default
   {% endfor %}
 </div>
 <!-- #post-list -->
+
+<script id="remaining-posts-data" type="application/json">
+[
+  {% for post in all_posts offset: 10 %}
+    {% assign post_lang = post.lang | default: 'en' %}
+    {% assign src = post.image.path | default: post.image %}
+    {% assign alt = post.image.alt | default: 'Preview Image' %}
+    {% assign webp_src = src | replace: '.png', '.webp' %}
+    {
+      "url": {{ post.url | relative_url | jsonify }},
+      "title": {{ post.title | jsonify }},
+      "lang": {{ post_lang | jsonify }},
+      "date": {{ post.date | date: "%b %d, %Y" | jsonify }},
+      "categories": {{ post.categories | jsonify }},
+      "image": {
+        "src": {{ src | relative_url | jsonify }},
+        "webp": {{ webp_src | relative_url | jsonify }},
+        "alt": {{ alt | jsonify }}
+      },
+      "summary": {{ post.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+</script>
 
 <div id="no-lang-results" class="text-center py-5 d-none">
   <i class="fas fa-globe-americas fa-3x text-muted mb-3"></i>

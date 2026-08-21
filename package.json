@@ -15,5 +15,9 @@
   "dependencies": {
     "dotenv": "^17.4.0",
     "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "^12.8.2"
   }
 }

@@ -52,6 +52,25 @@ CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--force_polling"
 # Stage 4: Production Replica Web Server (Nginx)
 # ---------------------------------------------------
 FROM nginx:alpine AS prod
+RUN printf 'server {\n\
+    listen 80;\n\
+    server_name localhost;\n\
+    root /usr/share/nginx/html;\n\
+    index index.html;\n\
+    gzip on;\n\
+    gzip_vary on;\n\
+    gzip_min_length 256;\n\
+    gzip_proxied any;\n\
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml;\n\
+    location / {\n\
+        try_files $uri $uri/ /index.html =404;\n\
+    }\n\
+    location ~* \\.(?:css|js|jpg|jpeg|gif|png|ico|svg|webp|woff|woff2|ttf|eot)$ {\n\
+        expires 1y;\n\
+        add_header Cache-Control "public, max-age=31536000, immutable";\n\
+    }\n\
+}\n' > /etc/nginx/conf.d/default.conf
+
 COPY --from=builder /srv/jekyll/_site /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,27 @@
+<!-- Google tag (gtag.js) - Async Non-Blocking -->
+<script>
+  (function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.google.id }}');
+
+    function loadGtag() {
+      if (window._gtagLoaded) return;
+      window._gtagLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.id }}';
+      document.head.appendChild(s);
+    }
+
+    ['scroll', 'touchstart', 'click', 'keydown'].forEach(function(ev) {
+      window.addEventListener(ev, loadGtag, { once: true, passive: true });
+    });
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(function() { setTimeout(loadGtag, 7000); });
+    } else {
+      setTimeout(loadGtag, 7500);
+    }
+  })();
+</script>

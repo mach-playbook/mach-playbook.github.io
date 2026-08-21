@@ -80,7 +80,72 @@
     });
   }
 
+  function unpackRemainingPostsIfNeeded() {
+    var dataEl = document.getElementById('remaining-posts-data');
+    if (!dataEl) return;
+    try {
+      var posts = JSON.parse(dataEl.textContent);
+      var postList = document.getElementById('post-list');
+      if (postList && Array.isArray(posts)) {
+        posts.forEach(function(post) {
+          var article = document.createElement('article');
+          article.className = 'card-wrapper card post-card-item';
+          article.setAttribute('data-post-lang', post.lang || 'es');
+          article.style.display = 'none';
+
+          var categoriesHtml = '';
+          if (post.categories && post.categories.length) {
+            categoriesHtml = '<i class="far fa-folder-open fa-fw me-1"></i><span class="categories">' +
+              post.categories.join(', ') + '</span>';
+          }
+
+          var badgeHtml = post.lang === 'es' ?
+            '<span class="badge border border-primary text-primary ms-2" style="font-weight: 500; font-size: 0.75rem; padding: 0.2em 0.55em; border-radius: 4px;">🇲🇽/🇪🇸 Español</span>' :
+            '<span class="badge border border-secondary text-muted ms-2" style="font-weight: 500; font-size: 0.75rem; padding: 0.2em 0.55em; border-radius: 4px;">🇺🇸 English</span>';
+
+          var imgHtml = '';
+          if (post.image && post.image.src) {
+            imgHtml = '<div class="col-md-5">' +
+              '<div class="preview-img shimmer">' +
+                '<picture>' +
+                  '<source srcset="' + (post.image.webp || post.image.src) + '" type="image/webp">' +
+                  '<img src="' + post.image.src + '" alt="' + (post.image.alt || 'Preview Image') + '" width="400" height="225" loading="lazy" decoding="async" style="aspect-ratio: 16/9; object-fit: cover;">' +
+                '</picture>' +
+              '</div>' +
+            '</div>';
+          }
+
+          var bodyCol = imgHtml ? '7' : '12';
+
+          article.innerHTML = '<a href="' + post.url + '" class="post-preview row g-0 flex-md-row-reverse">' +
+            imgHtml +
+            '<div class="col-md-' + bodyCol + '">' +
+              '<div class="card-body d-flex flex-column">' +
+                '<h1 class="card-title my-2 mt-md-0">' + post.title + '</h1>' +
+                '<div class="card-text content mt-0 mb-3"><p>' + (post.summary || '') + '</p></div>' +
+                '<div class="post-meta flex-grow-1 d-flex align-items-end">' +
+                  '<div class="me-auto">' +
+                    '<i class="far fa-calendar fa-fw me-1"></i>' +
+                    '<span>' + post.date + '</span>' +
+                    categoriesHtml +
+                    badgeHtml +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</a>';
+
+          postList.appendChild(article);
+        });
+      }
+    } catch (e) {
+      console.error('Error unpacking remaining posts:', e);
+    }
+    dataEl.remove();
+  }
+
   function goToPage(page) {
+    unpackRemainingPostsIfNeeded();
     currentPage = page;
     updatePostCardsView();
     var postList = document.getElementById('post-list');
@@ -90,6 +155,10 @@
   }
 
   function updatePostCardsView() {
+    if (currentPage > 1 || currentLang === 'all' || currentLang === 'en') {
+      unpackRemainingPostsIfNeeded();
+    }
+
     var cards = Array.from(document.querySelectorAll('.post-card-item'));
     if (!cards.length) return;
 

@@ -142,7 +142,7 @@ def main():
         else:
             failures.append("FAIL: fonts.gstatic.com preconnect is missing 'crossorigin' attribute!")
 
-        # C. Verify Post preview images have explicit dimensions and proper loading attributes
+        # C. Verify Post preview images have explicit dimensions, WebP picture sources, and proper loading attributes
         preview_imgs = home_soup.find_all("img", src=lambda s: s and "/assets/img/posts/" in s)
         if preview_imgs:
             first_img = preview_imgs[0]
@@ -158,6 +158,30 @@ def main():
                 passes += 1
             else:
                 failures.append("FAIL: Not all post preview images have width='400' and height='225'!")
+
+        # D. Verify WebP picture sources in home feed
+        webp_sources = home_soup.find_all("source", type="image/webp")
+        if len(webp_sources) > 0:
+            print(f"[PASS] Performance: WebP image sources configured ({len(webp_sources)} picture elements)")
+            passes += 1
+        else:
+            failures.append("FAIL: No WebP picture sources found in home feed!")
+
+        # E. Verify Hero WebP Image Preload in <head>
+        hero_preload = home_soup.find(lambda tag: tag.name == "link" and tag.get("as") == "image" and "preload" in tag.get("rel", []))
+        if hero_preload:
+            print(f"[PASS] Performance: High-priority Hero WebP image preload active in <head>: {hero_preload.get('href')}")
+            passes += 1
+        else:
+            failures.append("FAIL: Hero WebP image preload is missing in <head>!")
+
+        # F. Verify Remaining Posts JSON serialization for lean DOM
+        remaining_json = home_soup.find("script", id="remaining-posts-data", type="application/json")
+        if remaining_json and len(remaining_json.text.strip()) > 50:
+            print("[PASS] Performance: Remaining posts serialized to JSON for lean initial DOM")
+            passes += 1
+        else:
+            failures.append("FAIL: remaining-posts-data JSON block is missing or empty!")
 
     print("-" * 60)
     if failures:
