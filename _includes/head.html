@@ -148,20 +148,37 @@
       border-right: 1px solid #2d2d34;
     }
     #main-wrapper {
-      margin-left: 260px;
-      padding: 0 1.5rem;
+      position: relative;
+      padding-left: 0;
+      padding-right: 0;
       min-height: 100vh;
       background-color: #1b1b1e;
       display: flex !important;
       justify-content: center !important;
     }
-    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-      width: 100%;
-      padding-right: 0.75rem !important;
-      padding-left: 0.75rem !important;
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 100%;
+    @media all and (min-width: 850px) {
+      #main-wrapper { margin-left: 260px; }
+    }
+    @media all and (max-width: 849px) {
+      #sidebar { display: none !important; }
+      #main-wrapper { margin-left: 0 !important; }
+    }
+    @media all and (max-width: 768px) {
+      #main-wrapper > .container {
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+    #topbar-wrapper.row,
+    #main-wrapper > .container > .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    @media all and (max-width: 1199px) {
+      #main-wrapper > .container > .row {
+        justify-content: center !important;
+      }
     }
     .flex-column { flex-direction: column !important; }
     .flex-grow-1 { flex-grow: 1 !important; }
@@ -183,10 +200,6 @@
       align-items: center !important;
       justify-content: space-between !important;
       padding: 0 1rem !important;
-    }
-    @media (max-width: 849px) {
-      #sidebar { display: none !important; }
-      #main-wrapper { margin-left: 0 !important; padding: 0 !important; }
     }
 
     /* Critical Grid & Filter Bar Skeleton for Zero CLS */
