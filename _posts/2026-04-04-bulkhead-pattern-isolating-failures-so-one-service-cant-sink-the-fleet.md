@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, distributed-systems, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet.webp
+  path: /assets/img/posts/2026-04-04-bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet.png
 ---
 
 In nautical engineering, a ship's hull is divided into watertight compartments called **bulkheads**. If a rock punctures one compartment, water is contained within that single section, preventing the entire vessel from sinking.

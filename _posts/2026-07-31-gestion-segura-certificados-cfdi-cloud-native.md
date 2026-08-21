@@ -6,7 +6,7 @@ lang: es
 categories: [Seguridad & Observabilidad, Cloud-Native]
 tags: [headless, microservices, security]
 image:
-  path: /assets/img/posts/2026-07-31-gestion-segura-certificados-cfdi-cloud-native.webp
+  path: /assets/img/posts/2026-07-31-gestion-segura-certificados-cfdi-cloud-native.png
 ---
 
 La emisión de facturas electrónicas (como el CFDI en México) en sistemas ERP distribuidos presenta un desafío único de seguridad y rendimiento. Las aplicaciones monolíticas tradicionales solían almacenar los certificados de Sello Digital (archivos `.cer` y `.key`) directamente en el sistema de archivos del servidor. Sin embargo, en arquitecturas Cloud-Native y contenedores efímeros, esta práctica no solo viola los principios de la infraestructura inmutable, sino que representa un riesgo crítico de seguridad.

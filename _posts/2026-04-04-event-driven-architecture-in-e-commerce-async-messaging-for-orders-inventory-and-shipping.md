@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [event-driven, headless, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping.webp
+  path: /assets/img/posts/2026-04-04-event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping.png
 ---
 
 In traditional synchronous e-commerce architectures, placing an order requires a web server to make sequential HTTP calls to multiple backend services: verifying payment, reserving stock, generating invoices, sending confirmation emails, and updating warehouse shipping queues. If any one of these downstream services hangs or fails, the user's checkout request fails.

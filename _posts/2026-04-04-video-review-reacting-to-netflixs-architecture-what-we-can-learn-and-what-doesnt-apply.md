@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, aws, cloud-native, microservices, observability]
 image:
-  path: /assets/img/posts/2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.webp
+  path: /assets/img/posts/2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.png
 ---
 
 In this architecture breakdown, we react to and analyze presentations detailing **Netflix’s Global Cloud Architecture**. Operating one of the world's largest streaming video networks—accounting for a significant percentage of global downstream internet traffic—Netflix is widely recognized as a pioneer of cloud-native microservices, Chaos Engineering, and active-active multi-region cloud deployments.

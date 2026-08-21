@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [mach, resilience, distributed-systems, event-driven, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-08-19-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260819.webp
+  path: /assets/img/posts/2026-08-19-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260819.png
 ---
 
 En el panorama tecnológico de 2026, la adopción de arquitecturas **MACH** (Microservices, API-first, Cloud-native, Headless) ha dejado de ser una ventaja competitiva para convertirse en el estándar de facto en el sector Enterprise. Sin embargo, la transición de monolitos hacia ecosistemas *Composable* ha revelado una verdad incómoda que muchos arquitectos subestimaron: **la red es inherentemente poco fiable y la consistencia distribuida es extremadamente costosa.**

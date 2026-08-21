@@ -6,7 +6,7 @@ lang: es
 categories: [Headless & Frontend, Arquitectura Cloud]
 tags: [architecture, ci-cd, cloud-native, headless]
 image:
-  path: /assets/img/posts/2026-08-03-migracion-wordpress-jekyll-github-actions.webp
+  path: /assets/img/posts/2026-08-03-migracion-wordpress-jekyll-github-actions.png
 ---
 
 Durante la última década, WordPress democratizó la publicación web. Sin embargo, en el contexto de las arquitecturas empresariales modernas (MACH), acoplar estrechamente la base de datos, el motor de renderizado PHP y la capa de presentación introduce vulnerabilidades de seguridad, cuellos de botella en el rendimiento y una pesada carga de mantenimiento.

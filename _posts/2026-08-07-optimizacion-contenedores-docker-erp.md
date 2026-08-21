@@ -6,7 +6,7 @@ lang: es
 categories: [DevOps & CI/CD, Automatización]
 tags: [cloud-native, devops, headless]
 image:
-  path: /assets/img/posts/2026-08-07-optimizacion-contenedores-docker-erp.webp
+  path: /assets/img/posts/2026-08-07-optimizacion-contenedores-docker-erp.png
 ---
 
 Desplegar sistemas de Planificación de Recursos Empresariales (ERP) completos (como ERPNext u Odoo) en la nube ha dejado de ser un proceso manual sobre servidores de metal desnudo (*bare-metal*). La contenedorización con Docker es el estándar de facto, proporcionando aislamiento, portabilidad y consistencia entre entornos.

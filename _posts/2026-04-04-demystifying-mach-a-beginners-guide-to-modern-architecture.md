@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [architecture, cloud-native, headless, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-demystifying-mach-a-beginners-guide-to-modern-architecture.webp
+  path: /assets/img/posts/2026-04-04-demystifying-mach-a-beginners-guide-to-modern-architecture.png
 ---
 
 If you work in software engineering, digital product management, or e-commerce, you have likely heard the acronym **MACH**. Industry leaders and technology vendors tout MACH as the gold standard for building modern, high-performance web platforms.

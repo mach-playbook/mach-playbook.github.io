@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [API Design, Microservices]
 tags: [api-first, microservices, qa-automation]
 image:
-  path: /assets/img/posts/2026-04-04-the-role-of-openapi-in-contract-driven-development.webp
+  path: /assets/img/posts/2026-04-04-the-role-of-openapi-in-contract-driven-development.png
 ---
 
 In traditional software development, frontend and backend teams often work in silos. The backend team writes code, deploys an endpoint, and verbally informs the frontend team or posts a informal message in Slack with JSON examples. This informal workflow leads to constant integration bugs, mismatched data types, and delayed releases.

@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [DevOps & CI/CD, Cloud-Native]
 tags: [architecture, cloud-native, observability]
 image:
-  path: /assets/img/posts/2026-04-04-centralized-observability-distributed-tracing-logging-and-metrics-for-microservices.webp
+  path: /assets/img/posts/2026-04-04-centralized-observability-distributed-tracing-logging-and-metrics-for-microservices.png
 ---
 
 In a monolithic application, diagnosing a bug involves checking a single server log file. In a distributed microservices environment, a single user request can traverse 20 separate containers across multiple Kubernetes nodes. When a request fails or experiences latency, traditional server logging falls short.

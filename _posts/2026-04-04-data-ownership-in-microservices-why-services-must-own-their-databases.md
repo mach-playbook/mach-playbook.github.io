@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Data & AI, Distributed Systems]
 tags: [architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-data-ownership-in-microservices-why-services-must-own-their-databases.webp
+  path: /assets/img/posts/2026-04-04-data-ownership-in-microservices-why-services-must-own-their-databases.png
 ---
 
 The single most critical rule of microservices architecture is: **Every microservice must exclusively own its database.** 

@@ -6,7 +6,7 @@ lang: es
 categories: [DevOps & CI/CD, Automatización]
 tags: [ci-cd, devops, microservices, qa-automation]
 image:
-  path: /assets/img/posts/2026-08-03-ci-cd-microservicios-multi-repositorio.webp
+  path: /assets/img/posts/2026-08-03-ci-cd-microservicios-multi-repositorio.png
 ---
 
 A medida que las organizaciones escalan sus arquitecturas nativas de la nube, el debate entre utilizar un Monorepo (un único repositorio para todo el código) o un enfoque Multi-Repositorio (un repositorio por microservicio) se vuelve central. 

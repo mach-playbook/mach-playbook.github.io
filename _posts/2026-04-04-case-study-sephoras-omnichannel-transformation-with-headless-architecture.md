@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Headless & Frontend, Architecture]
 tags: [architecture, cloud-native, headless]
 image:
-  path: /assets/img/posts/2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.webp
+  path: /assets/img/posts/2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.png
 ---
 
 Sephora, a global prestige beauty retailer, operates hundreds of physical stores alongside e-commerce websites and mobile applications. Delivering a unified **omnichannel experience**—where physical store inventory, online loyalty rewards, personalized beauty recommendations, and mobile in-store scanning work seamlessly together—requires a modern software architecture.

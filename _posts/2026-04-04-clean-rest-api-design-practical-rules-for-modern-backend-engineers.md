@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [API Design, Microservices]
 tags: [api-first, architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.webp
+  path: /assets/img/posts/2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.png
 ---
 
 REpresentational State Transfer (REST) remains the dominant architectural style for web APIs. However, inconsistent URL conventions, improper HTTP status code usage, and unstandardized error formatting create developer friction and integration bugs.

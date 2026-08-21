@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Data & AI, Distributed Systems]
 tags: [data-engineering, event-driven, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.webp
+  path: /assets/img/posts/2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.png
 ---
 
 In traditional CRUD (Create, Read, Update, Delete) architectures, the same database data model is used for both writing transactions and querying data. In high-concurrency enterprise applications, this dual responsibility creates performance bottlenecks: read queries require complex database joins, while write operations require strict transactional locks on the same tables.

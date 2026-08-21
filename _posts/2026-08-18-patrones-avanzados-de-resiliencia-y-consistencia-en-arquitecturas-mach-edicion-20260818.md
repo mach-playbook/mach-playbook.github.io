@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [resiliencia, mach, microservicios, saga-pattern, outbox-pattern, distributed-systems, cloud-native]
 image:
-  path: /assets/img/posts/2026-08-18-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260818.webp
+  path: /assets/img/posts/2026-08-18-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260818.png
 ---
 
 En el panorama actual del *Composable Commerce* y las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless), la agilidad ya no es el único diferenciador competitivo. Para las empresas de nivel *Enterprise*, el verdadero reto ha mutado: ¿cómo mantenemos la integridad de los datos y la disponibilidad del sistema cuando una sola transacción de negocio involucra cinco servicios de terceros, tres nubes distintas y una red inherentemente poco confiable?

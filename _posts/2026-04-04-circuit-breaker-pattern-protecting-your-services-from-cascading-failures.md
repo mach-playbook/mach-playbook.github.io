@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [distributed-systems, kubernetes, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.webp
+  path: /assets/img/posts/2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.png
 ---
 
 In a microservices architecture, services make frequent network calls to downstream microservices and third-party APIs. If a downstream dependency experiences an outage or severe latency, upstream callers can quickly exhaust thread pools and memory while waiting for responses, triggering a **cascading system failure**.

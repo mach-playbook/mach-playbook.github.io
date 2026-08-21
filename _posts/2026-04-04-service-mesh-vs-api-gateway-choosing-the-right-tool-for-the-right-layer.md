@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Architecture, Microservices]
 tags: [api-first, kubernetes, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.webp
+  path: /assets/img/posts/2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.png
 ---
 
 As organizations migrate to microservice and MACH architectures, a common source of confusion is the relationship between an **API Gateway** and a **Service Mesh**. Both technologies perform networking tasks such as routing, rate limiting, and traffic control, leading engineers to ask: *"Do we need both, or does one replace the other?"*
