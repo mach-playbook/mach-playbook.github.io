@@ -8,7 +8,7 @@
 
   var PAGE_SIZE = 10;
   var currentPage = 1;
-  var currentLang = 'es'; // Spanish is default
+  var currentLang = 'all'; // Default to all posts (matches SSR HTML)
 
   var TAB_LOCALIZATIONS = {
     'home': { es: 'Inicio', en: 'Home' },
@@ -317,8 +317,8 @@
       savedLang = localStorage.getItem('mach_playbook_lang');
     } catch (e) {}
 
-    // Priority: URL query param > LocalStorage > Default 'es'
-    var initialLang = urlLang || savedLang || 'es';
+    // Priority: URL query param > LocalStorage > Default 'all'
+    var initialLang = urlLang || savedLang || 'all';
 
     // Setup click listeners on topbar options
     document.querySelectorAll('.lang-select-opt').forEach(function(opt) {
