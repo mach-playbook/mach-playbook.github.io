@@ -226,12 +226,17 @@
   * Created automated validator `scripts/test-site-integrity.py` checking 19 integrity points across rendered HTML files (markdown parse check, script inclusion, bilingual classes, mermaid CSS).
   * Integrated site integrity test into `Dockerfile` Stage 2 test runner, verifying 19/19 checks and HTML-Proofer across 629 internal links and 142 files with 0 errors.
 
-2026-08-15 18:00: Enhanced Mermaid Diagram Card Container, Fixed Tables, and Enabled Bilingual Support for Resources & Glossary
-  * Added dedicated `.mermaid` container card styling with distinct background (`#1e242c` in dark mode, `#f6f8fa` in light mode), subtle borders (`#30363d`), border-radius (`12px`), and depth shadow (`box-shadow`), solving low-contrast readability for flowcharts, subgraphs, and sequence diagrams.
-  * Fixed Markdown table parsing in `_tabs/resources.md` by inserting blank lines before table declarations, ensuring Kramdown properly renders HTML `<table>` elements.
-  * Converted `_tabs/resources.md` and `_tabs/glossary.md` into full bilingual structures with `.lang-block.lang-es` and `.lang-block.lang-en`, enabling instant language switching when selecting Español or English.
-  * Extended `scripts/test-site-integrity.py` to 22 automated checks (validating bilingual blocks and table renders across all 6 tabs).
-  * Validated 22/22 integrity checks and 641 internal links in Docker container with 0 errors.
+2026-08-21 08:50: Page Speed Optimization, Core Web Vitals Hardening & GSC Sitemap/Indexing Forensics
+  * Eliminated render-blocking JavaScript in `<head>` by adding `defer` to `theme.min.js` (`_includes/head.html`).
+  * Optimized Resource Hints: added `crossorigin` to font preconnect (`https://fonts.gstatic.com`), preconnected to jsDelivr CDN (`https://cdn.jsdelivr.net`), and added `dns-prefetch` for Google AdSense and Google Tag Manager.
+  * Solved Cumulative Layout Shift (CLS) on Home page and Post pages: added explicit `width="400" height="225"` and `style="aspect-ratio: 16/9; object-fit: cover;"` across all 65 post cards (`_layouts/home.html`), and `width="1200" height="630"` with aspect ratio on article hero images (`_layouts/post.html`).
+  * Optimized Largest Contentful Paint (LCP) on mobile: configured `loading="eager" fetchpriority="high" decoding="async"` on above-the-fold first post and article hero banner, while setting `loading="lazy" decoding="async"` on subsequent post cards.
+  * Enhanced `_includes/sidebar.html` with explicit avatar loading attributes (`loading="eager" decoding="async" style="aspect-ratio: 1/1;"`).
+  * Extended `scripts/test-site-integrity.py` with 4 automated performance assertions (26/26 test points passing with 0 errors).
+  * Validated full Docker Stage 2 unit test pipeline (`mach-playbook:test`) passing 142 HTML files, 641 internal links, and 100% AdSense compliance with 0 errors.
+  * Rebuilt and verified local production replica container `mach-playbook:prod` listening on `http://localhost:8080` via `scripts/analyze-performance.py`.
+  * Audited Google Search Console: identified sitemap submission typo (`/sitemap.xm` -> `/sitemap.xml` missing 'l'), verified live `sitemap.xml` returns HTTP 200 OK with 141 URLs, and explained 3-page indexing root cause (pre-August 14 crawl budget suppression due to 256 thin taxonomy pages & asynchronous GSC indexing pipeline processing).
+
 
 
 

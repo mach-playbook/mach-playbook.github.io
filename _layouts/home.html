@@ -71,7 +71,24 @@ layout: default
           {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
 
           <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip_attr }}>
+            <div class="preview-img shimmer">
+              <img
+                src="{{ src }}"
+                alt="{{ alt }}"
+                width="400"
+                height="225"
+                {% if forloop.first %}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                {% else %}
+                  loading="lazy"
+                  decoding="async"
+                {% endif %}
+                style="aspect-ratio: 16/9; object-fit: cover;"
+                {{ lqip_attr }}
+              >
+            </div>
           </div>
 
           {% assign card_body_col = '7' %}

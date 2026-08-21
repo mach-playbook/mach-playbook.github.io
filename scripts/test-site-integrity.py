@@ -124,6 +124,41 @@ def main():
         else:
             failures.append("FAIL: Mermaid sequence diagram CSS overrides missing from <head>!")
 
+    # 4. Performance & Core Web Vitals Integrity Checks
+    if os.path.exists(home_path):
+        # A. Verify theme.min.js is deferred to prevent render blocking
+        theme_script = home_soup.find("script", src=lambda s: s and "theme.min.js" in s)
+        if theme_script and theme_script.has_attr("defer"):
+            print("[PASS] Performance: theme.min.js has 'defer' attribute to eliminate render-blocking JS")
+            passes += 1
+        else:
+            failures.append("FAIL: theme.min.js is missing 'defer' attribute in <head>!")
+
+        # B. Verify Preconnect crossorigin for fonts.gstatic.com
+        gstatic_preconnect = home_soup.find("link", rel="preconnect", href="https://fonts.gstatic.com")
+        if gstatic_preconnect and gstatic_preconnect.has_attr("crossorigin"):
+            print("[PASS] Performance: fonts.gstatic.com preconnect includes 'crossorigin'")
+            passes += 1
+        else:
+            failures.append("FAIL: fonts.gstatic.com preconnect is missing 'crossorigin' attribute!")
+
+        # C. Verify Post preview images have explicit dimensions and proper loading attributes
+        preview_imgs = home_soup.find_all("img", src=lambda s: s and "/assets/img/posts/" in s)
+        if preview_imgs:
+            first_img = preview_imgs[0]
+            if first_img.get("loading") == "eager" and first_img.get("fetchpriority") == "high":
+                print("[PASS] Performance: First post image configured with loading='eager' and fetchpriority='high' for mobile LCP")
+                passes += 1
+            else:
+                failures.append(f"FAIL: First post image has loading='{first_img.get('loading')}', expected 'eager'!")
+
+            all_have_dims = all(img.get("width") == "400" and img.get("height") == "225" for img in preview_imgs)
+            if all_have_dims:
+                print(f"[PASS] Performance: All {len(preview_imgs)} post preview images have width='400' height='225' for zero CLS")
+                passes += 1
+            else:
+                failures.append("FAIL: Not all post preview images have width='400' and height='225'!")
+
     print("-" * 60)
     if failures:
         print(f"FAILED: {len(failures)} test failures detected:")

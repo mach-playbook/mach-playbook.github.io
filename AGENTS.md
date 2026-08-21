@@ -156,5 +156,15 @@
 - Added comprehensive CSS styling for Mermaid sequence diagrams and flowcharts in `_includes/head.html` for high contrast on `#1b1b1e` dark theme.
 - Added `scripts/test-site-integrity.py` and embedded into `Dockerfile` Stage 2 test runner (19/19 checks passed).
 
+2026-08-21 08:50: Page Speed Optimization, Core Web Vitals Hardening & GSC Forensics
+- Eliminated render-blocking JS in `<head>` by adding `defer` to `theme.min.js`.
+- Optimized Resource Hints: added `crossorigin` to `fonts.gstatic.com` preconnect, preconnected to `cdn.jsdelivr.net`, and added `dns-prefetch` for AdSense and GTM.
+- Solved Cumulative Layout Shift (CLS): added explicit `width="400" height="225"` and `aspect-ratio: 16/9; object-fit: cover;` across all post preview images (`_layouts/home.html`) and `width="1200" height="630"` with aspect ratio on article hero banners (`_layouts/post.html`).
+- Optimized Largest Contentful Paint (LCP) on mobile: configured `loading="eager" fetchpriority="high" decoding="async"` on above-the-fold first post and article hero banner, while setting `loading="lazy" decoding="async"` on subsequent post cards.
+- Extended `scripts/test-site-integrity.py` with 4 automated performance assertions (26/26 test points passing with 0 errors).
+- Validated Docker Stage 2 unit test pipeline (`mach-playbook:test`) passing 142 HTML files, 641 internal links, and 100% AdSense compliance with 0 errors.
+- Conducted Google Search Console forensics: identified `/sitemap.xm` submission typo (missing 'l'), confirmed live `sitemap.xml` HTTP 200 OK with 141 URLs, and explained 3-page indexing baseline vs GSC pipeline indexing lag.
+
+
 
 
