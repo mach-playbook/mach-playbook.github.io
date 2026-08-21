@@ -1,4 +1,5 @@
 import urllib.request
+import sys
 from html.parser import HTMLParser
 
 class TagAuditor(HTMLParser):
@@ -13,7 +14,8 @@ def audit_url(url, label):
     print(f"\n========================================================")
     print(f"   AUDIT: {label} ({url})")
     print(f"========================================================")
-    html = urllib.request.urlopen(url).read().decode('utf-8')
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    html = urllib.request.urlopen(req).read().decode('utf-8')
     auditor = TagAuditor()
     auditor.feed(html)
 
@@ -41,5 +43,6 @@ def audit_url(url, label):
         print(f"  - href: {p.get('href')} | crossorigin: {p.get('crossorigin', 'None')}")
 
 if __name__ == '__main__':
-    audit_url('http://localhost:8080/', 'HOME PAGE')
-    audit_url('http://localhost:8080/posts/welcome-to-mach/', 'POST ARTICLE PAGE')
+    base = sys.argv[1] if len(sys.argv) > 1 else "https://mach-playbook.github.io"
+    audit_url(f'{base}/', 'HOME PAGE')
+    audit_url(f'{base}/posts/welcome-to-mach/', 'POST ARTICLE PAGE')
