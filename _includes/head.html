@@ -203,13 +203,32 @@
     .btn { display: inline-block; font-weight: 500; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.25rem 0.5rem; font-size: 0.875rem; line-height: 1.5; border-radius: 0.25rem; }
     .btn-group-sm > .btn, .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.875rem; border-radius: 0.2rem; }
     .btn-outline-secondary { color: #cbd5e1; border-color: #475569; background-color: transparent; }
-    .row { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
-    .col-12 { flex: 0 0 100%; width: 100%; }
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc(-1 * var(--bs-gutter-y));
+      margin-right: calc(-0.5 * var(--bs-gutter-x));
+      margin-left: calc(-0.5 * var(--bs-gutter-x));
+    }
+    .row > * {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+      margin-top: var(--bs-gutter-y);
+    }
+    .g-0, .gx-0 { --bs-gutter-x: 0 !important; }
+    .gy-0 { --bs-gutter-y: 0 !important; }
+    .col-12 { flex: 0 0 auto; width: 100%; }
     .col-md-5 { width: 100%; }
     .col-md-7 { width: 100%; }
     @media (min-width: 768px) {
-      .col-md-5 { width: 41.66666667% !important; flex: 0 0 41.66666667% !important; max-width: 41.66666667% !important; }
-      .col-md-7 { width: 58.33333333% !important; flex: 0 0 58.33333333% !important; max-width: 58.33333333% !important; }
+      .col-md-5 { width: 41.66666667% !important; flex: 0 0 auto !important; max-width: 41.66666667% !important; }
+      .col-md-7 { width: 58.33333333% !important; flex: 0 0 auto !important; max-width: 58.33333333% !important; }
     }
 
     /* Critical Post Cards Layout for Zero CLS */
