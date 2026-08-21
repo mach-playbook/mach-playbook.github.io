@@ -90,9 +90,11 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP) -->
+  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
+  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
 
   <!-- Hero Image Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -168,6 +170,10 @@
     .text-muted,
     .badge.border-secondary,
     .badge.text-muted,
+    .post-meta,
+    .post-meta *,
+    .post-preview .post-meta,
+    .post-preview .post-meta *,
     .post-meta span,
     .post-meta time,
     .post-meta i,
