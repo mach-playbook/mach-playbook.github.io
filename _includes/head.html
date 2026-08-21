@@ -90,38 +90,18 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 
-  <!-- Critical Font Preloads -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  {% unless page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
+    <!-- Font Preloads for Content Pages -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  {% endunless %}
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Deferred for Instant Mobile LCP) -->
-  {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
-    <script>
-      (function() {
-        function loadStyles() {
-          ['{{ "/assets/css/vendor/bootstrap.min.css" | relative_url }}', '{{ "/assets/css/:THEME.css" | replace: ":THEME", site.theme | relative_url }}'].forEach(function(href) {
-            var l = document.createElement('link');
-            l.rel = 'stylesheet';
-            l.href = href;
-            document.head.appendChild(l);
-          });
-        }
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadStyles);
-        } else {
-          window.addEventListener('load', loadStyles);
-        }
-      })();
-    </script>
-    <noscript>
-      <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
-      <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
-    </noscript>
-  {% else %}
-    <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
-  {% endif %}
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP & Zero CLS) -->
+  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
+  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
 
   <!-- Hero Images Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -343,6 +323,11 @@
     }
 
     /* High contrast WCAG AAA accessibility rules (100/100) */
+    #langSelectorBtn,
+    #current-lang-text {
+      color: #cbd5e1 !important;
+      border-color: #475569 !important;
+    }
     .lang-pill {
       color: #cbd5e1 !important;
       border-color: #475569 !important;
