@@ -148,58 +148,21 @@
       border-right: 1px solid #2d2d34;
     }
     #main-wrapper {
-      position: relative;
-      padding-left: 0;
-      padding-right: 0;
+      margin-left: 260px;
+      padding: 0 1.5rem;
       min-height: 100vh;
       background-color: #1b1b1e;
-      display: flex !important;
-      justify-content: center !important;
     }
-    @media all and (min-width: 850px) {
-      #main-wrapper { margin-left: 260px; }
-    }
-    @media all and (max-width: 849px) {
-      #sidebar { display: none !important; }
-      #main-wrapper { margin-left: 0 !important; }
-    }
-    @media all and (max-width: 768px) {
-      #main-wrapper > .container {
-        max-width: 100% !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-    }
-    #topbar-wrapper.row,
-    #main-wrapper > .container > .row {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    @media all and (max-width: 1199px) {
-      #main-wrapper > .container > .row {
-        justify-content: center !important;
-      }
-    }
-    .flex-column { flex-direction: column !important; }
-    .flex-grow-1 { flex-grow: 1 !important; }
-    .justify-content-center { justify-content: center !important; }
-    .h-100 { height: 100% !important; }
-    .w-100 { width: 100% !important; }
-    .px-3 { padding-right: 1rem !important; padding-left: 1rem !important; }
     #topbar-wrapper {
       height: 3rem;
       background-color: #1b1b1e;
       position: sticky;
       top: 0;
       z-index: 10;
-      width: 100%;
     }
-    #topbar {
-      height: 100%;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      padding: 0 1rem !important;
+    @media (max-width: 849px) {
+      #sidebar { display: none !important; }
+      #main-wrapper { margin-left: 0 !important; padding: 0 1rem !important; }
     }
 
     /* Critical Grid & Filter Bar Skeleton for Zero CLS */
@@ -216,32 +179,13 @@
     .btn { display: inline-block; font-weight: 500; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.25rem 0.5rem; font-size: 0.875rem; line-height: 1.5; border-radius: 0.25rem; }
     .btn-group-sm > .btn, .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.875rem; border-radius: 0.2rem; }
     .btn-outline-secondary { color: #cbd5e1; border-color: #475569; background-color: transparent; }
-    .row {
-      --bs-gutter-x: 1.5rem;
-      --bs-gutter-y: 0;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: calc(-1 * var(--bs-gutter-y));
-      margin-right: calc(-0.5 * var(--bs-gutter-x));
-      margin-left: calc(-0.5 * var(--bs-gutter-x));
-    }
-    .row > * {
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 100%;
-      max-width: 100%;
-      padding-right: calc(var(--bs-gutter-x) * 0.5);
-      padding-left: calc(var(--bs-gutter-x) * 0.5);
-      margin-top: var(--bs-gutter-y);
-    }
-    .g-0, .gx-0 { --bs-gutter-x: 0 !important; }
-    .gy-0 { --bs-gutter-y: 0 !important; }
-    .col-12 { flex: 0 0 auto; width: 100%; }
+    .row { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
+    .col-12 { flex: 0 0 100%; width: 100%; }
     .col-md-5 { width: 100%; }
     .col-md-7 { width: 100%; }
     @media (min-width: 768px) {
-      .col-md-5 { width: 41.66666667% !important; flex: 0 0 auto !important; max-width: 41.66666667% !important; }
-      .col-md-7 { width: 58.33333333% !important; flex: 0 0 auto !important; max-width: 58.33333333% !important; }
+      .col-md-5 { width: 41.66666667% !important; flex: 0 0 41.66666667% !important; max-width: 41.66666667% !important; }
+      .col-md-7 { width: 58.33333333% !important; flex: 0 0 58.33333333% !important; max-width: 58.33333333% !important; }
     }
 
     /* Critical Post Cards Layout for Zero CLS */
@@ -276,20 +220,25 @@
       }
     }
     .preview-img {
-      width: 100% !important;
-      aspect-ratio: 16 / 9 !important;
+      width: 100%;
+      aspect-ratio: 16/9;
+      min-height: 180px;
       overflow: hidden;
       background: #232328;
       position: relative;
       flex-shrink: 0;
-      border-radius: 8px;
+    }
+    @media (min-width: 768px) {
+      .preview-img {
+        width: 41.66666667% !important;
+      }
     }
     .preview-img img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      display: block !important;
-      aspect-ratio: 16 / 9 !important;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 16/9;
     }
     .card-body {
       flex: 1 1 auto;
