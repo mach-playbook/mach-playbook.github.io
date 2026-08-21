@@ -80,7 +80,7 @@ layout: default
                   alt="{{ alt }}"
                   width="400"
                   height="225"
-                  {% if forloop.first %}
+                  {% if forloop.index <= 2 %}
                     loading="eager"
                     fetchpriority="high"
                     decoding="async"

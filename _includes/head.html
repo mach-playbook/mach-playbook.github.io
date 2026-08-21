@@ -101,14 +101,16 @@
   <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
 
-  <!-- Hero Image Preload for Instant Mobile LCP -->
+  <!-- Hero Images Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
-    {% assign first_post = site.posts | where_exp: 'item', 'item.hidden != true' | first %}
-    {% if first_post and first_post.image %}
-      {% assign hero_img = first_post.image.path | default: first_post.image %}
-      {% assign hero_webp = hero_img | replace: '.png', '.webp' %}
-      <link rel="preload" as="image" href="{{ hero_webp | relative_url }}" type="image/webp" fetchpriority="high">
-    {% endif %}
+    {% assign hero_posts = site.posts | where_exp: 'item', 'item.hidden != true' %}
+    {% for p in hero_posts limit: 2 %}
+      {% if p.image %}
+        {% assign hero_img = p.image.path | default: p.image %}
+        {% assign hero_webp = hero_img | replace: '.png', '.webp' %}
+        <link rel="preload" as="image" href="{{ hero_webp | relative_url }}" type="image/webp" fetchpriority="high">
+      {% endif %}
+    {% endfor %}
   {% elsif page.layout == 'post' and page.image %}
     {% assign post_hero = page.image.path | default: page.image %}
     {% assign post_hero_webp = post_hero | replace: '.png', '.webp' %}
