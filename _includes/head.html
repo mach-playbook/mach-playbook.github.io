@@ -161,7 +161,20 @@
       #main-wrapper { margin-left: 0 !important; padding: 0 1rem !important; }
     }
 
-    /* Critical Grid & Columns for Zero CLS */
+    /* Critical Grid & Filter Bar Skeleton for Zero CLS */
+    .d-flex { display: flex !important; }
+    .align-items-center { align-items: center !important; }
+    .justify-content-between { justify-content: space-between !important; }
+    .mb-4 { margin-bottom: 1.5rem !important; }
+    .gap-2 { gap: 0.5rem !important; }
+    .border-bottom { border-bottom: 1px solid #2d2d34 !important; }
+    .px-1 { padding-right: 0.25rem !important; padding-left: 0.25rem !important; }
+    .pb-2 { padding-bottom: 0.5rem !important; }
+    .btn-group { position: relative; display: inline-flex; vertical-align: middle; }
+    .btn-group > .btn { position: relative; flex: 1 1 auto; }
+    .btn { display: inline-block; font-weight: 500; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: 0.25rem 0.5rem; font-size: 0.875rem; line-height: 1.5; border-radius: 0.25rem; }
+    .btn-group-sm > .btn, .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.875rem; border-radius: 0.2rem; }
+    .btn-outline-secondary { color: #cbd5e1; border-color: #475569; background-color: transparent; }
     .row { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
     .col-12 { flex: 0 0 100%; width: 100%; }
     .col-md-5 { width: 100%; }
