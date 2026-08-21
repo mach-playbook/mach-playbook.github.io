@@ -186,29 +186,34 @@
     .border-bottom { border-bottom: 1px solid #2d2d34 !important; }
     .px-1 { padding-right: 0.25rem !important; padding-left: 0.25rem !important; }
     .pb-2 { padding-bottom: 0.5rem !important; }
-    #home-lang-pills {
+    #home-lang-filter-bar {
       min-height: 48px;
       height: 48px;
       display: flex !important;
       align-items: center !important;
-      justify-content: flex-start !important;
-      overflow-x: auto !important;
-      overflow-y: hidden !important;
-      flex-wrap: nowrap !important;
-      white-space: nowrap !important;
-      -webkit-overflow-scrolling: touch;
+      justify-content: space-between !important;
+      overflow: hidden !important;
       margin-bottom: 1.5rem !important;
       padding-bottom: 0.5rem !important;
       border-bottom: 1px solid #2d2d34 !important;
     }
-    #home-lang-pills::-webkit-scrollbar {
-      display: none;
-    }
-    #home-lang-pills > div {
+    #home-lang-filter-bar > div:first-child {
       display: flex !important;
       align-items: center !important;
       gap: 0.5rem !important;
+      overflow-x: auto !important;
+      white-space: nowrap !important;
+      flex-wrap: nowrap !important;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+    #home-lang-filter-bar > div:first-child::-webkit-scrollbar {
+      display: none;
+    }
+    #home-lang-pills {
+      display: inline-flex !important;
       flex-shrink: 0 !important;
+      white-space: nowrap !important;
     }
     .btn-group { position: relative; display: inline-flex; vertical-align: middle; flex-shrink: 0; }
     .btn-group > .btn { position: relative; flex: 0 0 auto; white-space: nowrap; }
