@@ -95,9 +95,11 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Non-Blocking for Instant FCP & Zero CLS) -->
+  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
+  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
 
   <!-- Hero Images Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -614,13 +616,15 @@
     }
   </style>
 
-  <!-- Web Font (Non-Blocking) -->
-  <link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}"></noscript>
+  {% unless page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
+    <!-- Web Font (Non-Blocking) -->
+    <link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}"></noscript>
 
-  <!-- Font Awesome Icons (Non-Blocking) -->
-  <link rel="stylesheet" href="{{ site.data.origin[type].fontawesome.css | relative_url }}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ site.data.origin[type].fontawesome.css | relative_url }}"></noscript>
+    <!-- Font Awesome Icons (Non-Blocking) -->
+    <link rel="stylesheet" href="{{ site.data.origin[type].fontawesome.css | relative_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ site.data.origin[type].fontawesome.css | relative_url }}"></noscript>
+  {% endunless %}
 
   <!-- 3rd-party Dependencies -->
 
