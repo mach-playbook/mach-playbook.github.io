@@ -165,6 +165,13 @@
 - Validated Docker Stage 2 unit test pipeline (`mach-playbook:test`) passing 142 HTML files, 641 internal links, and 100% AdSense compliance with 0 errors.
 - Conducted Google Search Console forensics: identified `/sitemap.xm` submission typo (missing 'l'), confirmed live `sitemap.xml` HTTP 200 OK with 141 URLs, and explained 3-page indexing baseline vs GSC pipeline indexing lag.
 
+2026-08-21 14:00: Elimination of 0.275 CLS, On-Demand Mermaid Loading & Mobile Lighthouse >90 Achievement
+- Replaced asynchronous stylesheet preloads with standard synchronous local CSS (`bootstrap.min.css` and Chirpy theme) and inlined critical layout locks (`.dropdown-menu { display: none; }`, `#search { display: none; }`, `#breadcrumb { display: none; }` on mobile) in `_includes/head.html`, completely eliminating topbar height shifts (CLS: 0.275 -> 0.000).
+- Configured on-demand Mermaid.js loading: disabled global `mermaid: true` default in `_config.yml` and enabled only in frontmatter for the 9 posts with diagrams, eliminating 3 MB of unused JS on 62+ text articles.
+- Made secondary stylesheets (`tocbot.min.css`, `glightbox.min.css`) non-blocking via `media="print" onload="this.media='all'"`.
+- Verified live mobile Lighthouse audit: Performance **91/100**, Accessibility **100/100**, Best Practices **100/100**, SEO **100/100**, CLS **0.000**, FCP **1.4s**, TBT **120ms**.
+- Updated Karpathy-style `llm-wiki.md` and codebase memory Knowledge Graph ADR (`manage_adr`) with full architectural documentation.
+
 
 
 
