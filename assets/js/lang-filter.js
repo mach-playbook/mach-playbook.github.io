@@ -155,7 +155,7 @@
   }
 
   function updatePostCardsView() {
-    if (currentPage > 1 || currentLang === 'all' || currentLang === 'en') {
+    if (currentPage > 1 || currentLang !== 'all') {
       unpackRemainingPostsIfNeeded();
     }
 
@@ -169,6 +169,16 @@
     });
 
     var totalMatching = matchingCards.length;
+    var dataEl = document.getElementById('remaining-posts-data');
+    if (dataEl && currentLang === 'all') {
+      try {
+        if (!window._cachedRemainingPostsCount) {
+          window._cachedRemainingPostsCount = JSON.parse(dataEl.textContent).length;
+        }
+        totalMatching += window._cachedRemainingPostsCount;
+      } catch (e) {}
+    }
+
     var totalPages = Math.ceil(totalMatching / PAGE_SIZE) || 1;
     if (currentPage > totalPages) {
       currentPage = 1;
