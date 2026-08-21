@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [DevOps & CI/CD, Cloud-Native]
 tags: [ci-cd, devops, headless, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend.webp
+  path: /assets/img/posts/2026-04-04-ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend.png
 ---
 
 In decoupled headless platforms, frontend applications (Next.js, Remix, mobile apps) and backend microservices (catalog, cart, payment) are developed in separate repositories and deployed on independent schedules. This decoupling enables high team velocity, but introduces risk: how do we ensure a backend API deployment does not break the production frontend?

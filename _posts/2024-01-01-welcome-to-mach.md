@@ -7,7 +7,7 @@ date: 2024-01-01 12:00:00 +0000
 categories: [Architecture, Microservices]
 tags: [api-first, architecture, cloud-native, headless, microservices]
 image:
-  path: /assets/img/posts/2024-01-01-welcome-to-mach.webp
+  path: /assets/img/posts/2024-01-01-welcome-to-mach.png
 ---
 
 Modern digital transformations have exposed the fundamental limitations of monolithic enterprise software suites. Monoliths couple user interface rendering, business workflow execution, and persistence schemas into unified runtime binaries. As organizations scale engineering velocity and expand global footprints, this coupled topology creates cascading deployment bottlenecks, high blast radiuses for minor bugs, and immense vendor lock-in.

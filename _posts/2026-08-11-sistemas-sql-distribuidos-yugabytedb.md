@@ -6,7 +6,7 @@ lang: es
 categories: [Bases de Datos, Sistemas Distribuidos]
 tags: [cloud-native, data-engineering, distributed-systems, postgresql]
 image:
-  path: /assets/img/posts/2026-08-11-sistemas-sql-distribuidos-yugabytedb.webp
+  path: /assets/img/posts/2026-08-11-sistemas-sql-distribuidos-yugabytedb.png
 ---
 
 A medida que las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless) maduran y se despliegan a escala global, la capa de persistencia de datos se convierte en el principal cuello de botella. Las bases de datos relacionales tradicionales, como PostgreSQL de nodo único, no fueron diseñadas para la distribución geográfica activa-activa sin incurrir en compromisos severos de latencia o consistencia.

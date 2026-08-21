@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [mach, resilience, microservices, distributed-systems, event-driven, saga-pattern]
 image:
-  path: /assets/img/posts/2026-08-20-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260820.webp
+  path: /assets/img/posts/2026-08-20-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260820.png
 ---
 
 En el ecosistema del **Composable Commerce** y las arquitecturas **MACH** (Microservices, API-first, Cloud-native, Headless), la flexibilidad es nuestra mayor virtud, pero la complejidad distribuida es nuestro mayor desafío. Para el año 2026, ya no es suficiente con implementar un *Circuit Breaker* básico o un *Retry Policy* estándar. Las empresas de escala enterprise se enfrentan a un problema crítico: la **consistencia de datos a través de fronteras de servicios** y la **resiliencia ante fallos parciales en cascada**.

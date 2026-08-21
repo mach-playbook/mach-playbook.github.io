@@ -7,7 +7,7 @@ date: 2026-07-23 00:00:00 -0600
 categories: [DevOps & CI/CD, Automatización]
 tags: [cloud-native, data-engineering, finops, gcp, postgresql, qa-automation]
 image:
-  path: /assets/img/posts/2026-07-23-finops-desmantelamiento-gcp.webp
+  path: /assets/img/posts/2026-07-23-finops-desmantelamiento-gcp.png
 ---
 
 En la era del Cloud-Native, la facilidad para aprovisionar recursos a menudo conduce a la expansión descontrolada de la infraestructura y a facturas mensuales infladas. La práctica de FinOps (Operaciones Financieras en la Nube) exige que los ingenieros asuman la responsabilidad del ciclo de vida completo de las aplicaciones, desde el despliegue hasta el desmantelamiento (decommissioning) sistemático.

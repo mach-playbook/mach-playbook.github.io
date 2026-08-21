@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [API Design, Microservices]
 tags: [api-first, architecture, cloud-native, devops]
 image:
-  path: /assets/img/posts/2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.webp
+  path: /assets/img/posts/2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.png
 ---
 
 As an organization grows from 5 microservices to 50+, maintaining consistent API standards becomes a major engineering challenge. Without centralized **API Governance**, different teams invent inconsistent URL naming rules, incompatible authentication schemes, and mismatched error payloads.

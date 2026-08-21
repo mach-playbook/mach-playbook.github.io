@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [cloud-native, gcp, microservices, postgresql]
 image:
-  path: /assets/img/posts/2026-08-04-arquitecturas-mach-serverless-nestjs-postgresql.webp
+  path: /assets/img/posts/2026-08-04-arquitecturas-mach-serverless-nestjs-postgresql.png
 ---
 
 En el diseño de backends modernos bajo el paradigma MACH (Microservices, API-first, Cloud-native, Headless), la elección del framework y la infraestructura de despliegue define la escalabilidad a largo plazo. NestJS ha surgido como el estándar empresarial para Node.js gracias a su arquitectura modular fuertemente tipada con TypeScript. Al combinar la rigurosidad de NestJS, la robustez de PostgreSQL y el auto-escalado de Google Cloud Run, obtenemos una plataforma de microservicios virtualmente indestructible.

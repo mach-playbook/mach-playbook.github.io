@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, Microservicios]
 tags: [aws, cloud-native, event-driven, gcp]
 image:
-  path: /assets/img/posts/2026-07-28-arquitecturas-orientadas-eventos-multi-nube.webp
+  path: /assets/img/posts/2026-07-28-arquitecturas-orientadas-eventos-multi-nube.png
 ---
 
 El paradigma de la computación síncrona (petición-respuesta) es insuficiente cuando se escalan plataformas de alto rendimiento. En las arquitecturas MACH (Microservices, API-first, Cloud-native, Headless), la resiliencia se logra mediante el desacoplamiento agresivo de los servicios. 

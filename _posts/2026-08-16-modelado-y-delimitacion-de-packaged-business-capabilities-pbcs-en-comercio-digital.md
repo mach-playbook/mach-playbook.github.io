@@ -6,7 +6,7 @@ lang: es
 categories: [Composable Commerce, Arquitectura de Software]
 tags: [mach, pbcs, microservicios, ddd, enterprise-architecture, digital-commerce]
 image:
-  path: /assets/img/posts/2026-08-16-modelado-y-delimitacion-de-packaged-business-capabilities-pbcs-en-comercio-digital.webp
+  path: /assets/img/posts/2026-08-16-modelado-y-delimitacion-de-packaged-business-capabilities-pbcs-en-comercio-digital.png
 ---
 
 En la última década, la transición de arquitecturas monolíticas a microservicios fue la panacea prometida para la agilidad empresarial. Sin embargo, muchas organizaciones de escala *enterprise* se encuentran hoy atrapadas en una "pesadilla de granularidad": cientos de microservicios huérfanos, latencias disparadas por excesivos saltos de red y una complejidad operativa que consume el 80% del presupuesto de innovación.

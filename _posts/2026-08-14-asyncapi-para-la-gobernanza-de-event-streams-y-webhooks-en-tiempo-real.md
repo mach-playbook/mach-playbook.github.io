@@ -6,7 +6,7 @@ lang: es
 categories: [Arquitectura Cloud, API-First]
 tags: [asyncapi, event-driven architecture, webhooks, kafka, composable commerce, gobernanza de datos]
 image:
-  path: /assets/img/posts/2026-08-14-asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real.webp
+  path: /assets/img/posts/2026-08-14-asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real.png
 ---
 
 En la transición hacia arquitecturas composables y ecosistemas MACH (*Microservices, API-first, Cloud-native, Headless*), la gobernanza de las comunicaciones síncronas se resolvió de forma estandarizada mediante especificaciones como OpenAPI (OAS). Sin embargo, a medida que las organizaciones migran sus núcleos transaccionales hacia arquitecturas orientadas a eventos (*Event-Driven Architectures* o EDA) y distribución de eventos vía Webhooks en tiempo real, surge un vacío crítico: la ausencia de contratos formales, versionamiento desacoplado y validación automatizada en el plano asíncrono.

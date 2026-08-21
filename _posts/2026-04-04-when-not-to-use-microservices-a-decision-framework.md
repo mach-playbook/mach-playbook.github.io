@@ -7,7 +7,7 @@ date: 2026-04-04 00:00:00 -0600
 categories: [Enterprise Architecture, FinOps]
 tags: [architecture, cloud-native, microservices]
 image:
-  path: /assets/img/posts/2026-04-04-when-not-to-use-microservices-a-decision-framework.webp
+  path: /assets/img/posts/2026-04-04-when-not-to-use-microservices-a-decision-framework.png
 ---
 
 In software engineering, microservices are frequently presented as the ultimate goal for cloud-native applications. Industry blogs and conference talks focus heavily on how tech giants manage thousands of microservices. However, blindly adopting microservices without meeting essential organizational prerequisites is one of the leading causes of project delays, budget overruns, and engineering burnout.
