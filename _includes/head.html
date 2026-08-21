@@ -97,11 +97,9 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
   {% endunless %}
 
-  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS (Async Preload for Instant FCP & Zero CLS) -->
-  <link rel="preload" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}"></noscript>
-  <link rel="preload" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}"></noscript>
+  <!-- Self-Hosted Bootstrap & Chirpy Theme CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
 
   <!-- Hero Images Preload for Instant Mobile LCP -->
   {% if page.layout == 'home' or page.url == '/' or page.url == '/index.html' or layout.layout == 'home' %}
@@ -172,8 +170,12 @@
     .w-100 { width: 100% !important; }
     .flex-grow-1 { flex-grow: 1 !important; }
     .flex-column { flex-direction: column !important; }
+    .dropdown-menu { display: none; }
+    #search { display: none; }
+    #search-cancel { display: none; }
     @media (max-width: 849px) {
       #sidebar { display: none !important; }
+      #breadcrumb { display: none !important; }
       #main-wrapper { margin-left: 0 !important; padding: 0 1rem !important; }
     }
 
