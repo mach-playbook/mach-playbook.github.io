@@ -61,7 +61,7 @@ script_includes:
         <div class="mt-3 mb-3">
           <picture>
             <source srcset="{{ webp_src | relative_url }}" type="image/webp">
-            <img src="{{ webp_src | relative_url }}" {{ class }} {{ alt }} width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" style="aspect-ratio: 1200/630; object-fit: cover; width: 100%; height: auto;" {{ lqip }}>
+            <img src="{{ webp_src | relative_url }}" {{ class }} {{ alt }} width="1200" height="630" loading="eager" fetchpriority="high" decoding="sync" style="aspect-ratio: 1200/630; object-fit: cover; width: 100%; height: auto;" {{ lqip }}>
           </picture>
           {%- if page.image.alt -%}
             <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>

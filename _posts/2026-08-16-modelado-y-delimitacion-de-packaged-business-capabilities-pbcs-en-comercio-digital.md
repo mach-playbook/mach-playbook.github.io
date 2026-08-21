@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá de los Microservicios: Modelado Estratégico de Packaged Business Capabilities (PBCs) en Composable Commerce"
 date: 2026-08-16 09:00:00 -0600

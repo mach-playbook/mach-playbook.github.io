@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá del Circuit Breaker: Patrones Avanzados de Resiliencia y Consistencia en Ecosistemas MACH"
 date: 2026-08-19 09:00:00 -0600

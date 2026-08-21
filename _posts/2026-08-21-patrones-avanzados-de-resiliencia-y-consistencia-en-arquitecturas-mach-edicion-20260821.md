@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Resiliencia de Próxima Generación y Consistencia Distribuida: El Estado del Arte en Arquitecturas MACH 2026"
 date: 2026-08-21 09:00:00 -0600

@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Diseño de APIs de Alto Rendimiento con gRPC y Protocol Buffers para Comunicación Interna"
 date: 2026-08-15 09:00:00 -0600

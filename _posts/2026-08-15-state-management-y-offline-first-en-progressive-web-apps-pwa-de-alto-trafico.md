@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Arquitectura de Estado y Estrategias Offline-First: Resiliencia en PWAs de Escala Enterprise"
 date: 2026-08-15 09:00:00 -0600

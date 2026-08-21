@@ -679,12 +679,14 @@
   <!-- 3rd-party Dependencies -->
 
   {% if site.toc and page.toc %}
-    <link rel="stylesheet" href="{{ site.data.origin[type].toc.css | relative_url }}">
+    <link rel="stylesheet" href="{{ site.data.origin[type].toc.css | relative_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ site.data.origin[type].toc.css | relative_url }}"></noscript>
   {% endif %}
 
   {% if page.layout == 'page' or page.layout == 'post' %}
     <!-- Image Popup -->
-    <link rel="stylesheet" href="{{ site.data.origin[type].glightbox.css | relative_url }}">
+    <link rel="stylesheet" href="{{ site.data.origin[type].glightbox.css | relative_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ site.data.origin[type].glightbox.css | relative_url }}"></noscript>
   {% endif %}
 
   <!-- Scripts -->

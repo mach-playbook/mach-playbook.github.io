@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Patrones Avanzados de Resiliencia y Consistencia en Arquitecturas MACH - Edición 20260820"
 date: 2026-08-20 09:00:00 -0600

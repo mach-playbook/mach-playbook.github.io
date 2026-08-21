@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "De la Rigidez al Agilismo: Transición de Catálogos Monolíticos a Motores Composable PIM (Akeneo, Pimcore)"
 date: 2026-08-17 09:00:00 -0600

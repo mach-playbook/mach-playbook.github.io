@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "AsyncAPI para la Gobernanza de Event Streams y Webhooks en Tiempo Real"
 date: 2026-08-14 09:00:00 -0600
