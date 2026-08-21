@@ -154,13 +154,29 @@
     }
   }
 
-  function updatePostCardsView() {
-    if (currentPage > 1 || currentLang !== 'all') {
-      unpackRemainingPostsIfNeeded();
-    }
-
+  function updatePostCardsView(isInit) {
     var cards = Array.from(document.querySelectorAll('.post-card-item'));
     if (!cards.length) return;
+
+    if (isInit && currentLang === 'all' && currentPage === 1) {
+      var totalMatching = cards.length;
+      var dataEl = document.getElementById('remaining-posts-data');
+      if (dataEl) {
+        try {
+          if (!window._cachedRemainingPostsCount) {
+            window._cachedRemainingPostsCount = JSON.parse(dataEl.textContent).length;
+          }
+          totalMatching += window._cachedRemainingPostsCount;
+        } catch (e) {}
+      }
+      renderPagination(totalMatching, 1);
+      return;
+    }
+
+    if (currentPage > 1 || currentLang !== 'all') {
+      unpackRemainingPostsIfNeeded();
+      cards = Array.from(document.querySelectorAll('.post-card-item'));
+    }
 
     // 1. Filter matching cards
     var matchingCards = cards.filter(function(card) {
@@ -267,7 +283,7 @@
     }
   }
 
-  function setLanguage(lang) {
+  function setLanguage(lang, isInit) {
     currentLang = lang || 'es';
     currentPage = 1;
 
@@ -311,10 +327,12 @@
     });
 
     // Apply translations across UI and static page blocks
-    applyLocalization(currentLang);
+    if (currentLang !== 'all') {
+      applyLocalization(currentLang);
+    }
 
     // Apply card filtering on home feed
-    updatePostCardsView();
+    updatePostCardsView(isInit);
   }
 
   window.setLanguageFilter = setLanguage;
@@ -335,7 +353,7 @@
       opt.addEventListener('click', function(e) {
         e.preventDefault();
         var selected = this.getAttribute('data-lang');
-        setLanguage(selected);
+        setLanguage(selected, false);
       });
     });
 
@@ -344,11 +362,11 @@
       pill.addEventListener('click', function(e) {
         e.preventDefault();
         var selected = this.getAttribute('data-lang-target');
-        setLanguage(selected);
+        setLanguage(selected, false);
       });
     });
 
-    setLanguage(initialLang);
+    setLanguage(initialLang, true);
   }
 
   if (document.readyState === 'loading') {
