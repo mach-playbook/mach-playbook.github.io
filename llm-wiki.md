@@ -241,9 +241,16 @@ This project underwent multiple review cycles for Google Search Console (GSC) in
    - *The Problem*: Although `/about/` had Lenin Meza's credentials, individual post footers lacked an author bio card. Human AdSense reviewers sampling random articles could not immediately verify the author's hands-on enterprise background.
    - *Remediation*: Injected a responsive Author Bio Card into `_layouts/post.html` with Lenin Meza's Senior Solutions Architect title, avatar, and direct verified links to GitHub, LinkedIn, and Portfolio.
 
-4. **GSC "Couldn't fetch" UI Timing Quirk & Submission Typo**:
-   - *The Problem*: An initial submission typo (`/sitemap.xm` missing the trailing 'l') produced a 404 in Search Console. Furthermore, when a new sitemap is submitted, GSC places it in an asynchronous queue and displays `Couldn't fetch` with `Last read` blank until Googlebot executes the scheduled crawl.
-   - *Remediation*: Corrected submission to `sitemap.xml`, confirmed live HTTP 200 OK and robots.txt inclusion, and established the 48-hour audit protocol.
+4. **GSC "Couldn't fetch" UI Timing Quirk & Chronological Submissions Log**:
+   - *The Problem*: When a new sitemap is submitted or replaced, Google Search Console places it in an asynchronous worker queue, marking `Type: Unknown`, `Last read: (blank)`, and `Status: Couldn't fetch` (in red). This occurs even when the live endpoint responds `HTTP/2 200 OK`. Once Googlebot executes its background crawl, the status updates to `Success`.
+   - *Chronological Submissions Log*:
+     1. **Aug 13, 2026**: Initial submission (corrected `/sitemap.xm` -> `/sitemap.xml`). Transitioned to `Success` with 117 URLs.
+     2. **Aug 14, 2026**: Post-taxonomy consolidation (eliminated 256 thin tag/category pages; 117 URLs). Status: `Success`.
+     3. **Aug 15, 2026**: Multilingual launch (`assets/js/lang-filter.js` & bilingual tags; 287 URLs). Status: `Success`.
+     4. **Aug 21, 2026**: Performance milestone (0.000 CLS, Mobile Lighthouse >90; 141 URLs). Status: `Success`.
+     5. **Sep 02, 2026 (10:50)**: Post-AdSense remediation (11 duplicate posts purged, 12 unique posts published; 223 URLs). Status: `Success`.
+     6. **Sep 02, 2026 (11:10)**: SEO duplicate cleanup (disabled `paginate: 10` in `_config.yml`, eliminated 7 duplicate `/pageN/` URLs). Re-submitted clean **222-URL sitemap** via `browser_subagent`. Enqueued in Googlebot crawler worker.
+   - *Verification Protocol*: Always verify live HTTP response with `curl -sI -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" https://mach-playbook.github.io/sitemap.xml` (returns HTTP 200 with application/xml).
 
 5. **Missing Dedicated Trust & Contact Endpoints**:
    - *The Problem*: Lack of distinct `/contact/` and `/terms/` pages weakened trust signals.

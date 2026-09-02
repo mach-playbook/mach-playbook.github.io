@@ -189,7 +189,17 @@
   8. Created full modular Karpathy-style LLM Wiki in `wiki/` (`index.md`, `architecture.md`, `adsense-policy-and-compliance.md`, `publishing-pipeline-and-deduplication.md`, `content-and-editorial-standards.md`, `tools-and-operations.md`).
   9. Registered new skill `.agents/skills/adsense-compliance-and-deduplication/SKILL.md` and updated `add-new-post-test-deploy/SKILL.md`.
 
-
-
-
-
+2026-09-02 11:20: Elimination of Duplicate /pageN/ URLs, Sitemap Clean-up & GSC Resubmission History
+- **Root Cause Analysis (Duplicate /pageN/ URLs)**:
+  Discovered that `sitemap.xml` contained 7 pagination URLs (`/page2/` to `/page8/`). Because `_layouts/home.html` is customized to use client-side dynamic pagination (`assets/js/lang-filter.js`), the static templates always rendered the first 10 posts of `site.posts`. Consequently, `/page2/` through `/page8/` were 100% duplicate copies of the home page `/`, causing duplicate content signals and crawl budget dilution.
+- **Remediation**:
+  1. Disabled static pagination in `_config.yml` (`# paginate: 10`). Jekyll now only builds `/index.html`.
+  2. Verified live `sitemap.xml`: Reduced to **222 canonical URLs** with 0 pagination duplicates.
+  3. Integrated automatic `.webp` image generation directly into `scripts/publish_daily_jekyll_post.py`.
+- **Google Search Console Submissions Record (6 Total to Date)**:
+  1. *2026-08-13*: Initial submission (`sitemap.xml`, 240 URLs; typo `/sitemap.xm` resolved). Status: `Success` (117 discovered).
+  2. *2026-08-14*: Post-taxonomy consolidation (55 -> 7 categories, 201 -> 21 tags; 117 URLs). Status: `Success`.
+  3. *2026-08-15*: Multilingual launch (`assets/js/lang-filter.js`; 287 URLs). Status: `Success`.
+  4. *2026-08-21*: Performance milestone (0.000 CLS, Mobile Lighthouse >90; 141 URLs). Status: `Success`.
+  5. *2026-09-02 (10:50)*: Post-AdSense remediation (11 duplicate posts purged, 12 unique posts added; 223 URLs). Status: `Success`.
+  6. *2026-09-02 (11:10)*: SEO pagination cleanup (deleted old entry and submitted clean 222-URL sitemap). Enqueued in Googlebot asynchronous crawler queue (transient `Couldn't fetch` while pending execution; verified `HTTP/2 200 OK` via curl).

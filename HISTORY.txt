@@ -258,7 +258,11 @@
   * Registered new specialized skill `.agents/skills/adsense-compliance-and-deduplication/SKILL.md` and updated `add-new-post-test-deploy/SKILL.md`.
   * Mandated across `AGENTS.md` and `.agents/AGENTS.md` that all agents and skills must always consult the LLM Wiki and `codebase-memory-mcp` knowledge graph.
 
-
-
-
-
+2026-09-02 11:20: Elimination of Duplicate /pageN/ URLs, Sitemap Clean-up & GSC Resubmission History
+  * Diagnosed duplicate pagination URLs: Identified that `sitemap.xml` contained 7 pagination URLs (`/page2/` to `/page8/`) which were 100% duplicate copies of the home page because client-side dynamic pagination (`assets/js/lang-filter.js`) had replaced static server-side pagination.
+  * Disabled static pagination in `_config.yml` (`# paginate: 10`), completely eliminating the 7 zombie duplicate URLs.
+  * Verified live production `sitemap.xml`: Reduced to 222 canonical URLs with 0 duplicate pages.
+  * Automated companion `.webp` image generation in `scripts/publish_daily_jekyll_post.py`.
+  * Autonomous daily publishing agent published its scheduled daily post: `2026-09-02-patron-strangler-fig-como-desmantelar-un-monolito-sap-commerce-o-magento-paso-a-paso` (total posts: 81).
+  * Re-submitted clean 222-URL sitemap in Google Search Console via browser subagent.
+  * Documented complete chronological history of all 6 GSC sitemap submissions across `wiki/tools-and-operations.md`, `llm-wiki.md`, `AGENTS.md`, and `HISTORY.txt`.
