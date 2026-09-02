@@ -245,6 +245,20 @@
   * Verified live mobile Lighthouse audit on `https://mach-playbook.github.io/`: Performance 91/100, Accessibility 100/100, Best Practices 100/100, SEO 100/100, CLS 0.000, FCP 1.4s, TBT 120ms.
   * Ingested all architectural patterns, performance benchmarks, and forensic findings into Karpathy-style `llm-wiki.md` and codebase memory Knowledge Graph ADR (`manage_adr`).
 
+2026-09-02 10:35: Google AdSense "Low-Value Content" Remediation, Deduplication Engine Fix & LLM Wiki Ingestion
+  * Diagnosed root causes of AdSense rejection: (1) AdSense script wrapped in interaction events and 8s delay, invisible to Google crawler bots, and (2) Autonomous Daily Blog Agent publishing 11 near-identical articles on consecutive days ("patrones-avanzados-de-resiliencia-y-consistencia...").
+  * Fixed `_includes/head.html`: Replaced lazy-loading with direct standard `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2700240339792942" crossorigin="anonymous"></script>` for immediate crawler discovery.
+  * Purged all 11 duplicate posts and their image assets from `_posts/` and `assets/img/posts/`.
+  * Authored and published 12 high-quality, unique technical deep-dives (>1,000 words each): FinOps, Platform Engineering con Backstage, GraphQL Federation, Multi-tenancy SaaS, Contract Testing con Pact, Istio Service Mesh, Database Sharding, API Rate Limiting, Feature Flags, OpenTelemetry y Domain-Driven Design. Total posts: 80 (34 EN, 46 ES).
+  * Synthesized 100% unique PNG headers and generated companion WebP assets via `scripts/generate-webp-images.py`.
+  * Updated `scripts/test-adsense-compliance.py` with 2 new policy assertions: direct async script check and near-duplicate topic detection (13/13 tests PASS).
+  * Overhauled `scripts/publish_daily_jekyll_post.py` with Jaccard keyword similarity deduplication, 100+ topic matrix, dynamic Gemini AI topic discovery, and combinatorial algorithmic fallback (permanently banning repetitive "Edición YYYYMMDD" fallback).
+  * Automated browser subagent requested formal site re-review on Google AdSense console (`https://adsense.google.com/adsense/u/0/pub-2700240339792942/sites/detail/url=mach-playbook.github.io`); site status updated to "Getting ready".
+  * Ingested complete modular Karpathy-style LLM Wiki in `wiki/` (`index.md`, `architecture.md`, `adsense-policy-and-compliance.md`, `publishing-pipeline-and-deduplication.md`, `content-and-editorial-standards.md`, `tools-and-operations.md`).
+  * Registered new specialized skill `.agents/skills/adsense-compliance-and-deduplication/SKILL.md` and updated `add-new-post-test-deploy/SKILL.md`.
+  * Mandated across `AGENTS.md` and `.agents/AGENTS.md` that all agents and skills must always consult the LLM Wiki and `codebase-memory-mcp` knowledge graph.
+
+
 
 
 

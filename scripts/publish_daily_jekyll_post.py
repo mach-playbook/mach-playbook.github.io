@@ -42,7 +42,7 @@ DEFAULT_MODELS = [
     "gemini-2.5-pro"
 ]
 
-# 5 Core Pillars of MACH Playbook Topic Matrix
+# 5 Core Pillars of MACH Playbook Topic Matrix - Expanded to 100+ Enterprise Topics
 TOPIC_MATRIX = {
     "Microservicios & Cloud Native": [
         "Patrón Outbox Transaccional y Debezium en Arquitecturas de Microservicios Distribuidas",
@@ -54,10 +54,20 @@ TOPIC_MATRIX = {
         "Optimización de Cold Starts y Conexiones Pooling en Serverless con Google Cloud Run y AWS Lambda",
         "Estrategias de Despliegue Canary y Blue/Green con ArgoCD y Flagger en Kubernetes",
         "Aislamiento de Cargas y Bulkhead Pattern en Microservicios de Alta Concurrencia",
-        "Patrones de Caché Distribuida con Redis Cluster y Consistencia Eventual"
+        "Patrones de Caché Distribuida con Redis Cluster y Consistencia Eventual",
+        "eBPF y Cilium para Seguridad y Redes de Alto Rendimiento en Kubernetes",
+        "Dapr como Distributed Application Runtime: Abstracción de Estado y Pub/Sub",
+        "KEDA y Escalado Dirigido por Eventos en Microservicios de Procesamiento Asíncrono",
+        "Gestión de Secretos Dinámicos y Rotación Automática con HashiCorp Vault en Kubernetes",
+        "Cell-Based Architecture: Aislamiento Extremo de Blast Radius para Escala Global",
+        "Chaos Engineering Continuo con LitmusChaos y Chaos Mesh en Entornos Staging",
+        "Arquitectura Hexagonal (Puertos y Adaptadores) en Microservicios Go y TypeScript",
+        "Migración sin Caídas de Esquemas Relacionales con gh-ost y pt-online-schema-change",
+        "Consistencia Eventual en CQRS: Manejo de Lecturas Sucias y Proyecciones Asíncronas",
+        "Multi-Cluster Kubernetes con Cilium Mesh y Global Service Load Balancing"
     ],
     "API-First & Integraciones": [
-        "Federación de GraphQL (Apollo Federation) vs REST Gateway en Ecosistemas Composable",
+        "Federación de GraphQL (Apollo Federation v2) vs REST Gateway en Ecosistemas Composable",
         "Diseño de Contratos API con OpenAPI v3.1 y Validación de Schemas en CI/CD",
         "Idempotencia de Pagos y Webhooks Distribuidos con Colas Dead-Letter (DLQ)",
         "Estrategias de Rate Limiting Adaptativo y Algoritmos Token Bucket en API Gateways",
@@ -66,19 +76,39 @@ TOPIC_MATRIX = {
         "Diseño de APIs de Alto Rendimiento con gRPC y Protocol Buffers para Comunicación Interna",
         "Seguridad de APIs: Prevención de OWASP API Top 10 y Manejo Seguro de Tokens JWT",
         "Traducción y Mediación de Protocolos en Edge Gateways (HTTP/3, WebSockets, SSE)",
-        "Gobernanza de APIs: Pruebas de Contrato Automatizadas con Pact en Pipelines CI/CD"
+        "Gobernanza de APIs: Pruebas de Contrato Automatizadas con Pact en Pipelines CI/CD",
+        "Kafka Schema Registry y Apache Avro para Evolución Compatible de Mensajería",
+        "BFF (Backend for Frontend) Ultraligero con Hono y Cloudflare Workers",
+        "Server-Sent Events (SSE) vs WebSockets para Notificaciones Push en Frontends Headless",
+        "OAuth 2.1 y Passkeys (WebAuthn): Modernizando la Identidad en Plataformas Composable",
+        "Gobernanza de Webhooks Entrantes: Verificación Criptográfica HMAC y Rate Limiting",
+        "API Monetization y Quotas Granulares con Kong Gateway y Stripe Billing",
+        "Enrutamiento Inteligente en API Gateway con Machine Learning para Detección de Anomalías",
+        "GraphQL Subscriptions a Escala con Redis Streams y NATS Messaging",
+        "Contratos Basados en Consumidores (Consumer-Driven Contracts) para Equipos Desacoplados",
+        "Mocking Dinámico y Virtualización de APIs en Ambientes de Pruebas Distribuidas"
     ],
     "Headless & Frontend Moderno": [
         "Optimización de Core Web Vitals (INP, LCP) en Frontends Composable con Next.js e ISR",
         "Estrategias de Caché Edge y Purgado Granular con Cloudflare Workers y Fastly Compute",
         "Integración de CMS Headless Multi-Tenant (Contentful, Strapi, Sanity) en E-Commerce Global",
         "Micro-Frontends con Module Federation: Modularización sin Pérdida de Rendimiento",
-        "Estrategias de Hidratación Parcial y Server Components en Arquitecturas Headless",
-        "Búsqueda Composable Instantánea: Integración de Algolia / Meilisearch con Catálogos Dinámicos",
+        "Estrategias de Hidratación Parcial y React Server Components en Arquitecturas Headless",
+        "Búsqueda Composable Instantánea: Integración de Algolia y Meilisearch con Catálogos Dinámicos",
         "Diseño de Sistemas de Diseño (Design Systems) Headless Desacoplados de la Lógica de Negocio",
         "State Management y Offline-First en Progressive Web Apps (PWA) de Alto Tráfico",
         "Monitoreo de Rendimiento Real (RUM) y Telemetría de Usuario en Tiendas Headless",
-        "Internacionalización Dinámica y Localización Geo-Distribuida en Frontends Composable"
+        "Internacionalización Dinámica y Localización Geo-Distribuida en Frontends Composable",
+        "Astro y Edge Islands para Sitios de Comercio Electrónico de Máximo Rendimiento",
+        "Optimización de Imágenes Responsive al Vuelo con Cloudflare Images y Next/Image",
+        "Estrategias de Renderizado Híbrido: SSG, SSR e ISR en Plataformas Omnicanal",
+        "Web Workers y Off-Main-Thread Architecture para Computación Pesada en el Navegador",
+        "A/B Testing en el Edge sin Layout Shifts (Zero-CLS) con Middleware Edge",
+        "Seguridad en el Cliente: Content Security Policy (CSP) Estricto y Protección XSS en SPAs",
+        "Personalización en Tiempo Real Basada en Edge Middleware sin Afectar la Tasa de Acierto de Caché",
+        "Storybook y Visual Regression Testing para Componentes Headless Composable",
+        "Accesibilidad Web (WCAG 2.2 AA) en Componentes Headless Interactivos Complejos",
+        "Micro-Frontends con Qiankun vs Single-SPA: Análisis de Sobrecarga y Rendimiento"
     ],
     "Composable Commerce & Transición": [
         "Patrón Strangler Fig: Cómo Desmantelar un Monolito SAP Commerce o Magento Paso a Paso",
@@ -90,7 +120,17 @@ TOPIC_MATRIX = {
         "Gestión de Devoluciones y Logística Inversa en Arquitecturas de Comercio Desacoplado",
         "Composable B2B Commerce: Reglas Complejas de Precios y Cuentas Corporativas",
         "Migración de Salesforce Commerce Cloud a Stack MACH: Lecciones Aprendidas y Trade-offs",
-        "Orquestación de Carritos de Compra Distribuidos y Manejo de Concurrencia Masiva"
+        "Orquestación de Carritos de Compra Distribuidos y Manejo de Concurrencia Masiva",
+        "Motores de Búsqueda y Descubrimiento Semántico con Vectores e IA Generativa en E-Commerce",
+        "Checkout Tokenizado y Cumplimiento PCI-DSS SAQ-A en Arquitecturas Headless",
+        "Sincronización de Catálogos Omnicanal (Tiendas Físicas + Online) con Event Streaming",
+        "Suscripciones y Pagos Recurrentes en Composable Commerce con Stripe Billing",
+        "Marketplace Multi-Vendor: Arquitectura de Liquidaciones y Gestión de Vendedores con PBCs",
+        "Manejo de Flash Sales Masivas: Patrones de Cola Virtual y Caching Agresivo de Inventario",
+        "Integración de Sistemas ERP Legacy (SAP, Oracle) mediante Event-Driven Integration Layers",
+        "Order Management System (OMS) Distribuido: Ruteo Inteligente de Pedidos por Proximidad",
+        "Programas de Lealtad y Gamificación Desacoplados en E-Commerce Composable",
+        "Comercio Conversacional y Social Commerce Integrados mediante APIs Headless"
     ],
     "Estrategia Enterprise, FinOps & ROI": [
         "Cómo Justificar el ROI de una Arquitectura MACH ante el C-Level y Comité de Dirección",
@@ -102,7 +142,17 @@ TOPIC_MATRIX = {
         "Acuerdos de Nivel de Servicio (SLA) Agregados en Cadenas de Dependencias Multi-SaaS",
         "Auditoría y Cumplimiento Normativo (PCI-DSS, GDPR, SOC2) en Plataformas Composable",
         "Métricas Clave de Éxito Técnico y de Negocio Post-Migración Composable (DORA + KPIs)",
-        "Gestión del Cambio Cultural y Capacitación de Equipos de Ingeniería Tradicionales a MACH"
+        "Gestión del Cambio Cultural y Capacitación de Equipos de Ingeniería Tradicionales a MACH",
+        "GreenOps y Sostenibilidad Cloud: Reducción de Huella de Carbono en Cargas MACH",
+        "Gobernanza Multi-Cloud: Evitando Complejidad Innecesaria entre GCP, AWS y Azure",
+        "Modelos de Madurez para Plataformas Composable: De Adopción Inicial a Escala Global",
+        "Gestión de Incidentes Mayores y Post-Mortems sin Culpa en Arquitecturas Multi-Proveedor",
+        "Gestión de Licenciamiento y Negociación de Contratos Enterprise en Ecosistemas MACH",
+        "Gestión de Riesgo Operacional y Continuidad de Negocio (DR) en Dependencias Multi-SaaS",
+        "Desarrollo Basado en Plataforma (Platform Engineering) e IDP Interno con Backstage",
+        "Definición y Medición de Service Level Objectives (SLOs) y Error Budgets en MACH",
+        "Auditoría Forense de Facturas Cloud: Descubriendo Desperdicios Ocultos en Kubernetes",
+        "Estrategias de Retención de Talento y Cultura de Ingeniería en Equipos Composable"
     ]
 }
 
@@ -120,12 +170,59 @@ UNSPLASH_IT_PHOTOS = [
     "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=675&fit=crop"   # Data Center Room
 ]
 
+STOP_WORDS = {
+    'de', 'en', 'para', 'con', 'las', 'los', 'por', 'sobre', 'del', 'al', 'una', 'uno', 'unos',
+    'the', 'and', 'for', 'with', 'in', 'on', 'at', 'to', 'a', 'an', 'is', 'as', 'by', 'vs',
+    'mach', 'arquitectura', 'arquitecturas', 'microservicios', 'cloud', 'native', 'patrones',
+    'estrategias', 'edicion', 'edition', 'guia', 'guide', 'tutorial', 'overview', 'moderna',
+    'moderno', 'modernos', 'sistemas', 'diseno', 'analisis', 'produccion', 'escala', 'global'
+}
+
 
 def slugify(text: str) -> str:
     """Transform topic title into URL-friendly, clean ASCII slug."""
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8')
     text = re.sub(r'[^\w\s-]', '', text.lower())
     return re.sub(r'[-\s]+', '-', text).strip('-')
+
+
+def extract_keywords(text: str) -> set:
+    """Extract significant content keywords from topic title or slug, ignoring stop words."""
+    text_clean = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8')
+    words = re.findall(r'[a-zA-Z0-9]+', text_clean.lower())
+    return {w for w in words if len(w) > 2 and w not in STOP_WORDS}
+
+
+def calculate_similarity(topic_a: str, topic_b: str) -> float:
+    """Calculate Jaccard keyword similarity between two topics/slugs."""
+    kw_a = extract_keywords(topic_a)
+    kw_b = extract_keywords(topic_b)
+    if not kw_a or not kw_b:
+        return 0.0
+    intersection = len(kw_a & kw_b)
+    union = len(kw_a | kw_b)
+    return intersection / union if union > 0 else 0.0
+
+
+def is_topic_covered(candidate_topic: str, existing_posts: List[Dict[str, str]], threshold: float = 0.45) -> bool:
+    """Check if a topic has already been covered with high confidence, preventing duplicate or thin content."""
+    cand_slug = slugify(candidate_topic)
+    for p in existing_posts:
+        existing_title = p.get("title", "")
+        existing_slug = p.get("slug", "")
+        
+        # Substring slug match (after removing dates)
+        clean_existing = re.sub(r'^\d{4}-\d{2}-\d{2}-', '', existing_slug)
+        if cand_slug == clean_existing or (len(cand_slug) > 20 and cand_slug in clean_existing):
+            return True
+            
+        # Jaccard keyword similarity check
+        sim_title = calculate_similarity(candidate_topic, existing_title)
+        sim_slug = calculate_similarity(cand_slug, clean_existing)
+        if max(sim_title, sim_slug) >= threshold:
+            return True
+            
+    return False
 
 
 def scan_existing_posts(posts_dir: str = "_posts") -> List[Dict[str, str]]:
@@ -161,31 +258,114 @@ def scan_existing_posts(posts_dir: str = "_posts") -> List[Dict[str, str]]:
     return existing_posts
 
 
-def select_next_topic(existing_posts: List[Dict[str, str]], manual_topic: Optional[str] = None) -> Tuple[str, str]:
-    """Select a fresh, untackled topic balancing the 5 pillars, or use manual topic if provided."""
+def generate_algorithmic_topic(existing_posts: List[Dict[str, str]]) -> Tuple[str, str]:
+    """Combinatorial generative fallback ensuring 100% unique architectural topics without repetitive editions."""
+    patterns = [
+        ("Cell-Based Architecture", "Arquitectura Cloud & Microservicios"),
+        ("Dapr Distributed Application Runtime", "Arquitectura Cloud & Microservicios"),
+        ("eBPF y Cilium Service Mesh", "Arquitectura Cloud & Microservicios"),
+        ("Event Sourcing con Kafka y Debezium", "Arquitectura Cloud & Microservicios"),
+        ("CQRS y Proyecciones Read-Heavy", "Arquitectura Cloud & Microservicios"),
+        ("GraphQL Federation v2 y Supergraphs", "API-First & Integraciones"),
+        ("AsyncAPI y Gobernanza de Webhooks", "API-First & Integraciones"),
+        ("OAuth 2.1 y Passkeys WebAuthn", "API-First & Integraciones"),
+        ("React Server Components e ISR", "Headless & Frontend Moderno"),
+        ("Edge Middleware y A/B Testing Zero-CLS", "Headless & Frontend Moderno"),
+        ("Búsqueda Vectorial con Meilisearch", "Headless & Frontend Moderno"),
+        ("Orquestación de Checkout Multi-Adquirente", "Composable Commerce & Transición"),
+        ("Gestión de Inventario Distribuido en Flash Sales", "Composable Commerce & Transición"),
+        ("GreenOps y Sostenibilidad en Cloud", "Estrategia Enterprise, FinOps & ROI"),
+        ("Platform Engineering con Backstage IDP", "Estrategia Enterprise, FinOps & ROI")
+    ]
+    
+    contexts = [
+        "en Sistemas de Alta Concurrencia",
+        "para Transacciones Transfronterizas",
+        "en Plataformas de E-Commerce Global",
+        "con Tolerancia Extrema a Particiones de Red",
+        "para Prevención de Fraude en Tiempo Real",
+        "en Arquitecturas Multi-Cloud",
+        "para Reducción de Latencia p99",
+        "en Catálogos B2B Distribuidos"
+    ]
+    
+    candidates = []
+    for (pat, pil) in patterns:
+        for ctx in contexts:
+            candidate = f"{pat} {ctx}"
+            if not is_topic_covered(candidate, existing_posts, threshold=0.40):
+                candidates.append((candidate, pil))
+                
+    if candidates:
+        random.shuffle(candidates)
+        return candidates[0]
+        
+    # Ultimate unique fallback with timestamp guarantee
+    ts = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+    return f"Estrategias Emergentes de Ingeniería de Plataforma y MACH - Ref {ts}", "Arquitectura Cloud & Microservicios"
+
+
+def generate_novel_topic_with_ai(api_key: str, existing_posts: List[Dict[str, str]]) -> Optional[Tuple[str, str]]:
+    """Dynamically prompt Google Gemini to propose a brand new, trending enterprise MACH topic not in existing posts."""
+    if not api_key or api_key == "MOCK_KEY":
+        return None
+        
+    recent_titles = [p["title"] for p in existing_posts[-30:] if p.get("title")]
+    titles_bulleted = "\n".join([f"- {t}" for t in recent_titles])
+    
+    system_prompt = "Eres un Principal Architect y curador de contenido técnico para el blog de ingeniería 'MACH Playbook'."
+    user_prompt = f"""Aquí están los últimos 30 artículos ya publicados en el blog:
+{titles_bulleted}
+
+Propón EXACTAMENTE UN tema técnico avanzado, original, específico y de nivel Senior Solutions Architect para un nuevo artículo sobre arquitecturas MACH / Composable Commerce / Cloud-Native.
+REGLAS ESTRICTAS:
+1. El tema NO debe ser una variación de ningún tema anterior (no repitas circuit breakers, resiliencia general, etc.).
+2. Debe ser un tema de vanguardia para 2026 (por ejemplo: eBPF, Cilium, Temporal, KEDA, Passkeys, ClickHouse, Cell-based architecture, etc.).
+3. Responde ÚNICAMENTE en formato JSON con dos campos:
+{{"topic": "Título del Tema en Español", "pillar": "Pilar correspondiente de MACH"}}
+"""
+    try:
+        response_text = call_gemini_api(api_key, system_prompt, user_prompt)
+        json_match = re.search(r'\{.*?\}', response_text, re.DOTALL)
+        if json_match:
+            data = json.loads(json_match.group(0))
+            topic = data.get("topic", "").strip()
+            pillar = data.get("pillar", "Arquitectura Cloud & Microservicios").strip()
+            if topic and not is_topic_covered(topic, existing_posts, threshold=0.40):
+                print(f" [AI Novel Topic Generated]: '{topic}' ({pillar})")
+                return topic, pillar
+    except Exception as e:
+        print(f" Notice: Dynamic AI topic generation skipped ({e}).")
+        
+    return None
+
+
+def select_next_topic(existing_posts: List[Dict[str, str]], manual_topic: Optional[str] = None, api_key: Optional[str] = None) -> Tuple[str, str]:
+    """Select a fresh, untackled topic balancing the 5 pillars, using AI generation or algorithmic synthesis when static matrix is covered."""
     if manual_topic:
         return manual_topic, "Arquitectura Cloud & Microservicios"
 
-    existing_titles_lower = [p["title"].lower() for p in existing_posts if p["title"]]
-    existing_slugs_lower = [p["slug"].lower() for p in existing_posts]
-
-    for pillar, topics in TOPIC_MATRIX.items():
+    # 1. Search expanded static topic matrix using smart Jaccard deduplication
+    pillars = list(TOPIC_MATRIX.keys())
+    random.shuffle(pillars)
+    
+    for pillar in pillars:
+        topics = TOPIC_MATRIX[pillar]
         for topic in topics:
-            topic_clean = topic.lower()
-            topic_slug = slugify(topic)
-            
-            is_covered = any(
-                topic_slug in s or s in topic_slug or
-                any(word in s for word in topic_slug.split("-") if len(word) > 5)
-                for s in existing_slugs_lower
-            ) or any(topic_clean in t or t in topic_clean for t in existing_titles_lower)
-            
-            if not is_covered:
+            if not is_topic_covered(topic, existing_posts, threshold=0.45):
                 return topic, pillar
 
-    timestamp_seed = datetime.datetime.now().strftime("%Y%m%d")
-    fallback_topic = f"Patrones Avanzados de Resiliencia y Consistencia en Arquitecturas MACH - Edición {timestamp_seed}"
-    return fallback_topic, "Arquitectura Cloud & Microservicios"
+    print(" Notice: Static topic matrix exhausted. Querying Gemini AI for a 100% novel topic...")
+    
+    # 2. Dynamic AI Topic Synthesis via Gemini
+    if api_key and api_key != "MOCK_KEY":
+        ai_topic = generate_novel_topic_with_ai(api_key, existing_posts)
+        if ai_topic:
+            return ai_topic
+
+    # 3. Combinatorial Algorithmic Generator (guaranteed unique, never repeats)
+    print(" Using combinatorial algorithmic topic generator...")
+    return generate_algorithmic_topic(existing_posts)
 
 
 def build_system_prompt(lang: str = "es") -> str:
@@ -935,7 +1115,7 @@ def main():
     print(f" Scanned {len(existing_posts)} existing articles in '{posts_dir}/' for deduplication.")
 
     # 4. Topic Selection
-    selected_topic, pillar = select_next_topic(existing_posts, args.topic)
+    selected_topic, pillar = select_next_topic(existing_posts, args.topic, api_key)
     print(f" Selected Topic: '{selected_topic}'")
     print(f" Pillar: [{pillar}] | Target Language: [{args.lang.upper()}]")
 

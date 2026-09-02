@@ -6,14 +6,13 @@ This workspace uses `llm-wiki.md` as its primary Karpathy-style knowledge base a
 
 ## 1. MANDATORY LLM WIKI INSTRUCTION FOR ALL AGENTS & SKILLS
 
-- **ALWAYS CONSULT `llm-wiki.md` FIRST**:
-  Before starting any task, architectural research, content creation, or debugging in this repository, ALL AGENTS and SKILLS MUST consult [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md) as the authoritative single source of truth for:
-  - Repository architecture & Jekyll Chirpy theme specs
-  - Bilingual post classification (`lang: es` and `lang: en`) & frontmatter rules
-  - Google AdSense policy compliance requirements & automated testing (`scripts/test-adsense-compliance.py`)
-  - Automated image pipeline (`scripts/generate-images.js`)
-  - Multi-stage Docker test environment & CI/CD deployment rules
-  - Environment gotchas & resolutions
+- **ALWAYS CONSULT THE LLM WIKI FIRST**:
+  Before starting any task, architectural research, content creation, or debugging in this repository, ALL AGENTS and SKILLS MUST consult the **LLM Wiki** ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) and [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md)) as the authoritative single source of truth for:
+  - Repository architecture & Jekyll Chirpy theme specs ([`wiki/architecture.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/architecture.md))
+  - Google AdSense policy compliance & direct async script loading rules ([`wiki/adsense-policy-and-compliance.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/adsense-policy-and-compliance.md))
+  - Autonomous daily publishing pipeline, topic matrix & smart Jaccard deduplication ([`wiki/publishing-pipeline-and-deduplication.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/publishing-pipeline-and-deduplication.md))
+  - Content standards & E-E-A-T editorial requirements ([`wiki/content-and-editorial-standards.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/content-and-editorial-standards.md))
+  - Operational testing suites, Docker HTML-Proofer & `codebase-memory-mcp` tools ([`wiki/tools-and-operations.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md))
 
 ---
 

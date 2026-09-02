@@ -1,7 +1,7 @@
 # LLM Wiki & Knowledge Base (`llm-wiki.md`)
 
 > **MANDATORY DIRECTIVE FOR ALL AI AGENTS & SKILLS**:
-> Always consult this Karpathy-style LLM Wiki (`llm-wiki.md`) first as the primary, single source of truth for project architecture, coding standards, environment gotchas, deployment workflows, Core Web Vitals performance benchmarks, and E-E-A-T / AdSense compliance rules before executing tasks.
+> Always consult this Karpathy-style LLM Wiki ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) and `llm-wiki.md`) and the **codebase-memory-mcp** knowledge graph tools (`search_graph`, `trace_path`, `get_code_snippet`, `get_architecture`, `query_graph`) as the primary, single source of truth for project architecture, coding standards, environment gotchas, deployment workflows, Core Web Vitals performance benchmarks, and E-E-A-T / AdSense compliance rules before executing tasks.
 
 ---
 
@@ -12,9 +12,15 @@
 - **Local Replica URL**: `http://localhost:8080` (Nginx Docker container)
 - **Framework**: Static Site Generator built on **Jekyll** with the [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy) (v7.5+).
 - **Core Domain & Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, multi-cloud strategies (GCP, AWS), API governance & gRPC protocols, ERP integrations (CFDI security), Next.js/Supabase serverless edge architectures, OpenSIPS VoIP security routing, YugabyteDB distributed SQL, local graph database indexing for AI IDEs in WSL, and high-resilience distributed systems.
-- **Content Inventory**: **71 deep technical guides** (>800–1,500 words each):
+- **Content Inventory**: **80 deep technical guides** (>800–1,500 words each):
   - **34 English Articles** (`lang: en`)
-  - **37 Spanish Articles** (`lang: es`)
+  - **46 Spanish Articles** (`lang: es`)
+- **Modular LLM Wiki Modules**:
+  - [`wiki/architecture.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/architecture.md): Stack, Web Vitals & Docker
+  - [`wiki/adsense-policy-and-compliance.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/adsense-policy-and-compliance.md): AdSense Guide & Postmortem
+  - [`wiki/publishing-pipeline-and-deduplication.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/publishing-pipeline-and-deduplication.md): Daily Agent & Deduplication
+  - [`wiki/content-and-editorial-standards.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/content-and-editorial-standards.md): E-E-A-T & Frontmatter
+  - [`wiki/tools-and-operations.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md): Testing & Codebase Memory MCP
 - **Author Identity & E-E-A-T**:
   - **Author Name**: **Lenin Meza** (`author: leninmeza` / `lenin`)
   - **Title**: Senior Solutions Architect & Enterprise Software Engineer

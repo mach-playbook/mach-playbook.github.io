@@ -11,20 +11,20 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 
 ---
 
-## 📖 Primary Source of Knowledge (`llm-wiki.md`)
+## 📖 Primary Source of Knowledge (`wiki/` & `llm-wiki.md`)
 
-> **IMPORTANT**: All AI Agents and Developers MUST consult [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md) as the authoritative Karpathy-style knowledge base for project architecture, coding standards, environment gotchas, deployment workflows, and E-E-A-T / AdSense compliance rules.
+> **IMPORTANT**: All AI Agents and Developers MUST consult the **LLM Wiki** ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) and [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md)) and query the **codebase-memory-mcp** knowledge graph (`home-merolhack-fl-mach-playbook`) as the authoritative single source of truth for project architecture, coding standards, environment gotchas, deployment workflows, and E-E-A-T / AdSense compliance rules.
 
 ---
 
 ## 🚀 Key Features
 
-- **62 Deep Technical Guides**: 34 English and 29 Spanish long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, YugabyteDB distributed SQL, local graph database indexing in WSL, Playwright + Ollama QA, headless CMS, Next.js/Supabase, OpenSIPS VoIP security, CFDI digital signatures, Cloud Run Blue/Green deployments, Event-Driven architectures, Zero Trust Apigee/mTLS, AWS RDS to GCP Cloud SQL migrations, VoIP call tracing, FinOps, and Kubernetes.
-- **100% Unique Content**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication**).
+- **80 Deep Technical Guides**: 34 English and 46 Spanish long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, Istio Service Mesh, Database Sharding, API Rate Limiting, Feature Flags, OpenTelemetry, YugabyteDB distributed SQL, local graph database indexing in WSL, Playwright + Ollama QA, headless CMS, Next.js/Supabase, OpenSIPS VoIP security, CFDI digital signatures, Cloud Run Blue/Green deployments, Event-Driven architectures, Zero Trust Apigee/mTLS, AWS RDS to GCP Cloud SQL migrations, VoIP call tracing, FinOps, and Kubernetes.
+- **100% Unique Content**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication**) and smart Jaccard deduplication in `scripts/publish_daily_jekyll_post.py`.
 - **🌐 Interactive Language Selector**: Global Topbar dropdown (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) and Home Feed Filter Pills with instant Vanilla JS client-side filtering and `localStorage` preference persistence.
-- **🎨 Topic-Aware IT Image Generation**: Automated image pipeline (`scripts/generate-images.js`) backed by Pollinations AI and a curated pool of 46+ high-resolution Unsplash IT graphics mapped by post index.
-- **🛡️ Automated AdSense Compliance Suite**: `scripts/test-adsense-compliance.py` verifies Publisher ID (`ca-pub-2700240339792942`), `ads.txt`, `<head>` verification, E-E-A-T credentials, word counts, and language metadata.
-- **🤖 Registered Agent Workflows**: Custom AI Agent skills in `.agents/skills/` for automated post creation, testing, deployment (`add-new-post-test-deploy`) and Search Console URL Inspection & Indexing (`gsc-manual-url-submission`).
+- **🎨 Topic-Aware IT Image Generation**: Automated image pipeline (`scripts/generate-images.js` & `scripts/generate-webp-images.py`) generating both PNG and WebP formats.
+- **🛡️ Automated AdSense Compliance Suite**: `scripts/test-adsense-compliance.py` verifies Publisher ID (`ca-pub-2700240339792942`), `ads.txt`, direct async `<head>` verification, E-E-A-T credentials, word counts, and language metadata (13/13 tests pass).
+- **🤖 Registered Agent Workflows**: Custom AI Agent skills in `.agents/skills/` for automated post creation (`add-new-post-test-deploy`), AdSense compliance and deduplication (`adsense-compliance-and-deduplication`), and Search Console URL Inspection & Indexing (`gsc-manual-url-submission`).
 - **🐳 Multi-Stage Docker CI/CD**: Local Docker Desktop environment matching GitHub Actions CI/CD for unit testing (`HTMLProofer`) and production serving via Nginx.
 
 ---
@@ -33,11 +33,19 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 
 ```text
 .
-├── _posts/                    # 62 Technical Markdown articles (35 EN, 28 ES)
+├── _posts/                    # 80 Technical Markdown articles (34 EN, 46 ES)
+├── wiki/                      # Karpathy-style Modular LLM Wiki Knowledge Base
+│   ├── index.md               # Master Wiki Catalog & Directives
+│   ├── architecture.md        # Technical Stack, CWV & Mobile Benchmarks
+│   ├── adsense-policy-and-compliance.md # AdSense Guide, Direct Script Rule & Postmortem
+│   ├── publishing-pipeline-and-deduplication.md # Daily Agent, Matrix & Deduplication
+│   ├── content-and-editorial-standards.md # E-E-A-T, Frontmatter & Mermaid
+│   └── tools-and-operations.md # Docker, Test Suites & Codebase Memory MCP
 ├── .agents/
 │   ├── AGENTS.md              # AI Agent operational guidelines & LLM Wiki mandate
 │   └── skills/                # Registered AI Agent Skill Workflows
 │       ├── add-new-post-test-deploy/  # Post creation, compliance & deployment skill
+│       ├── adsense-compliance-and-deduplication/ # AdSense audit & deduplication skill
 │       └── gsc-manual-url-submission/ # GSC URL extraction & indexing submission skill
 ├── _includes/
 │   ├── head.html              # Custom head override with AdSense & SEO tags
@@ -47,18 +55,20 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 │   └── post.html              # Post layout override with flag badges
 ├── assets/
 │   ├── js/lang-filter.js      # Client-side language filtering engine
-│   └── img/posts/             # Generated post cover graphics
+│   └── img/posts/             # Generated post cover graphics (PNG + WebP)
 ├── scripts/
+│   ├── publish_daily_jekyll_post.py # Autonomous daily blog post agent & deduplication
 │   ├── test-adsense-compliance.py # Automated AdSense E-E-A-T policy compliance suite
 │   ├── generate-images.js     # Unsplash & Pollinations AI image generator
+│   ├── generate-webp-images.py# WebP companion image generation
 │   ├── check-duplicates.py    # Automated similarity & duplicate checker
-│   └── list-urls.py           # Sitemap XML URL extractor utility
+│   └── test-site-integrity.py # Jekyll & HTML integrity testing suite
 ├── Dockerfile                 # Multi-stage Dockerfile (builder, test, dev, prod)
 ├── docker-compose.yml         # Container orchestration configuration
 ├── _config.yml                # Jekyll site configuration
-├── sitemap.xml                # Automated site map index (331 URLs)
+├── sitemap.xml                # Automated site map index
 ├── robots.txt                 # Search engine crawler instructions
-├── llm-wiki.md                 # Karpathy-style LLM Wiki knowledge base (Primary Single Source of Truth)
+├── llm-wiki.md                 # Karpathy-style LLM Wiki knowledge base (Quick Reference)
 ├── AGENTS.md                  # Comprehensive AI Agent operational log
 └── HISTORY.txt                # Chronological development history
 ```
