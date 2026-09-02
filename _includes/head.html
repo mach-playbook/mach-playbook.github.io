@@ -719,28 +719,7 @@
 
   {% include metadata-hook.html %}
 
-  <!-- Google AdSense - Activated -->
+  <!-- Google AdSense - Activated (Direct async load for crawler compatibility) -->
   <meta name="google-adsense-account" content="ca-pub-2700240339792942">
-  <script>
-    (function() {
-      var adLoaded = false;
-      function initAdSense() {
-        if (adLoaded) return;
-        adLoaded = true;
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2700240339792942';
-        s.crossOrigin = 'anonymous';
-        document.head.appendChild(s);
-      }
-      ['scroll', 'touchstart', 'click', 'keydown'].forEach(function(ev) {
-        window.addEventListener(ev, initAdSense, { once: true, passive: true });
-      });
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(function() { setTimeout(initAdSense, 8000); });
-      } else {
-        setTimeout(initAdSense, 8000);
-      }
-    })();
-  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2700240339792942" crossorigin="anonymous"></script>
 </head>
