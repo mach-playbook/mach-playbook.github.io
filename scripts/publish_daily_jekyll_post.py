@@ -1031,7 +1031,21 @@ def generate_post_image(title: str, slug: str, api_key: str, output_path: str, d
         return True
     except Exception as e:
         print(f" Error generating local fallback image: {e}")
-        return False
+def generate_webp_companion(png_path: str):
+    """Generate companion WebP image for Jekyll Chirpy responsive images and HTML-Proofer."""
+    try:
+        from PIL import Image
+        webp_path = os.path.splitext(png_path)[0] + '.webp'
+        if os.path.exists(png_path):
+            with Image.open(png_path) as img:
+                rgb = img.convert('RGB')
+                if rgb.width > 600:
+                    new_h = int(rgb.height * 600 / rgb.width)
+                    rgb = rgb.resize((600, new_h), Image.Resampling.LANCZOS)
+                rgb.save(webp_path, 'WEBP', quality=75, method=6)
+                print(f" Automatically generated companion WebP asset -> {webp_path}")
+    except Exception as e:
+        print(f" Warning: Could not generate WebP companion for {png_path}: {e}")
 
 
 def sanitize_markdown_post(raw_markdown: str, post_date_str: str, slug: str, lang: str = "es") -> str:
@@ -1153,6 +1167,8 @@ def main():
 
     # 8. Generate Matching Cover Image
     generate_post_image(selected_topic, slug_with_date, api_key, image_file_path, args.dry_run)
+    if not args.dry_run:
+        generate_webp_companion(image_file_path)
 
     # 9. Dry Run vs Save
     if args.dry_run:
