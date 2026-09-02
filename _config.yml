@@ -148,8 +148,9 @@ pwa:
     # shares the same domain name as the current website.
     deny_paths:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
-
-paginate: 10
+# Static pagination disabled to prevent duplicate /pageN/ URLs in sitemap.xml.
+# Dynamic client-side bilingual pagination is handled by assets/js/lang-filter.js in _layouts/home.html.
+# paginate: 10
 
 # The base URL of your site
 baseurl: ""
