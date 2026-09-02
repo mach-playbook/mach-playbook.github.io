@@ -29,3 +29,13 @@ assets/js/dist
 urls_list.txt
 __pycache__/
 *.pyc
+
+# Temporary wiki source files (email references, not for VCS)
+wiki/sources/
+
+# Lighthouse temp directories from browser testing
+lighthouse.*/
+undefined:/
+
+# Temporary run scripts
+scripts/run-lh.py

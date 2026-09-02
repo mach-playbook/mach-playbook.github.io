@@ -152,6 +152,59 @@ def run_adsense_tests():
     else:
         print(f"[PASS] All {total_posts} posts have structured tags")
 
+    # Test 9: Verify AdSense script loads directly (NOT lazy/interaction-triggered)
+    head_path = "_includes/head.html"
+    if os.path.exists(head_path):
+        with open(head_path, "r", encoding="utf-8") as f:
+            head_content = f.read()
+        # Check for direct async script tag (not inside event listeners or setTimeout)
+        lazy_patterns = [
+            "requestIdleCallback",
+            "addEventListener.*initAdSense",
+            "touchstart.*AdSense",
+            "setTimeout.*initAdSense",
+        ]
+        has_lazy_load = any(p.split(".*")[0] in head_content and "AdSense" in head_content
+                            and "setTimeout" in head_content for p in lazy_patterns)
+        has_direct_async = (
+            'script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' in head_content
+            or "script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" in head_content
+        )
+        if has_direct_async and not has_lazy_load:
+            print("[PASS] AdSense script loads directly with async tag (crawler-compatible)")
+        elif has_lazy_load:
+            failures.append("FAIL: AdSense script uses lazy/interaction-triggered loading! Google crawler cannot detect it. Use direct <script async> tag instead.")
+        else:
+            failures.append("FAIL: AdSense script not found in head.html or not properly configured!")
+
+    # Test 10: Detect near-duplicate posts (same topic published on consecutive days)
+    # Identifies posts where the first 50 chars of the slug (after date) are identical
+    post_slugs_by_date = {}
+    for post_file in posts:
+        base = os.path.basename(post_file)
+        # Extract date and slug: YYYY-MM-DD-slug.md
+        match = re.match(r"(\d{4}-\d{2}-\d{2})-(.*?)\.md$", base)
+        if match:
+            date_str = match.group(1)
+            slug = match.group(2)
+            # Use first 40 chars of slug as topic fingerprint
+            topic_key = slug[:40]
+            if topic_key not in post_slugs_by_date:
+                post_slugs_by_date[topic_key] = []
+            post_slugs_by_date[topic_key].append((date_str, base))
+
+    consecutive_duplicates = []
+    for topic_key, occurrences in post_slugs_by_date.items():
+        if len(occurrences) > 1:
+            consecutive_duplicates.append((topic_key, occurrences))
+
+    if consecutive_duplicates:
+        for topic_key, occurrences in consecutive_duplicates:
+            files_list = ", ".join([f[1] for f in occurrences])
+            failures.append(f"FAIL: Near-duplicate posts detected with same topic '{topic_key}': {files_list} - Google flags these as auto-generated low-value content!")
+    else:
+        print(f"[PASS] No near-duplicate posts detected (all topics are unique across different dates)")
+
     print("--------------------------------------------------")
     if failures:
         print(f"FAILED: {len(failures)} AdSense compliance issue(s) detected:")
