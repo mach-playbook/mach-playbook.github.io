@@ -6,7 +6,7 @@ lang: es
 categories: [Seguridad, Microservicios]
 tags: [mach, zero-trust, seguridad, kubernetes, mtls, arquitectura, cloud-native]
 image:
-  path: /assets/img/posts/seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y.png
+  path: /assets/img/posts/2026-09-17-seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y.png
 ---
 
 En el ecosistema del software empresarial moderno, **Seguridad Zero Trust y Autenticacion mTLS entre Microservicios con SPIFFE y SPIRE** representa uno de los patrones mas transformadores para equipos de ingenieria que buscan superar las limitaciones de las arquitecturas monoliticas tradicionales. Este analisis profundo, escrito desde la perspectiva de un Principal Solutions Architect con experiencia en plataformas enterprise de produccion, aborda los fundamentos tecnicos, las decisiones de diseno criticas y los patrones de implementacion necesarios para adoptar **Seguridad Zero Trust y Autenticacion mTLS entre Microservicios con SPIFFE y SPIRE** con exito.
