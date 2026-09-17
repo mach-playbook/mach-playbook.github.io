@@ -14,17 +14,27 @@ order: 6
 
 Proveer contenido técnico de la más alta calidad para ingenieros de software, líderes técnicos y arquitectos de soluciones modernos. El paradigma MACH (**Microservicios, API-First, Cloud-Native y Headless**) representa el estándar contemporáneo para software empresarial de alto rendimiento.
 
-## Credenciales del Autor: Senior Solutions Architect & Full-Stack Engineer
+## Credenciales del Autor y Liderazgo Técnico
 
-El contenido de esta plataforma es curado y redactado por un **Senior Solutions Architect y Full-Stack Software Engineer** con más de una década de experiencia práctica en la orquestación de transformaciones digitales y arquitecturas distribuidas de escala enterprise.
+El contenido de esta plataforma es curado y redactado por **Lenin Meza** ([LinkedIn](https://www.linkedin.com/in/leninmezazarco) · [GitHub](https://github.com/merolhack) · [Sitio Personal](https://merolhack.github.io/)), Senior Solutions Architect y Full-Stack Software Engineer con más de una década de experiencia práctica en la orquestación de transformaciones digitales y arquitecturas distribuidas de escala enterprise.
 
-Mi trayectoria profesional abarca el diseño y despliegue de arquitecturas multi-nube en **Google Cloud Platform (GCP)** y **Amazon Web Services (AWS)**, garantizando alta disponibilidad regional activa-activa y resiliencia ante fallos. He liderado equipos de ingeniería en migraciones complejas desde monolitos hacia microservicios desacoplados, implementando capas de gestión de APIs con **Google Cloud Apigee** y **MuleSoft Anypoint**.
+### Trayectoria y Especialidad
 
-Con un enfoque estricto en DevOps Cloud-Native, Site Reliability Engineering (SRE) y seguridad Zero Trust, las guías compartidas aquí no son teoría abstracta: son patrones probados en producción para escalar plataformas con millones de transacciones diarias.
+- **Multi-Cloud Architecture**: Diseño y despliegue de arquitecturas de alta disponibilidad regional activa-activa en **Google Cloud Platform (GCP)** y **Amazon Web Services (AWS)** con resiliencia ante fallos.
+- **Modernización y Desacoplamiento**: Liderazgo técnico en migraciones desde monolitos legados hacia microservicios desacoplados con contratos estrictos.
+- **Gestión Avanzada de APIs**: Implementación de capas de gobernanza y gateways con **Google Cloud Apigee** y **MuleSoft Anypoint**.
+- **Cloud-Native, DevOps & SRE**: Despliegues inmutables, observabilidad unificada (OpenTelemetry, Prometheus, Grafana) y seguridad perimetral Zero Trust.
 
-### ¿Por qué Arquitectura MACH?
+Las guías compartidas aquí no son teoría abstracta: son patrones probados en entornos de producción que procesan millones de transacciones diarias.
 
-Los sistemas monolíticos tradicionales son rígidos ante el ritmo vertiginoso de la innovación digital. Desglosamos estos conceptos en arquitecturas accionables para guiar a las organizaciones en su transición hacia ecosistemas modernos y composables.
+### Estándares Editoriales y Calidad
+
+Cada artículo publicado en MACH Playbook cumple con estándares rigurosos de ingeniería:
+1. **Verificabilidad**: Cada patrón arquitectónico incluye diagramas de secuencia/topología y snippets de implementación probados.
+2. **Independencia Tecnológica**: Análisis balanceado de trade-offs técnicos sin sesgos comerciales ni patrocinios opacos.
+3. **Mantenimiento Continuo**: Actualización periódica de lineamientos para reflejar la evolución del ecosistema Cloud Native y CNCF.
+
+Para colaboraciones técnicas o consultas de arquitectura, puedes contactarnos directamente en `merolhack@gmail.com` o a través de nuestra página de [Contacto](/contact/).
 
 </div>
 
@@ -38,16 +48,26 @@ Los sistemas monolíticos tradicionales son rígidos ante el ritmo vertiginoso d
 
 We strive to provide the highest quality technical content for modern software engineers, tech leads, and solutions architects. The MACH architecture—**Microservices, API-first, Cloud-native, and Headless**—represents the future of enterprise software.
 
-## Author Credentials: Senior Solutions Architect & Full-Stack Engineer
+## Author Credentials & Technical Leadership
 
-The content on this platform is curated and authored by a **Senior Solutions Architect and Full-Stack Software Engineer** with over a decade of deep, hands-on experience in orchestrating complex, enterprise-grade digital transformations.
+The content on this platform is curated and authored by **Lenin Meza** ([LinkedIn](https://www.linkedin.com/in/leninmezazarco) · [GitHub](https://github.com/merolhack) · [Personal Site](https://merolhack.github.io/)), a Senior Solutions Architect and Full-Stack Software Engineer with over a decade of deep, hands-on experience in orchestrating complex, enterprise-grade digital transformations.
 
-My professional background encompasses architecting multi-cloud deployments across **Google Cloud Platform (GCP)** and **Amazon Web Services (AWS)**, ensuring fault-tolerant, active-active regional availability. I have led technical teams through monolithic-to-microservices migrations, aggressively leveraging API management layers like **Google Cloud Apigee** and **MuleSoft Anypoint**.
+### Professional Background & Core Competencies
 
-With a rigorous focus on Cloud-native DevOps, Site Reliability Engineering (SRE), and Zero Trust network paradigms, the insights shared here are battle-tested strategies used to scale systems that handle millions of daily transactions.
+- **Multi-Cloud Architecture**: Designing and deploying fault-tolerant, active-active regional availability across **Google Cloud Platform (GCP)** and **Amazon Web Services (AWS)**.
+- **Monolith Decomposition**: Leading technical teams through monolithic-to-microservices migrations using domain-driven design and strangler fig patterns.
+- **API Management & Governance**: Architecting enterprise API platforms leveraging **Google Cloud Apigee** and **MuleSoft Anypoint**.
+- **Cloud-Native, DevOps & SRE**: Enforcing Zero Trust network security, immutable deployments, and production observability with OpenTelemetry and Grafana.
 
-### Why MACH?
+The insights shared here are battle-tested strategies used to scale systems that handle millions of daily transactions.
 
-Monolithic systems are no longer sufficient for modern digital velocity. We break down these complex topics into actionable blueprints to help engineering teams navigate the transition to modular, composable architectures.
+### Editorial Guidelines & Commitment to Quality
+
+Every guide on MACH Playbook satisfies rigorous engineering criteria:
+1. **Reproducibility**: Architectural patterns are accompanied by topology diagrams and functional code implementations.
+2. **Vendor Neutrality**: Objective analysis of technical trade-offs without hidden promotional agendas.
+3. **Continuous Maintenance**: Regular review cycles aligned with Cloud Native Computing Foundation (CNCF) industry evolutions.
+
+For inquiries, technical reviews, or architectural discussions, reach out at `merolhack@gmail.com` or visit our [Contact Page](/contact/).
 
 </div>

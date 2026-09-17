@@ -9,6 +9,11 @@ on:
       - README.md
       - LICENSE
 
+  workflow_run:
+    workflows: ["Autonomous Daily Blog Post Agent"]
+    types:
+      - completed
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -25,6 +30,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout

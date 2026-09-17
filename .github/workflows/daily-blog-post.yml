@@ -77,6 +77,28 @@ jobs:
 
           eval "python3 scripts/publish_daily_jekyll_post.py $EXTRA_ARGS"
 
+      - name: Validate Word Count (Anti-Thin-Content Gate)
+        if: "${{ github.event.inputs.dry_run != 'true' }}"
+        run: |
+          NEW_POST=$(git status --porcelain _posts/ | grep '^\?\?' | awk '{print $2}' | head -n 1)
+          if [ -z "$NEW_POST" ]; then
+            NEW_POST=$(git diff --name-only HEAD _posts/ | head -n 1)
+          fi
+          if [ -n "$NEW_POST" ] && [ -f "$NEW_POST" ]; then
+            WORD_COUNT=$(wc -w < "$NEW_POST")
+            echo "Post: $NEW_POST | Word count: $WORD_COUNT"
+            if [ "$WORD_COUNT" -lt 700 ]; then
+              echo "::error::THIN CONTENT BLOCKED — Post has only $WORD_COUNT words (minimum: 700). AdSense requires substantial content. Post was NOT published."
+              echo "## ❌ Thin Content Blocked" >> $GITHUB_STEP_SUMMARY
+              echo "Post **$NEW_POST** has only **$WORD_COUNT words** (minimum: 700). Not published." >> $GITHUB_STEP_SUMMARY
+              exit 1
+            else
+              echo "::notice::Word count OK: $WORD_COUNT words"
+            fi
+          else
+            echo "::warning::No new post file detected for word count check."
+          fi
+
       - name: Validate Duplicates & AdSense Compliance
         if: "${{ github.event.inputs.dry_run != 'true' }}"
         run: |
@@ -89,15 +111,21 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add _posts/ assets/img/posts/
-          
+
           if ! git diff --cached --quiet; then
             NEW_POST=$(git diff --cached --name-only _posts/ | head -n 1 | xargs -r basename -s .md)
             echo "Publishing new post: $NEW_POST"
             git commit -m "feat(blog): publish autonomous daily post: $NEW_POST"
             git pull --rebase origin main
             git push origin main
+            echo "## ✅ Post Published Successfully" >> $GITHUB_STEP_SUMMARY
+            echo "**Post:** \`$NEW_POST\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Date:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+            echo "**URL:** https://mach-playbook.github.io/posts/$NEW_POST/" >> $GITHUB_STEP_SUMMARY
           else
             echo "No new posts detected to commit."
+            echo "## ⚠️ No New Post Committed" >> $GITHUB_STEP_SUMMARY
+            echo "The post agent ran but found no new content to commit (possible duplicate or dry-run)." >> $GITHUB_STEP_SUMMARY
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
