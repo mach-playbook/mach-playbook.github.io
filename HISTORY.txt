@@ -266,3 +266,18 @@
   * Autonomous daily publishing agent published its scheduled daily post: `2026-09-02-patron-strangler-fig-como-desmantelar-un-monolito-sap-commerce-o-magento-paso-a-paso` (total posts: 81).
   * Re-submitted clean 222-URL sitemap in Google Search Console via browser subagent.
   * Documented complete chronological history of all 6 GSC sitemap submissions across `wiki/tools-and-operations.md`, `llm-wiki.md`, `AGENTS.md`, and `HISTORY.txt`.
+
+2026-09-17 11:16: Google AdSense "Low-Value Content" Root Cause Resolution, CI/CD Automated Pages Trigger, E-E-A-T Reinforcement & Official Re-Review Submission
+  * Investigated and resolved the root cause of the second AdSense "Low value content" violation:
+    (1) `requirements.txt` lacked `Pillow`, causing `No module named 'PIL'` failure during automated WebP companion creation in daily publishing workflow.
+    (2) Missing `.webp` assets caused `HTML-Proofer` to crash in `.github/workflows/pages-deploy.yml` with 78 broken internal links.
+    (3) Commits pushed via `GITHUB_TOKEN` from `daily-blog-post.yml` did not trigger `pages-deploy.yml` (`on: push` restriction), leaving live site `https://mach-playbook.github.io` frozen at September 2, 2026 for over 15 days despite daily commits on GitHub.
+  * Added `Pillow>=10.0.0` to `requirements.txt` and generated companion WebP assets for all 96 posts via `scripts/generate-webp-images.py` (86.6% payload reduction from 10.45 MB to 1.40 MB).
+  * Automated GitHub Pages deployment chain by adding `workflow_run` trigger to `.github/workflows/pages-deploy.yml` upon completion of `Autonomous Daily Blog Post Agent`.
+  * Hardened daily publishing agent: completely rewrote `generate_fallback_article()` in `scripts/publish_daily_jekyll_post.py` with 8-domain topic classification, dynamic Mermaid sequence/graph diagrams, and contextual TypeScript code (>1,300 words).
+  * Added Anti-Thin-Content Gate (`wc -w < 700` fails CI) and GitHub Actions Job Summary in `.github/workflows/daily-blog-post.yml`.
+  * Upgraded `_tabs/about.md` with explicit E-E-A-T author credentials for Lenin Meza (LinkedIn, GitHub, portfolio) and technical editorial standards (verifiability, neutrality, CNCF maintenance).
+  * Published September 17 deep-dive post: `2026-09-17-seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y.md` (total: 96 posts; 34 EN, 62 ES).
+  * Verified 100% passing AdSense compliance suite (`scripts/test-adsense-compliance.py`).
+  * Pushed commit `7aa5788` to GitHub; verified GitHub Actions Run `35250654570` successfully compiled Jekyll and deployed to GitHub Pages with 0 HTML-Proofer errors.
+  * Officially requested site re-review on Google AdSense console on 2026-09-17 at 11:16 AM; status transitioned to "Getting ready" with green checks on site ownership and review requested.

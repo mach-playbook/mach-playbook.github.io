@@ -30,9 +30,12 @@ flowchart TD
     AlgoFallback --> PickTopic
     
     PickTopic --> Generate["Generate Deep Article (>1,200 words)"]
-    Generate --> CoverImage["Synthesize Matching Cover Image & WebP"]
+    Generate --> AntiThinGate["Anti-Thin-Content Gate (wc -w >= 700 words)"]
+    AntiThinGate --> CoverImage["Synthesize Matching Cover Image & WebP (Pillow)"]
     CoverImage --> Verify["Validate Duplicates & AdSense Compliance"]
-    Verify --> Deploy["Commit, Push & Deploy via GitHub Actions"]
+    Verify --> Deploy["Commit & Push to main via GITHUB_TOKEN"]
+    Deploy --> Summary["Emit GitHub Actions Job Summary"]
+    Deploy -.->|workflow_run trigger| PagesDeploy["Trigger pages-deploy.yml (Build & Deploy to GitHub Pages)"]
 ```
 
 ### Jaccard Keyword Similarity Algorithm
@@ -49,6 +52,17 @@ When Gemini AI is offline and the static matrix is exhausted, the generator comb
 - **Patterns**: Cell-Based Architecture, Dapr Runtime, eBPF, Event Sourcing, CQRS, GraphQL Federation v2, AsyncAPI, OAuth 2.1 Passkeys, Edge Middleware, Platform Engineering.
 - **Contexts**: Sistemas de Alta Concurrencia, Transacciones Transfronterizas, Plataformas E-Commerce Global, Prevención de Fraude, Reducción de Latencia p99.
 - **Rule**: Every combination is dynamically checked against all historical posts. The hardcoded repetitive string `Edición YYYYMMDD` is **strictly prohibited**.
+
+---
+
+
+
+### CI/CD Deployment Automation & Continuous Pages Delivery
+To prevent production freeze and ensure every article is immediately available to search engine and AdSense crawlers:
+1. **Pillow Dependency**: Declared in `requirements.txt` (`Pillow>=10.0.0`) so CI runners never fail during WebP companion generation.
+2. **Anti-Thin-Content Quality Gate**: The publishing workflow checks `wc -w < 700` before git commit; thin articles are blocked with `exit 1`.
+3. **Automated `workflow_run` Trigger**: `.github/workflows/pages-deploy.yml` listens for `completed` events from `Autonomous Daily Blog Post Agent`. This bypasses GitHub's default recursive trigger block on `GITHUB_TOKEN` pushes, ensuring that Jekyll automatically compiles and deploys each daily post to GitHub Pages.
+4. **Job Summary Observability**: Each execution logs a Markdown report into the GitHub Actions run summary displaying the published post slug, date, and URL.
 
 ---
 

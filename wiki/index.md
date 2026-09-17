@@ -26,6 +26,7 @@ This LLM Wiki is structured according to the [Karpathy LLM Wiki Architecture](ht
 - **Local Testing URL**: `http://localhost:8080` (via Docker `mach-playbook:prod`)
 - **Primary Language**: Spanish (`lang: es`) with native English support (`lang: en`)
 - **AdSense Publisher ID**: `ca-pub-2700240339792942`
-- **AdSense Status**: **Getting ready** (Review requested after comprehensive remediation on 2026-09-02)
+- **Content Inventory**: **96 deep technical guides** (34 English, 62 Spanish)
+- **AdSense Status**: **Getting ready** (Review requested on 2026-09-17 11:16 AM; ownership verified, review active)
 - **Author**: Lenin Meza (`author: leninmeza`), Senior Solutions Architect & Enterprise Software Engineer
 - **Codebase Memory Graph**: `home-merolhack-fl-mach-playbook` (maintained via `codebase-memory-mcp`)

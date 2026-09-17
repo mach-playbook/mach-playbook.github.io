@@ -12,9 +12,9 @@
 - **Local Replica URL**: `http://localhost:8080` (Nginx Docker container)
 - **Framework**: Static Site Generator built on **Jekyll** with the [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy) (v7.5+).
 - **Core Domain & Purpose**: Enterprise architecture playbook providing deep technical insights into **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, multi-cloud strategies (GCP, AWS), API governance & gRPC protocols, ERP integrations (CFDI security), Next.js/Supabase serverless edge architectures, OpenSIPS VoIP security routing, YugabyteDB distributed SQL, local graph database indexing for AI IDEs in WSL, and high-resilience distributed systems.
-- **Content Inventory**: **80 deep technical guides** (>800–1,500 words each):
+- **Content Inventory**: **96 deep technical guides** (>800–1,500 words each):
   - **34 English Articles** (`lang: en`)
-  - **46 Spanish Articles** (`lang: es`)
+  - **62 Spanish Articles** (`lang: es`)
 - **Modular LLM Wiki Modules**:
   - [`wiki/architecture.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/architecture.md): Stack, Web Vitals & Docker
   - [`wiki/adsense-policy-and-compliance.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/adsense-policy-and-compliance.md): AdSense Guide & Postmortem
@@ -223,6 +223,22 @@ This project underwent multiple review cycles for Google Search Console (GSC) in
 │    - On-demand Mermaid diagram loading reduced JS bundle parsing by >300ms.            │
 │    - Mobile Lighthouse score upgraded from 72 to 91 (Accessibility 100, SEO 100).      │
 │    - Verified live sitemap.xml returns HTTP 200 OK across 140+ canonical URLs.         │
+│                                                                                        │
+│ 6. AdSense Review 1 & Deduplication Overhaul (September 02, 2026):                     │
+│    - Purged 11 repetitive articles; authored 12 unique deep-dives. Total: 80 posts.    │
+│    - Replaced lazy-loading with direct <script async> for crawler compatibility.       │
+│    - Re-submitted review; AdSense console showed "Getting ready".                      │
+│                                                                                        │
+│ 7. AdSense Review 2 & CI/CD Deployment Chain Automation (September 17, 2026):          │
+│    - Rejection: "Low value content" caused by frozen production site (stuck at Sep 2). │
+│    - Forensic discovery: missing Pillow in CI aborted WebP generation; HTML-Proofer    │
+│      crashed with 78 broken links, and daily commits lacked workflow_run trigger.      │
+│    - Remediation: Added Pillow>=10.0.0, synthesized WebP for all 96 posts (86.6% saved),│
+│      added workflow_run trigger to pages-deploy.yml, added Anti-Thin gate to CI,       │
+│      rewrote fallback generator, updated Lenin Meza E-E-A-T credentials in About tab,  │
+│      published Sep 17 article (96 total posts: 34 EN, 62 ES).                          │
+│    - Deployment verified in production (HTML-Proofer 0 errors, live site up to date).  │
+│    - Review requested on AdSense Console: 2026-09-17 11:16 AM (Status: "Getting ready")│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -255,6 +271,11 @@ This project underwent multiple review cycles for Google Search Console (GSC) in
 5. **Missing Dedicated Trust & Contact Endpoints**:
    - *The Problem*: Lack of distinct `/contact/` and `/terms/` pages weakened trust signals.
    - *Remediation*: Created `/contact/` (with Formspree & direct email) and `/terms/` (with editorial & technical advice disclaimers), linked across navigation and privacy policy.
+
+6. **CI/CD Broken Image Assets & Frozen Production Trap (The September 17 Discovery)**:
+   - *The Problem*: `requirements.txt` lacked `Pillow`. When the autonomous daily publishing agent ran in CI, Python caught `No module named 'PIL'`, created only `.png` files, and never generated companion `.webp` images. When Jekyll compiled the site in GitHub Pages CI, `HTML-Proofer` aborted with 78 broken internal image links. Furthermore, commits made via `GITHUB_TOKEN` do not fire `on: push` workflows, and `pages-deploy.yml` lacked a `workflow_run` trigger.
+   - *Impact on AdSense*: The live production site `https://mach-playbook.github.io` was frozen on September 2 for over 15 days without any new deployed posts. Google AdSense bots and quality evaluators inspected the site and rejected it for "Low value content / lack of ongoing curation".
+   - *Remediation*: Added `Pillow>=10.0.0` to `requirements.txt`, generated WebP companion assets for all 96 posts (86.6% payload reduction), added `workflow_run` trigger to `pages-deploy.yml` to automatically deploy after daily posts, added an Anti-Thin-Content Gate (`wc -w < 700` fails CI), enriched `_tabs/about.md` with verified author E-E-A-T credentials for **Lenin Meza** (LinkedIn, GitHub, portfolio), published the September 17 deep dive, and submitted for review on **2026-09-17 11:16 AM** (Status: **Getting ready** / Review requested).
 
 ---
 
