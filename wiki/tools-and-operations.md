@@ -69,6 +69,7 @@ Tracking of all formal `sitemap.xml` submissions to Google Search Console (`http
 | **4** | **2026-08-21** | Performance & CWV Milestone: 0.000 CLS & Mobile Lighthouse >90 | 141 URLs | Re-submitted following layout shift elimination and CSS optimization. Status: `Success`. |
 | **5** | **2026-09-02 10:50** | AdSense Remediation: Purged 11 duplicates, published 12 unique technical articles | 223 URLs | Submitted via automated browser subagent. GSC enqueued with status `Success` (discovered pages: 117 prior). |
 | **6** | **2026-09-02 11:10** | SEO Pagination Cleanup: Disabled static `paginate: 10`, eliminated `/page2/`..`/page8/` | **222 Clean URLs** | Old sitemap entry deleted via GSC options menu and re-submitted fresh as `sitemap.xml`. Transient `Couldn't fetch` displayed while enqueued in Googlebot asynchronous crawler worker. |
+| **7** | **2026-09-17 11:25** | AdSense & CI/CD Freeze Remediation: Re-submitted after fixing WebP assets and continuous deployment | **238 Clean URLs** | Re-submitted via browser subagent. GSC confirmed: 'Sitemap submitted successfully'. Enqueued for Googlebot processing to discover and crawl all 96 deep articles. |
 
 ### Technical Gotcha: The Asynchronous "Couldn't fetch" State
 When any sitemap is newly submitted in GSC:
