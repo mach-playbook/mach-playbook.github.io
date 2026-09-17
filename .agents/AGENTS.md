@@ -56,3 +56,31 @@ Whenever new content (posts, pages, tabs) is generated—whether in **Antigravit
 ## Fallback Rules
 - Only fall back to ripgrep (`grep_search`) or file list tools when searching for literal raw strings, config values, or non-code asset files where graph resolution is insufficient.
 
+---
+
+## 4. MANDATORY LOCAL MODEL DELEGATION VIA OLLAMA MCP (`qwen3:8b` / `consultar_modelo_local`)
+
+> ⚠️ **MANDATORY DIRECTIVE FOR ALL AGENTS & SESSIONS**:
+> Whenever a task is simple, mechanical, or low-risk, ALL AGENTS **MUST** delegate its execution to the local model **Qwen3:8b** (`qwen3:8b-8k` in Ollama) using the MCP tool `consultar_modelo_local` (`ServerName="ollama-local"`).
+> This preserves cloud LLM reasoning bandwidth, eliminates API quotas, and executes at near-instant local latency.
+
+### Delegation Matrix:
+
+| Task Type | Action | Execution Tool |
+| :--- | :---: | :--- |
+| **Docstrings, Comments & Type Annotations** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
+| **Simple Code Boilerplate & Repetitive Formatting** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
+| **Basic Markdown Formatting, Clean-up & Regex** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
+| **Quick Mechanical Text/Summary Translations** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
+| **Isolated Question Answering (No Multi-file Context)** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
+| **High-level System Architecture & Technical Design** | **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
+| **Multi-file Refactoring & Dependency Management** | **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
+| **Git Operations, CI/CD Pipeline & Deployment Workflows** | **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
+| **Critical Security, AdSense Policy & Data Integrity Tasks**| **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
+
+### Technical Specifications: `qwen3:8b` in Ollama
+- **Model Family**: Qwen3 (Alibaba Cloud)
+- **Local Tag**: `qwen3:8b-8k` (8.2 Billion parameters, `Q4_K_M` GGUF quantization, ~5.22 GB memory footprint)
+- **Context Length**: 40,960 tokens (optimized with 8,192 token active window locally)
+- **Ollama API Endpoint**: `http://localhost:11434/v1/chat/completions`
+- **MCP Bridge**: `C:\Users\lenin\Documents\AIDevelopment\ollama\ollama_mcp_server.py`

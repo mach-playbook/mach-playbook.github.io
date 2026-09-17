@@ -327,3 +327,21 @@ The project maintains registered Agent skills and autonomous CI/CD pipelines:
 5. **Resources & Ecosystem Hub (`_tabs/resources.md`) & MACH Glossary (`_tabs/glossary.md`)**:
    - Authoritative directory connecting MACH Playbook directly to the MACH Alliance (`machalliance.org`), CNCF landscape, OpenAPI 3.1, AsyncAPI 3.0, and Martin Fowler / Sam Newman canonical literature.
    - Categorized A-Z technical glossary of 30+ terms cross-linked with corresponding published articles for maximum internal linking, SEO authority, and user engagement.
+
+---
+
+## 12. Local Model Delegation & Qwen3:8b Architecture (`ollama-local`)
+
+To optimize developer bandwidth and eliminate cloud API consumption for routine development workflows, the workspace integrates a local inference sidecar via **Ollama** and the Model Context Protocol (MCP).
+
+### A. Technical Profile of `qwen3:8b`
+- **Origin**: Developed by Alibaba Cloud's Qwen team as part of the Qwen3 open-weights series.
+- **Architecture**: Dense decoder-only transformer with **8.2 Billion parameters**.
+- **Quantization & Footprint**: `Q4_K_M` quantization (~5.22 GB VRAM/RAM), providing an exceptional balance of inference speed (>45 tokens/sec on modern GPUs) and linguistic precision.
+- **Context Capacity**: 40,960 native tokens (configured locally at an 8k active window for optimal responsiveness).
+- **Capabilities**: Full function/tool support, reasoning/thinking, code comprehension, and bilingual excellence (Spanish & English).
+
+### B. Mandatory Delegation Policy ("MUST" Rule)
+All AI agents and development workflows **MUST** delegate mechanical, repetitive, and low-risk tasks to `qwen3:8b` via the MCP tool `consultar_modelo_local` (`ServerName="ollama-local"`):
+- **Delegated Tasks**: Generating docstrings, code comments, boilerplate models, regex patterns, simple data restructuring, JSON/YAML validation, and mechanical summaries.
+- **Non-Delegated Tasks**: Architectural trade-offs, multi-file refactoring, CI/CD pipeline modifications, and critical production debugging must always be resolved directly by the primary reasoning agent.
