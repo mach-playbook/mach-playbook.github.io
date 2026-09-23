@@ -189,3 +189,41 @@ layout: default
 
 <!-- Dynamic Client-Side Pagination Container -->
 <div id="dynamic-paginator" class="d-flex justify-content-center mt-4"></div>
+
+<!-- SEO & Crawl Path Discovery Navigation -->
+<div class="mt-5 pt-3 border-top text-center" id="catalog-discovery-nav">
+  <p class="text-muted small mb-2">
+    <i class="fas fa-book-open me-1"></i>
+    <span data-i18n-es="Explora nuestro catálogo completo de guías de arquitectura:" data-i18n-en="Explore our complete catalog of architecture guides:">Explora nuestro catálogo completo de guías de arquitectura:</span>
+  </p>
+  <div class="d-flex justify-content-center flex-wrap gap-2">
+    <a href="{{ '/archives/' | relative_url }}" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+      <i class="fas fa-archive me-1"></i>
+      <span data-i18n-es="Ver todos los artículos (100+ guías)" data-i18n-en="View all articles (100+ guides)">Ver todos los artículos (100+ guías)</span>
+    </a>
+    <a href="{{ '/categories/' | relative_url }}" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+      <i class="fas fa-folder me-1"></i>
+      <span data-i18n-es="Categorías" data-i18n-en="Categories">Categorías</span>
+    </a>
+    <a href="{{ '/tags/' | relative_url }}" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+      <i class="fas fa-tags me-1"></i>
+      <span data-i18n-es="Etiquetas" data-i18n-en="Tags">Etiquetas</span>
+    </a>
+  </div>
+</div>
+
+<!-- Static Crawl Fallback for Search Engine Crawlers (Googlebot) -->
+<noscript>
+  <div class="mt-4 p-3 border rounded bg-light text-start" id="static-crawler-archive">
+    <h5 class="h6 font-weight-bold mb-2">Directorio Completo de Artículos / Full Article Archive</h5>
+    <ul class="list-unstyled mb-0 small">
+      {% for post in all_posts offset: 10 %}
+        <li class="py-1 border-bottom">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="text-muted ms-1">({{ post.date | date: "%Y-%m-%d" }})</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</noscript>
+

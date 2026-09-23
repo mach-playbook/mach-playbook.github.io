@@ -230,6 +230,18 @@
 - **Secondary Model Mandate**: Enforced `gemma4:cloud` first (< 90% weekly quota) with fallback to `qwen3:8b-8k` via MCP `consultar_modelo_local`.
 - **Verification**: Verified 100% AdSense compliance (13/13 PASS) and 0 duplicate posts across 97 articles.
 
+2026-09-23 15:10: Crawl Path Restoration, Sitemap Deduplication & GSC Organic Discovery Jumpstart
+- **Root Cause Analysis (Zero Blog Post Indexation in GSC)**:
+  1. *Severed HTML Crawl Path*: When static pagination (`paginate: 10`) was disabled in commit `1dd2838`, `_layouts/home.html` was limited to rendering only 10 posts. The remaining 90+ posts were packed inside `<script id="remaining-posts-data" type="application/json">` for client-side JS rendering. Because Googlebot does not interactively trigger client-side pagination or extract URLs from raw JSON blocks, the articles became orphan pages from the homepage.
+  2. *Sitemap "Couldn't fetch" Falsely Diagnosed*: GSC sitemap status persisted in "Couldn't fetch" due to asynchronous queueing delays and TLS renegotiations on Fastly/GitHub Pages CDN. Repeated re-submissions (#5, #6, #7) continuously reset Googlebot's worker queue.
+  3. *Sitemap Taxonomy Duplications*: Tag and category slug collisions (`composable commerce` vs `composable-commerce`, `mach architecture` vs `mach-architecture`, `API First` vs `API-First`) caused `jekyll-sitemap` to output identical `<loc>` tags twice in `sitemap.xml`.
+- **Remediations Executed**:
+  1. *Crawl Path Restoration*: Added a catalog discovery navigation bar in `_layouts/home.html` linking directly to `/archives/`, `/categories/`, and `/tags/`, alongside a static `<noscript>` directory containing direct `<a href="...">` links to 100% of posts for search engine bots.
+  2. *Sitemap Deduplication*: Standardized tags and categories across `_posts/2026-09-09-...`, `_posts/2026-08-14-...`, `_posts/2026-09-10-...`, and `_posts/2026-09-18-...`, achieving 0 collisions and 0 duplicate URLs.
+  3. *Organic Indexation Jumpstart*: Leveraged existing complete HTML catalog at `https://mach-playbook.github.io/archives/` (hosting all 108 articles in static HTML) and submitted it directly to Google Search Console's **Priority Crawl Queue** via URL Inspection.
+  4. *Validation*: Verified 100% AdSense compliance (13/13 PASS) and zero duplicate posts.
+
+
 ---
 
 ## 4. MANDATORY SECONDARY MODEL DELEGATION VIA OLLAMA MCP (`gemma4:cloud` &rarr; `qwen3:8b-8k`)

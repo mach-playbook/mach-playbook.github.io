@@ -5,7 +5,7 @@ title: "AsyncAPI para la Gobernanza de Event Streams y Webhooks en Tiempo Real"
 date: 2026-08-14 09:00:00 -0600
 lang: es
 categories: [Arquitectura Cloud, API-First]
-tags: [asyncapi, event-driven architecture, webhooks, kafka, composable commerce, gobernanza de datos]
+tags: [asyncapi, event-driven architecture, webhooks, kafka, composable-commerce, gobernanza de datos]
 image:
   path: /assets/img/posts/2026-08-14-asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real.png
 ---

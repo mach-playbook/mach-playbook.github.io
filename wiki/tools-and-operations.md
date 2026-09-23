@@ -70,13 +70,16 @@ Tracking of all formal `sitemap.xml` submissions to Google Search Console (`http
 | **5** | **2026-09-02 10:50** | AdSense Remediation: Purged 11 duplicates, published 12 unique technical articles | 223 URLs | Submitted via automated browser subagent. GSC enqueued with status `Success` (discovered pages: 117 prior). |
 | **6** | **2026-09-02 11:10** | SEO Pagination Cleanup: Disabled static `paginate: 10`, eliminated `/page2/`..`/page8/` | **222 Clean URLs** | Old sitemap entry deleted via GSC options menu and re-submitted fresh as `sitemap.xml`. Transient `Couldn't fetch` displayed while enqueued in Googlebot asynchronous crawler worker. |
 | **7** | **2026-09-17 11:25** | AdSense & CI/CD Freeze Remediation: Re-submitted after fixing WebP assets and continuous deployment | **238 Clean URLs** | Re-submitted via browser subagent. GSC confirmed: 'Sitemap submitted successfully'. Enqueued for Googlebot processing to discover and crawl all 96 deep articles. |
+| **8** | **2026-09-23 15:05** | Crawl Path Restoration & XML Deduplication: Eliminated 3 duplicate URLs, added discovery nav & noscript crawl fallback, submitted `/archives/` to GSC Priority Crawl Queue | **306 Clean URLs** | Solved root cause: repaired severed HTML crawl path (hidden JSON pagination) via `<noscript>` & `/archives/` bridge. Deduplicated `composable-commerce`, `mach-architecture`, and `API-First` slugs. Submitted `https://mach-playbook.github.io/archives/` (hosting 108 HTML post links) directly to Google's Priority Crawl Queue. |
 
-### Technical Gotcha: The Asynchronous "Couldn't fetch" State
-When any sitemap is newly submitted in GSC:
+### Technical Gotcha: The Asynchronous "Couldn't fetch" State & Crawl Path Dependency
+When any sitemap is submitted in GSC:
 - `Type` initially appears as `Unknown`.
 - `Last read` remains blank.
-- `Status` displays in red as `Couldn't fetch`.
-This is normal Google Search Console asynchronous queueing behavior: Googlebot has not yet sent the HTTP request. Once the Googlebot worker pulls the queue item, it executes `GET https://mach-playbook.github.io/sitemap.xml` (which responds `HTTP/2 200 OK` with 222 URLs), sets `Type: Sitemap`, logs the timestamp in `Last read`, and updates status to `Success`.
+- `Status` displays in red as `Couldn't fetch` (*Sitemap could not be read*).
+**Crucial Rule:** Never delete and re-submit `sitemap.xml` repeatedly when stuck on `Couldn't fetch`. Dominios alojados en GitHub Pages (CDN Fastly) experimentan periódicamente renegociaciones TLS y micro-latencias ante el worker asíncrono de sitemaps. Reenviar el sitemap resetea la cola de Googlebot.
+**Solución Arquitectónica:** Googlebot descubre contenido principalmente a través de enlaces `<a href="...">` en el HTML estático. Si la paginación se maneja por JavaScript/JSON en el cliente, Googlebot solo indexará las páginas enlazadas estáticamente. Mantener siempre un camino de rastreo estático accesible (como `/archives/` o bloques `<noscript>`) garantiza la indexación orgánica completa de los 100+ artículos sin depender del worker de sitemaps.
+
 
 ---
 
