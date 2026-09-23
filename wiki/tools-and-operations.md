@@ -78,3 +78,65 @@ When any sitemap is newly submitted in GSC:
 - `Status` displays in red as `Couldn't fetch`.
 This is normal Google Search Console asynchronous queueing behavior: Googlebot has not yet sent the HTTP request. Once the Googlebot worker pulls the queue item, it executes `GET https://mach-playbook.github.io/sitemap.xml` (which responds `HTTP/2 200 OK` with 222 URLs), sets `Type: Sitemap`, logs the timestamp in `Last read`, and updates status to `Success`.
 
+---
+
+## 5. Secondary Model Delegation via Ollama MCP (`consultar_modelo_local`)
+
+To minimize primary LLM token utilization, all agents and automated tools MUST delegate routine and mechanical tasks via the Model Context Protocol (MCP) server `ollama-local`:
+
+### Operational Cascade & Pre-Check
+1. **Priority 1 — `gemma4:cloud`**: Always evaluated first. The tool `consultar_modelo_local` automatically queries the Ollama weekly usage API (`https://ollama.com/api/usage`). If weekly usage is below 90%, it routes requests to Gemma 4 (31B) in the cloud.
+2. **Priority 2 — `qwen3:8b-8k`**: If the weekly quota is exhausted or if cloud connectivity fails, the tool seamlessly falls back to local Qwen3 8B (~5.22 GB memory footprint, 8k context window).
+
+### Fluid Absorption of Routine Tasks
+The `consultar_modelo_local` tool executes the weekly quota pre-check and responds fluidly to absorb:
+- Docstrings, code comments, and type annotations
+- Simple code boilerplate and repetitive formatting
+- Markdown cleanup, table formatting, and regex patterns
+- Translation of mechanical texts and changelogs
+- Isolated single-prompt QA not requiring multi-file architectural context
+
+---
+
+## 6. Known Environment Gotchas & Solutions
+
+| Gotcha | Root Cause | Solution |
+| :--- | :--- | :--- |
+| **GitHub CLI Auth Failure on Windows** | PowerShell sets invalid `GITHUB_TOKEN` environment variable | Run `wsl gh` to bypass env var and use valid `hosts.yml` token |
+| **Jekyll Missing Future Dated Posts** | UTC build time offset excludes posts with local timestamps | Set `future: true` in `_config.yml` |
+| **Sidebar Menu Subtitle Overlap** | Chirpy theme `height: 3rem` hardcoded constraint | Override with `height: auto !important` in `_includes/head.html` |
+| **Inline Script Liquid Minification Error** | Inline `<script>` tags in `_layouts/home.html` cause syntax truncation | Load external script `assets/js/lang-filter.js` |
+| **Cumulative Layout Shift from Async CSS** | Async CSS preload pops topbar dropdowns and breadcrumbs | Load self-hosted core CSS synchronously and lock `.dropdown-menu { display: none; }` in inline critical CSS |
+| **Mermaid 3 MB JS Overhead on Text Posts** | Global `mermaid: true` in `_config.yml` bundled Mermaid on all pages | Set `mermaid: false` by default; enable only in frontmatter for diagram posts |
+| **Circuit Breaker Slug Typo** | Initial post slug had `circuit-breer` | Renamed slug & cover image asset to `circuit-breaker` |
+| **Missing `lang: es` Tag in New Posts** | `test-adsense-compliance.py` fails if explicit `lang: es` or `lang: en` flag is missing in frontmatter | Always include `lang: es` or `lang: en` in frontmatter of new posts |
+
+---
+
+## 7. Agent Workflows & Custom Skills
+
+The project maintains registered Agent skills and autonomous CI/CD pipelines:
+
+1. **`gsc-48h-indexation-audit`** (`.agents/skills/gsc-48h-indexation-audit/SKILL.md`):
+   - Autonomous 48-hour audit workflow for Google Search Console and Google AdSense.
+   - Executes pre-flight HTTP diagnostics (`scripts/audit-gsc-indexation.py`).
+   - Dispatches browser subagent to verify GSC sitemap status transition from `Couldn't fetch` to `Success` with ~140 discovered pages.
+   - Inspects the Page Indexing report for indexed vs non-indexed growth.
+
+2. **`add-new-post-test-deploy`** (`.agents/skills/add-new-post-test-deploy/SKILL.md`):
+   - Standardized workflow to create new Jekyll Markdown posts, check duplicate content, run AdSense policy tests, execute Docker HTML-Proofer unit tests, commit, push, and validate GitHub Actions deployment.
+
+3. **`gsc-manual-url-submission`** (`.agents/skills/gsc-manual-url-submission/SKILL.md`):
+   - Automated workflow for sitemap URL extraction (`scripts/list-urls.py`), HTTP header verification, and manual URL Inspection & Request Indexing via `browser_subagent` in Google Search Console.
+
+4. **`daily-blog-post` Autonomous Publishing Pipeline** (`.github/workflows/daily-blog-post.yml` & `scripts/publish_daily_jekyll_post.py`):
+   - Daily cron (`0 13 * * *` = 07:00 AM America/Mexico_City) and `workflow_dispatch` trigger.
+   - Automatically executes Gemini API calls with dynamic model discovery (`GET /v1beta/models`) prioritizing the Gemini 3 fleet (`gemini-3.7-flash`, `gemini-3.6-flash`, etc.) with intelligent fallback to autonomous high-quality deep-dive synthesis. Scans `_posts/` for deduplication, generates 1,500-2,200 words Senior Architect articles across 5 MACH pillars, synthesizes matching cover images, runs AdSense compliance and duplicate tests, and pushes to `main`.
+   - Granular `permissions: contents: write` configured at the workflow level to allow git write operations even when repo default token is set to read-only.
+
+5. **Resources & Ecosystem Hub (`_tabs/resources.md`) & MACH Glossary (`_tabs/glossary.md`)**:
+   - Authoritative directory connecting MACH Playbook directly to the MACH Alliance (`machalliance.org`), CNCF landscape, OpenAPI 3.1, AsyncAPI 3.0, and Martin Fowler / Sam Newman canonical literature.
+   - Categorized A-Z technical glossary of 30+ terms cross-linked with corresponding published articles for maximum internal linking, SEO authority, and user engagement.
+
+
+

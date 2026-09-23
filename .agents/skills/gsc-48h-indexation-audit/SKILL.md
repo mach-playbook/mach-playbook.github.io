@@ -87,7 +87,7 @@ Navigate to the Google AdSense Console:
 
 ## Step 5: Document Audit Findings
 
-Append a structured audit entry to `HISTORY.txt` and update `llm-wiki.md`:
+Append a structured audit entry to `HISTORY.txt` and update `wiki/tools-and-operations.md`:
 * Date & Time of Audit
 * GSC Sitemap status (`Success` vs `Pending`) & Discovered count
 * Indexed pages count vs Not indexed count

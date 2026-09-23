@@ -10,7 +10,7 @@ Follow this procedure whenever creating, updating, or publishing new blog posts 
 ## Step 0: Mandatory Knowledge Directives
 
 Before beginning, always:
-1. Consult the **LLM Wiki**: [`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) and [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md) for full project architecture, E-E-A-T guidelines, language specifications, and environment gotchas.
+1. Consult the **LLM Wiki**: [`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) for full project architecture, E-E-A-T guidelines, language specifications, and environment gotchas.
 2. Query the **codebase-memory-mcp** knowledge graph tools (`search_graph`, `trace_path`, `get_code_snippet`, `get_architecture`, `query_graph`) before reading or modifying files.
 
 ## Step 1: Create Post Markdown File

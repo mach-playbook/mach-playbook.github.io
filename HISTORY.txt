@@ -281,3 +281,12 @@
   * Verified 100% passing AdSense compliance suite (`scripts/test-adsense-compliance.py`).
   * Pushed commit `7aa5788` to GitHub; verified GitHub Actions Run `35250654570` successfully compiled Jekyll and deployed to GitHub Pages with 0 HTML-Proofer errors.
   * Officially requested site re-review on Google AdSense console on 2026-09-17 at 11:16 AM; status transitioned to "Getting ready" with green checks on site ownership and review requested.
+
+2026-09-23 09:12: Consolidation of Modular LLM Wiki (`wiki/`), Elimination of Duplicate `llm-wiki.md`, and Mandatory Secondary Model Delegation Directive
+  * Evaluated and resolved Wiki duplication: consolidated all knowledge base documentation into the modular Karpathy-style `wiki/` directory (`index.md`, `architecture.md`, `adsense-policy-and-compliance.md`, `publishing-pipeline-and-deduplication.md`, `content-and-editorial-standards.md`, `tools-and-operations.md`, `sources/`), eliminating `llm-wiki.md` to avoid dual maintenance and minimize agent context token consumption.
+  * Enriched `wiki/architecture.md` with client-side i18n engine specifications and UI placement patterns.
+  * Enriched `wiki/content-and-editorial-standards.md` with the 7 Core MACH Pillars, 21 Technical Tags, and the 3 Pillars of Content Validation Trinity.
+  * Enriched `wiki/tools-and-operations.md` with the Known Environment Gotchas table, Agent Skills directory, and Secondary Model Delegation specification.
+  * Updated `README.md`, `AGENTS.md`, `.agents/AGENTS.md`, and skills (`add-new-post-test-deploy`, `gsc-48h-indexation-audit`) to point exclusively to `wiki/index.md`.
+  * Mandated secondary model delegation hierarchy: `gemma4:cloud` first if weekly quota < 90%, falling back to local `qwen3:8b-8k` via MCP `consultar_modelo_local` (`ollama-local`).
+  * Verified 100% AdSense policy compliance (13/13 PASS) and 0 duplicate articles.

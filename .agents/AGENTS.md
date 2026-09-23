@@ -1,18 +1,18 @@
 # Project Knowledge, LLM Wiki & Agent Guidelines (`.agents/AGENTS.md`)
 
-This workspace uses `llm-wiki.md` as its primary Karpathy-style knowledge base and `codebase-memory-mcp` for structural graph discovery.
+This workspace uses the modular Karpathy-style `wiki/` directory ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md)) as its primary knowledge base and `codebase-memory-mcp` for structural graph discovery.
 
 ---
 
 ## 1. MANDATORY LLM WIKI INSTRUCTION FOR ALL AGENTS & SKILLS
 
 - **ALWAYS CONSULT THE LLM WIKI FIRST**:
-  Before starting any task, architectural research, content creation, or debugging in this repository, ALL AGENTS and SKILLS MUST consult the **LLM Wiki** ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) and [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md)) as the authoritative single source of truth for:
+  Before starting any task, architectural research, content creation, or debugging in this repository, ALL AGENTS and SKILLS MUST consult the **LLM Wiki** ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md)) as the authoritative single source of truth for:
   - Repository architecture & Jekyll Chirpy theme specs ([`wiki/architecture.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/architecture.md))
   - Google AdSense policy compliance & direct async script loading rules ([`wiki/adsense-policy-and-compliance.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/adsense-policy-and-compliance.md))
   - Autonomous daily publishing pipeline, topic matrix & smart Jaccard deduplication ([`wiki/publishing-pipeline-and-deduplication.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/publishing-pipeline-and-deduplication.md))
   - Content standards & E-E-A-T editorial requirements ([`wiki/content-and-editorial-standards.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/content-and-editorial-standards.md))
-  - Operational testing suites, Docker HTML-Proofer & `codebase-memory-mcp` tools ([`wiki/tools-and-operations.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md))
+  - Operational testing suites, Docker HTML-Proofer, gotchas & `codebase-memory-mcp` tools ([`wiki/tools-and-operations.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md))
 
 ---
 
@@ -58,29 +58,37 @@ Whenever new content (posts, pages, tabs) is generated—whether in **Antigravit
 
 ---
 
-## 4. MANDATORY LOCAL MODEL DELEGATION VIA OLLAMA MCP (`qwen3:8b` / `consultar_modelo_local`)
+## 4. MANDATORY SECONDARY MODEL DELEGATION VIA OLLAMA MCP (`gemma4:cloud` &rarr; `qwen3:8b-8k`)
 
 > ⚠️ **MANDATORY DIRECTIVE FOR ALL AGENTS & SESSIONS**:
-> Whenever a task is simple, mechanical, or low-risk, ALL AGENTS **MUST** delegate its execution to the local model **Qwen3:8b** (`qwen3:8b-8k` in Ollama) using the MCP tool `consultar_modelo_local` (`ServerName="ollama-local"`).
-> This preserves cloud LLM reasoning bandwidth, eliminates API quotas, and executes at near-instant local latency.
+> Whenever a task is routine, mechanical, or low-risk, ALL AGENTS **MUST** delegate its execution using the MCP tool `consultar_modelo_local` (`ServerName="ollama-local"`).
+>
+> **Model Hierarchy & Execution Logic:**
+> 1. **ALWAYS use `gemma4:cloud` first** whenever there is sufficient weekly usage quota available (< 90%).
+> 2. **SUBSEQUENTLY use `qwen3:8b-8k`** (local model, ~5.22 GB memory footprint, 8k context) as automatic fallback if weekly cloud quota is exhausted or if the cloud connection fails.
+>
+> **MCP Tool Behavior (`consultar_modelo_local`):**
+> The `consultar_modelo_local` tool natively executes an automated pre-check of the weekly quota against the usage API and responds fluidly to absorb routine and mechanical tasks, eliminating primary agent token consumption and executing with minimal latency.
 
 ### Delegation Matrix:
 
 | Task Type | Action | Execution Tool |
 | :--- | :---: | :--- |
-| **Docstrings, Comments & Type Annotations** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
-| **Simple Code Boilerplate & Repetitive Formatting** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
-| **Basic Markdown Formatting, Clean-up & Regex** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
-| **Quick Mechanical Text/Summary Translations** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
-| **Isolated Question Answering (No Multi-file Context)** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` |
+| **Docstrings, Comments & Type Annotations** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` (`gemma4:cloud` &rarr; `qwen3:8b-8k`) |
+| **Simple Code Boilerplate & Repetitive Formatting** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` (`gemma4:cloud` &rarr; `qwen3:8b-8k`) |
+| **Basic Markdown Formatting, Clean-up & Regex** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` (`gemma4:cloud` &rarr; `qwen3:8b-8k`) |
+| **Quick Mechanical Text/Summary Translations** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` (`gemma4:cloud` &rarr; `qwen3:8b-8k`) |
+| **Isolated Question Answering (No Multi-file Context)** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` (`gemma4:cloud` &rarr; `qwen3:8b-8k`) |
+| **Routine Data Transformations & Dictionaries/Mappings** | **MUST DELEGATE** | `ollama-local` &rarr; `consultar_modelo_local` (`gemma4:cloud` &rarr; `qwen3:8b-8k`) |
 | **High-level System Architecture & Technical Design** | **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
 | **Multi-file Refactoring & Dependency Management** | **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
 | **Git Operations, CI/CD Pipeline & Deployment Workflows** | **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
 | **Critical Security, AdSense Policy & Data Integrity Tasks**| **DO NOT DELEGATE** | Primary Reasoning Agent (Antigravity) |
 
-### Technical Specifications: `qwen3:8b` in Ollama
-- **Model Family**: Qwen3 (Alibaba Cloud)
-- **Local Tag**: `qwen3:8b-8k` (8.2 Billion parameters, `Q4_K_M` GGUF quantization, ~5.22 GB memory footprint)
-- **Context Length**: 40,960 tokens (optimized with 8,192 token active window locally)
+### Technical Specifications: Secondary Models
+- **Priority 1 (Cloud)**: `gemma4:cloud` (Google DeepMind Gemma 4 31B via Ollama Cloud API; active when weekly quota < 90%)
+- **Priority 2 (Local Fallback)**: `qwen3:8b-8k` (Alibaba Cloud Qwen3 8.2B dense decoder, `Q4_K_M` GGUF, ~5.22 GB memory footprint, 8,192 active context window)
+- **Pre-check Quota Check**: Evaluated automatically by `consultar_modelo_local` prior to routing to cloud
 - **Ollama API Endpoint**: `http://localhost:11434/v1/chat/completions`
 - **MCP Bridge**: `C:\Users\lenin\Documents\AIDevelopment\ollama\ollama_mcp_server.py`
+

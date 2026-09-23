@@ -58,3 +58,27 @@ Following rigorous profiling with Mobile Lighthouse (simulated network throttlin
 
 5. **PWA Character Entity Escaping**:
    - Query strings in service worker registration scripts are strictly escaped as `&amp;register=true` in `_includes/head.html`.
+
+---
+
+## 3. Spanish Primary Language & Global i18n Architecture
+
+The site establishes **Spanish as its primary language (`lang: es`)** while offering a seamless bilingual experience for global readers:
+
+### A. UI Placement Architecture
+1. **Global Flag Language Switcher (`_includes/topbar.html`)**:
+   - Compact button (`🇲🇽 ES ▼` / `🇺🇸 EN ▼` / `🌐 ALL ▼`) positioned in the global topbar.
+   - Triggers `setGlobalLanguage(lang)` to instantly toggle sidebar tagline, menu titles, and static page content blocks without page reload.
+2. **Home Feed Filter Pills (`_layouts/home.html`)**:
+   - Filter pill group positioned directly above `#post-list`: `[ 🇲🇽 Español (37) | 🇺🇸 English (34) | Todos (71) ]`.
+3. **In-Article Language Notice Banner (`_layouts/post.html`)**:
+   - Contextual alert banner atop each post providing language context and a direct one-click bridge to Google Translate.
+4. **Bilingual Static Trust Pages (`_tabs/about.md`, `_tabs/contact.md`, `_tabs/privacy.md`, `_tabs/terms.md`)**:
+   - Structured with `.lang-block.lang-es` and `.lang-block.lang-en.d-none` blocks that toggle in real-time when the user switches language.
+
+### B. Client-Side Script Engine (`assets/js/lang-filter.js`)
+- **Default Language**: `es` (Spanish).
+- **Priority Resolution**: URL parameter (`?lang=es|en`) &rarr; `localStorage.getItem('mach_playbook_lang')` &rarr; Default `es`.
+- **Dynamic Localization**: Updates all `[data-i18n-es]` and `[data-i18n-en]` attributes across the DOM (sidebar subtitle, navigation links, breadcrumbs).
+- **Post Feed Filtering**: Filters `.post-card-item` elements on the Home page and updates pagination dynamically without DOM layout shifts.
+

@@ -11,9 +11,9 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 
 ---
 
-## 📖 Primary Source of Knowledge (`wiki/` & `llm-wiki.md`)
+## 📖 Primary Source of Knowledge (`wiki/`)
 
-> **IMPORTANT**: All AI Agents and Developers MUST consult the **LLM Wiki** ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md) and [`llm-wiki.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/llm-wiki.md)) and query the **codebase-memory-mcp** knowledge graph (`home-merolhack-fl-mach-playbook`) as the authoritative single source of truth for project architecture, coding standards, environment gotchas, deployment workflows, and E-E-A-T / AdSense compliance rules.
+> **IMPORTANT**: All AI Agents and Developers MUST consult the **LLM Wiki** ([`wiki/index.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/index.md)) and query the **codebase-memory-mcp** knowledge graph (`home-merolhack-fl-mach-playbook`) as the authoritative single source of truth for project architecture, coding standards, environment gotchas, deployment workflows, and E-E-A-T / AdSense compliance rules.
 
 ---
 
@@ -36,11 +36,12 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 ├── _posts/                    # 80 Technical Markdown articles (34 EN, 46 ES)
 ├── wiki/                      # Karpathy-style Modular LLM Wiki Knowledge Base
 │   ├── index.md               # Master Wiki Catalog & Directives
-│   ├── architecture.md        # Technical Stack, CWV & Mobile Benchmarks
-│   ├── adsense-policy-and-compliance.md # AdSense Guide, Direct Script Rule & Postmortem
+│   ├── architecture.md        # Technical Stack, CWV, Mobile Benchmarks & i18n
+│   ├── adsense-policy-and-compliance.md # AdSense Guide, Direct Script Rule & Postmortems
 │   ├── publishing-pipeline-and-deduplication.md # Daily Agent, Matrix & Deduplication
-│   ├── content-and-editorial-standards.md # E-E-A-T, Frontmatter & Mermaid
-│   └── tools-and-operations.md # Docker, Test Suites & Codebase Memory MCP
+│   ├── content-and-editorial-standards.md # E-E-A-T, Frontmatter, 7 Pillars & Validation Trinity
+│   ├── tools-and-operations.md # Docker, Test Suites, Gotchas, Skills & MCP Delegation
+│   └── sources/               # Raw evidence, diagnostic emails & audit artifacts
 ├── .agents/
 │   ├── AGENTS.md              # AI Agent operational guidelines & LLM Wiki mandate
 │   └── skills/                # Registered AI Agent Skill Workflows
@@ -68,7 +69,6 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 ├── _config.yml                # Jekyll site configuration
 ├── sitemap.xml                # Automated site map index
 ├── robots.txt                 # Search engine crawler instructions
-├── llm-wiki.md                 # Karpathy-style LLM Wiki knowledge base (Quick Reference)
 ├── AGENTS.md                  # Comprehensive AI Agent operational log
 └── HISTORY.txt                # Chronological development history
 ```
