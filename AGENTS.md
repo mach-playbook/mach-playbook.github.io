@@ -241,6 +241,26 @@
   3. *Organic Indexation Jumpstart*: Leveraged existing complete HTML catalog at `https://mach-playbook.github.io/archives/` (hosting all 108 articles in static HTML) and submitted it directly to Google Search Console's **Priority Crawl Queue** via URL Inspection.
   4. *Validation*: Verified 100% AdSense compliance (13/13 PASS) and zero duplicate posts.
 
+2026-09-23 21:35: Topic Matrix Expansion (200 Enterprise Topics) & Autonomous Generator Evolution
+- **Punto 3 - Massive Topic Matrix Expansion (200+ Topics across 8 Pillars)**:
+  - Overhauled `TOPIC_DATABASE` in `scripts/publish_daily_jekyll_post.py` from 100 to 200 enterprise Day-2 topics across 8 specialized pillars (25 topics/pillar):
+    1. *Microservicios & Cloud Native* (Service Mesh, gRPC, Sidecars, Ephemeral Containers, Cell-based).
+    2. *API-First & Integraciones Distribuidas* (Federated GraphQL, Event-Driven AsyncAPI, Contract Testing, Backpressure).
+    3. *Headless & Frontend Moderno* (Islands Architecture, Micro-frontends, Edge SSR, Speculative Prerendering).
+    4. *Composable Commerce & Transición* (Strangler Fig, Dynamic Pricing Engines, Multi-vendor Catalog, Unified Cart).
+    5. *Consistencia de Datos & Transaccionalidad Multi-SaaS* (Saga Pattern, Outbox, CDC Debezium, Two-Phase Rollbacks).
+    6. *Operaciones Día 2, Observabilidad & Resiliencia* (Chaos Engineering, Distributed Tracing OTel, eBPF, Adaptive Throttling).
+    7. *FinOps, Unit Economics & Gestión Multi-Vendor* (Multi-SaaS API Cost Allocation, egress optimization, SLA monitoring).
+    8. *Seguridad Zero Trust & AI Composable* (mTLS SPIFFE/SPIRE, Token Exchange RFC 8693, Semantic Gateways, Prompt Injection Defense).
+  - Designed and implemented the **Tridimensional Algorithmic Generator**: Combines `[Core Pattern]` x `[Production Pain Point]` x `[Enterprise Context]` to synthesize >1,000 mathematically distinct production topics as an autonomous fallback.
+- **Punto 4 - Autonomous Generator Evolution (`publish_daily_jekyll_post.py`)**:
+  - Enhanced topic selection with cross-pillar fallback and strict Jaccard similarity limit (`<= 0.40`).
+  - Rewrote system and user prompts to ban generic glossary definitions ("En la arquitectura MACH...") and repetitive title formulas ("Estrategias de...", "Orquestación de...").
+  - Enforced mandatory production opening, production code snippets (Python/Go/TypeScript/k8s YAML), and dark-mode compatible Mermaid sequence/flowchart diagrams.
+- **Unit Testing Suite & Docker Verification**:
+  - Created `scripts/test-topic-generator.py` testing live `publish_daily_jekyll_post.py` with 8 test cases (pillar count, topic quantity, zero duplicates, similarity checks, formula banning, and algorithmic fallback).
+  - Integrated `test-topic-generator.py` into `Dockerfile` test stage and `docker-compose.yml`.
+  - Executed tests inside Docker test container (`mach-playbook-test`), passing 8/8 tests in 4.7s. Verified 100% AdSense compliance (13/13 PASS) and zero duplicate posts.
 
 ---
 

@@ -42,6 +42,12 @@ python3 scripts/test-site-integrity.py
 ```
 Validates Markdown parsing, Kramdown block tags, script defer attributes, and dark-mode Mermaid styling.
 
+### E. Topic Generator & Matrix Unit Test Suite
+```bash
+python3 scripts/test-topic-generator.py
+```
+Validates the autonomous publisher (`scripts/publish_daily_jekyll_post.py`): confirms all 8 enterprise pillars, minimum 200 predefined topics (>=25 per pillar), 0 duplicate slugs/titles, strict title formula banning, similarity threshold compliance, and tridimensional algorithmic fallback generation.
+
 ---
 
 ## 3. Local Docker Testing (HTML-Proofer)
@@ -134,7 +140,9 @@ The project maintains registered Agent skills and autonomous CI/CD pipelines:
 
 4. **`daily-blog-post` Autonomous Publishing Pipeline** (`.github/workflows/daily-blog-post.yml` & `scripts/publish_daily_jekyll_post.py`):
    - Daily cron (`0 13 * * *` = 07:00 AM America/Mexico_City) and `workflow_dispatch` trigger.
-   - Automatically executes Gemini API calls with dynamic model discovery (`GET /v1beta/models`) prioritizing the Gemini 3 fleet (`gemini-3.7-flash`, `gemini-3.6-flash`, etc.) with intelligent fallback to autonomous high-quality deep-dive synthesis. Scans `_posts/` for deduplication, generates 1,500-2,200 words Senior Architect articles across 5 MACH pillars, synthesizes matching cover images, runs AdSense compliance and duplicate tests, and pushes to `main`.
+   - Automatically executes Gemini API calls with dynamic model discovery (`GET /v1beta/models`) prioritizing the Gemini 3 fleet (`gemini-3.7-flash`, `gemini-3.6-flash`, etc.) with intelligent fallback to autonomous high-quality deep-dive synthesis.
+   - Leverages an expanded 8-pillar enterprise matrix with **200+ structured Day-2 topics** and a **tridimensional algorithmic topic generator** (`[Pattern] x [Production Pain] x [Enterprise Context]`) yielding 1,000+ unique permutations.
+   - Scans `_posts/` for deduplication (Jaccard similarity threshold `<= 0.40`), bans repetitive title formulas and introductory definitions, generates 1,500-2,500 word Senior Architect deep-dives with production code and Mermaid architecture diagrams, synthesizes matching cover images, runs AdSense compliance and duplicate tests, and pushes to `main`.
    - Granular `permissions: contents: write` configured at the workflow level to allow git write operations even when repo default token is set to read-only.
 
 5. **Resources & Ecosystem Hub (`_tabs/resources.md`) & MACH Glossary (`_tabs/glossary.md`)**:

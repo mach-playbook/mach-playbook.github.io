@@ -34,7 +34,9 @@ RUN bundle exec jekyll build -d _site
 # Stage 2: Unit Testing (HTMLProofer & Site Integrity Validation)
 # ---------------------------------------------------
 FROM builder AS test
-RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-bs4 && \
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-bs4 python3-yaml && \
+    python3 scripts/test-topic-generator.py && \
+    python3 scripts/test-adsense-compliance.py && \
     python3 scripts/test-site-integrity.py && \
     rm -rf /var/lib/apt/lists/*
 RUN bundle exec htmlproofer _site \

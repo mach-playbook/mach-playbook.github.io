@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
       target: test
     container_name: mach-playbook-test
+    command: ["python3", "scripts/test-topic-generator.py"]
 
   # Local preview web server (Nginx serving production build)
   site:

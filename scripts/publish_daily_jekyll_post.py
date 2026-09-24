@@ -42,7 +42,7 @@ DEFAULT_MODELS = [
     "gemini-2.5-pro"
 ]
 
-# 5 Core Pillars of MACH Playbook Topic Matrix - Expanded to 100+ Enterprise Topics
+# 8 Enterprise Pillars of MACH Playbook Topic Matrix - Expanded to 200+ Topics
 TOPIC_MATRIX = {
     "Microservicios & Cloud Native": [
         "Patrón Outbox Transaccional y Debezium en Arquitecturas de Microservicios Distribuidas",
@@ -64,9 +64,14 @@ TOPIC_MATRIX = {
         "Arquitectura Hexagonal (Puertos y Adaptadores) en Microservicios Go y TypeScript",
         "Migración sin Caídas de Esquemas Relacionales con gh-ost y pt-online-schema-change",
         "Consistencia Eventual en CQRS: Manejo de Lecturas Sucias y Proyecciones Asíncronas",
-        "Multi-Cluster Kubernetes con Cilium Mesh y Global Service Load Balancing"
+        "Multi-Cluster Kubernetes con Cilium Mesh y Global Service Load Balancing",
+        "Controladores Kubernetes Personalizados (Custom Controllers) con Kubebuilder en Go",
+        "Contención de Cascading Failures con Backpressure y Reactive Streams en Microservicios",
+        "Gestión de Memoria y Garbage Collection Tuning para Microservicios Java y Node.js en Contenedores",
+        "Arquitecturas Multi-Región Activo-Activo con Bases de Datos Globalmente Distribuidas (Spanner, CockroachDB)",
+        "Compresión y Optimización de Payloads Binarios Internos con Protobuf vs FlatBuffers"
     ],
-    "API-First & Integraciones": [
+    "API-First & Integraciones Distribuidas": [
         "Federación de GraphQL (Apollo Federation v2) vs REST Gateway en Ecosistemas Composable",
         "Diseño de Contratos API con OpenAPI v3.1 y Validación de Schemas en CI/CD",
         "Idempotencia de Pagos y Webhooks Distribuidos con Colas Dead-Letter (DLQ)",
@@ -86,7 +91,12 @@ TOPIC_MATRIX = {
         "Enrutamiento Inteligente en API Gateway con Machine Learning para Detección de Anomalías",
         "GraphQL Subscriptions a Escala con Redis Streams y NATS Messaging",
         "Contratos Basados en Consumidores (Consumer-Driven Contracts) para Equipos Desacoplados",
-        "Mocking Dinámico y Virtualización de APIs en Ambientes de Pruebas Distribuidas"
+        "Mocking Dinámico y Virtualización de APIs en Ambientes de Pruebas Distribuidas",
+        "Event Mesh Global: Conectando Nubes Híbridas con Solace PubSub+ y Apache Pulsar",
+        "API Linters y Style Guides Automatizados con Spectral en Flujos de Pull Request",
+        "Depuración y Replay de Webhooks Fallidos mediante Arquitecturas Dead-Letter Event-Driven",
+        "Transformación de Cargas XML/SOAP Legadas a JSON REST mediante Middleware Liviano",
+        "Sistemas de Notificaciones Masivas Multi-Canal (SMS, Push, Email) con Resiliencia ante Caídas"
     ],
     "Headless & Frontend Moderno": [
         "Optimización de Core Web Vitals (INP, LCP) en Frontends Composable con Next.js e ISR",
@@ -108,7 +118,12 @@ TOPIC_MATRIX = {
         "Personalización en Tiempo Real Basada en Edge Middleware sin Afectar la Tasa de Acierto de Caché",
         "Storybook y Visual Regression Testing para Componentes Headless Composable",
         "Accesibilidad Web (WCAG 2.2 AA) en Componentes Headless Interactivos Complejos",
-        "Micro-Frontends con Qiankun vs Single-SPA: Análisis de Sobrecarga y Rendimiento"
+        "Micro-Frontends con Qiankun vs Single-SPA: Análisis de Sobrecarga y Rendimiento",
+        "Sincronización de Estado Local con IndexedDB para Checkouts Resistentes a Desconexiones",
+        "Optimizaciones de Bundle Size: Tree Shaking y Análisis de Dependencias Críticas en SPAs",
+        "Edge Functions y Streaming SSR para Reducir Time To First Byte (TTFB) a Escala Global",
+        "Gestión de Sesiones de Usuario Stateful en Plataformas Headless Serverless",
+        "Pruebas End-to-End Visuales y de Rendimiento Automatizadas con Playwright en CI/CD"
     ],
     "Composable Commerce & Transición": [
         "Patrón Strangler Fig: Cómo Desmantelar un Monolito SAP Commerce o Magento Paso a Paso",
@@ -130,29 +145,120 @@ TOPIC_MATRIX = {
         "Integración de Sistemas ERP Legacy (SAP, Oracle) mediante Event-Driven Integration Layers",
         "Order Management System (OMS) Distribuido: Ruteo Inteligente de Pedidos por Proximidad",
         "Programas de Lealtad y Gamificación Desacoplados en E-Commerce Composable",
-        "Comercio Conversacional y Social Commerce Integrados mediante APIs Headless"
+        "Comercio Conversacional y Social Commerce Integrados mediante APIs Headless",
+        "Cálculo de Impuestos y Aranceles Transfronterizos en Tiempo Real (Avalara, Vertex)",
+        "Gestión de Envíos y Conexión con Múltiples Operadores Logísticos (FedEx, DHL, Estafeta)",
+        "Garantías y Protección Post-Venta Integradas como Microservicios Independientes",
+        "Gestión de Cupones y Descuentos Complejos con Motores de Reglas Desacoplados (Drools, JSON-Rules)",
+        "Sistemas de Cotizaciones y Negociaciones Comerciales B2B en Frontends Headless"
     ],
-    "Estrategia Enterprise, FinOps & ROI": [
-        "Cómo Justificar el ROI de una Arquitectura MACH ante el C-Level y Comité de Dirección",
-        "FinOps para MACH: Control de Costos y Optimización de Facturación Multi-Vendor",
-        "Cómo Evitar la Trampa del 'Monolito Distribuido': Señales de Alerta y Remediación",
-        "Matriz de Decisión: Construir vs Comprar (Build vs Buy) en Ecosistemas Composable",
-        "Gestión de Proveedores (Vendor Lock-in Mitigation) en Contratos SaaS de Arquitectura MACH",
-        "Estructura Organizacional: Equipos Stream-Aligned e Inversión Conway en Equipos MACH",
-        "Acuerdos de Nivel de Servicio (SLA) Agregados en Cadenas de Dependencias Multi-SaaS",
-        "Auditoría y Cumplimiento Normativo (PCI-DSS, GDPR, SOC2) en Plataformas Composable",
-        "Métricas Clave de Éxito Técnico y de Negocio Post-Migración Composable (DORA + KPIs)",
-        "Gestión del Cambio Cultural y Capacitación de Equipos de Ingeniería Tradicionales a MACH",
-        "GreenOps y Sostenibilidad Cloud: Reducción de Huella de Carbono en Cargas MACH",
-        "Gobernanza Multi-Cloud: Evitando Complejidad Innecesaria entre GCP, AWS y Azure",
-        "Modelos de Madurez para Plataformas Composable: De Adopción Inicial a Escala Global",
-        "Gestión de Incidentes Mayores y Post-Mortems sin Culpa en Arquitecturas Multi-Proveedor",
-        "Gestión de Licenciamiento y Negociación de Contratos Enterprise en Ecosistemas MACH",
-        "Gestión de Riesgo Operacional y Continuidad de Negocio (DR) en Dependencias Multi-SaaS",
-        "Desarrollo Basado en Plataforma (Platform Engineering) e IDP Interno con Backstage",
-        "Definición y Medición de Service Level Objectives (SLOs) y Error Budgets en MACH",
-        "Auditoría Forense de Facturas Cloud: Descubriendo Desperdicios Ocultos en Kubernetes",
-        "Estrategias de Retención de Talento y Cultura de Ingeniería en Equipos Composable"
+    "Consistencia de Datos & Transaccionalidad Multi-SaaS": [
+        "Resolución de Escrituras Conflictivas en Carritos de Compra Distribuidos sin Bloqueo Pesimista",
+        "Patrón Saga Coreografiado vs Orquestado con Temporal.io en Cadenas de Suministro Multi-Vendor",
+        "Change Data Capture (CDC) con Debezium y Kafka para Sincronizar ERPs Legados con Almacenes de Lectura",
+        "Estrategias de Read-Your-Own-Writes (RYOW) en Frontends Headless con Consistencia Eventual",
+        "Patrón Outbox Bidireccional para Conciliación de Pagos y Facturación Electrónica Fiscal",
+        "Manejo de Transacciones de Compensación en Fallos de Aprovisionamiento Multi-SaaS",
+        "Diseño de Modelos de Datos en Esquemas Documentales NoSQL vs Relacionales en E-Commerce",
+        "Replicación Multi-Región con Resolución de Conflictos Last-Write-Wins vs Vector Clocks",
+        "Tolerancia a Particiones de Red (Teorema CAP) en Gestión de Inventarios Críticos",
+        "Validación de Idempotencia a Nivel de Base de Datos con Claves Naturales y Filtros Bloom",
+        "Arquitecturas CQRS con Event Store Dedicado para Auditoría Forense de Transacciones Financieras",
+        "Limpieza y Compactación de Topics de Eventos en Kafka para Reducción de Almacenamiento",
+        "Indexación de Proyecciones de Consulta en Elasticsearch/OpenSearch a partir de Event Streams",
+        "Aislamiento de Transacciones Snapshot y Read Committed en Bases de Datos SQL Distribuidas",
+        "Conciliación Nocturna Automatizada de Estados entre Pasarelas de Pago y Libros Contables",
+        "Patrón Reservas Temporales (Two-Phase Commit Ligero) en Hoteles y Boletos de Alta Demanda",
+        "Manejo de Backpressure en Consumidores de Eventos para Prevenir Desbordamiento de Memoria",
+        "Evolución de Schemas de Base de Datos sin Downtime con Expansión y Contracción (Expand and Contract)",
+        "Sharding de Base de Datos por Tenant en SaaS B2B Enterprise: Estrategias de Claves de Partición",
+        "Pistas de Auditoría Inmutables (Append-Only Logs) para Trazabilidad Regulatoria en Fintech",
+        "Prevención de Pérdida de Datos en Desconexiones de Red con Colas Locales SQLite en Clientes Edge",
+        "Doble Escritura (Dual-Write Problem): Por Qué Fallan las Transacciones No Coordinadas y Cómo Evitarlo",
+        "Desduplicación de Mensajes en Redes Inciertas con Almacenes Distribuidos en Memoria",
+        "Patrón Claim Check: Manejo Eficiente de Grandes Payloads en Sistemas de Mensajería",
+        "Sincronización de Identidad de Clientes (Customer Master Data) entre CRM, ERP y Storefront"
+    ],
+    "Operaciones Día 2, Observabilidad & Resiliencia": [
+        "Propagación de Contexto W3C TraceContext a través de Redes Multi-Vendor y Protocolos Híbridos",
+        "Diseño de Métricas de Alta Cardinalidad con Prometheus y M3DB sin Degradar Rendimiento",
+        "Degradación Elegante de Experiencia de Usuario: Modo Fallback cuando un Microservicio Crítico Cae",
+        "Pruebas de Inyección de Caos en Producción con Gremlin y Chaos Toolkit para Validar SLAs",
+        "Monitoreo de Golden Signals (Latencia, Tráfico, Errores, Saturación) en Plataformas Composable",
+        "Arquitectura de Alertas Inteligentes: Eliminación de Fatiga de Alertas con Detección de Anomalías",
+        "Post-Mortems sin Culpa (Blameless Post-Mortems) y Análisis de Causa Raíz en Fallos Complejos",
+        "Definición Rigurosa de Service Level Objectives (SLOs) y Presupuestos de Error (Error Budgets)",
+        "Trazabilidad de Transacciones de Extremo a Extremo (User Click a Base de Datos) con OpenTelemetry",
+        "Centralización de Logs Distribuidos a Gran Escala con Vector, ClickHouse y Grafana Loki",
+        "Detección y Aislamiento Automático de Microservicios Lentos (Noisy Neighbors) en Kubernetes",
+        "Políticas de Auto-Sanación (Self-Healing) y Reinicio Controlado de Pods en Despliegues Cloud",
+        "Pruebas de Estrés y Capacidad Extrema con k6 y Distributed Load Generators",
+        "Simulacros de Resiliencia ante Desastres (Game Days) para Validar RPO y RTO en la Nube",
+        "Monitoreo Sintético y Pruebas Continuas de Endpoints de APIs en Producción",
+        "Gestión de Runbooks Automatizados con Ansible y Temporal para Remediación de Incidentes",
+        "Visualización de Dependencias Dinámicas en Tiempo Real entre Microservicios con Service Maps",
+        "Perfiles Continuos de Rendimiento en Producción (Continuous Profiling) con Pyroscope y Parca",
+        "Análisis de Sobrecarga de Red y Latencia DNS en Entornos Kubernetes de Alta Densidad",
+        "Control de Saturación de Colas de Mensajes y Alertas Predictivas de Dead-Letter Queue (DLQ)",
+        "Gobernanza de Cambios en Producción: Auditoría de Despliegues GitOps con Firmas Criptográficas",
+        "Planificación de Capacidad (Capacity Planning) Basada en Modelos Predictivos para Picos Estacionales",
+        "Segregación de Entornos de Staging Efímeros por Pull Request con vcluster y Kubernetes",
+        "Monitoreo de Latencia p99 y p99.9: Identificando Cuellos de Botella Ocultos en Microservicios",
+        "Cultura On-Call Sostenible y Rotación de Guardias en Equipos de Ingeniería Distribuidos"
+    ],
+    "FinOps, Unit Economics & Gestión Multi-Vendor": [
+        "Cálculo del Costo Unitario por Llamada API y por Pedido en Arquitecturas Headless",
+        "Optimización de Costos de Transferencia de Datos (Egress Network) entre GCP, AWS y Azure",
+        "Negociación de Contratos SaaS Enterprise: Cláusulas de Salida, Migración y SLAs Agregados",
+        "Auditoría Forense de Facturas Cloud: Detectando Desperdicios en Instancias Kubernetes y Discos Huérfanos",
+        "FinOps Cultural: Asignación de Costos de Infraestructura Directamente a Equipos de Producto (Showback/Chargeback)",
+        "Estrategias para Mitigar el Vendor Lock-in en Capas de Base de Datos y Mensajería Cloud Propietarias",
+        "Modelado del Retorno de Inversión (ROI) y Total Cost of Ownership (TCO): Monolito vs MACH a 5 Años",
+        "Optimización de Consumo de Créditos y Licencias en Capas de Middleware y API Gateways",
+        "Gestión de Compromisos de Uso Cloud (Savings Plans y Reserved Instances) en Cargas Dinámicas",
+        "Gobernanza de Adquisiciones de Software: Matriz de Decisión Build vs Buy vs Compose",
+        "Control de Costos en Almacenamiento de Logs y Métricas: Políticas de Retención Tiered y Archival",
+        "Desmantelamiento Seguro de Infraestructura Cloud Abandonada tras Migraciones Composable",
+        "Economía de Serverless vs Contenedores Dedicados: Punto de Inflexión de Costos a Escala",
+        "Estrategias de Facturación Multi-Inquilino y Repercusión de Costos en Plataformas B2B SaaS",
+        "Auditoría de SLAs de Proveedores SaaS Externos: Métricas de Incumplimiento y Compensaciones Financieras",
+        "Optimización de Facturas de CDN y Edge Computing: Políticas de Cache Hit Ratio Efectivas",
+        "Racionalización del Catálogo de Herramientas SaaS para Evitar Redundancia Funcional",
+        "Gestión Financiera de APIs Públicas: Modelos de Cobro Freemium, Por Consumo y Por Nivel",
+        "Automatización del Apagado de Entornos de Desarrollo Fuera de Horario Laboral para Reducir Gasto",
+        "Benchmarking de Costos de Proveedores de Composable Commerce (commercetools, BigCommerce, Shopify Plus)",
+        "Contención de Costos en Modelos de Lenguaje e Inferencia de IA en Aplicaciones Enterprise",
+        "Políticas de FinOps As Code: Bloqueo de Infraestructura Sobre-Aprovisionada en Terraform CI/CD",
+        "Evaluación de Impacto Financiero de Caídas de Servicio (Cost of Downtime per Hour) en Retail",
+        "Estrategias de Financiación de Proyectos de Modernización Tecnológica para Directores Financieros (CFO)",
+        "Alineación de Objetivos OKR de Ingeniería con Metas de Eficiencia de Costos Cloud"
+    ],
+    "Seguridad Zero Trust & AI Composable": [
+        "Autenticación mTLS y Gestión de Identidades Efímeras entre Microservicios con SPIFFE y SPIRE",
+        "Mitigación del OWASP API Security Top 10 en Capas de API Gateway y BFF",
+        "Agentes de IA Autónomos que Consumen Contratos OpenAPI y Schemas GraphQL para Automatizar Compras",
+        "Búsqueda Híbrida Vectorial y Léxica en Catálogos de Gran Escala con Bases de Datos Vectoriales (Qdrant, Pinecone)",
+        "Pricing Dinámico en el Edge con Inferencia de Modelos Ligeros sin Afectar la Latencia p99",
+        "Detección y Mitigación de Bots Maliciosos en Frontends Headless con Cloudflare Turnstile",
+        "Rotación Automática de Claves Criptográficas y Certificados TLS con cert-manager y Vault",
+        "Arquitectura de Seguridad en APIs GraphQL: Prevención de Ataques de Complejidad de Consulta y DoS",
+        "Tokenización de Datos Sensibles y Cumplimiento PCI-DSS SAQ-A en Checkouts Desacoplados",
+        "Gobernanza de Modelos de Inteligencia Artificial (LLMOps) Integrados en Plataformas Composable",
+        "Seguridad en la Cadena de Suministro de Software (Supply Chain Security) con Sigstore y SBOM",
+        "Aislamiento de Microservicios con Sandboxing Liviano (gVisor, Firecracker) en Cargas Inseguras",
+        "Auditoría de Accesos con Control Basado en Atributos (ABAC) y Open Policy Agent (OPA)",
+        "Prevención de Fuga de Datos de Clientes (DLP) en Flujos de Integración Asíncronos",
+        "Pruebas Automatizadas de Seguridad Dinámica (DAST) de APIs en Pipelines de CI/CD",
+        "Cifrado de Datos en Reposo con Claves Gestionadas por el Cliente (CMEK) en Entornos Multi-Cloud",
+        "Autenticación Passwordless y FIDO2/WebAuthn en Aplicaciones Headless Móviles y Web",
+        "Monitorización de Amenazas en Tiempo Real con eBPF Security Sensors (Tetragon, Falco)",
+        "Generación Aumentada por Recuperación (RAG) para Recomendaciones Técnicas de Productos B2B",
+        "Gestión de Identidades de Clientes (CIAM) Federada con Soporte OIDC y SAML 2.0",
+        "Detección de Anomalías de Comportamiento de Usuarios y Prevención de Fraude en Tiempo Real",
+        "Políticas de Content Security Policy (CSP) Dinámicas Gestionadas desde el Edge Worker",
+        "Auditoría Forense de Tokens JWT Comprometidos y Listas Negras Distribuidas con Redis",
+        "Protección contra Envenenamiento de Modelos y Prompt Injection en Agentes de Comercio Conversacional",
+        "Seguridad de Webhooks Salientes: Aislamiento de Red y Mitigación de SSRF (Server-Side Request Forgery)"
     ]
 }
 
@@ -259,41 +365,63 @@ def scan_existing_posts(posts_dir: str = "_posts") -> List[Dict[str, str]]:
 
 
 def generate_algorithmic_topic(existing_posts: List[Dict[str, str]]) -> Tuple[str, str]:
-    """Combinatorial generative fallback ensuring 100% unique architectural topics without repetitive editions."""
+    """Combinatorial generative fallback using a tridimensional enterprise matrix: Pattern x Production Pain Point x Enterprise Context."""
     patterns = [
-        ("Cell-Based Architecture", "Arquitectura Cloud & Microservicios"),
-        ("Dapr Distributed Application Runtime", "Arquitectura Cloud & Microservicios"),
-        ("eBPF y Cilium Service Mesh", "Arquitectura Cloud & Microservicios"),
-        ("Event Sourcing con Kafka y Debezium", "Arquitectura Cloud & Microservicios"),
-        ("CQRS y Proyecciones Read-Heavy", "Arquitectura Cloud & Microservicios"),
-        ("GraphQL Federation v2 y Supergraphs", "API-First & Integraciones"),
-        ("AsyncAPI y Gobernanza de Webhooks", "API-First & Integraciones"),
-        ("OAuth 2.1 y Passkeys WebAuthn", "API-First & Integraciones"),
-        ("React Server Components e ISR", "Headless & Frontend Moderno"),
-        ("Edge Middleware y A/B Testing Zero-CLS", "Headless & Frontend Moderno"),
-        ("Búsqueda Vectorial con Meilisearch", "Headless & Frontend Moderno"),
-        ("Orquestación de Checkout Multi-Adquirente", "Composable Commerce & Transición"),
-        ("Gestión de Inventario Distribuido en Flash Sales", "Composable Commerce & Transición"),
-        ("GreenOps y Sostenibilidad en Cloud", "Estrategia Enterprise, FinOps & ROI"),
-        ("Platform Engineering con Backstage IDP", "Estrategia Enterprise, FinOps & ROI")
+        # Microservicios & Cloud Native
+        ("Cell-Based Architecture y Aislamiento de Blast Radius", "Microservicios & Cloud Native"),
+        ("eBPF y Redes de Alto Rendimiento con Cilium", "Microservicios & Cloud Native"),
+        ("Dapr Distributed Application Runtime para Abstracción Pub/Sub", "Microservicios & Cloud Native"),
+        ("KEDA y Auto-Escalado Dirigido por Eventos", "Microservicios & Cloud Native"),
+        ("Controladores Kubernetes Personalizados en Go", "Microservicios & Cloud Native"),
+        # API-First & Integraciones Distribuidas
+        ("GraphQL Federation v2 y Arquitectura de Supergraphs", "API-First & Integraciones Distribuidas"),
+        ("AsyncAPI y Gobernanza Criptográfica de Webhooks", "API-First & Integraciones Distribuidas"),
+        ("OAuth 2.1 y Autenticación Passwordless FIDO2/WebAuthn", "API-First & Integraciones Distribuidas"),
+        ("Event Mesh Global con Solace PubSub+ y Apache Pulsar", "API-First & Integraciones Distribuidas"),
+        # Headless & Frontend Moderno
+        ("React Server Components y Streaming SSR en Edge Functions", "Headless & Frontend Moderno"),
+        ("Edge Middleware y A/B Testing Zero-CLS a Escala Global", "Headless & Frontend Moderno"),
+        ("Búsqueda Híbrida Vectorial y Léxica con Meilisearch", "Headless & Frontend Moderno"),
+        ("Checkouts Offline-First con IndexedDB y Sincronización Local", "Headless & Frontend Moderno"),
+        # Composable Commerce & Transición
+        ("Desmantelamiento Strangler Fig de Monolitos SAP y Magento", "Composable Commerce & Transición"),
+        ("Orquestación de Checkout Multi-Adquirente y Split Payments", "Composable Commerce & Transición"),
+        ("Gestión de Inventario Distribuido y Reservas en Flash Sales", "Composable Commerce & Transición"),
+        ("Order Management System (OMS) Distribuido con Ruteo por Proximidad", "Composable Commerce & Transición"),
+        # Consistencia de Datos & Transaccionalidad Multi-SaaS
+        ("Resolución de Escrituras Conflictivas con Vector Clocks", "Consistencia de Datos & Transaccionalidad Multi-SaaS"),
+        ("Patrón Outbox Transaccional y Change Data Capture con Debezium", "Consistencia de Datos & Transaccionalidad Multi-SaaS"),
+        ("Read-Your-Own-Writes (RYOW) en Frontends con Consistencia Eventual", "Consistencia de Datos & Transaccionalidad Multi-SaaS"),
+        # Operaciones Día 2, Observabilidad & Resiliencia
+        ("Propagación de Contexto W3C TraceContext en Redes Multi-Vendor", "Operaciones Día 2, Observabilidad & Resiliencia"),
+        ("Inyección de Caos Automatizada con LitmusChaos y Chaos Mesh", "Operaciones Día 2, Observabilidad & Resiliencia"),
+        ("Centralización de Logs a Gran Escala con Vector y ClickHouse", "Operaciones Día 2, Observabilidad & Resiliencia"),
+        # FinOps, Unit Economics & Gestión Multi-Vendor
+        ("Cálculo del Costo Unitario por Llamada API en Arquitecturas Headless", "FinOps, Unit Economics & Gestión Multi-Vendor"),
+        ("Optimización de Costos de Egress Network entre GCP y AWS", "FinOps, Unit Economics & Gestión Multi-Vendor"),
+        ("Auditoría Forense de Facturas Cloud para Detección de Desperdicios", "FinOps, Unit Economics & Gestión Multi-Vendor"),
+        # Seguridad Zero Trust & AI Composable
+        ("Autenticación mTLS y SPIFFE/SPIRE para Microservicios Efímeros", "Seguridad Zero Trust & AI Composable"),
+        ("Agentes de IA Autónomos que Consumen Contratos OpenAPI y GraphQL", "Seguridad Zero Trust & AI Composable"),
+        ("Mitigación del OWASP API Security Top 10 en Capas de API Gateway", "Seguridad Zero Trust & AI Composable")
     ]
     
     contexts = [
-        "en Sistemas de Alta Concurrencia",
-        "para Transacciones Transfronterizas",
-        "en Plataformas de E-Commerce Global",
-        "con Tolerancia Extrema a Particiones de Red",
-        "para Prevención de Fraude en Tiempo Real",
-        "en Arquitecturas Multi-Cloud",
-        "para Reducción de Latencia p99",
-        "en Catálogos B2B Distribuidos"
+        "en Sistemas de Alta Concurrencia y Tráfico Masivo",
+        "para Transacciones Transfronterizas y Cumplimiento Normativo",
+        "en Plataformas de E-Commerce Global y Retail Omnicanal",
+        "con Tolerancia Extrema a Particiones de Red y Caídas de Proveedores",
+        "para Prevención de Fraude y Mitigación de Bots en Tiempo Real",
+        "en Entornos Multi-Cloud Híbridos (GCP, AWS y Azure)",
+        "para Optimización de Latencia p99 en Cargas de Misión Crítica",
+        "en Catálogos B2B Distribuidos con Jerarquías Complejas"
     ]
     
     candidates = []
     for (pat, pil) in patterns:
         for ctx in contexts:
             candidate = f"{pat} {ctx}"
-            if not is_topic_covered(candidate, existing_posts, threshold=0.40):
+            if not is_topic_covered(candidate, existing_posts, threshold=0.35):
                 candidates.append((candidate, pil))
                 
     if candidates:
@@ -302,7 +430,7 @@ def generate_algorithmic_topic(existing_posts: List[Dict[str, str]]) -> Tuple[st
         
     # Ultimate unique fallback with timestamp guarantee
     ts = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
-    return f"Estrategias Emergentes de Ingeniería de Plataforma y MACH - Ref {ts}", "Arquitectura Cloud & Microservicios"
+    return f"Patrones Emergentes de Ingeniería de Plataforma y Arquitectura Composable - Ref {ts}", "Microservicios & Cloud Native"
 
 
 def generate_novel_topic_with_ai(api_key: str, existing_posts: List[Dict[str, str]]) -> Optional[Tuple[str, str]]:
@@ -320,8 +448,9 @@ def generate_novel_topic_with_ai(api_key: str, existing_posts: List[Dict[str, st
 Propón EXACTAMENTE UN tema técnico avanzado, original, específico y de nivel Senior Solutions Architect para un nuevo artículo sobre arquitecturas MACH / Composable Commerce / Cloud-Native.
 REGLAS ESTRICTAS:
 1. El tema NO debe ser una variación de ningún tema anterior (no repitas circuit breakers, resiliencia general, etc.).
-2. Debe ser un tema de vanguardia para 2026 (por ejemplo: eBPF, Cilium, Temporal, KEDA, Passkeys, ClickHouse, Cell-based architecture, etc.).
-3. Responde ÚNICAMENTE en formato JSON con dos campos:
+2. Debe ser un tema de vanguardia para 2026 (por ejemplo: eBPF, Cilium, Temporal, KEDA, Passkeys, ClickHouse, Cell-based architecture, SPIFFE/SPIRE, FinOps de APIs, etc.).
+3. EVITA fórmulas repetitivas en el título como 'Estrategias de...' o 'Introducción a...'. Enfócalo en un problema concreto y su solución técnica.
+4. Responde ÚNICAMENTE en formato JSON con dos campos:
 {{"topic": "Título del Tema en Español", "pillar": "Pilar correspondiente de MACH"}}
 """
     try:
@@ -330,8 +459,8 @@ REGLAS ESTRICTAS:
         if json_match:
             data = json.loads(json_match.group(0))
             topic = data.get("topic", "").strip()
-            pillar = data.get("pillar", "Arquitectura Cloud & Microservicios").strip()
-            if topic and not is_topic_covered(topic, existing_posts, threshold=0.40):
+            pillar = data.get("pillar", "Microservicios & Cloud Native").strip()
+            if topic and not is_topic_covered(topic, existing_posts, threshold=0.35):
                 print(f" [AI Novel Topic Generated]: '{topic}' ({pillar})")
                 return topic, pillar
     except Exception as e:
@@ -341,21 +470,21 @@ REGLAS ESTRICTAS:
 
 
 def select_next_topic(existing_posts: List[Dict[str, str]], manual_topic: Optional[str] = None, api_key: Optional[str] = None) -> Tuple[str, str]:
-    """Select a fresh, untackled topic balancing the 5 pillars, using AI generation or algorithmic synthesis when static matrix is covered."""
+    """Select a fresh, untackled topic balancing the 8 enterprise pillars, using AI generation or algorithmic synthesis when static matrix is covered."""
     if manual_topic:
-        return manual_topic, "Arquitectura Cloud & Microservicios"
+        return manual_topic, "Microservicios & Cloud Native"
 
-    # 1. Search expanded static topic matrix using smart Jaccard deduplication
+    # 1. Search expanded 200-topic matrix using smart Jaccard & title deduplication
     pillars = list(TOPIC_MATRIX.keys())
     random.shuffle(pillars)
     
     for pillar in pillars:
         topics = TOPIC_MATRIX[pillar]
         for topic in topics:
-            if not is_topic_covered(topic, existing_posts, threshold=0.45):
+            if not is_topic_covered(topic, existing_posts, threshold=0.40):
                 return topic, pillar
 
-    print(" Notice: Static topic matrix exhausted. Querying Gemini AI for a 100% novel topic...")
+    print(" Notice: Static 200-topic matrix exhausted. Querying Gemini AI for a 100% novel topic...")
     
     # 2. Dynamic AI Topic Synthesis via Gemini
     if api_key and api_key != "MOCK_KEY":
@@ -369,24 +498,28 @@ def select_next_topic(existing_posts: List[Dict[str, str]], manual_topic: Option
 
 
 def build_system_prompt(lang: str = "es") -> str:
-    """Build the comprehensive Senior Solutions Architect system prompt with E-E-A-T guidelines."""
+    """Build the comprehensive Senior Solutions Architect system prompt with E-E-A-T and anti-repetition guidelines."""
     if lang == "es":
         return """Eres un Principal Enterprise Solutions Architect y especialista certificado en Arquitectura MACH (Microservices, API-first, Cloud-native, Headless) y Composable Commerce.
 Escribes artículos técnicos de altísimo nivel para 'MACH Playbook' (mach-playbook.github.io).
 
 DIRECTRICES EDITORIALES Y DE CALIDAD (E-E-A-T):
 1. **Profundidad Técnica y Experiencia Real:** No te limites a explicaciones teóricas superficiales. Proporciona ejemplos prácticos de arquitectura, patrones de diseño de producción, trade-offs reales y métricas de desempeño.
-2. **Extensión:** Entre 1,500 y 2,200 palabras. El contenido debe ser exhaustivo, estructurado y sin texto de relleno.
-3. **Estructura Requerida:**
-   - Título impactante y profesional.
+2. **ANTI-PATRONES EDITORIALES ESTRICTAMENTE PROHIBIDOS:**
+   - NUNCA comiences el artículo con introducciones de tipo glosario o definiciones genéricas (ej: "En la arquitectura MACH, los microservicios son...", "Una API es una interfaz...").
+   - Abre INMEDIATAMENTE en el primer párrafo con un problema de producción crítico, un cuello de botella de escalabilidad o un dilema arquitectónico enterprise real (Operaciones de Día 2).
+   - Evita títulos con fórmulas repetitivas ("Estrategias de...", "Orquestación de..."). Enfócate en el problema técnico concreto, su impacto y su solución.
+3. **Extensión:** Entre 1,500 y 2,200 palabras. El contenido debe ser exhaustivo, estructurado y sin texto de relleno.
+4. **Estructura Requerida:**
+   - Título impactante, específico y profesional.
    - Front Matter YAML compatible con Jekyll tema Chirpy al inicio del archivo.
-   - Introducción con planteamiento del problema en el mundo real (dolores de empresas enterprise).
+   - Planteamiento inmediato del problema en producción (pain points enterprise).
    - Diagrama de arquitectura o secuencia en sintaxis Mermaid (```mermaid).
    - Bloques de código reales, ejecutables y documentados (TypeScript, Python, YAML, Go o SQL).
    - Tablas comparativas de trade-offs arquitectónicos (pros, contras, cuándo usarlo, cuándo evitarlo).
    - Modos de fallo comunes y estrategias de mitigación/recuperación en producción.
    - Conclusión accionable con checklist de implementación para equipos de ingeniería.
-4. **Formato Front Matter de Jekyll:**
+5. **Formato Front Matter de Jekyll:**
 ---
 layout: post
 title: "Título Exacto Entre Comillas"
@@ -397,25 +530,27 @@ tags: [tag1, tag2, tag3, tag4, tag5, tag6]
 image:
   path: /assets/img/posts/YYYY-MM-DD-slug.png
 ---
-5. **Idioma:** Español técnico impecable, fluido y profesional, utilizando la terminología estándar de la industria cloud/software.
-"""
+6. **Idioma:** Español técnico impecable, fluido y profesional, utilizando la terminología estándar de la industria cloud/software."""
     else:
         return """You are a Principal Enterprise Solutions Architect and MACH Alliance Certified Specialist (Microservices, API-first, Cloud-native, Headless) and Composable Commerce expert.
 You write authoritative technical deep-dives for 'MACH Playbook' (mach-playbook.github.io).
 
 EDITORIAL GUIDELINES (E-E-A-T):
 1. **Technical Depth & Real-World Experience:** Provide concrete production architecture patterns, design tradeoffs, performance metrics, and actionable blueprints.
-2. **Length:** Between 1,500 and 2,200 words. Exhaustive, well-structured, zero fluff.
-3. **Required Elements:**
+2. **STRICT EDITORIAL ANTI-PATTERNS (PROHIBITED):**
+   - NEVER begin the article with glossary-style definitions (e.g. "In MACH architecture, microservices are...", "An API is...").
+   - Open IMMEDIATELY with a production incident, high-stakes trade-off, or architectural failure scenario.
+3. **Length:** Between 1,500 and 2,200 words. Exhaustive, well-structured, zero fluff.
+4. **Required Elements:**
    - Jekyll Chirpy-compliant YAML Front Matter at the very beginning.
-   - Real-world problem statement and enterprise challenges.
+   - Production failure scenario & real-world enterprise challenge.
    - Architecture or sequence diagram in Mermaid syntax (```mermaid).
    - Production-grade, documented code snippets (TypeScript, Python, YAML, Go, or SQL).
    - Comparative tradeoff table (Pros, Cons, When to use, When to avoid).
    - Failure modes and mitigation strategies.
    - Actionable conclusion with engineering implementation checklist.
-4. **Language:** Professional, highly technical English.
-"""
+5. **Language:** Professional, highly technical English."""
+
 
 
 def build_user_prompt(topic: str, pillar: str, existing_posts: List[Dict[str, str]], post_date_str: str, slug: str, lang: str = "es") -> str:
@@ -450,6 +585,8 @@ REQUISITOS ESTRICTOS:
 5. Incluye ejemplos de código de producción detallados y bien comentados.
 6. Incluye una tabla comparativa Markdown con trade-offs de arquitectura.
 7. NO incluyas introducciones meta como 'Aquí tienes el artículo...' ni bloques de markdown envolventes adicionales. Devuelve directamente el documento listo para guardar en Jekyll.
+8. REGLA DE ORIGINALIDAD: No utilices introducciones genéricas ni definiciones tipo diccionario (ej: qué es una API o qué es un microservicio). Abre en el primer párrafo directamente con el incidente de producción, cuello de botella o problema arquitectónico específico.
+9. REGLA ANTI-PLANTILLAS EN TÍTULO: Evita fórmulas repetitivas como 'Estrategias de...' u 'Orquestación de...'; enfoca el título en el impacto concreto, mitigación de fallos o patrón de diseño.
 """
     else:
         return f"""Please generate a complete, exhaustive technical deep-dive article on the following topic:
