@@ -1,3 +1,13 @@
+2026-09-26 09:09: Full GSC Audit - HTML Tag Verification, GA4-GSC Link, Sitemap Lastmod Fix
+  * Diagnosed 5 GSC issues: missing HTML verification, GA4-GSC not linked, 200/314 URLs lacking lastmod, stale sitemaps, only 3 pages indexed.
+  * Fixed _config.yml: set webmaster_verifications.google: 3Xpaut9lHT-31Qw8eh8YS5Wia4iYxaXu7HaFtva6CeI (HTML tag now shows "Successfully verified" in GSC).
+  * Fixed _plugins/posts-lastmod-hook.rb: extended lastmod to ALL posts (not just commit_num>1) and added page hook for _tabs/ pages. All 314 sitemap URLs will now have <lastmod> dates.
+  * Linked Google Analytics (G-98D95S3VXX) to Search Console via GA Admin > Product Links > Search Console Links. Confirmed "LINK CREATED" for https://mach-playbook.github.io/.
+  * Deleted stale feed.xml and sitemap.xml from GSC (stuck on "Couldn't fetch" since Sep 17). Re-submitted fresh sitemap.xml (Submission #9: 314 clean URLs).
+  * Requested manual indexing for: / (homepage), /posts/welcome-to-mach/, /archives/.
+  * GSC Ownership Verification: Both HTML tag + Google Analytics methods show green "Successfully verified".
+  * Deployed commit 3cdae71 via GitHub Actions run 36250946561 (build 39s + deploy 10s = success).
+
 2026-04-04 18:58: Completed Phase 4 — Configure the Site
   * Updated _config.yml with site metadata (title, tagline, baseurl: /mach-playbook, url: https://merolhack.github.io, comments config).
   * Created _tabs/about.md.
