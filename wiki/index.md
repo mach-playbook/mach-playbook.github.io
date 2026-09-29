@@ -11,11 +11,11 @@ This LLM Wiki is structured according to the [Karpathy LLM Wiki Architecture](ht
 
 | Document | Purpose & Key Topics |
 | :--- | :--- |
-| [**architecture.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/architecture.md) | High-level system architecture, Jekyll Chirpy static generator, GitHub Pages CI/CD, local multi-stage Docker environment, mobile Core Web Vitals optimizations (0.000 CLS, >90 Performance), and Spanish primary i18n architecture. |
+| [**architecture.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/architecture.md) | High-level system architecture, Jekyll Chirpy static generator, GitHub Pages CI/CD, local multi-stage Docker environment, mobile Core Web Vitals optimizations (0.000 CLS, >90 Performance), Spanish primary i18n architecture, and Google Analytics 4 (GA4) telemetry. |
 | [**adsense-policy-and-compliance.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/adsense-policy-and-compliance.md) | Complete Google AdSense integration guide, Publisher ID `ca-pub-2700240339792942`, mandatory direct `<script async>` loading requirement, postmortem of "Low-value content" rejections, and automated compliance test suite. |
 | [**publishing-pipeline-and-deduplication.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/publishing-pipeline-and-deduplication.md) | Architecture of the Autonomous Daily Blog Post Agent (`scripts/publish_daily_jekyll_post.py`), 5-pillar MACH matrix (100+ topics), smart Jaccard deduplication engine, dynamic Gemini AI topic discovery, Pillow companion WebP generation, and continuous pages deployment. |
 | [**content-and-editorial-standards.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/content-and-editorial-standards.md) | E-E-A-T editorial standards, mandatory word count (>1,000 words), YAML frontmatter schema, 7 core MACH pillars, 21 technical tags, and the Content Validation Trinity (Depth, Physical Assets, Mermaid Diagrams). |
-| [**tools-and-operations.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md) | Operational playbooks, Docker testing commands (`mach-playbook:test`), compliance test scripts (`test-adsense-compliance.py`, `check-duplicates.py`), Google Search Console submissions log, secondary model delegation (`consultar_modelo_local` via `gemma4:cloud` &rarr; `qwen3:8b-8k`), known environment gotchas & solutions, and agent workflows. |
+| [**tools-and-operations.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md) | Operational playbooks, Docker testing commands (`mach-playbook:test`), compliance test scripts (`test-adsense-compliance.py`, `check-duplicates.py`), Google Search Console submissions log, Google Analytics 4 (GA4) setup assistant protocol, secondary model delegation (`consultar_modelo_local` via `gemma4:cloud` &rarr; `qwen3:8b-8k`), known environment gotchas & solutions, and agent workflows. |
 | [**sources/**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/sources/) | Directory containing raw diagnostic evidence, official AdSense notification emails (`.eml`), and compliance audit artifacts. |
 
 
@@ -28,7 +28,8 @@ This LLM Wiki is structured according to the [Karpathy LLM Wiki Architecture](ht
 - **Local Testing URL**: `http://localhost:8080` (via Docker `mach-playbook:prod`)
 - **Primary Language**: Spanish (`lang: es`) with native English support (`lang: en`)
 - **AdSense Publisher ID**: `ca-pub-2700240339792942`
-- **Content Inventory**: **96 deep technical guides** (34 English, 62 Spanish)
+- **Google Analytics 4 (GA4)**: Property ID `531281877` | Measurement ID `G-98D95S3VXX` | Stream ID `14312315619`
+- **Content Inventory**: **108 deep technical guides** (34 English, 74 Spanish)
 - **AdSense Status**: **Getting ready** (Review requested on 2026-09-17 11:16 AM; ownership verified, review active)
 - **Author**: Lenin Meza (`author: leninmeza`), Senior Solutions Architect & Enterprise Software Engineer
 - **Codebase Memory Graph**: `home-merolhack-fl-mach-playbook` (maintained via `codebase-memory-mcp`)

@@ -82,3 +82,29 @@ The site establishes **Spanish as its primary language (`lang: es`)** while offe
 - **Dynamic Localization**: Updates all `[data-i18n-es]` and `[data-i18n-en]` attributes across the DOM (sidebar subtitle, navigation links, breadcrumbs).
 - **Post Feed Filtering**: Filters `.post-card-item` elements on the Home page and updates pagination dynamically without DOM layout shifts.
 
+---
+
+## 4. Web Analytics & Telemetry Architecture (Google Analytics 4 / GA4)
+
+The platform integrates Google Analytics 4 (GA4) with real-time data streaming engineered to preserve Zero Layout Shift (0.000 CLS) and sub-1.5s First Contentful Paint:
+
+### A. Measurement Specification
+- **GA4 Property ID**: `531281877` (Account ID: `389930119`)
+- **Measurement ID**: `G-98D95S3VXX`
+- **Web Data Stream**: `MACH Playbook` (Stream ID: `14312315619`)
+- **Stream Status**: Active (*Receiving traffic in past 48 hours*)
+- **Product Links**: Linked bi-directionally with Google Search Console (`https://mach-playbook.github.io/`) for organic search query and landing page engagement attribution.
+
+### B. Lightweight gtag.js Injection (`_includes/analytics/google.html`)
+- **Conditional Loading**: Injected via `_includes/head.html` strictly when `site.analytics.google.id` is configured in `_config.yml`.
+- **Asynchronous Execution**:
+  ```html
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.google.id }}');
+  </script>
+  ```
+- **Network Optimization**: The global head implements `dns-prefetch` to `https://www.googletagmanager.com`, mitigating third-party DNS and TLS handshake latency on mobile devices while preserving the >90 Performance score.

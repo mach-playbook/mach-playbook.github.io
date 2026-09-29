@@ -90,7 +90,34 @@ When any sitemap is submitted in GSC:
 
 ---
 
-## 5. Secondary Model Delegation via Ollama MCP (`consultar_modelo_local`)
+## 5. Google Analytics 4 (GA4) Telemetry & Setup Assistant Protocol
+
+Google Analytics 4 is integrated for production telemetry, engagement tracking, and Google Search Console audience insights:
+
+### A. Core Telemetry Identifiers
+- **Account ID**: `389930119`
+- **Property ID**: `531281877`
+- **Measurement ID**: `G-98D95S3VXX`
+- **Web Data Stream**: `MACH Playbook` (Stream ID: `14312315619`)
+- **Product Links**: Connected to Google Search Console (`https://mach-playbook.github.io/`)
+
+### B. Setup Assistant (Task Assistant) Sequential Dependency
+In Google Analytics 4, the Setup Assistant (`task-assistant`) enforces a **progressive activation model** based on incoming data events rather than manual task completion:
+1. **Initial State (10 / 13 tasks remaining)**:
+   - 3 tasks completed: *Enable enhanced measurement*, *Confirm privacy settings*, and product linking.
+   - 9 advanced tasks (*Google Signals*, *Key Events*, *Audiences*, *Google Ads link*, *Custom Insights*, *User-ID*, *User-provided data*, *Offline event data*, *Measurement Protocol*) are restricted with the message:
+     > `This panel is restricted. Start collecting data to unlock this task.`
+   - The primary gateway task is **"Set up data collection"** (*Collect website and app data*).
+2. **Live Event Dispatch & Realtime Validation (2026-09-28)**:
+   - Live browser interactions on [mach-playbook.github.io](https://mach-playbook.github.io/) dispatched `page_view`, `user_engagement`, and `session_start` beacons.
+   - GA4 Realtime Overview (`/#/p531281877/realtime/overview`) confirmed **1 active user** and validated event capture across multiple routes.
+   - Data Stream status transitioned from idle to **"Receiving traffic in past 48 hours"**.
+3. **Automated Unlock Lifecycle**:
+   - Following initial event collection, GA4 requires a standard **24–48 hour batch processing cycle** to index the event schema and unlock the dependent configuration panels.
+
+---
+
+## 6. Secondary Model Delegation via Ollama MCP (`consultar_modelo_local`)
 
 To minimize primary LLM token utilization, all agents and automated tools MUST delegate routine and mechanical tasks via the Model Context Protocol (MCP) server `ollama-local`:
 
@@ -108,7 +135,7 @@ The `consultar_modelo_local` tool executes the weekly quota pre-check and respon
 
 ---
 
-## 6. Known Environment Gotchas & Solutions
+## 7. Known Environment Gotchas & Solutions
 
 | Gotcha | Root Cause | Solution |
 | :--- | :--- | :--- |
@@ -120,10 +147,11 @@ The `consultar_modelo_local` tool executes the weekly quota pre-check and respon
 | **Mermaid 3 MB JS Overhead on Text Posts** | Global `mermaid: true` in `_config.yml` bundled Mermaid on all pages | Set `mermaid: false` by default; enable only in frontmatter for diagram posts |
 | **Circuit Breaker Slug Typo** | Initial post slug had `circuit-breer` | Renamed slug & cover image asset to `circuit-breaker` |
 | **Missing `lang: es` Tag in New Posts** | `test-adsense-compliance.py` fails if explicit `lang: es` or `lang: en` flag is missing in frontmatter | Always include `lang: es` or `lang: en` in frontmatter of new posts |
+| **GA4 Setup Assistant Restricted Tasks** | Sequential progressive activation: GA4 locks advanced tasks (`This panel is restricted`) until stream receives initial events and completes 24–48h batch | Trigger live web stream traffic (`page_view`), verify in Realtime report, and allow standard 24–48h processing latency to unlock tasks automatically |
 
 ---
 
-## 7. Agent Workflows & Custom Skills
+## 8. Agent Workflows & Custom Skills
 
 The project maintains registered Agent skills and autonomous CI/CD pipelines:
 
