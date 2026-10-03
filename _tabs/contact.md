@@ -22,7 +22,8 @@ order: 7
 
 ## Formulario de Mensaje Directo
 
-<form action="https://formspree.io/f/mqkrvzqw" method="POST" class="contact-form">
+<form action="https://formspree.io/f/xoevgrqq" method="POST" class="contact-form">
+  <input type="text" name="_gotcha" style="display:none">
   <div class="mb-3">
     <label for="name-es" class="form-label font-weight-bold">Nombre Completo</label>
     <input type="text" class="form-control" id="name-es" name="name" required placeholder="Tu Nombre">
@@ -68,7 +69,8 @@ Have an architectural question, technical feedback, or an inquiry regarding ente
 
 ## Send a Message
 
-<form action="https://formspree.io/f/mqkrvzqw" method="POST" class="contact-form">
+<form action="https://formspree.io/f/xoevgrqq" method="POST" class="contact-form">
+  <input type="text" name="_gotcha" style="display:none">
   <div class="mb-3">
     <label for="name-en" class="form-label font-weight-bold">Your Name</label>
     <input type="text" class="form-control" id="name-en" name="name" required placeholder="Jane Doe">
@@ -95,3 +97,49 @@ Have an architectural question, technical feedback, or an inquiry regarding ente
 We review technical inquiries regularly and aim to respond within 24–48 business hours. For bug reports or repository contributions, feel free to open an issue or pull request directly on our [GitHub repository](https://github.com/merolhack/mach-playbook).
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll(".contact-form");
+  forms.forEach(function (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando... / Sending...';
+
+      let statusMsg = form.querySelector(".form-status-alert");
+      if (!statusMsg) {
+        statusMsg = document.createElement("div");
+        statusMsg.className = "form-status-alert mt-3 alert d-none";
+        form.appendChild(statusMsg);
+      }
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+          form.reset();
+          statusMsg.className = "form-status-alert mt-3 alert alert-success";
+          statusMsg.innerHTML = '<i class="fas fa-check-circle me-2"></i>¡Mensaje enviado con éxito! Te responderemos a la brevedad. / Message sent successfully!';
+        } else {
+          const data = await response.json();
+          statusMsg.className = "form-status-alert mt-3 alert alert-danger";
+          statusMsg.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>' + (data.errors ? data.errors.map(err => err.message).join(", ") : "Error al enviar el mensaje. / Submission error.");
+        }
+      } catch (err) {
+        statusMsg.className = "form-status-alert mt-3 alert alert-danger";
+        statusMsg.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Error de conexión. Inténtalo de nuevo. / Connection error.';
+      } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }
+    });
+  });
+});
+</script>
