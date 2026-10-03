@@ -230,6 +230,13 @@
       .col-md-5 { width: 41.66666667% !important; flex: 0 0 41.66666667% !important; max-width: 41.66666667% !important; }
       .col-md-7 { width: 58.33333333% !important; flex: 0 0 58.33333333% !important; max-width: 58.33333333% !important; }
     }
+    @media (min-width: 992px) {
+      .col-lg-11 { width: 91.66666667% !important; flex: 0 0 91.66666667% !important; max-width: 91.66666667% !important; }
+    }
+    @media (min-width: 1200px) {
+      .col-xl-9 { width: 75% !important; flex: 0 0 75% !important; max-width: 75% !important; }
+      .col-xl-3 { width: 25% !important; flex: 0 0 25% !important; max-width: 25% !important; }
+    }
 
     /* Critical Post Cards Layout for Zero CLS */
     .card-wrapper {
@@ -663,6 +670,97 @@
     [data-bs-theme="dark"] .mermaid .loopText {
       fill: #f0f6fc !important;
       font-weight: 600 !important;
+    }
+
+    /* =========================================================
+       Sticky Desktop TOC & Post Navigation Enhancement
+       ========================================================= */
+    #panel-wrapper #toc-wrapper {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+      top: 5.5rem !important;
+      max-height: calc(100vh - 7rem) !important;
+      overflow-y: auto !important;
+      margin-top: 1.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+
+    #panel-wrapper #toc-wrapper::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    #panel-wrapper #toc-wrapper::-webkit-scrollbar-thumb {
+      background: var(--border-color, #30363d);
+      border-radius: 4px;
+    }
+
+    #panel-wrapper #toc-wrapper nav#toc {
+      font-size: 0.85rem;
+    }
+
+    #panel-wrapper #toc-wrapper .is-active-link {
+      color: var(--toc-highlight, #3b82f6) !important;
+      font-weight: 600 !important;
+    }
+
+    /* =========================================================
+       Post Bottom Widgets: 2-Column Horizontal Cards
+       ========================================================= */
+    .post-bottom-widgets {
+      margin-top: 2rem;
+    }
+
+    .post-bottom-widgets .panel-heading {
+      display: none !important;
+    }
+
+    .post-bottom-widgets section {
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .post-bottom-widgets #access-lastmod ul {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .post-bottom-widgets #access-lastmod li {
+      padding: 0.25rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .post-bottom-widgets #access-lastmod li:last-child {
+      border-bottom: none;
+    }
+
+    .post-bottom-widgets .post-tag {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      margin: 0.2rem;
+      border-radius: 6px;
+      line-height: 1.2;
+    }
+
+    /* =========================================================
+       Categories Tab 2-Column Masonry Grid
+       ========================================================= */
+    .categories-masonry {
+      columns: 1;
+      column-gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .categories-masonry {
+        columns: 2;
+      }
+    }
+
+    .categories-masonry .card.categories {
+      break-inside: avoid;
+      margin-bottom: 1.25rem;
+      display: inline-block;
+      width: 100%;
     }
   </style>
 
