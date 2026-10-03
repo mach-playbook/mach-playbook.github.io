@@ -56,7 +56,24 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
-      - name: Test site
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Test Dependencies
+        run: |
+          python3 -m pip install beautifulsoup4 pyyaml websockets
+
+      - name: Run Automated Test Suites (Unit, Integrity, UI & BDD)
+        run: |
+          python3 scripts/test-topic-generator.py
+          python3 scripts/test-adsense-compliance.py
+          python3 scripts/test-site-integrity.py
+          python3 scripts/test-ui-components.py
+          python3 scripts/test-bdd-specs.py
+
+      - name: Run HTML-Proofer Link Verification
         run: |
           bundle exec htmlproofer _site \
             \-\-disable-external \

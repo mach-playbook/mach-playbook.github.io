@@ -60,10 +60,30 @@ main() {
   JEKYLL_ENV=production bundle exec jekyll b \
     -d "$SITE_DIR$_baseurl" -c "$_config"
 
-  # test
+  # test: HTML-Proofer
   bundle exec htmlproofer "$SITE_DIR" \
     --disable-external \
     --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+
+  # test: Topic Generator Integrity
+  python3 scripts/test-topic-generator.py
+
+  # test: Google AdSense & EEAT Compliance
+  python3 scripts/test-adsense-compliance.py
+
+  # test: Site Integrity & Localization
+  python3 scripts/test-site-integrity.py
+
+  # test: UI Components & Template Assertions
+  python3 scripts/test-ui-components.py
+
+  # test: BDD Specifications (Given-When-Then)
+  python3 scripts/test-bdd-specs.py
+
+  # test: E2E Headless Browser Scenarios
+  if command -v google-chrome &> /dev/null; then
+    python3 scripts/test-e2e-browser.py
+  fi
 }
 
 while (($#)); do

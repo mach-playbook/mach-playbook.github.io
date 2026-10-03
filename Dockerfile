@@ -38,6 +38,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends python3 python3
     python3 scripts/test-topic-generator.py && \
     python3 scripts/test-adsense-compliance.py && \
     python3 scripts/test-site-integrity.py && \
+    python3 scripts/test-ui-components.py && \
+    python3 scripts/test-bdd-specs.py && \
     rm -rf /var/lib/apt/lists/*
 RUN bundle exec htmlproofer _site \
     --disable-external \
