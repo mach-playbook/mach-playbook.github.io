@@ -108,3 +108,49 @@ The platform integrates Google Analytics 4 (GA4) with real-time data streaming e
   </script>
   ```
 - **Network Optimization**: The global head implements `dns-prefetch` to `https://www.googletagmanager.com`, mitigating third-party DNS and TLS handshake latency on mobile devices while preserving the >90 Performance score.
+
+---
+
+---
+
+## 5. UI/UX Component & Layout System
+
+Detailed in full technical specification in [**ui-ux-design-system-and-testing.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/ui-ux-design-system-and-testing.md):
+
+### A. Responsive Grid & 100% Post Hero Layout
+- Post hero images reside in `.post-hero-image-wrapper` with `width: 100% !important`, `aspect-ratio: 1200 / 630`, and zero horizontal margins, guaranteeing full container width on desktop and mobile.
+- Completely eliminated legacy Bootstrap `.col-md-5` (41.666667%) collision on `.preview-img`, allowing home cards and post headers to fill 100% of their intended width containers.
+
+### B. Pure CSS 2-Column Categories Masonry
+- Categories layout (`_layouts/categories.html`) utilizes CSS Multi-Column (`column-count: 2`, `column-gap: 1.5rem`) on screens &ge;768px, eliminating dead whitespace without requiring runtime JavaScript libraries.
+- Automatically collapses to `column-count: 1` on mobile displays (<768px).
+
+### C. Hybrid Table of Contents (TOC)
+- Synchronizes an in-article structured card navigation widget (`_includes/post-bottom-widgets.html`) with Chirpy's desktop floating sidebar TOC (`#toc-wrapper`).
+- Enforces `scroll-margin-top: 5rem` to prevent sticky topbars from obscuring heading anchors upon jump.
+
+### D. High-Contrast Dark-Mode Mermaid Diagrams
+- Inlines CSS overrides ensuring transparent diagram canvases and `#f8fafc` text contrast across all dark-mode viewing contexts.
+
+---
+
+## 6. Automated Multi-Tier Testing Infrastructure
+
+Detailed in [**ui-ux-design-system-and-testing.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/ui-ux-design-system-and-testing.md):
+
+1. **Tier 1 (Unit & Component)**: `scripts/test-ui-components.py` enforces static template invariants, CSS rules, and DOM contracts.
+2. **Tier 2 (BDD Behavioral Specifications)**: `scripts/test-bdd-specs.py` executes 19 Given-When-Then scenarios covering home feeds, post heroes, category masonry, glossaries, contact forms, and mobile drawers.
+3. **Tier 3 (Headless Chrome E2E)**: `scripts/test-e2e-browser.py` drives Chrome DevTools Protocol (CDP) WebSocket sessions across desktop (1707x932, 1440x900) and mobile (390x844) viewports, asserting exact bounding-box geometry (`getBoundingClientRect()`).
+4. **CI/CD Gating**: Fully integrated into Docker multi-stage builds (`mach-playbook:test`), `tools/test.sh`, and GitHub Actions deployment pipelines.
+
+---
+
+## 7. Jamstack Serverless Contact Subsystem
+
+Detailed in [**contact-and-formspree-architecture.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/contact-and-formspree-architecture.md):
+
+- **Endpoint**: Formspree API `https://formspree.io/f/xoevgrqq`.
+- **Anti-Spam**: Silent honeypot `<input type="text" name="_gotcha" style="display:none !important">` eliminating heavy third-party CAPTCHA scripts.
+- **Asynchronous UX**: Native JavaScript AJAX `fetch()` with `Accept: application/json` delivering inline Bootstrap alerts (`#form-success`, `#form-error`) without page reloads.
+- **Graceful Degradation**: Fallback to standard HTML POST multipart submission if client JavaScript is disabled.
+

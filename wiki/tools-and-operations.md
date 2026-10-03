@@ -50,6 +50,26 @@ Validates the autonomous publisher (`scripts/publish_daily_jekyll_post.py`): con
 
 ---
 
+### F. UI Components & Template Integrity Suite
+```bash
+python3 scripts/test-ui-components.py
+```
+Validates DOM invariants, container styling, eradication of rogue 41.6% image width constraints, Zero-CLS aspect ratios (1200/630 and 16/9), and Formspree honeypot contracts.
+
+### G. BDD Behavioral Specifications (Given-When-Then)
+```bash
+python3 scripts/test-bdd-specs.py
+```
+Executes 19 behavioral specifications across Home post feeds, post hero image layout, categories masonry, glossary anchors, and mobile drawer behavior.
+
+### H. E2E Headless Chrome Browser Suite (CDP Automation)
+```bash
+python3 scripts/test-e2e-browser.py
+```
+Drives Headless Chrome via WebSocket connection to Chrome DevTools Protocol (CDP), validating computed geometry (`getBoundingClientRect()`), layout stability, and responsive rendering across 1707x932, 1440x900, and 390x844 viewports.
+
+---
+
 ## 3. Local Docker Testing (HTML-Proofer)
 
 To replicate GitHub Pages build and test conditions locally:
