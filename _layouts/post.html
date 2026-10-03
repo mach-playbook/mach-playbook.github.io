@@ -59,8 +59,8 @@ script_includes:
 
         {% assign raw_src = page.image.path | default: page.image %}
         {% assign webp_src = raw_src | replace: '.png', '.webp' %}
-        <div class="mt-3 mb-3">
-          <picture>
+        <div class="post-hero-image-wrapper mt-3 mb-3 w-100">
+          <picture class="w-100 d-block">
             <source srcset="{{ webp_src | relative_url }}" type="image/webp">
             <img src="{{ webp_src | relative_url }}" {{ class }} {{ alt }} width="1200" height="630" loading="eager" fetchpriority="high" decoding="sync" style="aspect-ratio: 1200/630; object-fit: cover; width: 100%; height: auto;" {{ lqip }}>
           </picture>
