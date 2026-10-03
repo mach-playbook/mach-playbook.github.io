@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Estructura Organizacional: Equipos Stream-Aligned e Inversión Conway en Equipos MACH"
 date: 2026-09-19 09:00:00 -0600

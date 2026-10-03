@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá del TTL: Estrategias de Caché Edge y Purgado Granular con Cloudflare Workers y Fastly Compute"
 date: 2026-09-04 09:00:00 -0600

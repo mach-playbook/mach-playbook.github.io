@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Consistencia Eventual Garantizada: Implementando el Patrón Outbox Transaccional con Debezium y Kafka"
 date: 2026-09-07 09:00:00 -0600

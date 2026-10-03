@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Optimización del TBT en E-Commerce Global: React Server Components e Hidratación Parcial en Arquitecturas Headless"
 date: 2026-09-29 09:00:00 -0600
@@ -143,6 +144,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 Este componente procesa HTML/Markdown utilizando una librería pesada (`isomorphic-dompurify` y `marked`). Al ser un RSC, estas dependencias **nunca** se envían al navegador del usuario, ahorrando más de 150KB de JS en el bundle.
 
+{% raw %}
 ```typescript
 // components/ProductDescription.tsx
 import { parse } from 'marked';
@@ -165,6 +167,7 @@ export function ProductDescription({ content }: ProductDescriptionProps) {
   );
 }
 ```
+{% endraw %}
 
 ### 3. El Componente de Cliente (Isla de Interactividad)
 

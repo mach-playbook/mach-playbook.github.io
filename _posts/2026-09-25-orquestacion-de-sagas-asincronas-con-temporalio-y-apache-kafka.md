@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Consistencia Eventual sin Dolor: Resolviendo el Infierno de las Sagas Coreografiadas con Temporal.io y Kafka"
 date: 2026-09-25 09:00:00 -0600

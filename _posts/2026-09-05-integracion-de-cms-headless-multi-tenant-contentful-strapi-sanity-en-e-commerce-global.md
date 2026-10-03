@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Orquestación de CMS Headless Multi-Tenant en E-Commerce Global: Estrategias de Federación y Gobierno de Datos"
 date: 2026-09-05 09:00:00 -0600

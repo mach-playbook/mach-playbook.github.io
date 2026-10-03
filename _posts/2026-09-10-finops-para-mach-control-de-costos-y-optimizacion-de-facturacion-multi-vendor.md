@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "FinOps para MACH: Control de Costos y Optimización de Facturación Multi-Vendor"
 date: 2026-09-10 09:00:00 -0600

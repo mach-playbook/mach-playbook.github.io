@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Mitigación de Vendor Lock-in en el Ecosistema MACH: Estrategias de Salida, Abstracción y Gobernanza SaaS"
 date: 2026-09-18 09:00:00 -0600

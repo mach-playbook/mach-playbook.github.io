@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá de los Retries: Dominando la Resiliencia y el Circuit Breaking Avanzado con Envoy e Istio"
 date: 2026-09-12 09:00:00 -0600

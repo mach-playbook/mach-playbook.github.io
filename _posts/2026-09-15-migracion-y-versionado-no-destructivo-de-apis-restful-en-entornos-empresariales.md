@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Migración y Versionado No Destructivo de APIs RESTful en Entornos Empresariales"
 date: 2026-09-15 09:00:00 -0600

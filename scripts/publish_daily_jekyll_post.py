@@ -521,6 +521,7 @@ DIRECTRICES EDITORIALES Y DE CALIDAD (E-E-A-T):
    - Conclusión accionable con checklist de implementación para equipos de ingeniería.
 5. **Formato Front Matter de Jekyll:**
 ---
+mermaid: true
 layout: post
 title: "Título Exacto Entre Comillas"
 date: YYYY-MM-DD HH:MM:SS -0600
@@ -572,6 +573,7 @@ CONTEXTO DE DEDUPLICACIÓN (ÚLTIMOS ARTÍCULOS YA PUBLICADOS EN EL BLOG):
 REQUISITOS ESTRICTOS:
 1. El artículo DEBE comenzar exactamente con el bloque Front Matter de YAML delimitado por '---'.
 2. El Front Matter debe contener:
+   - mermaid: true (obligatorio cuando se incluye diagrama Mermaid)
    - layout: post
    - title: "{topic}" (o un título refinado de nivel Senior Architect para este tema)
    - date: {post_date_str} 09:00:00 -0600
@@ -602,7 +604,7 @@ DEDUPLICATION CONTEXT (RECENT POSTS ALREADY PUBLISHED):
 
 STRICT REQUIREMENTS:
 1. Must start directly with the YAML Front Matter enclosed in '---'.
-2. Front matter must include: layout: post, title, date, lang: en, categories, tags, image.path.
+2. Front matter must include: mermaid: true (mandatory when Mermaid diagram is included), layout: post, title, date, lang: en, categories, tags, image.path.
 3. 1,500 to 2,200 words of technical content.
 4. Include at least one Mermaid diagram (```mermaid).
 5. Include concrete production code blocks.
@@ -784,7 +786,7 @@ def generate_fallback_article(topic: str, pillar: str, slug: str, lang: str, pos
             code = "import Redis from 'ioredis';\nimport { v4 as uuidv4 } from 'uuid';\nimport { trace, SpanStatusCode } from '@opentelemetry/api';\n\nclass EnterpriseMACHService {\n  private readonly redis: Redis;\n  private readonly tracer = trace.getTracer('mach-playbook', '1.0.0');\n\n  constructor(uri: string) {\n    this.redis = new Redis(uri, { maxRetriesPerRequest: 3,\n      retryStrategy: (t) => Math.min(t * 150, 5000) });\n  }\n\n  async execute<T>(\n    tenantId: string, idempKey: string | undefined, fn: () => Promise<T>\n  ): Promise<T | null> {\n    const span = this.tracer.startSpan(`mach.${tenantId}`);\n    const key = `idem:${tenantId}:${idempKey ?? uuidv4()}`;\n    try {\n      if (idempKey) {\n        const hit = await this.redis.get(key);\n        if (hit) { span.end(); return JSON.parse(hit); }\n      }\n      const result = await fn();\n      if (idempKey) await this.redis.setex(key, 300, JSON.stringify(result));\n      span.setStatus({ code: SpanStatusCode.OK });\n      return result;\n    } catch (e: any) {\n      span.setStatus({ code: SpanStatusCode.ERROR, message: e.message });\n      span.recordException(e); throw e;\n    } finally { span.end(); }\n  }\n}"
 
         sections = [
-            "---", "layout: post",
+            "---", "mermaid: true", "layout: post",
             f'title: "{topic}"',
             f"date: {post_date_str} 09:00:00 -0600",
             "lang: es",
@@ -865,7 +867,7 @@ def generate_fallback_article(topic: str, pillar: str, slug: str, lang: str, pos
         else:          cats,tags = "[Architecture, Microservices]",           "[mach, microservices, cloud-native, api-first, resilience, architecture, devops]"
 
         sections = [
-            "---", "layout: post",
+            "---", "mermaid: true", "layout: post",
             f'title: "{topic}"',
             f"date: {post_date_str} 09:00:00 -0600",
             "lang: en",
@@ -1069,10 +1071,13 @@ def sanitize_markdown_post(raw_markdown: str, post_date_str: str, slug: str, lan
     if content.endswith("```"):
         content = content[:-3].strip()
 
+    has_mermaid = "```mermaid" in content
+
     if not content.startswith("---"):
         default_cat = "Arquitectura Cloud, Microservicios" if lang == "es" else "Architecture, Microservices"
+        mermaid_line = "mermaid: true\n" if has_mermaid else ""
         front_matter = f"""---
-layout: post
+{mermaid_line}layout: post
 title: "{slug.replace('-', ' ').title()}"
 date: {post_date_str} 09:00:00 -0600
 lang: {lang}
@@ -1095,6 +1100,15 @@ image:
         if not re.search(r"^lang:\s*(es|en)", content, re.MULTILINE):
             content = content.replace("---", f"""---
 lang: {lang}""", 1)
+
+        # Ensure mermaid: true is present if post contains mermaid diagram
+        if has_mermaid:
+            parts = content.split("---", 2)
+            if len(parts) >= 3:
+                fm = parts[1]
+                if not re.search(r"^mermaid:\s*true", fm, re.MULTILINE):
+                    parts[1] = "\nmermaid: true" + fm
+                    content = "---" + parts[1] + "---" + parts[2]
 
     return content
 

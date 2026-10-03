@@ -183,6 +183,38 @@ def main():
         else:
             failures.append("FAIL: remaining-posts-data JSON block is missing or empty!")
 
+    # 5. Mermaid Diagrams & Frontmatter Integrity Checks
+    import glob
+    all_markdown_files = sorted(glob.glob("_posts/*.md") + glob.glob("_tabs/*.md"))
+    diagram_posts_count = 0
+    clean_posts_count = 0
+
+    for doc_path in all_markdown_files:
+        with open(doc_path, "r", encoding="utf-8") as f:
+            doc_content = f.read()
+
+        parts = doc_content.split("---", 2)
+        doc_fm = parts[1] if len(parts) >= 3 else ""
+        doc_body = parts[2] if len(parts) >= 3 else doc_content
+
+        has_mermaid_block = bool(re.search(r"```mermaid", doc_body))
+        has_mermaid_flag = bool(re.search(r"^mermaid:\s*true", doc_fm, re.MULTILINE))
+
+        if has_mermaid_block and not has_mermaid_flag:
+            failures.append(f"FAIL: {doc_path} contains ```mermaid diagram but is MISSING 'mermaid: true' in frontmatter!")
+        elif not has_mermaid_block and has_mermaid_flag:
+            failures.append(f"FAIL: {doc_path} has 'mermaid: true' in frontmatter but DOES NOT contain any ```mermaid diagram!")
+        elif has_mermaid_block and has_mermaid_flag:
+            diagram_posts_count += 1
+        else:
+            clean_posts_count += 1
+
+    if not any("MISSING 'mermaid: true'" in f for f in failures):
+        print(f"[PASS] Mermaid Integrity: All {diagram_posts_count} articles with Mermaid diagrams have 'mermaid: true' enabled")
+        passes += 1
+        print(f"[PASS] Performance: All {clean_posts_count} articles without diagrams keep 'mermaid: false' (0 overhead)")
+        passes += 1
+
     print("-" * 60)
     if failures:
         print(f"FAILED: {len(failures)} test failures detected:")

@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá del Límite de RDS: Sharding y Escalabilidad Horizontal en Bases de Datos SQL Distribuidas"
 date: 2026-09-14 09:00:00 -0600

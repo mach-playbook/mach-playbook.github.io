@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Patrón Strangler Fig: Cómo Desmantelar un Monolito SAP Commerce o Magento Paso a Paso"
 date: 2026-09-02 09:00:00 -0600

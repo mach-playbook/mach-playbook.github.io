@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá de los Microservicios: Diagnóstico y Remediación del Monolito Distribuido en Ecosistemas MACH"
 date: 2026-09-16 09:00:00 -0600

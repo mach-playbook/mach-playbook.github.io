@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Más allá del Eventual Consistency: Resolviendo el Laberinto de Transacciones Multi-Vendor con Temporal.io y Sagas Orquestadas"
 date: 2026-10-02 09:00:00 -0600

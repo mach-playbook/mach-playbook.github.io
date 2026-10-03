@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Sincronización de Alta Frecuencia en Búsqueda Composable: Resolviendo el Gap de Consistencia entre PIM y Search Engines"
 date: 2026-10-01 09:00:00 -0600

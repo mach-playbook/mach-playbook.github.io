@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Contratos API Inquebrantables: OpenAPI v3.1 y Validación de Schemas en el Ciclo de Vida CI/CD para Arquitecturas MACH"
 date: 2026-09-09 09:00:00 -0600

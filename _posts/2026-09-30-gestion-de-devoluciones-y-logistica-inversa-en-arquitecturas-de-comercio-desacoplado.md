@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Logística Inversa y el Infierno de la Consistencia: Arquitectura de Devoluciones en Ecosistemas Composable"
 date: 2026-09-30 09:00:00 -0600

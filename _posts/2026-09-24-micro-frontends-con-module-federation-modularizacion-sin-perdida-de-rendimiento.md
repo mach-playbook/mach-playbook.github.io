@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Métricas Letales y Fugas de Memoria en Micro-Frontends: Arquitectura de Module Federation a Escala Enterprise"
 date: 2026-09-24 09:00:00 -0600

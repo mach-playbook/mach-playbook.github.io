@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Resolución de Escrituras Conflictivas en Carritos de Compra Distribuidos sin Bloqueo Pesimista"
 date: 2026-09-27 09:00:00 -0600

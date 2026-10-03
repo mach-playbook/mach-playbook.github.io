@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Gestión de Inventario en Tiempo Real y Consistencia Distribuida en Composable Commerce"
 date: 2026-09-22 09:00:00 -0600

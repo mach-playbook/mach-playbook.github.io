@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Mitigación de Ejecuciones Fantasma: Agentes Autónomos Consumiendo Contratos OpenAPI y Schemas GraphQL en E-Commerce"
 date: 2026-09-28 09:00:00 -0600

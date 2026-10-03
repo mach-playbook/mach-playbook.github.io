@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Federación de GraphQL (Apollo Federation v2) vs REST Gateway: Orquestación de API en la Era del Composable Commerce"
 date: 2026-09-06 09:00:00 -0600

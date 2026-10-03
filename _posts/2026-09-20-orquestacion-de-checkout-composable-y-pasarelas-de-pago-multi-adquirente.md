@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Orquestación de Checkout Composable: Estrategias Multi-Adquirente para Resiliencia y Optimización de Costos en Escala Enterprise"
 date: 2026-09-20 09:00:00 -0600

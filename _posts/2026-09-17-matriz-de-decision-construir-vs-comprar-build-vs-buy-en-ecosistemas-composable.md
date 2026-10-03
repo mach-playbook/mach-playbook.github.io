@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Matriz de Decisión: Construir vs Comprar (Build vs Buy) en Ecosistemas Composable"
 date: 2026-09-17 09:00:00 -0600

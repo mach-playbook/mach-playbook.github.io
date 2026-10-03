@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Resiliencia Dinámica: Rate Limiting Adaptativo y Algoritmos Token Bucket en Arquitecturas MACH de Alta Escala"
 date: 2026-09-13 09:00:00 -0600

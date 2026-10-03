@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Mitigación Crítica del OWASP API Security Top 10 en Capas de API Gateway y BFF"
 date: 2026-09-26 09:00:00 -0600

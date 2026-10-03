@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Seguridad Zero Trust y Autenticacion mTLS entre Microservicios con SPIFFE y SPIRE"
 date: 2026-09-17 09:00:00 -0600

@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Acuerdos de Nivel de Servicio (SLA) Agregados en Cadenas de Dependencias Multi-SaaS"
 date: 2026-09-21 09:00:00 -0600

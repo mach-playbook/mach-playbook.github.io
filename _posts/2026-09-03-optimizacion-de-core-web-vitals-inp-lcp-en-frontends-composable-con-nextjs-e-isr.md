@@ -1,4 +1,5 @@
 ---
+mermaid: true
 layout: post
 title: "Optimización de Core Web Vitals (INP, LCP) en Frontends Composable con Next.js e ISR"
 date: 2026-09-03 09:00:00 -0600
