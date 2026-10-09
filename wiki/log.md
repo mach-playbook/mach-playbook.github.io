@@ -5,7 +5,7 @@
 
 ---
 
-## [2026-10-09] feat | Multi-Platform Content Syndication (DEV.to 117-Post Backfill, daily.dev Squad & CI/CD Pipeline)
+## [2026-10-09] feat | Multi-Platform Content Syndication & Social Amplification (DEV.to, Medium, LinkedIn, X & Buffer)
 
 - **Impacted Files**: `scripts/publish_to_devto.py`, `.devto_synced.json`, `.github/workflows/daily-blog-post.yml`, `wiki/content-syndication-and-distribution.md`, `wiki/publishing-pipeline-and-deduplication.md`, `wiki/index.md`, `wiki/log.md`
 - **Summary**:
@@ -17,7 +17,11 @@
   - Integrated automated syndication into GitHub Actions daily publisher (`.github/workflows/daily-blog-post.yml`) conditioned on repository secret `DEVTO_API_KEY`.
   - Evaluated community Squad on daily.dev (`https://daily.dev/squads/machplaybook`), resolving RSS reputation gate by enabling direct Squad content distribution.
   - Investigated Hashnode API and bulk import: discovered GraphQL deprecation and Pro paywall restriction; made architectural decision to avoid paid tiers ($0 budget rule).
+  - Executed Medium web import (`medium.com/p/import`), verified canonical attribution, assigned 5 architectural tags, and published live post.
+  - Executed and validated cross-platform social amplification on LinkedIn (offsite share intent with card metadata) and X (Twitter intent with character budget optimization) on `@merolhack`.
+  - Documented Buffer middleware architecture (`publish.buffer.com`) connecting blog RSS feed (`feed.xml`) to LinkedIn and X channels with anti-spam rate governance.
   - Authored comprehensive modular wiki topic `wiki/content-syndication-and-distribution.md` and updated `wiki/index.md`.
+
 
 ---
 

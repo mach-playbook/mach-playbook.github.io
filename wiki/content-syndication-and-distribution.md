@@ -145,15 +145,62 @@ In accordance with the project's strict **$0 budget constraint**, programmatic H
 
 ### 6.1 Workflow & Canonical Attribution
 - **Import Tool**: `https://medium.com/p/import`
-- **Mechanism**: Single-URL crawl extracting title, text, and companion images.
+- **Mechanism**: Single-URL crawl extracting title, text, code blocks, and companion images.
 - **Canonical Preservation**: Medium automatically injects canonical metadata pointing back to `https://mach-playbook.github.io/posts/{slug}/` and appends an editorial footer:
   > *“Originally published at https://mach-playbook.github.io...”*
 - **Recommended Tagging Strategy**: Use 5 high-intent technical tags (`Kubernetes`, `Security`, `DevOps`, `Software Architecture`, `Cloud`).
-- **First Live Publication**: [Blindaje de Identidad Criptográfica en Kubernetes](https://medium.com/@merolhack/blindaje-de-identidad-criptogr%C3%A1fica-gobernanza-zero-trust-y-mtls-en-cl%C3%BAsteres-kubernetes-3fe5fbf6ca9c).
+- **Published Live Post**: [Blindaje de Identidad Criptográfica en Kubernetes](https://medium.com/@merolhack/blindaje-de-identidad-criptogr%C3%A1fica-gobernanza-zero-trust-y-mtls-en-cl%C3%BAsteres-kubernetes-3fe5fbf6ca9c).
 
 ---
 
-## 7. Verification & Monitoring Playbook
+## 7. Social Media Amplification Architecture (LinkedIn, X & Buffer)
+
+```mermaid
+flowchart TD
+    Origin["GitHub Pages Article Published"] --> RSS["RSS Feed (/feed.xml)"]
+    Origin --> DevTo["DEV.to (Automated REST API)"]
+    Origin --> Medium["Medium (Import via /p/import)"]
+    
+    RSS --> Buffer["Buffer Automation Engine (publish.buffer.com)"]
+    Buffer --> LinkedInChannel["LinkedIn Feed (@merolhack)"]
+    Buffer --> XChannel["X / Twitter Feed (@merolhack)"]
+    
+    Medium -.->|Direct Intent Modal| LinkedInChannel
+    Medium -.->|Direct Intent Modal| XChannel
+```
+
+### 7.1 LinkedIn Sharing Protocol
+- **Endpoint**: `https://www.linkedin.com/sharing/share-offsite/?url={target_url}`
+- **Card Pre-rendering**: OpenGraph image, title, and site domain are extracted automatically.
+- **Copy Structure**:
+  1. Headline (problem and technical domain).
+  2. Core technical themes (SPIFFE/SPIRE, mTLS, zero trust).
+  3. Hashtags: `#Kubernetes #ZeroTrust #CloudArchitecture #DevOps #MACH`.
+- **Live Verification**: Post successfully published on LinkedIn profile (Lenin José Meza Zarco).
+
+### 7.2 X (Twitter) Sharing Protocol
+- **Endpoint**: `https://twitter.com/intent/tweet?text={text}&url={target_url}`
+- **Character Budget Optimization**: Under 280 characters with encoded title, 4 core tags, and link.
+- **Live Verification**: Published and active in feed (`@merolhack`).
+
+### 7.3 Buffer End-to-End Scheduling Architecture (`publish.buffer.com`)
+Buffer acts as the central middleware between the blog's RSS feed and social networks:
+1. **Free Tier Limits**: Supports 3 connected channels (LinkedIn Profile/Page, X Twitter account, and Mastodon/Facebook).
+2. **Channel Authorization**:
+   - LinkedIn: OAuth 2.0 connection granting post publishing permissions.
+   - X (Twitter): OAuth authorization granting tweet creation.
+3. **Feed Ingestion**: Buffer monitors `https://mach-playbook.github.io/feed.xml`.
+4. **Queue Strategy**: When GitHub Actions runs at 07:00 CDMX (`13:00 UTC`), Buffer detects the new item in `feed.xml` and dispatches it according to the pre-configured publishing schedule.
+
+### 7.4 Social Rate Limits & Anti-Spam Governance
+> [!WARNING]
+> **Anti-Spam / Shadowban Constraint**:  
+> Never bulk-post the 117 historical articles to X or LinkedIn simultaneously. Both platforms detect high-velocity automated posting and flag accounts for algorithmic shadowbans or account suspension.  
+> **Rule**: Maintain a strict cadence of **1 post per day** aligned with the autonomous daily publishing schedule.
+
+---
+
+## 8. Verification & Monitoring Playbook
 
 Verify syndication health locally at any time:
 
@@ -167,4 +214,5 @@ python3 scripts/publish_to_devto.py --api-key "$DEVTO_API_KEY" --all
 # 3. Verify canonical headers on live DEV.to article
 curl -sI "https://dev.to/merolhack/blindaje-de-identidad-criptografica-gobernanza-zero-trust-y-mtls-en-clusteres-kubernetes-k53" | grep -i "canonical"
 ```
+
 
