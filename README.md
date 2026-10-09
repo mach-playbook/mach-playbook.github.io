@@ -4,6 +4,8 @@
 [![Docker Test](https://img.shields.io/badge/Docker-HTMLProofer%20Passing-brightgreen)](https://github.com/mach-playbook/mach-playbook.github.io)
 [![AdSense Test Suite](https://img.shields.io/badge/AdSense-100%25%20Verified-blue)](https://mach-playbook.github.io)
 [![AdSense Approval Status](https://img.shields.io/badge/AdSense%20Status-Getting%20Ready-yellow)](https://adsense.google.com/)
+[![daily.dev Squad](https://img.shields.io/badge/daily.dev%20Squad-MACH%20Architecture-purple?logo=dailydotdev)](https://daily.dev/squads/machplaybook)
+[![Interactive Tools](https://img.shields.io/badge/Tools-Maturity%20Calculator%20%26%20TCO-blueviolet)](https://mach-playbook.github.io/tools/)
 
 An enterprise-grade architectural engineering blog and technical playbook dedicated to **MACH** (**M**icroservices, **A**PI-First, **C**loud-Native, **H**eadless) architectures, cloud multi-cloud strategies (GCP, AWS), API management (Apigee, MuleSoft), ERP integrations, Next.js/Supabase serverless edge architectures, OpenSIPS VoIP security routing, YugabyteDB distributed SQL, local graph database indexing for AI IDEs in WSL, and database administration (RDS to Cloud SQL).
 
@@ -19,7 +21,8 @@ Created and authored by **[Lenin Meza](https://merolhack.github.io/)** ([LinkedI
 
 ## 🚀 Key Features
 
-- **80 Deep Technical Guides**: 34 English and 46 Spanish long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, Istio Service Mesh, Database Sharding, API Rate Limiting, Feature Flags, OpenTelemetry, YugabyteDB distributed SQL, local graph database indexing in WSL, Playwright + Ollama QA, headless CMS, Next.js/Supabase, OpenSIPS VoIP security, CFDI digital signatures, Cloud Run Blue/Green deployments, Event-Driven architectures, Zero Trust Apigee/mTLS, AWS RDS to GCP Cloud SQL migrations, VoIP call tracing, FinOps, and Kubernetes.
+- **117+ Deep Technical Guides**: Long-form articles (>1,000 words each) covering microservices, domain-driven design, API gateways, Istio Service Mesh, Database Sharding, API Rate Limiting, Feature Flags, OpenTelemetry, YugabyteDB distributed SQL, local graph database indexing in WSL, Playwright + Ollama QA, headless CMS, Next.js/Supabase, OpenSIPS VoIP security, CFDI digital signatures, Cloud Run Blue/Green deployments, Event-Driven architectures, Zero Trust Apigee/mTLS, AWS RDS to GCP Cloud SQL migrations, VoIP call tracing, FinOps, and Kubernetes.
+- **🛠️ Interactive Engineering Tools & Calculators**: Embedded client-side utilities including the **MACH Architectural Maturity Evaluator** (0-100 Pts assessment with per-pillar breakdown) and the **TCO & P99 Latency Scale Simulator** (Monolith vs MACH vs Serverless).
 - **100% Unique Content**: Verified with `scripts/check-duplicates.py` (**0% title duplication, 0% body duplication**) and smart Jaccard deduplication in `scripts/publish_daily_jekyll_post.py`.
 - **🌐 Interactive Language Selector**: Global Topbar dropdown (`🌐 All | 🇲🇽/🇪🇸 Español | 🇺🇸 English`) and Home Feed Filter Pills with instant Vanilla JS client-side filtering and `localStorage` preference persistence.
 - **🎨 Topic-Aware IT Image Generation**: Automated image pipeline (`scripts/generate-images.js` & `scripts/generate-webp-images.py`) generating both PNG and WebP formats.
