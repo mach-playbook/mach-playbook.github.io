@@ -1,0 +1,704 @@
+{
+  "2026-10-08-gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant.md": {
+    "id": 4824253,
+    "url": "https://dev.to/merolhack/blindaje-de-identidad-criptografica-gobernanza-zero-trust-y-mtls-en-clusteres-kubernetes-k53",
+    "canonical_url": "https://mach-playbook.github.io/posts/gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant/",
+    "synced_at": "2026-10-09T16:02:28Z"
+  },
+  "2024-01-01-welcome-to-mach.md": {
+    "id": 4824255,
+    "url": "https://dev.to/merolhack/the-enterprise-mach-architecture-handbook-foundations-trade-offs-and-migration-strategy-4765",
+    "canonical_url": "https://mach-playbook.github.io/posts/welcome-to-mach/",
+    "synced_at": "2026-10-09T16:02:43Z"
+  },
+  "2026-04-04-centralized-observability-distributed-tracing-logging-and-metrics-for-microservices.md": {
+    "id": 4824257,
+    "url": "https://dev.to/merolhack/centralized-observability-distributed-tracing-logging-and-metrics-for-microservices-1oh1",
+    "canonical_url": "https://mach-playbook.github.io/posts/centralized-observability-distributed-tracing-logging-and-metrics-for-microservices/",
+    "synced_at": "2026-10-09T16:02:58Z"
+  },
+  "2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.md": {
+    "id": 4824259,
+    "url": "https://dev.to/merolhack/feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts-2ehm",
+    "canonical_url": "https://mach-playbook.github.io/posts/feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts/",
+    "synced_at": "2026-10-09T16:03:15Z"
+  },
+  "2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.md": {
+    "id": 4824260,
+    "url": "https://dev.to/merolhack/the-distributed-monolith-trap-how-microservices-become-what-they-replace-2ni5",
+    "canonical_url": "https://mach-playbook.github.io/posts/the-distributed-monolith-trap-how-microservices-become-what-they-replace/",
+    "synced_at": "2026-10-09T16:03:30Z"
+  },
+  "2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.md": {
+    "id": 4824264,
+    "url": "https://dev.to/merolhack/video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply-26n5",
+    "canonical_url": "https://mach-playbook.github.io/posts/video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply/",
+    "synced_at": "2026-10-09T16:03:46Z"
+  },
+  "2026-07-24-habilidades-sistema-ia-ides-modernos.md": {
+    "id": 4824267,
+    "url": "https://dev.to/merolhack/ingenieria-asistida-por-ia-desarrollo-de-habilidades-de-sistema-personalizadas-para-ides-modernos-4a49",
+    "canonical_url": "https://mach-playbook.github.io/posts/habilidades-sistema-ia-ides-modernos/",
+    "synced_at": "2026-10-09T16:04:01Z"
+  },
+  "2026-07-31-infraestructura-inmutable-despliegues-blue-green-cloud-run.md": {
+    "id": 4824270,
+    "url": "https://dev.to/merolhack/infraestructura-inmutable-y-despliegues-bluegreen-en-google-cloud-run-56e2",
+    "canonical_url": "https://mach-playbook.github.io/posts/infraestructura-inmutable-despliegues-blue-green-cloud-run/",
+    "synced_at": "2026-10-09T16:04:18Z"
+  },
+  "2026-08-05-automatizacion-e2e-playwright-ollama.md": {
+    "id": 4824272,
+    "url": "https://dev.to/merolhack/automatizacion-inteligente-pruebas-e2e-con-playwright-y-modelos-locales-mediante-ollama-do5",
+    "canonical_url": "https://mach-playbook.github.io/posts/automatizacion-e2e-playwright-ollama/",
+    "synced_at": "2026-10-09T16:04:33Z"
+  },
+  "2026-08-16-modelado-y-delimitacion-de-packaged-business-capabilities-pbcs-en-comercio-digital.md": {
+    "id": 4824273,
+    "url": "https://dev.to/merolhack/mas-alla-de-los-microservicios-modelado-estrategico-de-packaged-business-capabilities-pbcs-en-9gl",
+    "canonical_url": "https://mach-playbook.github.io/posts/modelado-y-delimitacion-de-packaged-business-capabilities-pbcs-en-comercio-digital/",
+    "synced_at": "2026-10-09T16:04:49Z"
+  },
+  "2026-08-27-service-mesh-istio-mach-produccion.md": {
+    "id": 4824274,
+    "url": "https://dev.to/merolhack/service-mesh-con-istio-en-produccion-mach-trafico-seguridad-mtls-y-observabilidad-1o1p",
+    "canonical_url": "https://mach-playbook.github.io/posts/service-mesh-istio-mach-produccion/",
+    "synced_at": "2026-10-09T16:05:05Z"
+  },
+  "2026-09-03-optimizacion-de-core-web-vitals-inp-lcp-en-frontends-composable-con-nextjs-e-isr.md": {
+    "id": 4824276,
+    "url": "https://dev.to/merolhack/optimizacion-de-core-web-vitals-inp-lcp-en-frontends-composable-con-nextjs-e-isr-2abk",
+    "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-de-core-web-vitals-inp-lcp-en-frontends-composable-con-nextjs-e-isr/",
+    "synced_at": "2026-10-09T16:05:21Z"
+  },
+  "2026-09-10-finops-para-mach-control-de-costos-y-optimizacion-de-facturacion-multi-vendor.md": {
+    "id": 4824279,
+    "url": "https://dev.to/merolhack/finops-para-mach-control-de-costos-y-optimizacion-de-facturacion-multi-vendor-16f6",
+    "canonical_url": "https://mach-playbook.github.io/posts/finops-para-mach-control-de-costos-y-optimizacion-de-facturacion-multi-vendor/",
+    "synced_at": "2026-10-09T16:05:35Z"
+  },
+  "2026-09-18-gestion-de-proveedores-vendor-lock-in-mitigation-en-contratos-saas-de-arquitectura-mach.md": {
+    "id": 4824282,
+    "url": "https://dev.to/merolhack/mitigacion-de-vendor-lock-in-en-el-ecosistema-mach-estrategias-de-salida-abstraccion-y-gobernanza-354k",
+    "canonical_url": "https://mach-playbook.github.io/posts/gestion-de-proveedores-vendor-lock-in-mitigation-en-contratos-saas-de-arquitectura-mach/",
+    "synced_at": "2026-10-09T16:05:52Z"
+  },
+  "2026-09-25-orquestacion-de-sagas-asincronas-con-temporalio-y-apache-kafka.md": {
+    "id": 4824283,
+    "url": "https://dev.to/merolhack/consistencia-eventual-sin-dolor-resolviendo-el-infierno-de-las-sagas-coreografiadas-con-1j1o",
+    "canonical_url": "https://mach-playbook.github.io/posts/orquestacion-de-sagas-asincronas-con-temporalio-y-apache-kafka/",
+    "synced_at": "2026-10-09T16:06:06Z"
+  },
+  "2026-10-03-busqueda-hibrida-vectorial-y-lexica-en-catalogos-de-gran-escala-con-bases-de-datos-vectoriales-qdrant-pinecone.md": {
+    "id": 4824286,
+    "url": "https://dev.to/merolhack/mas-alla-del-rag-arquitectura-de-busqueda-hibrida-de-baja-latencia-para-catalogos-de-100m-de-skus-4mp8",
+    "canonical_url": "https://mach-playbook.github.io/posts/busqueda-hibrida-vectorial-y-lexica-en-catalogos-de-gran-escala-con-bases-de-datos-vectoriales-qdrant-pinecone/",
+    "synced_at": "2026-10-09T16:06:47Z"
+  },
+  "2026-10-04-diseno-de-sistemas-de-diseno-design-systems-headless-desacoplados-de-la-logica-de-negocio.md": {
+    "id": 4824288,
+    "url": "https://dev.to/merolhack/arquitectura-de-ui-agnostica-desacoplando-la-logica-de-negocio-en-sistemas-de-diseno-headless-para-1gji",
+    "canonical_url": "https://mach-playbook.github.io/posts/diseno-de-sistemas-de-diseno-design-systems-headless-desacoplados-de-la-logica-de-negocio/",
+    "synced_at": "2026-10-09T16:06:50Z"
+  },
+  "2026-04-04-api-contracts-first-designing-service-boundaries-before-writing-code.md": {
+    "id": 4824295,
+    "url": "https://dev.to/merolhack/api-contracts-first-designing-service-boundaries-before-writing-code-2khf",
+    "canonical_url": "https://mach-playbook.github.io/posts/api-contracts-first-designing-service-boundaries-before-writing-code/",
+    "synced_at": "2026-10-09T16:08:21Z"
+  },
+  "2026-04-04-api-first-vs-code-first-why-contract-before-code-wins.md": {
+    "id": 4824296,
+    "url": "https://dev.to/merolhack/api-first-vs-code-first-why-contract-before-code-wins-in-distributed-systems-57p1",
+    "canonical_url": "https://mach-playbook.github.io/posts/api-first-vs-code-first-why-contract-before-code-wins/",
+    "synced_at": "2026-10-09T16:08:25Z"
+  },
+  "2026-04-04-api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends.md": {
+    "id": 4824298,
+    "url": "https://dev.to/merolhack/api-security-essentials-oauth-20-jwt-and-rate-limiting-for-headless-backends-10in",
+    "canonical_url": "https://mach-playbook.github.io/posts/api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends/",
+    "synced_at": "2026-10-09T16:09:02Z"
+  },
+  "2026-04-04-bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet.md": {
+    "id": 4824299,
+    "url": "https://dev.to/merolhack/bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet-1d94",
+    "canonical_url": "https://mach-playbook.github.io/posts/bulkhead-pattern-isolating-failures-so-one-service-cant-sink-the-fleet/",
+    "synced_at": "2026-10-09T16:09:06Z"
+  },
+  "2026-04-04-case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services.md": {
+    "id": 4824303,
+    "url": "https://dev.to/merolhack/case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services-4ghg",
+    "canonical_url": "https://mach-playbook.github.io/posts/case-study-how-nike-scaled-with-mach-flash-sales-global-storefronts-independent-services/",
+    "synced_at": "2026-10-09T16:09:45Z"
+  },
+  "2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.md": {
+    "id": 4824304,
+    "url": "https://dev.to/merolhack/case-study-sephoras-omnichannel-transformation-with-headless-architecture-5gf0",
+    "canonical_url": "https://mach-playbook.github.io/posts/case-study-sephoras-omnichannel-transformation-with-headless-architecture/",
+    "synced_at": "2026-10-09T16:09:49Z"
+  },
+  "2026-04-04-ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend.md": {
+    "id": 4824306,
+    "url": "https://dev.to/merolhack/cicd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend-43m2",
+    "canonical_url": "https://mach-playbook.github.io/posts/ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend/",
+    "synced_at": "2026-10-09T16:10:27Z"
+  },
+  "2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.md": {
+    "id": 4824307,
+    "url": "https://dev.to/merolhack/circuit-breaker-pattern-protecting-your-services-from-cascading-failures-55mi",
+    "canonical_url": "https://mach-playbook.github.io/posts/circuit-breaker-pattern-protecting-your-services-from-cascading-failures/",
+    "synced_at": "2026-10-09T16:10:31Z"
+  },
+  "2026-04-04-composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites.md": {
+    "id": 4824315,
+    "url": "https://dev.to/merolhack/composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites-624",
+    "canonical_url": "https://mach-playbook.github.io/posts/composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites/",
+    "synced_at": "2026-10-09T16:12:12Z"
+  },
+  "2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.md": {
+    "id": 4824316,
+    "url": "https://dev.to/merolhack/cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services-2abg",
+    "canonical_url": "https://mach-playbook.github.io/posts/cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services/",
+    "synced_at": "2026-10-09T16:12:18Z"
+  },
+  "2026-04-04-event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping.md": {
+    "id": 4824321,
+    "url": "https://dev.to/merolhack/event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping-2oc7",
+    "canonical_url": "https://mach-playbook.github.io/posts/event-driven-architecture-in-e-commerce-async-messaging-for-orders-inventory-and-shipping/",
+    "synced_at": "2026-10-09T16:13:29Z"
+  },
+  "2026-04-04-idempotency-in-api-design-safe-retries-for-payments-and-critical-operations.md": {
+    "id": 4824322,
+    "url": "https://dev.to/merolhack/idempotency-in-api-design-safe-retries-for-payments-and-critical-operations-a80",
+    "canonical_url": "https://mach-playbook.github.io/posts/idempotency-in-api-design-safe-retries-for-payments-and-critical-operations/",
+    "synced_at": "2026-10-09T16:13:33Z"
+  },
+  "2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.md": {
+    "id": 4824326,
+    "url": "https://dev.to/merolhack/implementing-api-governance-enforcing-consistency-across-all-your-services-pf7",
+    "canonical_url": "https://mach-playbook.github.io/posts/implementing-api-governance-enforcing-consistency-across-all-your-services/",
+    "synced_at": "2026-10-09T16:14:17Z"
+  },
+  "2026-04-04-managing-api-versioning-evolving-endpoints-without-breaking-integrations.md": {
+    "id": 4824327,
+    "url": "https://dev.to/merolhack/managing-api-versioning-evolving-endpoints-without-breaking-integrations-2e2p",
+    "canonical_url": "https://mach-playbook.github.io/posts/managing-api-versioning-evolving-endpoints-without-breaking-integrations/",
+    "synced_at": "2026-10-09T16:14:24Z"
+  },
+  "2026-04-04-microservices-at-scale-engineering-debt-and-system-complexity.md": {
+    "id": 4824335,
+    "url": "https://dev.to/merolhack/microservices-at-scale-engineering-debt-and-system-complexity-26n",
+    "canonical_url": "https://mach-playbook.github.io/posts/microservices-at-scale-engineering-debt-and-system-complexity/",
+    "synced_at": "2026-10-09T16:15:02Z"
+  },
+  "2026-04-04-service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices.md": {
+    "id": 4824336,
+    "url": "https://dev.to/merolhack/service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices-3gfp",
+    "canonical_url": "https://mach-playbook.github.io/posts/service-boundaries-by-domain-applying-ddd-bounded-contexts-to-microservices/",
+    "synced_at": "2026-10-09T16:15:05Z"
+  },
+  "2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.md": {
+    "id": 4824337,
+    "url": "https://dev.to/merolhack/service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer-46ib",
+    "canonical_url": "https://mach-playbook.github.io/posts/service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer/",
+    "synced_at": "2026-10-09T16:15:42Z"
+  },
+  "2026-04-04-sizing-your-microservices-how-to-find-the-right-service-granularity.md": {
+    "id": 4824338,
+    "url": "https://dev.to/merolhack/sizing-your-microservices-how-to-find-the-right-service-granularity-71m",
+    "canonical_url": "https://mach-playbook.github.io/posts/sizing-your-microservices-how-to-find-the-right-service-granularity/",
+    "synced_at": "2026-10-09T16:15:46Z"
+  },
+  "2026-04-04-the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about.md": {
+    "id": 4824342,
+    "url": "https://dev.to/merolhack/the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about-gcf",
+    "canonical_url": "https://mach-playbook.github.io/posts/the-real-cost-of-microservices-operational-overhead-nobody-warns-you-about/",
+    "synced_at": "2026-10-09T16:16:23Z"
+  },
+  "2026-04-04-the-role-of-openapi-in-contract-driven-development.md": {
+    "id": 4824343,
+    "url": "https://dev.to/merolhack/the-role-of-openapi-in-contract-driven-development-4kme",
+    "canonical_url": "https://mach-playbook.github.io/posts/the-role-of-openapi-in-contract-driven-development/",
+    "synced_at": "2026-10-09T16:16:28Z"
+  },
+  "2026-04-04-the-saga-pattern-managing-distributed-transactions-without-two-phase-commit.md": {
+    "id": 4824350,
+    "url": "https://dev.to/merolhack/the-saga-pattern-managing-distributed-transactions-without-two-phase-commit-2h58",
+    "canonical_url": "https://mach-playbook.github.io/posts/the-saga-pattern-managing-distributed-transactions-without-two-phase-commit/",
+    "synced_at": "2026-10-09T16:17:05Z"
+  },
+  "2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.md": {
+    "id": 4824351,
+    "url": "https://dev.to/merolhack/the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite-38en",
+    "canonical_url": "https://mach-playbook.github.io/posts/the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite/",
+    "synced_at": "2026-10-09T16:17:09Z"
+  },
+  "2026-04-04-understanding-headless-cms-decoupling-content-from-presentation.md": {
+    "id": 4824356,
+    "url": "https://dev.to/merolhack/understanding-headless-cms-decoupling-content-from-presentation-1o78",
+    "canonical_url": "https://mach-playbook.github.io/posts/understanding-headless-cms-decoupling-content-from-presentation/",
+    "synced_at": "2026-10-09T16:17:46Z"
+  },
+  "2026-04-04-video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice.md": {
+    "id": 4824357,
+    "url": "https://dev.to/merolhack/video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice-1bmk",
+    "canonical_url": "https://mach-playbook.github.io/posts/video-review-configuring-your-service-mesh-gateway-api-and-routing-in-practice/",
+    "synced_at": "2026-10-09T16:17:50Z"
+  },
+  "2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.md": {
+    "id": 4824361,
+    "url": "https://dev.to/merolhack/video-review-martin-fowler-on-microservices-key-takeaways-1klc",
+    "canonical_url": "https://mach-playbook.github.io/posts/video-review-martin-fowler-on-microservices-key-takeaways/",
+    "synced_at": "2026-10-09T16:18:27Z"
+  },
+  "2026-04-04-when-not-to-use-microservices-a-decision-framework.md": {
+    "id": 4824363,
+    "url": "https://dev.to/merolhack/when-not-to-use-microservices-a-decision-framework-1c5n",
+    "canonical_url": "https://mach-playbook.github.io/posts/when-not-to-use-microservices-a-decision-framework/",
+    "synced_at": "2026-10-09T16:18:31Z"
+  },
+  "2026-07-22-infraestructura-voip-cloud-native.md": {
+    "id": 4824365,
+    "url": "https://dev.to/merolhack/estrategias-de-enrutamiento-voip-y-senalizacion-sip-en-infraestructuras-cloud-native-26e2",
+    "canonical_url": "https://mach-playbook.github.io/posts/infraestructura-voip-cloud-native/",
+    "synced_at": "2026-10-09T16:19:08Z"
+  },
+  "2026-07-22-orquestacion-mach-multi-nube.md": {
+    "id": 4824366,
+    "url": "https://dev.to/merolhack/orquestacion-de-arquitecturas-mach-en-entornos-multi-nube-integrando-apigee-y-mulesoft-5ln",
+    "canonical_url": "https://mach-playbook.github.io/posts/orquestacion-mach-multi-nube/",
+    "synced_at": "2026-10-09T16:19:13Z"
+  },
+  "2026-07-23-arquitectura-api-first-erpnext.md": {
+    "id": 4824368,
+    "url": "https://dev.to/merolhack/arquitectura-api-first-para-la-integracion-de-facturacion-electronica-y-timbrado-en-sistemas-erp-4mfl",
+    "canonical_url": "https://mach-playbook.github.io/posts/arquitectura-api-first-erpnext/",
+    "synced_at": "2026-10-09T16:19:50Z"
+  },
+  "2026-07-23-automatizacion-inteligente-playwright-ollama.md": {
+    "id": 4824369,
+    "url": "https://dev.to/merolhack/automatizacion-de-pruebas-end-to-end-inteligentes-integrando-playwright-y-modelos-locales-ollama-3dd3",
+    "canonical_url": "https://mach-playbook.github.io/posts/automatizacion-inteligente-playwright-ollama/",
+    "synced_at": "2026-10-09T16:19:54Z"
+  },
+  "2026-07-23-finops-desmantelamiento-gcp.md": {
+    "id": 4824373,
+    "url": "https://dev.to/merolhack/finops-y-gestion-del-ciclo-de-vida-desmantelamiento-seguro-de-infraestructura-serverless-en-gcp-3lg2",
+    "canonical_url": "https://mach-playbook.github.io/posts/finops-desmantelamiento-gcp/",
+    "synced_at": "2026-10-09T16:20:33Z"
+  },
+  "2026-07-23-flujos-hibridos-wsl-powershell-windows.md": {
+    "id": 4824375,
+    "url": "https://dev.to/merolhack/flujos-de-trabajo-hibridos-para-arquitectos-cloud-orquestando-sistemas-con-wsl-powershell-y-2d1d",
+    "canonical_url": "https://mach-playbook.github.io/posts/flujos-hibridos-wsl-powershell-windows/",
+    "synced_at": "2026-10-09T16:20:38Z"
+  },
+  "2026-07-24-integracion-salesforce-data-cloud-headless.md": {
+    "id": 4824378,
+    "url": "https://dev.to/merolhack/orquestacion-de-datos-de-clientes-integrando-salesforce-data-cloud-en-arquitecturas-headless-4d7j",
+    "canonical_url": "https://mach-playbook.github.io/posts/integracion-salesforce-data-cloud-headless/",
+    "synced_at": "2026-10-09T16:21:16Z"
+  },
+  "2026-07-27-estrategias-migracion-bases-datos-multi-nube.md": {
+    "id": 4824379,
+    "url": "https://dev.to/merolhack/estrategias-de-migracion-de-bases-de-datos-relacionales-de-aws-rds-a-gcp-cloud-sql-ojg",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-migracion-bases-datos-multi-nube/",
+    "synced_at": "2026-10-09T16:21:19Z"
+  },
+  "2026-07-27-trazabilidad-avanzada-traduccion-gateways-voip.md": {
+    "id": 4824385,
+    "url": "https://dev.to/merolhack/trazabilidad-avanzada-y-traduccion-de-gateways-en-redes-voip-core-5393",
+    "canonical_url": "https://mach-playbook.github.io/posts/trazabilidad-avanzada-traduccion-gateways-voip/",
+    "synced_at": "2026-10-09T16:21:57Z"
+  },
+  "2026-07-28-arquitecturas-orientadas-eventos-multi-nube.md": {
+    "id": 4824386,
+    "url": "https://dev.to/merolhack/arquitecturas-orientadas-a-eventos-en-entornos-multi-nube-orquestando-gcp-pubsub-y-aws-sqs-58mh",
+    "canonical_url": "https://mach-playbook.github.io/posts/arquitecturas-orientadas-eventos-multi-nube/",
+    "synced_at": "2026-10-09T16:22:00Z"
+  },
+  "2026-07-28-seguridad-zero-trust-microservicios-mach.md": {
+    "id": 4824430,
+    "url": "https://dev.to/merolhack/implementacion-de-seguridad-zero-trust-en-arquitecturas-mach-y-apis-nativas-de-la-nube-3b1k",
+    "canonical_url": "https://mach-playbook.github.io/posts/seguridad-zero-trust-microservicios-mach/",
+    "synced_at": "2026-10-09T16:22:38Z"
+  },
+  "2026-07-30-estrategias-cache-distribuida-edge-headless.md": {
+    "id": 4824437,
+    "url": "https://dev.to/merolhack/estrategias-de-cache-distribuida-y-edge-computing-en-arquitecturas-headless-5a0g",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-cache-distribuida-edge-headless/",
+    "synced_at": "2026-10-09T16:22:45Z"
+  },
+  "2026-07-30-observabilidad-integral-ecosistemas-voip.md": {
+    "id": 4824447,
+    "url": "https://dev.to/merolhack/observabilidad-integral-en-ecosistemas-voip-altamente-distribuidos-trazabilidad-y-analisis-de-qos-2dho",
+    "canonical_url": "https://mach-playbook.github.io/posts/observabilidad-integral-ecosistemas-voip/",
+    "synced_at": "2026-10-09T16:23:22Z"
+  },
+  "2026-07-31-gestion-segura-certificados-cfdi-cloud-native.md": {
+    "id": 4824448,
+    "url": "https://dev.to/merolhack/gestion-segura-de-certificados-y-firmas-digitales-cfdi-en-arquitecturas-cloud-native-4pk4",
+    "canonical_url": "https://mach-playbook.github.io/posts/gestion-segura-certificados-cfdi-cloud-native/",
+    "synced_at": "2026-10-09T16:23:26Z"
+  },
+  "2026-08-01-desarrollo-headless-nextjs-supabase.md": {
+    "id": 4824453,
+    "url": "https://dev.to/merolhack/arquitecturas-serverless-en-el-borde-desarrollo-headless-con-nextjs-y-supabase-3974",
+    "canonical_url": "https://mach-playbook.github.io/posts/desarrollo-headless-nextjs-supabase/",
+    "synced_at": "2026-10-09T16:24:03Z"
+  },
+  "2026-08-01-mitigacion-fraude-voip-opensips.md": {
+    "id": 4824454,
+    "url": "https://dev.to/merolhack/ingenieria-de-trafico-voip-mitigacion-de-fraude-y-gestion-de-capacidad-con-opensips-pia",
+    "canonical_url": "https://mach-playbook.github.io/posts/mitigacion-fraude-voip-opensips/",
+    "synced_at": "2026-10-09T16:24:07Z"
+  },
+  "2026-08-03-ci-cd-microservicios-multi-repositorio.md": {
+    "id": 4824460,
+    "url": "https://dev.to/merolhack/orquestacion-de-microservicios-estrategias-de-cicd-en-entornos-multi-repositorio-4200",
+    "canonical_url": "https://mach-playbook.github.io/posts/ci-cd-microservicios-multi-repositorio/",
+    "synced_at": "2026-10-09T16:24:45Z"
+  },
+  "2026-08-03-migracion-wordpress-jekyll-github-actions.md": {
+    "id": 4824461,
+    "url": "https://dev.to/merolhack/de-monolito-a-estatico-migrando-de-wordpress-a-arquitecturas-ssg-con-jekyll-y-github-actions-2cnk",
+    "canonical_url": "https://mach-playbook.github.io/posts/migracion-wordpress-jekyll-github-actions/",
+    "synced_at": "2026-10-09T16:24:49Z"
+  },
+  "2026-08-04-analitica-web-seo-arquitecturas-headless.md": {
+    "id": 4824468,
+    "url": "https://dev.to/merolhack/analitica-web-y-core-web-vitals-en-arquitecturas-headless-integrando-google-analytics-y-search-4b9j",
+    "canonical_url": "https://mach-playbook.github.io/posts/analitica-web-seo-arquitecturas-headless/",
+    "synced_at": "2026-10-09T16:25:27Z"
+  },
+  "2026-08-04-arquitecturas-mach-serverless-nestjs-postgresql.md": {
+    "id": 4824470,
+    "url": "https://dev.to/merolhack/arquitecturas-mach-serverless-orquestando-nestjs-y-postgresql-en-google-cloud-run-20df",
+    "canonical_url": "https://mach-playbook.github.io/posts/arquitecturas-mach-serverless-nestjs-postgresql/",
+    "synced_at": "2026-10-09T16:25:30Z"
+  },
+  "2026-08-05-gestion-apis-apigee-mulesoft-salesforce.md": {
+    "id": 4824471,
+    "url": "https://dev.to/merolhack/gestion-de-apis-empresariales-integrando-apigee-mulesoft-y-salesforce-data-cloud-1eik",
+    "canonical_url": "https://mach-playbook.github.io/posts/gestion-apis-apigee-mulesoft-salesforce/",
+    "synced_at": "2026-10-09T16:26:07Z"
+  },
+  "2026-08-07-optimizacion-contenedores-docker-erp.md": {
+    "id": 4824472,
+    "url": "https://dev.to/merolhack/optimizacion-de-contenedores-docker-y-despliegues-cloud-para-sistemas-erp-empresariales-4j82",
+    "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-contenedores-docker-erp/",
+    "synced_at": "2026-10-09T16:26:11Z"
+  },
+  "2026-08-07-pipelines-etl-python-postgresql-databricks.md": {
+    "id": 4824474,
+    "url": "https://dev.to/merolhack/ingenieria-de-datos-avanzada-construyendo-pipelines-etl-escalables-con-python-postgresql-y-f06",
+    "canonical_url": "https://mach-playbook.github.io/posts/pipelines-etl-python-postgresql-databricks/",
+    "synced_at": "2026-10-09T16:26:49Z"
+  },
+  "2026-08-11-indexacion-grafos-locales-ia-ides.md": {
+    "id": 4824475,
+    "url": "https://dev.to/merolhack/ingenieria-asistida-por-ia-indexacion-de-grafos-locales-para-entornos-de-desarrollo-modernos-3joi",
+    "canonical_url": "https://mach-playbook.github.io/posts/indexacion-grafos-locales-ia-ides/",
+    "synced_at": "2026-10-09T16:26:53Z"
+  },
+  "2026-08-11-sistemas-sql-distribuidos-yugabytedb.md": {
+    "id": 4824480,
+    "url": "https://dev.to/merolhack/escalabilidad-geografica-implementacion-de-sistemas-sql-distribuidos-con-yugabytedb-2ong",
+    "canonical_url": "https://mach-playbook.github.io/posts/sistemas-sql-distribuidos-yugabytedb/",
+    "synced_at": "2026-10-09T16:27:30Z"
+  },
+  "2026-08-14-asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real.md": {
+    "id": 4824481,
+    "url": "https://dev.to/merolhack/asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real-1dkl",
+    "canonical_url": "https://mach-playbook.github.io/posts/asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real/",
+    "synced_at": "2026-10-09T16:27:34Z"
+  },
+  "2026-08-15-diseno-de-apis-de-alto-rendimiento-con-grpc-y-protocol-buffers-para-comunicacion-interna.md": {
+    "id": 4824482,
+    "url": "https://dev.to/merolhack/diseno-de-apis-de-alto-rendimiento-con-grpc-y-protocol-buffers-para-comunicacion-interna-2o55",
+    "canonical_url": "https://mach-playbook.github.io/posts/diseno-de-apis-de-alto-rendimiento-con-grpc-y-protocol-buffers-para-comunicacion-interna/",
+    "synced_at": "2026-10-09T16:28:11Z"
+  },
+  "2026-08-15-state-management-y-offline-first-en-progressive-web-apps-pwa-de-alto-trafico.md": {
+    "id": 4824483,
+    "url": "https://dev.to/merolhack/arquitectura-de-estado-y-estrategias-offline-first-resiliencia-en-pwas-de-escala-enterprise-22a9",
+    "canonical_url": "https://mach-playbook.github.io/posts/state-management-y-offline-first-en-progressive-web-apps-pwa-de-alto-trafico/",
+    "synced_at": "2026-10-09T16:28:15Z"
+  },
+  "2026-08-17-transicion-de-catalogos-monoliticos-a-motores-composable-pim-akeneo-pimcore.md": {
+    "id": 4824485,
+    "url": "https://dev.to/merolhack/de-la-rigidez-al-agilismo-transicion-de-catalogos-monoliticos-a-motores-composable-pim-akeneo-6jb",
+    "canonical_url": "https://mach-playbook.github.io/posts/transicion-de-catalogos-monoliticos-a-motores-composable-pim-akeneo-pimcore/",
+    "synced_at": "2026-10-09T16:28:56Z"
+  },
+  "2026-08-18-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260818.md": {
+    "id": 4824486,
+    "url": "https://dev.to/merolhack/mas-alla-del-circuit-breaker-patrones-avanzados-de-resiliencia-y-consistencia-en-ecosistemas-mach-h1o",
+    "canonical_url": "https://mach-playbook.github.io/posts/patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260818/",
+    "synced_at": "2026-10-09T16:28:59Z"
+  },
+  "2026-08-22-finops-mach-arquitecturas-produccion.md": {
+    "id": 4824491,
+    "url": "https://dev.to/merolhack/finops-para-arquitecturas-mach-reduccion-de-costos-cloud-sin-sacrificar-velocidad-4ldl",
+    "canonical_url": "https://mach-playbook.github.io/posts/finops-mach-arquitecturas-produccion/",
+    "synced_at": "2026-10-09T16:29:36Z"
+  },
+  "2026-08-23-platform-engineering-backstage-idp-interno.md": {
+    "id": 4824492,
+    "url": "https://dev.to/merolhack/platform-engineering-con-backstage-construyendo-un-idp-interno-para-equipos-mach-4508",
+    "canonical_url": "https://mach-playbook.github.io/posts/platform-engineering-backstage-idp-interno/",
+    "synced_at": "2026-10-09T16:29:40Z"
+  },
+  "2026-08-24-multi-tenancy-arquitecturas-saas-mach.md": {
+    "id": 4824497,
+    "url": "https://dev.to/merolhack/multi-tenancy-en-arquitecturas-saas-con-mach-aislamiento-escalado-y-modelo-de-datos-d8a",
+    "canonical_url": "https://mach-playbook.github.io/posts/multi-tenancy-arquitecturas-saas-mach/",
+    "synced_at": "2026-10-09T16:30:17Z"
+  },
+  "2026-08-25-graphql-federation-comercio-headless-mach.md": {
+    "id": 4824498,
+    "url": "https://dev.to/merolhack/graphql-federation-en-comercio-headless-unificando-microservicios-mach-con-un-supergraph-28gj",
+    "canonical_url": "https://mach-playbook.github.io/posts/graphql-federation-comercio-headless-mach/",
+    "synced_at": "2026-10-09T16:30:20Z"
+  },
+  "2026-08-26-testing-estrategias-microservicios-mach.md": {
+    "id": 4824501,
+    "url": "https://dev.to/merolhack/estrategias-de-testing-para-microservicios-mach-de-unit-tests-a-contract-testing-5e2m",
+    "canonical_url": "https://mach-playbook.github.io/posts/testing-estrategias-microservicios-mach/",
+    "synced_at": "2026-10-09T16:30:58Z"
+  },
+  "2026-08-28-database-sharding-mach-microservicios.md": {
+    "id": 4824503,
+    "url": "https://dev.to/merolhack/database-sharding-para-microservicios-mach-estrategias-de-particionado-a-escala-global-26hl",
+    "canonical_url": "https://mach-playbook.github.io/posts/database-sharding-mach-microservicios/",
+    "synced_at": "2026-10-09T16:31:01Z"
+  },
+  "2026-08-29-api-rate-limiting-mach-microservicios.md": {
+    "id": 4824510,
+    "url": "https://dev.to/merolhack/rate-limiting-y-throttling-en-apis-mach-proteccion-multicapa-sin-impactar-performance-340i",
+    "canonical_url": "https://mach-playbook.github.io/posts/api-rate-limiting-mach-microservicios/",
+    "synced_at": "2026-10-09T16:31:38Z"
+  },
+  "2026-08-30-feature-flags-arquitectura-mach.md": {
+    "id": 4824511,
+    "url": "https://dev.to/merolhack/feature-flags-en-arquitectura-mach-releases-controlados-y-experimentacion-continua-8h7",
+    "canonical_url": "https://mach-playbook.github.io/posts/feature-flags-arquitectura-mach/",
+    "synced_at": "2026-10-09T16:31:42Z"
+  },
+  "2026-08-31-api-gateway-patterns-mach.md": {
+    "id": 4824513,
+    "url": "https://dev.to/merolhack/patrones-avanzados-de-api-gateway-en-mach-backend-for-frontend-aggregation-y-edge-logic-1kod",
+    "canonical_url": "https://mach-playbook.github.io/posts/api-gateway-patterns-mach/",
+    "synced_at": "2026-10-09T16:32:19Z"
+  },
+  "2026-09-01-observability-opentelemetry-mach.md": {
+    "id": 4824514,
+    "url": "https://dev.to/merolhack/observabilidad-con-opentelemetry-en-mach-trazas-metricas-y-logs-unificados-3d7p",
+    "canonical_url": "https://mach-playbook.github.io/posts/observability-opentelemetry-mach/",
+    "synced_at": "2026-10-09T16:32:23Z"
+  },
+  "2026-09-02-ddd-bounded-contexts-mach-avanzado.md": {
+    "id": 4824519,
+    "url": "https://dev.to/merolhack/domain-driven-design-avanzado-en-mach-bounded-contexts-aggregates-y-domain-events-3nk2",
+    "canonical_url": "https://mach-playbook.github.io/posts/ddd-bounded-contexts-mach-avanzado/",
+    "synced_at": "2026-10-09T16:33:00Z"
+  },
+  "2026-09-02-patron-strangler-fig-como-desmantelar-un-monolito-sap-commerce-o-magento-paso-a-paso.md": {
+    "id": 4824520,
+    "url": "https://dev.to/merolhack/patron-strangler-fig-como-desmantelar-un-monolito-sap-commerce-o-magento-paso-a-paso-egm",
+    "canonical_url": "https://mach-playbook.github.io/posts/patron-strangler-fig-como-desmantelar-un-monolito-sap-commerce-o-magento-paso-a-paso/",
+    "synced_at": "2026-10-09T16:33:05Z"
+  },
+  "2026-09-04-estrategias-de-cache-edge-y-purgado-granular-con-cloudflare-workers-y-fastly-compute.md": {
+    "id": 4824521,
+    "url": "https://dev.to/merolhack/mas-alla-del-ttl-estrategias-de-cache-edge-y-purgado-granular-con-cloudflare-workers-y-fastly-k21",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-cache-edge-y-purgado-granular-con-cloudflare-workers-y-fastly-compute/",
+    "synced_at": "2026-10-09T16:33:43Z"
+  },
+  "2026-09-05-integracion-de-cms-headless-multi-tenant-contentful-strapi-sanity-en-e-commerce-global.md": {
+    "id": 4824523,
+    "url": "https://dev.to/merolhack/orquestacion-de-cms-headless-multi-tenant-en-e-commerce-global-estrategias-de-federacion-y-4p4b",
+    "canonical_url": "https://mach-playbook.github.io/posts/integracion-de-cms-headless-multi-tenant-contentful-strapi-sanity-en-e-commerce-global/",
+    "synced_at": "2026-10-09T16:33:48Z"
+  },
+  "2026-09-06-federacion-de-graphql-apollo-federation-v2-vs-rest-gateway-en-ecosistemas-composable.md": {
+    "id": 4824526,
+    "url": "https://dev.to/merolhack/federacion-de-graphql-apollo-federation-v2-vs-rest-gateway-orquestacion-de-api-en-la-era-del-1ip6",
+    "canonical_url": "https://mach-playbook.github.io/posts/federacion-de-graphql-apollo-federation-v2-vs-rest-gateway-en-ecosistemas-composable/",
+    "synced_at": "2026-10-09T16:34:26Z"
+  },
+  "2026-09-07-patron-outbox-transaccional-y-debezium-en-arquitecturas-de-microservicios-distribuidas.md": {
+    "id": 4824527,
+    "url": "https://dev.to/merolhack/consistencia-eventual-garantizada-implementando-el-patron-outbox-transaccional-con-debezium-y-kafka-4fjb",
+    "canonical_url": "https://mach-playbook.github.io/posts/patron-outbox-transaccional-y-debezium-en-arquitecturas-de-microservicios-distribuidas/",
+    "synced_at": "2026-10-09T16:34:30Z"
+  },
+  "2026-09-08-como-justificar-el-roi-de-una-arquitectura-mach-ante-el-c-level-y-comite-de-direccion.md": {
+    "id": 4824528,
+    "url": "https://dev.to/merolhack/mas-alla-del-hype-como-justificar-el-roi-de-una-arquitectura-mach-ante-el-c-level-y-comite-de-19h5",
+    "canonical_url": "https://mach-playbook.github.io/posts/como-justificar-el-roi-de-una-arquitectura-mach-ante-el-c-level-y-comite-de-direccion/",
+    "synced_at": "2026-10-09T16:35:09Z"
+  },
+  "2026-09-09-diseno-de-contratos-api-con-openapi-v31-y-validacion-de-schemas-en-cicd.md": {
+    "id": 4824529,
+    "url": "https://dev.to/merolhack/contratos-api-inquebrantables-openapi-v31-y-validacion-de-schemas-en-el-ciclo-de-vida-cicd-para-3e6d",
+    "canonical_url": "https://mach-playbook.github.io/posts/diseno-de-contratos-api-con-openapi-v31-y-validacion-de-schemas-en-cicd/",
+    "synced_at": "2026-10-09T16:35:13Z"
+  },
+  "2026-09-11-idempotencia-de-pagos-y-webhooks-distribuidos-con-colas-dead-letter-dlq.md": {
+    "id": 4824532,
+    "url": "https://dev.to/merolhack/idempotencia-de-pagos-y-webhooks-distribuidos-estrategias-de-resiliencia-con-dlq-en-arquitecturas-461k",
+    "canonical_url": "https://mach-playbook.github.io/posts/idempotencia-de-pagos-y-webhooks-distribuidos-con-colas-dead-letter-dlq/",
+    "synced_at": "2026-10-09T16:35:50Z"
+  },
+  "2026-09-12-resiliencia-y-circuit-breaking-avanzado-con-envoy-proxy-e-istio-service-mesh.md": {
+    "id": 4824533,
+    "url": "https://dev.to/merolhack/mas-alla-de-los-retries-dominando-la-resiliencia-y-el-circuit-breaking-avanzado-con-envoy-e-istio-1bm4",
+    "canonical_url": "https://mach-playbook.github.io/posts/resiliencia-y-circuit-breaking-avanzado-con-envoy-proxy-e-istio-service-mesh/",
+    "synced_at": "2026-10-09T16:35:54Z"
+  },
+  "2026-09-13-estrategias-de-rate-limiting-adaptativo-y-algoritmos-token-bucket-en-api-gateways.md": {
+    "id": 4824535,
+    "url": "https://dev.to/merolhack/resiliencia-dinamica-rate-limiting-adaptativo-y-algoritmos-token-bucket-en-arquitecturas-mach-de-3cd5",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-rate-limiting-adaptativo-y-algoritmos-token-bucket-en-api-gateways/",
+    "synced_at": "2026-10-09T16:36:32Z"
+  },
+  "2026-09-14-estrategias-de-sharding-y-escalabilidad-horizontal-en-bases-de-datos-sql-distribuidas.md": {
+    "id": 4824536,
+    "url": "https://dev.to/merolhack/mas-alla-del-limite-de-rds-sharding-y-escalabilidad-horizontal-en-bases-de-datos-sql-distribuidas-3bnn",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-sharding-y-escalabilidad-horizontal-en-bases-de-datos-sql-distribuidas/",
+    "synced_at": "2026-10-09T16:36:36Z"
+  },
+  "2026-09-15-migracion-y-versionado-no-destructivo-de-apis-restful-en-entornos-empresariales.md": {
+    "id": 4824538,
+    "url": "https://dev.to/merolhack/migracion-y-versionado-no-destructivo-de-apis-restful-en-entornos-empresariales-1jm4",
+    "canonical_url": "https://mach-playbook.github.io/posts/migracion-y-versionado-no-destructivo-de-apis-restful-en-entornos-empresariales/",
+    "synced_at": "2026-10-09T16:37:15Z"
+  },
+  "2026-09-16-como-evitar-la-trampa-del-monolito-distribuido-senales-de-alerta-y-remediacion.md": {
+    "id": 4824539,
+    "url": "https://dev.to/merolhack/mas-alla-de-los-microservicios-diagnostico-y-remediacion-del-monolito-distribuido-en-ecosistemas-5gci",
+    "canonical_url": "https://mach-playbook.github.io/posts/como-evitar-la-trampa-del-monolito-distribuido-senales-de-alerta-y-remediacion/",
+    "synced_at": "2026-10-09T16:37:18Z"
+  },
+  "2026-09-17-matriz-de-decision-construir-vs-comprar-build-vs-buy-en-ecosistemas-composable.md": {
+    "id": 4824546,
+    "url": "https://dev.to/merolhack/matriz-de-decision-construir-vs-comprar-build-vs-buy-en-ecosistemas-composable-1hm1",
+    "canonical_url": "https://mach-playbook.github.io/posts/matriz-de-decision-construir-vs-comprar-build-vs-buy-en-ecosistemas-composable/",
+    "synced_at": "2026-10-09T16:37:55Z"
+  },
+  "2026-09-17-seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y.md": {
+    "id": 4824547,
+    "url": "https://dev.to/merolhack/seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y-spire-329p",
+    "canonical_url": "https://mach-playbook.github.io/posts/seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y/",
+    "synced_at": "2026-10-09T16:37:59Z"
+  },
+  "2026-09-19-estructura-organizacional-equipos-stream-aligned-e-inversion-conway-en-equipos-mach.md": {
+    "id": 4824550,
+    "url": "https://dev.to/merolhack/estructura-organizacional-equipos-stream-aligned-e-inversion-conway-en-equipos-mach-1c4",
+    "canonical_url": "https://mach-playbook.github.io/posts/estructura-organizacional-equipos-stream-aligned-e-inversion-conway-en-equipos-mach/",
+    "synced_at": "2026-10-09T16:38:36Z"
+  },
+  "2026-09-20-orquestacion-de-checkout-composable-y-pasarelas-de-pago-multi-adquirente.md": {
+    "id": 4824551,
+    "url": "https://dev.to/merolhack/orquestacion-de-checkout-composable-estrategias-multi-adquirente-para-resiliencia-y-optimizacion-1be7",
+    "canonical_url": "https://mach-playbook.github.io/posts/orquestacion-de-checkout-composable-y-pasarelas-de-pago-multi-adquirente/",
+    "synced_at": "2026-10-09T16:38:40Z"
+  },
+  "2026-09-21-acuerdos-de-nivel-de-servicio-sla-agregados-en-cadenas-de-dependencias-multi-saas.md": {
+    "id": 4824553,
+    "url": "https://dev.to/merolhack/acuerdos-de-nivel-de-servicio-sla-agregados-en-cadenas-de-dependencias-multi-saas-3d0f",
+    "canonical_url": "https://mach-playbook.github.io/posts/acuerdos-de-nivel-de-servicio-sla-agregados-en-cadenas-de-dependencias-multi-saas/",
+    "synced_at": "2026-10-09T16:39:19Z"
+  },
+  "2026-09-22-gestion-de-inventario-en-tiempo-real-y-consistencia-distribuida-en-composable-commerce.md": {
+    "id": 4824555,
+    "url": "https://dev.to/merolhack/gestion-de-inventario-en-tiempo-real-y-consistencia-distribuida-en-composable-commerce-27kc",
+    "canonical_url": "https://mach-playbook.github.io/posts/gestion-de-inventario-en-tiempo-real-y-consistencia-distribuida-en-composable-commerce/",
+    "synced_at": "2026-10-09T16:39:23Z"
+  },
+  "2026-09-23-estrategias-de-pricing-dinamico-y-motores-de-promociones-desacoplados.md": {
+    "id": 4824558,
+    "url": "https://dev.to/merolhack/estrategias-de-pricing-dinamico-y-motores-de-promociones-desacoplados-en-arquitecturas-mach-3k03",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-pricing-dinamico-y-motores-de-promociones-desacoplados/",
+    "synced_at": "2026-10-09T16:40:00Z"
+  },
+  "2026-09-24-micro-frontends-con-module-federation-modularizacion-sin-perdida-de-rendimiento.md": {
+    "id": 4824559,
+    "url": "https://dev.to/merolhack/metricas-letales-y-fugas-de-memoria-en-micro-frontends-arquitectura-de-module-federation-a-escala-4k4a",
+    "canonical_url": "https://mach-playbook.github.io/posts/micro-frontends-con-module-federation-modularizacion-sin-perdida-de-rendimiento/",
+    "synced_at": "2026-10-09T16:40:04Z"
+  },
+  "2026-09-26-mitigacion-del-owasp-api-security-top-10-en-capas-de-api-gateway-y-bff.md": {
+    "id": 4824561,
+    "url": "https://dev.to/merolhack/mitigacion-critica-del-owasp-api-security-top-10-en-capas-de-api-gateway-y-bff-3c32",
+    "canonical_url": "https://mach-playbook.github.io/posts/mitigacion-del-owasp-api-security-top-10-en-capas-de-api-gateway-y-bff/",
+    "synced_at": "2026-10-09T16:40:41Z"
+  },
+  "2026-09-27-resolucion-de-escrituras-conflictivas-en-carritos-de-compra-distribuidos-sin-bloqueo-pesimista.md": {
+    "id": 4824562,
+    "url": "https://dev.to/merolhack/resolucion-de-escrituras-conflictivas-en-carritos-de-compra-distribuidos-sin-bloqueo-pesimista-3ge",
+    "canonical_url": "https://mach-playbook.github.io/posts/resolucion-de-escrituras-conflictivas-en-carritos-de-compra-distribuidos-sin-bloqueo-pesimista/",
+    "synced_at": "2026-10-09T16:40:45Z"
+  },
+  "2026-09-28-agentes-de-ia-autonomos-que-consumen-contratos-openapi-y-schemas-graphql-para-automatizar-compras.md": {
+    "id": 4824565,
+    "url": "https://dev.to/merolhack/mitigacion-de-ejecuciones-fantasma-agentes-autonomos-consumiendo-contratos-openapi-y-schemas-32g8",
+    "canonical_url": "https://mach-playbook.github.io/posts/agentes-de-ia-autonomos-que-consumen-contratos-openapi-y-schemas-graphql-para-automatizar-compras/",
+    "synced_at": "2026-10-09T16:41:24Z"
+  },
+  "2026-09-29-estrategias-de-hidratacion-parcial-y-react-server-components-en-arquitecturas-headless.md": {
+    "id": 4824566,
+    "url": "https://dev.to/merolhack/optimizacion-del-tbt-en-e-commerce-global-react-server-components-e-hidratacion-parcial-en-17i2",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-hidratacion-parcial-y-react-server-components-en-arquitecturas-headless/",
+    "synced_at": "2026-10-09T16:41:27Z"
+  },
+  "2026-09-30-gestion-de-devoluciones-y-logistica-inversa-en-arquitecturas-de-comercio-desacoplado.md": {
+    "id": 4824570,
+    "url": "https://dev.to/merolhack/logistica-inversa-y-el-infierno-de-la-consistencia-arquitectura-de-devoluciones-en-ecosistemas-54oo",
+    "canonical_url": "https://mach-playbook.github.io/posts/gestion-de-devoluciones-y-logistica-inversa-en-arquitecturas-de-comercio-desacoplado/",
+    "synced_at": "2026-10-09T16:42:05Z"
+  },
+  "2026-10-01-busqueda-composable-instantanea-integracion-de-algolia-y-meilisearch-con-catalogos-dinamicos.md": {
+    "id": 4824571,
+    "url": "https://dev.to/merolhack/sincronizacion-de-alta-frecuencia-en-busqueda-composable-resolviendo-el-gap-de-consistencia-entre-id2",
+    "canonical_url": "https://mach-playbook.github.io/posts/busqueda-composable-instantanea-integracion-de-algolia-y-meilisearch-con-catalogos-dinamicos/",
+    "synced_at": "2026-10-09T16:42:08Z"
+  },
+  "2026-10-02-patron-saga-coreografiado-vs-orquestado-con-temporalio-en-cadenas-de-suministro-multi-vendor.md": {
+    "id": 4824574,
+    "url": "https://dev.to/merolhack/mas-alla-del-eventual-consistency-resolviendo-el-laberinto-de-transacciones-multi-vendor-con-4f62",
+    "canonical_url": "https://mach-playbook.github.io/posts/patron-saga-coreografiado-vs-orquestado-con-temporalio-en-cadenas-de-suministro-multi-vendor/",
+    "synced_at": "2026-10-09T16:42:45Z"
+  },
+  "2026-10-06-seguridad-de-apis-prevencion-de-owasp-api-top-10-y-manejo-seguro-de-tokens-jwt.md": {
+    "id": 4824575,
+    "url": "https://dev.to/merolhack/mitigacion-de-vulnerabilidades-en-apis-enterprise-blindaje-contra-owasp-top-10-y-gestion-21om",
+    "canonical_url": "https://mach-playbook.github.io/posts/seguridad-de-apis-prevencion-de-owasp-api-top-10-y-manejo-seguro-de-tokens-jwt/",
+    "synced_at": "2026-10-09T16:42:49Z"
+  },
+  "2026-10-07-monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless.md": {
+    "id": 4824579,
+    "url": "https://dev.to/merolhack/puntos-ciegos-en-la-observabilidad-headless-correlacion-de-telemetria-rum-y-trazabilidad-9ke",
+    "canonical_url": "https://mach-playbook.github.io/posts/monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless/",
+    "synced_at": "2026-10-09T16:43:27Z"
+  },
+  "2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.md": {
+    "id": 4824584,
+    "url": "https://dev.to/merolhack/clean-rest-api-design-practical-rules-for-modern-backend-engineers-39ji",
+    "canonical_url": "https://mach-playbook.github.io/posts/clean-rest-api-design-practical-rules-for-modern-backend-engineers/",
+    "synced_at": "2026-10-09T16:44:36Z"
+  },
+  "2026-04-04-data-ownership-in-microservices-why-services-must-own-their-databases.md": {
+    "id": 4824585,
+    "url": "https://dev.to/merolhack/data-ownership-in-microservices-why-services-must-own-their-databases-1m6l",
+    "canonical_url": "https://mach-playbook.github.io/posts/data-ownership-in-microservices-why-services-must-own-their-databases/",
+    "synced_at": "2026-10-09T16:44:40Z"
+  },
+  "2026-04-04-demystifying-mach-a-beginners-guide-to-modern-architecture.md": {
+    "id": 4824589,
+    "url": "https://dev.to/merolhack/demystifying-mach-a-beginners-guide-to-modern-architecture-25ab",
+    "canonical_url": "https://mach-playbook.github.io/posts/demystifying-mach-a-beginners-guide-to-modern-architecture/",
+    "synced_at": "2026-10-09T16:45:17Z"
+  }
+}

@@ -138,32 +138,41 @@ def main():
             continue
 
         print(f"[+] Publishing: '{post_data['title']}'...")
-        try:
-            resp = publish_to_devto(api_key, post_data, published=published)
-            if resp.status_code in [200, 201]:
-                res_json = resp.json()
-                devto_url = res_json.get("url", "")
-                print(f"    SUCCESS: Published at {devto_url}")
-                print(f"    Canonical preserved: {post_data['canonical_url']}")
-                synced_log[base_name] = {
-                    "id": res_json.get("id"),
-                    "url": devto_url,
-                    "canonical_url": post_data["canonical_url"],
-                    "synced_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-                }
-                save_synced_log(synced_log)
-                count += 1
-            else:
-                print(f"    FAIL ({resp.status_code}): {resp.text[:200]}")
-        except Exception as e:
-            print(f"    ERROR: {e}")
+        published_ok = False
+        for attempt in range(4):
+            try:
+                resp = publish_to_devto(api_key, post_data, published=published)
+                if resp.status_code in [200, 201]:
+                    res_json = resp.json()
+                    devto_url = res_json.get("url", "")
+                    print(f"    SUCCESS: Published at {devto_url}")
+                    print(f"    Canonical preserved: {post_data['canonical_url']}")
+                    synced_log[base_name] = {
+                        "id": res_json.get("id"),
+                        "url": devto_url,
+                        "canonical_url": post_data["canonical_url"],
+                        "synced_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+                    }
+                    save_synced_log(synced_log)
+                    count += 1
+                    published_ok = True
+                    break
+                elif resp.status_code == 429:
+                    print(f"    [!] Rate limit 429 hit. Waiting 32 seconds before retry (attempt {attempt+1}/3)...")
+                    time.sleep(32)
+                else:
+                    print(f"    FAIL ({resp.status_code}): {resp.text[:200]}")
+                    break
+            except Exception as e:
+                print(f"    ERROR: {e}")
+                time.sleep(5)
 
         if args.limit and count >= args.limit:
             print(f"[*] Reached limit of {args.limit} posts.")
             break
 
-        # Respect DEV.to rate limit (30 req / 30s)
-        time.sleep(1.5)
+        # Respect DEV.to rate limit
+        time.sleep(3.0)
 
     print(f"[*] Completed. Synced {count} post(s) to DEV.to.")
 
