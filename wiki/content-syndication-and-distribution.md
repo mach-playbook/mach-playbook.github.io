@@ -183,20 +183,25 @@ flowchart TD
 - **Character Budget Optimization**: Under 280 characters with encoded title, 4 core tags, and link.
 - **Live Verification**: Published and active in feed (`@merolhack`).
 
-### 7.3 Buffer End-to-End Scheduling Architecture (`publish.buffer.com`)
-Buffer acts as the central middleware between the blog's RSS feed and social networks:
-1. **Free Tier Limits**: Supports 3 connected channels (LinkedIn Profile/Page, X Twitter account, and Mastodon/Facebook).
-2. **Channel Authorization**:
-   - LinkedIn: OAuth 2.0 connection granting post publishing permissions.
-   - X (Twitter): OAuth authorization granting tweet creation.
-3. **Feed Ingestion**: Buffer monitors `https://mach-playbook.github.io/feed.xml`.
-4. **Queue Strategy**: When GitHub Actions runs at 07:00 CDMX (`13:00 UTC`), Buffer detects the new item in `feed.xml` and dispatches it according to the pre-configured publishing schedule.
+### 7.3 Buffer GraphQL API Automated Engine (`scripts/publish_to_buffer.py`)
+Buffer acts as the programmatic API bridge between GitHub Actions and social networks via its new official GraphQL API:
+- **Endpoint**: `https://api.buffer.com/graphql`
+- **Auth**: `Authorization: Bearer <BUFFER_API_KEY>`
+- **Organization**: `MACH Playbook` (ID: `6ac92ed28ee0d41b34aefac8`)
+- **Connected Channels**:
+  - **Twitter / X**: `@merolhack` (Channel ID: `6ac9378e6a5c39ccb6658af6`)
+  - **LinkedIn**: `Lenin José Meza Zarco` (Channel ID: `6ac9375c6a5c39ccb66587b3`)
+- **Script**: `scripts/publish_to_buffer.py`
+- **Mutation Used**: `createPost(input: { channelId, text, mode: addToQueue, schedulingType: automatic, assets: [] })`
+- **State Ledger**: `.buffer_synced.json` (avoids duplicate scheduling across runs)
+- **CI/CD Integration**: Integrated into `.github/workflows/daily-blog-post.yml` triggered automatically if `BUFFER_API_KEY` is present in GitHub Secrets.
 
 ### 7.4 Social Rate Limits & Anti-Spam Governance
 > [!WARNING]
 > **Anti-Spam / Shadowban Constraint**:  
 > Never bulk-post the 117 historical articles to X or LinkedIn simultaneously. Both platforms detect high-velocity automated posting and flag accounts for algorithmic shadowbans or account suspension.  
 > **Rule**: Maintain a strict cadence of **1 post per day** aligned with the autonomous daily publishing schedule.
+
 
 ---
 

@@ -1,0 +1,23 @@
+{
+  "2026-10-08-gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant.md": {
+    "title": "Blindaje de Identidad Criptográfica: Gobernanza Zero Trust y mTLS en Clústeres Kubernetes Multi-Tenant de Alta Densidad",
+    "url": "https://mach-playbook.github.io/posts/gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant/",
+    "scheduled_at": "2026-10-09 19:01:24 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ac93a03d9cab260a79de00d",
+        "dueAt": "2026-10-13T15:05:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ac93a04f91f772d456cb0b7",
+        "dueAt": "2026-10-10T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
+  }
+}
