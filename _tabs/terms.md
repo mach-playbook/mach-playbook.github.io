@@ -1,7 +1,7 @@
 ---
 title: Terms
 icon: fas fa-file-contract
-order: 9
+order: 10
 ---
 
 <div class="lang-block lang-es" markdown="1">

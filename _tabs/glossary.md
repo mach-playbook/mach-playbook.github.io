@@ -1,7 +1,7 @@
 ---
 title: Glossary
 icon: fas fa-book
-order: 5
+order: 6
 ---
 
 <div class="lang-block lang-es" markdown="1">

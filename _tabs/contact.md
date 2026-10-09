@@ -1,7 +1,7 @@
 ---
 title: Contact
 icon: fas fa-envelope
-order: 7
+order: 8
 ---
 
 <div class="lang-block lang-es" markdown="1">

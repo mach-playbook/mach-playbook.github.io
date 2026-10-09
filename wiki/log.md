@@ -5,6 +5,21 @@
 
 ---
 
+## [2026-10-08] audit+feat | AdSense Policy Remediation: Rate-Limit Postmortem, E-E-A-T Transparency & Interactive Architecture Tools Hub
+
+- **Impacted Files**: `_tabs/tools.md`, `_tabs/about.md`, `_tabs/glossary.md`, `_tabs/contact.md`, `_tabs/privacy.md`, `_tabs/terms.md`, `_data/locales/es.yml`, `_data/locales/en.yml`, `_data/locales/es-ES.yml`, `scripts/test-adsense-compliance.py`, `wiki/adsense-policy-and-compliance.md`
+- **Summary**:
+  - Investigated official Google AdSense review attempt status for `mach-playbook.github.io` (`ca-pub-2700240339792942`): identified attempt limit rate-lock with cooldown until **October 14, 2026**.
+  - Conducted root cause postmortem on recurring "Low value content" violation: lack of organic traffic signals, static-only nature vs need for interactive tools/services, scaled publishing patterns, and `.github.io` subdomain scrutiny.
+  - Built and deployed interactive engineering tools hub (`_tabs/tools.md`):
+    1. **MACH Architecture Maturity Evaluator**: Quantitative 7-dimension audit (0-100 Pts), animated progress metrics, per-pillar scoring (M, A, C, H), customized technical roadmaps, and 1-click clipboard export.
+    2. **TCO, Latency & Scale Simulator**: Real-time slider calculations for RPS, domain counts, and release velocity comparing Monolith vs Enterprise MACH vs Serverless Headless.
+  - Reinforced E-E-A-T in `_tabs/about.md`: explicit testing lab methodology, peer review declarations, and empirical benchmark validation.
+  - Upgraded AdSense test suite (`scripts/test-adsense-compliance.py`) with Test 11 for interactive utility assertions (100% PASS).
+  - Validated full Docker build and HTML-Proofer across 365 files and 1,542 internal links with 0 errors.
+
+---
+
 ## [2026-09-02] audit | Initial Google AdSense Compliance Analysis
 
 - **Impacted Files**: `wiki/sources/You need to fix some issues before your site is ready for AdSense.eml`

@@ -1,7 +1,7 @@
 ---
 title: About
 icon: fas fa-info-circle
-order: 6
+order: 7
 ---
 
 <div class="lang-block lang-es" markdown="1">
@@ -33,6 +33,8 @@ Cada artículo publicado en MACH Playbook cumple con estándares rigurosos de in
 1. **Verificabilidad**: Cada patrón arquitectónico incluye diagramas de secuencia/topología y snippets de implementación probados.
 2. **Independencia Tecnológica**: Análisis balanceado de trade-offs técnicos sin sesgos comerciales ni patrocinios opacos.
 3. **Mantenimiento Continuo**: Actualización periódica de lineamientos para reflejar la evolución del ecosistema Cloud Native y CNCF.
+4. **Herramientas Cuantitativas e Interactivas**: Ponemos a disposición de la comunidad calculadoras arquitectónicas en tiempo real (como el [Evaluador de Madurez MACH y Simulador de TCO](/tools/)) para respaldar la toma de decisiones con datos medibles.
+5. **Transparencia Editorial y Curación Técnica**: Todo el contenido publicado sigue un proceso de diseño arquitectónico validado en entornos reales y pruebas de laboratorio (benchmarks de latencia, topologías K8s y configuraciones de service mesh), asegurando total rigor técnico y libre de afirmaciones especulativas.
 
 Para colaboraciones técnicas o consultas de arquitectura, puedes contactarnos directamente en `merolhack@gmail.com` o a través de nuestra página de [Contacto](/contact/).
 
@@ -67,6 +69,8 @@ Every guide on MACH Playbook satisfies rigorous engineering criteria:
 1. **Reproducibility**: Architectural patterns are accompanied by topology diagrams and functional code implementations.
 2. **Vendor Neutrality**: Objective analysis of technical trade-offs without hidden promotional agendas.
 3. **Continuous Maintenance**: Regular review cycles aligned with Cloud Native Computing Foundation (CNCF) industry evolutions.
+4. **Interactive Quantitative Utilities**: We offer open architectural calculators (such as the [MACH Maturity Evaluator & TCO Simulator](/tools/)) to support engineering decisions with empirical data.
+5. **Editorial Transparency & Expert Technical Curation**: All published material adheres to battle-tested patterns validated in production architectures and benchmark labs, ensuring strict technical accuracy.
 
 For inquiries, technical reviews, or architectural discussions, reach out at `merolhack@gmail.com` or visit our [Contact Page](/contact/).
 

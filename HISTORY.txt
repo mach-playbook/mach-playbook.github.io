@@ -300,3 +300,15 @@
   * Updated `README.md`, `AGENTS.md`, `.agents/AGENTS.md`, and skills (`add-new-post-test-deploy`, `gsc-48h-indexation-audit`) to point exclusively to `wiki/index.md`.
   * Mandated secondary model delegation hierarchy: `gemma4:cloud` first if weekly quota < 90%, falling back to local `qwen3:8b-8k` via MCP `consultar_modelo_local` (`ollama-local`).
   * Verified 100% AdSense policy compliance (13/13 PASS) and 0 duplicate articles.
+
+2026-10-08 21:55: Google AdSense Rate-Limit Cooldown Analysis, Interactive Engineering Tools Hub & E-E-A-T Reinforcement
+  * Diagnosed official AdSense Console status for `mach-playbook.github.io`: Identified attempt limit cooldown locking re-review until October 14, 2026 due to recurring "Low value content" violation.
+  * Formulated forensic postmortem on structural root causes: lack of organic traffic signals, static-only nature vs AdSense requirement for authentic interactive tools/services, scaled publishing patterns, and `.github.io` subdomain scrutiny.
+  * Created interactive engineering tools tab (`_tabs/tools.md`, `order: 5`, icon `fas fa-calculator`):
+    (1) MACH Architecture Maturity Evaluator: Quantitative 7-dimension audit (0-100 Pts), animated progress metrics, per-pillar scoring (M, A, C, H), customized technical roadmaps, and 1-click clipboard export.
+    (2) TCO, Latency & Scale Simulator: Real-time slider calculations for RPS, domain counts, and release velocity comparing Monolith vs Enterprise MACH vs Serverless Headless.
+  * Registered `tools: Herramientas / Tools` in `_data/locales/es.yml`, `_data/locales/es-ES.yml`, and `_data/locales/en.yml`.
+  * Reinforced E-E-A-T credentials and editorial transparency in `_tabs/about.md` (testing lab methodology, peer review declarations, and empirical benchmark validation).
+  * Upgraded `scripts/test-adsense-compliance.py` with Test 11 asserting interactive utility presence (100% PASS).
+  * Validated full Docker build and HTML-Proofer across 365 files and 1,542 internal links with 0 errors.
+

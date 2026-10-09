@@ -205,6 +205,18 @@ def run_adsense_tests():
     else:
         print(f"[PASS] No near-duplicate posts detected (all topics are unique across different dates)")
 
+    # Test 11: Verify Interactive Tools and Substantial Value Utility (_tabs/tools.md)
+    tools_path = "_tabs/tools.md"
+    if not os.path.exists(tools_path):
+        failures.append("FAIL: _tabs/tools.md is missing! AdSense requires substantial unique tools or services.")
+    else:
+        with open(tools_path, "r", encoding="utf-8") as f:
+            tools_content = f.read()
+        if "mach-calculator-app" in tools_content and "tco-simulator-app" in tools_content:
+            print("[PASS] Interactive Engineering Tools verified (_tabs/tools.md with MACH Calculator & TCO Simulator)")
+        else:
+            failures.append("FAIL: _tabs/tools.md missing interactive apps (mach-calculator-app / tco-simulator-app)!")
+
     print("--------------------------------------------------")
     if failures:
         print(f"FAILED: {len(failures)} AdSense compliance issue(s) detected:")

@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 icon: fas fa-shield-alt
-order: 8
+order: 9
 ---
 
 <div class="lang-block lang-es" markdown="1">
