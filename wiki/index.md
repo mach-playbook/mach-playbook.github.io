@@ -19,6 +19,7 @@ This LLM Wiki is structured according to the [Karpathy LLM Wiki Architecture](ht
 | [**adsense-policy-and-compliance.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/adsense-policy-and-compliance.md) | Complete Google AdSense integration guide, Publisher ID `ca-pub-2700240339792942`, mandatory direct `<script async>` loading requirement, postmortem of "Low-value content" rejections, and automated compliance test suite. |
 | [**publishing-pipeline-and-deduplication.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/publishing-pipeline-and-deduplication.md) | Architecture of the Autonomous Daily Blog Post Agent (`scripts/publish_daily_jekyll_post.py`), 5-pillar MACH matrix (100+ topics), smart Jaccard deduplication engine, dynamic Gemini AI topic discovery, Pillow companion WebP generation, and continuous pages deployment. |
 | [**content-and-editorial-standards.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/content-and-editorial-standards.md) | E-E-A-T editorial standards, mandatory word count (>1,000 words), YAML frontmatter schema, 7 core MACH pillars, 21 technical tags, and the Content Validation Trinity (Depth, Physical Assets, Mermaid Diagrams). |
+| [**content-syndication-and-distribution.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/content-syndication-and-distribution.md) | Multi-platform developer distribution architecture: DEV.to REST API engine (`scripts/publish_to_devto.py`), 100% canonical SEO protection, adaptive rate limit backoff (HTTP 429), 117-post historical backfill ledger (`.devto_synced.json`), daily.dev Squad (`machplaybook`) curation, Hashnode paywall postmortem, and CI/CD secret scoping. |
 | [**tools-and-operations.md**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/tools-and-operations.md) | Operational playbooks, Docker testing commands (`mach-playbook:test`), compliance test scripts (`test-adsense-compliance.py`, `check-duplicates.py`, `test-ui-components.py`, `test-bdd-specs.py`, `test-e2e-browser.py`), Google Search Console submissions log, Google Analytics 4 (GA4) setup assistant protocol, secondary model delegation (`consultar_modelo_local` via `gemma4:cloud` -> `qwen3:8b-8k`), known environment gotchas & solutions, and agent workflows. |
 | [**sources/**](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/sources/) | Directory containing raw diagnostic evidence, official AdSense notification emails (`.eml`), and compliance audit artifacts. |
 
@@ -32,8 +33,13 @@ This LLM Wiki is structured according to the [Karpathy LLM Wiki Architecture](ht
 - **Primary Language**: Spanish (`lang: es`) with native English support (`lang: en`)
 - **AdSense Publisher ID**: `ca-pub-2700240339792942`
 - **Google Analytics 4 (GA4)**: Property ID `531281877` | Measurement ID `G-98D95S3VXX` | Stream ID `14312315619`
-- **Content Inventory**: **108 deep technical guides** (34 English, 74 Spanish)
+- **Content Inventory**: **117 deep technical guides** (34 English, 83 Spanish)
+- **Multi-Platform Distribution**:
+  - **DEV.to**: 117 / 117 articles live with `<link rel="canonical">` protection (`@merolhack`)
+  - **daily.dev Squad**: Live at [https://daily.dev/squads/machplaybook](https://daily.dev/squads/machplaybook)
+- **Interactive Tools**: MACH Architecture Maturity Evaluator & TCO Simulator live at [`/tools/`](https://mach-playbook.github.io/tools/)
 - **Automated Test Pyramid**: 8 Automated Test Suites (HTML-Proofer, AdSense Policy, Duplicate Detector, Site Integrity, Topic Generator, UI Components, BDD Specs, E2E Browser)
-- **AdSense Status**: **Getting ready** (Review requested on 2026-09-17 11:16 AM; ownership verified, review active)
+- **AdSense Status**: Review limit cooldown active until **October 14, 2026** (Remediated: interactive utility hub added + external distribution live)
 - **Author**: Lenin Meza (`author: leninmeza`), Senior Solutions Architect & Enterprise Software Engineer
 - **Codebase Memory Graph**: `home-merolhack-fl-mach-playbook` (maintained via `codebase-memory-mcp`)
+

@@ -90,3 +90,15 @@ python3 scripts/publish_daily_jekyll_post.py --topic "eBPF y Cilium en Arquitect
 # Run with custom language
 python3 scripts/publish_daily_jekyll_post.py --lang en --dry-run
 ```
+
+---
+
+## 4. Post-Publishing Multi-Platform Syndication
+
+Immediately following git commit and deployment, the workflow executes automated syndication via `scripts/publish_to_devto.py`.
+- **Target Platform**: DEV.to REST API
+- **Secret Required**: `DEVTO_API_KEY` (stored in GitHub Repository Secrets)
+- **Tracking Ledger**: `.devto_synced.json`
+- **Canonical Preservation**: Injects `https://mach-playbook.github.io/posts/{slug}/` ensuring 100% SEO attribution.
+- **Reference**: See full specifications in [content-syndication-and-distribution.md](content-syndication-and-distribution.md).
+
