@@ -141,7 +141,19 @@ In accordance with the project's strict **$0 budget constraint**, programmatic H
 
 ---
 
-## 6. Verification & Monitoring Playbook
+## 6. Medium Syndication Protocol (`medium.com/p/import`)
+
+### 6.1 Workflow & Canonical Attribution
+- **Import Tool**: `https://medium.com/p/import`
+- **Mechanism**: Single-URL crawl extracting title, text, and companion images.
+- **Canonical Preservation**: Medium automatically injects canonical metadata pointing back to `https://mach-playbook.github.io/posts/{slug}/` and appends an editorial footer:
+  > *“Originally published at https://mach-playbook.github.io...”*
+- **Recommended Tagging Strategy**: Use 5 high-intent technical tags (`Kubernetes`, `Security`, `DevOps`, `Software Architecture`, `Cloud`).
+- **First Live Publication**: [Blindaje de Identidad Criptográfica en Kubernetes](https://medium.com/@merolhack/blindaje-de-identidad-criptogr%C3%A1fica-gobernanza-zero-trust-y-mtls-en-cl%C3%BAsteres-kubernetes-3fe5fbf6ca9c).
+
+---
+
+## 7. Verification & Monitoring Playbook
 
 Verify syndication health locally at any time:
 
@@ -155,3 +167,4 @@ python3 scripts/publish_to_devto.py --api-key "$DEVTO_API_KEY" --all
 # 3. Verify canonical headers on live DEV.to article
 curl -sI "https://dev.to/merolhack/blindaje-de-identidad-criptografica-gobernanza-zero-trust-y-mtls-en-clusteres-kubernetes-k53" | grep -i "canonical"
 ```
+
