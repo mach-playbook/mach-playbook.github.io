@@ -700,5 +700,11 @@
     "url": "https://dev.to/merolhack/demystifying-mach-a-beginners-guide-to-modern-architecture-25ab",
     "canonical_url": "https://mach-playbook.github.io/posts/demystifying-mach-a-beginners-guide-to-modern-architecture/",
     "synced_at": "2026-10-09T16:45:17Z"
+  },
+  "2026-10-09-change-data-capture-cdc-con-debezium-y-kafka-para-sincronizar-erps-legados-con-almacenes-de-lectura.md": {
+    "id": 4824997,
+    "url": "https://dev.to/merolhack/cdc-de-alta-resiliencia-sincronizando-erps-legados-y-almacenes-de-lectura-con-debezium-y-kafka-2j0j",
+    "canonical_url": "https://mach-playbook.github.io/posts/change-data-capture-cdc-con-debezium-y-kafka-para-sincronizar-erps-legados-con-almacenes-de-lectura/",
+    "synced_at": "2026-10-09T18:38:26Z"
   }
 }
