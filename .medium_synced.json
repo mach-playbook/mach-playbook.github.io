@@ -1,0 +1,14 @@
+{
+  "2026-10-08-gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant.md": {
+    "title": "Blindaje de Identidad Criptográfica: Gobernanza Zero Trust y mTLS en Clústeres Kubernetes Multi-Tenant de Alta Densidad",
+    "canonical_url": "https://mach-playbook.github.io/posts/gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant/",
+    "medium_url": "https://medium.com/@merolhack/blindaje-de-identidad-criptogr%C3%A1fica-gobernanza-zero-trust-y-mtls-en-cl%C3%BAsteres-kubernetes-3fe5fbf6ca9c",
+    "synced_at": "2026-10-09"
+  },
+  "2026-10-07-monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless.md": {
+    "title": "Puntos Ciegos en la Observabilidad Headless: Correlación de Telemetría RUM y Trazabilidad Distribuida de Extremo a Extremo",
+    "canonical_url": "https://mach-playbook.github.io/posts/monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless/",
+    "medium_url": "https://medium.com/@merolhack/puntos-ciegos-en-la-observabilidad-headless-correlaci%C3%B3n-de-telemetr%C3%ADa-rum-y-trazabilidad-99776a0c7625",
+    "synced_at": "2026-10-09"
+  }
+}

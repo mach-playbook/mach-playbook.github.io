@@ -141,15 +141,24 @@ In accordance with the project's strict **$0 budget constraint**, programmatic H
 
 ---
 
-## 6. Medium Syndication Protocol (`medium.com/p/import`)
+## 6. Medium Syndication & Historical Backfill Protocol (`medium.com/p/import`)
 
 ### 6.1 Workflow & Canonical Attribution
 - **Import Tool**: `https://medium.com/p/import`
 - **Mechanism**: Single-URL crawl extracting title, text, code blocks, and companion images.
 - **Canonical Preservation**: Medium automatically injects canonical metadata pointing back to `https://mach-playbook.github.io/posts/{slug}/` and appends an editorial footer:
   > *“Originally published at https://mach-playbook.github.io...”*
-- **Recommended Tagging Strategy**: Use 5 high-intent technical tags (`Kubernetes`, `Security`, `DevOps`, `Software Architecture`, `Cloud`).
-- **Published Live Post**: [Blindaje de Identidad Criptográfica en Kubernetes](https://medium.com/@merolhack/blindaje-de-identidad-criptogr%C3%A1fica-gobernanza-zero-trust-y-mtls-en-cl%C3%BAsteres-kubernetes-3fe5fbf6ca9c).
+- **Recommended Tagging Strategy**: Use 5 high-intent technical tags per story (`Kubernetes`, `Security`, `DevOps`, `Software Architecture`, `Observability`, `Performance`, etc.).
+
+### 6.2 Platform Evaluation: Make.com & Third-Party APIs
+- **Investigation in Make.com (`us2.make.com`)**: Verified the scenario builder. Make.com does NOT possess a native write/publish module for Medium because Medium officially closed and deprecated its public Integration Tokens API.
+- **Architectural Solution**: Automated Browser Agent Workflow executing the official web import protocol (`medium.com/p/import`) leveraging active authenticated session cookies.
+
+### 6.3 Historical Backfill State Ledger (`.medium_synced.json`)
+The agent maintains `.medium_synced.json` tracking every migrated article, preventing duplicates and enabling a consistent drip of 1 historical post per day:
+1. **Post 1**: [Blindaje de Identidad Criptográfica en Kubernetes](https://medium.com/@merolhack/blindaje-de-identidad-criptogr%C3%A1fica-gobernanza-zero-trust-y-mtls-en-cl%C3%BAsteres-kubernetes-3fe5fbf6ca9c).
+2. **Post 2**: [Puntos Ciegos en la Observabilidad Headless: Telemetría RUM y Trazabilidad](https://medium.com/@merolhack/puntos-ciegos-en-la-observabilidad-headless-correlaci%C3%B3n-de-telemetr%C3%ADa-rum-y-trazabilidad-99776a0c7625).
+
 
 ---
 

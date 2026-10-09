@@ -19,5 +19,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-07-monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless.md": {
+    "title": "Puntos Ciegos en la Observabilidad Headless: Correlación de Telemetría RUM y Trazabilidad Distribuida de Extremo a Extremo",
+    "url": "https://mach-playbook.github.io/posts/monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless/",
+    "scheduled_at": "2026-10-09 19:33:00 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ac9416cb07d37ac974ca2b8",
+        "dueAt": "2026-10-14T15:49:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ac9416ced92ed8fa5a6cabb",
+        "dueAt": "2026-10-14T04:18:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
