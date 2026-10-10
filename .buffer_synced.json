@@ -40,5 +40,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-10-composable-b2b-commerce-reglas-complejas-de-precios-y-cuentas-corporativas.md": {
+    "title": "Jerarquías Corporativas Multi-Nivel y Motores de Precios Dinámicos en Composable B2B: Arquitectura de Baja Latencia y Cero Bloqueos",
+    "url": "https://mach-playbook.github.io/posts/composable-b2b-commerce-reglas-complejas-de-precios-y-cuentas-corporativas/",
+    "scheduled_at": "2026-10-10 17:37:04 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6aca77c0ed92ed8fa5d8794f",
+        "dueAt": "2026-10-15T15:32:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6aca77c0f91f772d45a0065d",
+        "dueAt": "2026-10-14T23:33:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
