@@ -706,5 +706,11 @@
     "url": "https://dev.to/merolhack/cdc-de-alta-resiliencia-sincronizando-erps-legados-y-almacenes-de-lectura-con-debezium-y-kafka-2j0j",
     "canonical_url": "https://mach-playbook.github.io/posts/change-data-capture-cdc-con-debezium-y-kafka-para-sincronizar-erps-legados-con-almacenes-de-lectura/",
     "synced_at": "2026-10-09T18:38:26Z"
+  },
+  "2026-10-10-composable-b2b-commerce-reglas-complejas-de-precios-y-cuentas-corporativas.md": {
+    "id": 4829585,
+    "url": "https://dev.to/merolhack/jerarquias-corporativas-multi-nivel-y-motores-de-precios-dinamicos-en-composable-b2b-arquitectura-3b2h",
+    "canonical_url": "https://mach-playbook.github.io/posts/composable-b2b-commerce-reglas-complejas-de-precios-y-cuentas-corporativas/",
+    "synced_at": "2026-10-10T17:36:58Z"
   }
 }
