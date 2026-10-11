@@ -61,5 +61,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-11-calculo-del-costo-unitario-por-llamada-api-y-por-pedido-en-arquitecturas-headless.md": {
+    "title": "Anatomía del Costo Oculto: Atribución FinOps por Transacción en Plataformas Headless Multi-Vendor",
+    "url": "https://mach-playbook.github.io/posts/calculo-del-costo-unitario-por-llamada-api-y-por-pedido-en-arquitecturas-headless/",
+    "scheduled_at": "2026-10-11 17:53:59 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6acbcd36fa026cfb810dca85",
+        "dueAt": "2026-10-16T15:52:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6acbcd37a9411fbcc553eac6",
+        "dueAt": "2026-10-15T21:16:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
