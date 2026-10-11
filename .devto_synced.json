@@ -712,5 +712,11 @@
     "url": "https://dev.to/merolhack/jerarquias-corporativas-multi-nivel-y-motores-de-precios-dinamicos-en-composable-b2b-arquitectura-3b2h",
     "canonical_url": "https://mach-playbook.github.io/posts/composable-b2b-commerce-reglas-complejas-de-precios-y-cuentas-corporativas/",
     "synced_at": "2026-10-10T17:36:58Z"
+  },
+  "2026-10-11-calculo-del-costo-unitario-por-llamada-api-y-por-pedido-en-arquitecturas-headless.md": {
+    "id": 4833914,
+    "url": "https://dev.to/merolhack/anatomia-del-costo-oculto-atribucion-finops-por-transaccion-en-plataformas-headless-multi-vendor-3amj",
+    "canonical_url": "https://mach-playbook.github.io/posts/calculo-del-costo-unitario-por-llamada-api-y-por-pedido-en-arquitecturas-headless/",
+    "synced_at": "2026-10-11T17:53:53Z"
   }
 }
