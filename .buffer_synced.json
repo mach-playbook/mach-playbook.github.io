@@ -82,5 +82,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-12-estrategias-de-read-your-own-writes-ryow-en-frontends-headless-con-consistencia-eventual.md": {
+    "title": "Más allá del Optimistic UI: Arquitectura de Consistencia Causal para Sistemas Headless de Alta Disponibilidad",
+    "url": "https://mach-playbook.github.io/posts/estrategias-de-read-your-own-writes-ryow-en-frontends-headless-con-consistencia-eventual/",
+    "scheduled_at": "2026-10-12 21:37:33 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6acd531c9f22b96ae7e35beb",
+        "dueAt": "2026-10-19T15:34:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6acd531daec88be081e43851",
+        "dueAt": "2026-10-16T20:36:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
