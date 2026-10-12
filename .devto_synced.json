@@ -718,5 +718,11 @@
     "url": "https://dev.to/merolhack/anatomia-del-costo-oculto-atribucion-finops-por-transaccion-en-plataformas-headless-multi-vendor-3amj",
     "canonical_url": "https://mach-playbook.github.io/posts/calculo-del-costo-unitario-por-llamada-api-y-por-pedido-en-arquitecturas-headless/",
     "synced_at": "2026-10-11T17:53:53Z"
+  },
+  "2026-10-12-estrategias-de-read-your-own-writes-ryow-en-frontends-headless-con-consistencia-eventual.md": {
+    "id": 4840305,
+    "url": "https://dev.to/merolhack/mas-alla-del-optimistic-ui-arquitectura-de-consistencia-causal-para-sistemas-headless-de-alta-10ll",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-read-your-own-writes-ryow-en-frontends-headless-con-consistencia-eventual/",
+    "synced_at": "2026-10-12T21:37:28Z"
   }
 }
