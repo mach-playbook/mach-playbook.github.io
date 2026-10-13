@@ -103,5 +103,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-13-internacionalizacion-dinamica-y-localizacion-geo-distribuida-en-frontends-composable.md": {
+    "title": "Latencia de Borde y Consistencia de Localización: Resolviendo el Cuello de Botella de i18n en Arquitecturas Composable Globales",
+    "url": "https://mach-playbook.github.io/posts/internacionalizacion-dinamica-y-localizacion-geo-distribuida-en-frontends-composable/",
+    "scheduled_at": "2026-10-13 19:43:37 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ace89e99abb1755a4731704",
+        "dueAt": "2026-10-20T15:05:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ace89e91bdf729a2aa9e9c8",
+        "dueAt": "2026-10-17T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
