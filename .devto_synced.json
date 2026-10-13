@@ -724,5 +724,11 @@
     "url": "https://dev.to/merolhack/mas-alla-del-optimistic-ui-arquitectura-de-consistencia-causal-para-sistemas-headless-de-alta-10ll",
     "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-read-your-own-writes-ryow-en-frontends-headless-con-consistencia-eventual/",
     "synced_at": "2026-10-12T21:37:28Z"
+  },
+  "2026-10-13-internacionalizacion-dinamica-y-localizacion-geo-distribuida-en-frontends-composable.md": {
+    "id": 4846308,
+    "url": "https://dev.to/merolhack/latencia-de-borde-y-consistencia-de-localizacion-resolviendo-el-cuello-de-botella-de-i18n-en-2cli",
+    "canonical_url": "https://mach-playbook.github.io/posts/internacionalizacion-dinamica-y-localizacion-geo-distribuida-en-frontends-composable/",
+    "synced_at": "2026-10-13T19:43:32Z"
   }
 }
