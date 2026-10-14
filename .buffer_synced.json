@@ -124,5 +124,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-14-astro-y-edge-islands-para-sitios-de-comercio-electronico-de-maximo-rendimiento.md": {
+    "title": "Eliminando la Hidratación Masiva: Astro, Edge Islands y Zero-JS en E-Commerce Enterprise",
+    "url": "https://mach-playbook.github.io/posts/astro-y-edge-islands-para-sitios-de-comercio-electronico-de-maximo-rendimiento/",
+    "scheduled_at": "2026-10-14 17:51:30 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6acfc121c3d6c8430113c331",
+        "dueAt": "2026-10-21T15:49:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6acfc1222397c8676abbb1f8",
+        "dueAt": "2026-10-21T04:18:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
