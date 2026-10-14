@@ -730,5 +730,11 @@
     "url": "https://dev.to/merolhack/latencia-de-borde-y-consistencia-de-localizacion-resolviendo-el-cuello-de-botella-de-i18n-en-2cli",
     "canonical_url": "https://mach-playbook.github.io/posts/internacionalizacion-dinamica-y-localizacion-geo-distribuida-en-frontends-composable/",
     "synced_at": "2026-10-13T19:43:32Z"
+  },
+  "2026-10-14-astro-y-edge-islands-para-sitios-de-comercio-electronico-de-maximo-rendimiento.md": {
+    "id": 4851823,
+    "url": "https://dev.to/merolhack/eliminando-la-hidratacion-masiva-astro-edge-islands-y-zero-js-en-e-commerce-enterprise-1omo",
+    "canonical_url": "https://mach-playbook.github.io/posts/astro-y-edge-islands-para-sitios-de-comercio-electronico-de-maximo-rendimiento/",
+    "synced_at": "2026-10-14T17:51:24Z"
   }
 }
