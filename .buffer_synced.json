@@ -145,5 +145,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-15-traduccion-y-mediacion-de-protocolos-en-edge-gateways-http3-websockets-sse.md": {
+    "title": "Mediación de Protocolos en Edge Gateways: Degradación de HTTP/3 a WebSockets y SSE bajo Alta Concurrencia",
+    "url": "https://mach-playbook.github.io/posts/traduccion-y-mediacion-de-protocolos-en-edge-gateways-http3-websockets-sse/",
+    "scheduled_at": "2026-10-15 17:43:04 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad110a8dd8e15df34b20bd4",
+        "dueAt": "2026-10-22T15:32:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad110a84fdae32ad3950cb9",
+        "dueAt": "2026-10-21T23:33:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
