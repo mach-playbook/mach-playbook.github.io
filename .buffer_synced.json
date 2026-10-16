@@ -166,5 +166,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-16-gobernanza-de-apis-pruebas-de-contrato-automatizadas-con-pact-en-pipelines-cicd.md": {
+    "title": "Rotura Silenciosa en Producción: Mitigación de Despliegues Acoplados mediante Pruebas de Contrato con Pact y Can Broker",
+    "url": "https://mach-playbook.github.io/posts/gobernanza-de-apis-pruebas-de-contrato-automatizadas-con-pact-en-pipelines-cicd/",
+    "scheduled_at": "2026-10-16 17:14:07 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad25b5f507d75c0467a6597",
+        "dueAt": "2026-10-23T15:52:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad25b5fba438821ac2cbfe0",
+        "dueAt": "2026-10-22T21:16:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
