@@ -742,5 +742,11 @@
     "url": "https://dev.to/merolhack/mediacion-de-protocolos-en-edge-gateways-degradacion-de-http3-a-websockets-y-sse-bajo-alta-4jfo",
     "canonical_url": "https://mach-playbook.github.io/posts/traduccion-y-mediacion-de-protocolos-en-edge-gateways-http3-websockets-sse/",
     "synced_at": "2026-10-15T17:42:58Z"
+  },
+  "2026-10-16-gobernanza-de-apis-pruebas-de-contrato-automatizadas-con-pact-en-pipelines-cicd.md": {
+    "id": 4863682,
+    "url": "https://dev.to/merolhack/rotura-silenciosa-en-produccion-mitigacion-de-despliegues-acoplados-mediante-pruebas-de-contrato-16ik",
+    "canonical_url": "https://mach-playbook.github.io/posts/gobernanza-de-apis-pruebas-de-contrato-automatizadas-con-pact-en-pipelines-cicd/",
+    "synced_at": "2026-10-16T17:14:02Z"
   }
 }
