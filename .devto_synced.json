@@ -748,5 +748,11 @@
     "url": "https://dev.to/merolhack/rotura-silenciosa-en-produccion-mitigacion-de-despliegues-acoplados-mediante-pruebas-de-contrato-16ik",
     "canonical_url": "https://mach-playbook.github.io/posts/gobernanza-de-apis-pruebas-de-contrato-automatizadas-con-pact-en-pipelines-cicd/",
     "synced_at": "2026-10-16T17:14:02Z"
+  },
+  "2026-10-17-propagacion-de-contexto-w3c-tracecontext-a-traves-de-redes-multi-vendor-y-protocolos-hibridos.md": {
+    "id": 4868227,
+    "url": "https://dev.to/merolhack/ruptura-de-trazabilidad-en-ecosistemas-heterogeneos-implementando-w3c-tracecontext-a-traves-de-5fne",
+    "canonical_url": "https://mach-playbook.github.io/posts/propagacion-de-contexto-w3c-tracecontext-a-traves-de-redes-multi-vendor-y-protocolos-hibridos/",
+    "synced_at": "2026-10-17T16:06:25Z"
   }
 }
