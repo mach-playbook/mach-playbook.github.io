@@ -187,5 +187,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-17-propagacion-de-contexto-w3c-tracecontext-a-traves-de-redes-multi-vendor-y-protocolos-hibridos.md": {
+    "title": "Ruptura de Trazabilidad en Ecosistemas Heterogéneos: Implementando W3C TraceContext a través de HTTP, gRPC, Kafka y Pasarelas SaaS Cerradas",
+    "url": "https://mach-playbook.github.io/posts/propagacion-de-contexto-w3c-tracecontext-a-traves-de-redes-multi-vendor-y-protocolos-hibridos/",
+    "scheduled_at": "2026-10-17 16:06:30 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad39d06938409f1d09321d7",
+        "dueAt": "2026-10-26T15:34:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad39d06ae173d6e00c422df",
+        "dueAt": "2026-10-23T20:36:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
