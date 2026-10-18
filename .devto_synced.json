@@ -754,5 +754,11 @@
     "url": "https://dev.to/merolhack/ruptura-de-trazabilidad-en-ecosistemas-heterogeneos-implementando-w3c-tracecontext-a-traves-de-5fne",
     "canonical_url": "https://mach-playbook.github.io/posts/propagacion-de-contexto-w3c-tracecontext-a-traves-de-redes-multi-vendor-y-protocolos-hibridos/",
     "synced_at": "2026-10-17T16:06:25Z"
+  },
+  "2026-10-18-diseno-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-sin-degradar-rendimiento.md": {
+    "id": 4872910,
+    "url": "https://dev.to/merolhack/ingesta-masiva-sin-oomkilled-arquitectura-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-336a",
+    "canonical_url": "https://mach-playbook.github.io/posts/diseno-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-sin-degradar-rendimiento/",
+    "synced_at": "2026-10-18T16:20:39Z"
   }
 }
