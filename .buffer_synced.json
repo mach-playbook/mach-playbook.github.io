@@ -208,5 +208,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-18-diseno-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-sin-degradar-rendimiento.md": {
+    "title": "Ingesta Masiva sin OOMKilled: Arquitectura de Métricas de Alta Cardinalidad con Prometheus y M3DB",
+    "url": "https://mach-playbook.github.io/posts/diseno-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-sin-degradar-rendimiento/",
+    "scheduled_at": "2026-10-18 16:20:44 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad4f1dcae173d6e000c974b",
+        "dueAt": "2026-10-27T15:05:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad4f1dc769b457934ce942a",
+        "dueAt": "2026-10-24T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
