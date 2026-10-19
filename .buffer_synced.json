@@ -229,5 +229,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-19-optimizacion-de-imagenes-responsive-al-vuelo-con-cloudflare-images-y-nextimage.md": {
+    "title": "Descargando la CPU del SSR: Optimización de Imágenes al Vuelo con Cloudflare Images y Next.js a Escala Enterprise",
+    "url": "https://mach-playbook.github.io/posts/optimizacion-de-imagenes-responsive-al-vuelo-con-cloudflare-images-y-nextimage/",
+    "scheduled_at": "2026-10-19 18:58:57 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad66871055abbe925e142fa",
+        "dueAt": "2026-10-28T15:49:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad6687137a3bee8ce016d3f",
+        "dueAt": "2026-10-28T04:18:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
