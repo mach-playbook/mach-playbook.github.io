@@ -760,5 +760,11 @@
     "url": "https://dev.to/merolhack/ingesta-masiva-sin-oomkilled-arquitectura-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-336a",
     "canonical_url": "https://mach-playbook.github.io/posts/diseno-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-sin-degradar-rendimiento/",
     "synced_at": "2026-10-18T16:20:39Z"
+  },
+  "2026-10-19-optimizacion-de-imagenes-responsive-al-vuelo-con-cloudflare-images-y-nextimage.md": {
+    "id": 4879332,
+    "url": "https://dev.to/merolhack/descargando-la-cpu-del-ssr-optimizacion-de-imagenes-al-vuelo-con-cloudflare-images-y-nextjs-a-i2i",
+    "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-de-imagenes-responsive-al-vuelo-con-cloudflare-images-y-nextimage/",
+    "synced_at": "2026-10-19T18:58:51Z"
   }
 }
