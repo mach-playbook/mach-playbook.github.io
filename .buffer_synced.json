@@ -250,5 +250,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-20-optimizacion-de-costos-de-transferencia-de-datos-egress-network-entre-gcp-aws-y-azure.md": {
+    "title": "La Hemorragia Silenciosa del Egress: Ingeniería de Tráfico y Unit Economics en Arquitecturas Multi-Cloud",
+    "url": "https://mach-playbook.github.io/posts/optimizacion-de-costos-de-transferencia-de-datos-egress-network-entre-gcp-aws-y-azure/",
+    "scheduled_at": "2026-10-20 17:45:05 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad7a8a104c3c5310c47217d",
+        "dueAt": "2026-10-29T15:32:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad7a8a158633da513885dab",
+        "dueAt": "2026-10-28T23:33:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
