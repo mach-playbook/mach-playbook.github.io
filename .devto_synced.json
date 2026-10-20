@@ -766,5 +766,11 @@
     "url": "https://dev.to/merolhack/descargando-la-cpu-del-ssr-optimizacion-de-imagenes-al-vuelo-con-cloudflare-images-y-nextjs-a-i2i",
     "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-de-imagenes-responsive-al-vuelo-con-cloudflare-images-y-nextimage/",
     "synced_at": "2026-10-19T18:58:51Z"
+  },
+  "2026-10-20-optimizacion-de-costos-de-transferencia-de-datos-egress-network-entre-gcp-aws-y-azure.md": {
+    "id": 4884752,
+    "url": "https://dev.to/merolhack/la-hemorragia-silenciosa-del-egress-ingenieria-de-trafico-y-unit-economics-en-arquitecturas-14a7",
+    "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-de-costos-de-transferencia-de-datos-egress-network-entre-gcp-aws-y-azure/",
+    "synced_at": "2026-10-20T17:45:00Z"
   }
 }
