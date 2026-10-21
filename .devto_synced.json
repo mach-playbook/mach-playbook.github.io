@@ -772,5 +772,11 @@
     "url": "https://dev.to/merolhack/la-hemorragia-silenciosa-del-egress-ingenieria-de-trafico-y-unit-economics-en-arquitecturas-14a7",
     "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-de-costos-de-transferencia-de-datos-egress-network-entre-gcp-aws-y-azure/",
     "synced_at": "2026-10-20T17:45:00Z"
+  },
+  "2026-10-21-pricing-dinamico-en-el-edge-con-inferencia-de-modelos-ligeros-sin-afectar-la-latencia-p99.md": {
+    "id": 4891171,
+    "url": "https://dev.to/merolhack/inferencia-de-precios-dinamicos-en-el-edge-optimizando-el-p99-mediante-webassembly-y-modelos-517n",
+    "canonical_url": "https://mach-playbook.github.io/posts/pricing-dinamico-en-el-edge-con-inferencia-de-modelos-ligeros-sin-afectar-la-latencia-p99/",
+    "synced_at": "2026-10-21T17:51:15Z"
   }
 }
