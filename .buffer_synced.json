@@ -271,5 +271,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-21-pricing-dinamico-en-el-edge-con-inferencia-de-modelos-ligeros-sin-afectar-la-latencia-p99.md": {
+    "title": "Inferencia de Precios Dinámicos en el Edge: Optimizando el p99 mediante WebAssembly y Modelos Cuantizados en Arquitecturas Composable",
+    "url": "https://mach-playbook.github.io/posts/pricing-dinamico-en-el-edge-con-inferencia-de-modelos-ligeros-sin-afectar-la-latencia-p99/",
+    "scheduled_at": "2026-10-21 17:51:21 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ad8fb99cb531f410844bd30",
+        "dueAt": "2026-10-30T15:52:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ad8fb99cb531f410844bd6c",
+        "dueAt": "2026-10-29T21:16:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
