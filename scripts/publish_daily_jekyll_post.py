@@ -30,16 +30,15 @@ from typing import Dict, List, Optional, Tuple
 
 # Supported Gemini text generation models in prioritized order (latest 2026 fleet first)
 DEFAULT_MODELS = [
+    "gemini-3.8-flash",
     "gemini-3.7-flash",
-    "gemini-3.6-flash",
     "gemini-3.5-flash",
     "gemini-3.5-flash-lite",
-    "gemini-3.1-flash-lite",
     "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-2.5-flash-lite",
     "gemini-3.1-pro",
-    "gemini-pro-latest",
-    "gemini-2.5-flash",
-    "gemini-2.5-pro"
+    "gemini-pro-latest"
 ]
 
 # 8 Enterprise Pillars of MACH Playbook Topic Matrix - Expanded to 200+ Topics
@@ -630,19 +629,27 @@ def get_available_gemini_models(api_key: str) -> List[str]:
                     name = m.get("name", "")
                     if "generateContent" in methods and name.startswith("models/"):
                         model_id = name.replace("models/", "")
+                        m_low = model_id.lower()
+                        # Exclude non-text, audio, tts, embedding, image, or deprecated models
+                        if any(bad in m_low for bad in ["-tts", "-audio", "-image", "embed", "vision", "realtime"]):
+                            continue
+                        if m_low in ["gemini-2.5-flash", "gemini-2.5-pro"]:
+                            continue
                         discovered.append(model_id)
 
                 if discovered:
                     def model_priority(m: str) -> int:
                         m_low = m.lower()
-                        # Flash models (fastest, cheapest, highest availability)
-                        if "flash" in m_low and "lite" not in m_low and "8b" not in m_low:
+                        # Modern Flash models (fastest, cheapest, highest availability)
+                        if "3.8-flash" in m_low or "3.7-flash" in m_low:
                             return 1
-                        elif "flash" in m_low:
+                        elif "flash-lite" in m_low:
                             return 2
-                        elif "pro" in m_low:
+                        elif "flash" in m_low:
                             return 3
-                        return 4
+                        elif "pro" in m_low:
+                            return 4
+                        return 5
 
                     sorted_models = sorted(discovered, key=model_priority)
                     print(f" Dynamically discovered {len(sorted_models)} active Gemini models (top: {', '.join(sorted_models[:4])})")
@@ -711,9 +718,9 @@ def call_gemini_api(api_key: str, system_prompt: str, user_prompt: str, preferre
                 print(f" Model {model} returned HTTP {e.code}: {err_body}")
                 last_error = f"HTTP {e.code} ({model}): {err_body}"
                 
-                # If 404 (Model not found/deprecated), break retry loop immediately and try next model
-                if e.code == 404:
-                    print(f" Model {model} is not supported or deprecated. Advancing immediately to next fallback model...")
+                # If 404 (Model not found/deprecated) or 400 (Invalid argument/unsupported modality), break retry loop immediately
+                if e.code in [400, 404]:
+                    print(f" Model {model} returned HTTP {e.code} (unsupported/deprecated/invalid modality). Advancing immediately to next fallback model...")
                     break
                 
                 # If 429 (Rate limit / Quota)
@@ -1090,8 +1097,15 @@ image:
 """
         content = front_matter + content
     else:
-        # Ensure image path is present
-        if "image:" not in content and "path:" not in content:
+        # Enforce canonical image path in front matter to prevent LLM hallucination typos
+        if re.search(r"^image:\s*\n(?:\s+path:\s*.*)", content, re.MULTILINE):
+            content = re.sub(
+                r"^image:\s*\n\s+path:\s*.*",
+                f"image:\n  path: /assets/img/posts/{slug}.png",
+                content,
+                flags=re.MULTILINE
+            )
+        elif "image:" not in content:
             content = content.replace("---", f"""---
 image:
   path: /assets/img/posts/{slug}.png""", 1)
@@ -1113,6 +1127,78 @@ lang: {lang}""", 1)
     return content
 
 
+def submit_post_to_bing(
+    post_url: str,
+    site_url: str = "https://mach-playbook.github.io/",
+    api_key: Optional[str] = None
+) -> bool:
+    """
+    Submits the published article URL to Bing Webmaster Tools API (SubmitUrlBatch)
+    for immediate priority crawling by Bingbot and ingestion into Microsoft Copilot.
+    """
+    resolved_api_key = api_key or os.getenv("BING_WEBMASTER_API_KEY")
+    if not resolved_api_key:
+        # Fallback check in local .env
+        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+        if os.path.exists(env_path):
+            try:
+                with open(env_path, "r", encoding="utf-8") as f:
+                    for line in f:
+                        if line.strip().startswith("BING_WEBMASTER_API_KEY="):
+                            resolved_api_key = line.strip().split("=", 1)[1].strip().strip("'\"")
+                            break
+            except Exception:
+                pass
+
+    if not resolved_api_key:
+        print("[Bing Indexation] ℹ️ BING_WEBMASTER_API_KEY is not configured; skipping instant indexing on Bing.")
+        return False
+
+    endpoint = f"https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey={resolved_api_key}"
+    payload = {
+        "siteUrl": site_url.rstrip("/") + "/",
+        "urlList": [post_url]
+    }
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 MACHPlaybookBot/1.0",
+        "Content-Type": "application/json; charset=utf-8"
+    }
+
+    try:
+        print(f"[Bing Indexation] 🚀 Notifying new post to Bing Webmaster Tools API...")
+        print(f"  * URL submitted: {post_url}")
+        print(f"  * Site URL: {site_url}")
+
+        status_code = None
+        resp_text = ""
+
+        try:
+            import requests
+            resp = requests.post(endpoint, json=payload, headers=headers, timeout=20)
+            status_code = resp.status_code
+            resp_text = resp.text
+        except ImportError:
+            data_bytes = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(endpoint, data=data_bytes, headers=headers, method="POST")
+            try:
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    status_code = resp.status
+                    resp_text = resp.read().decode("utf-8", errors="replace")
+            except urllib.error.HTTPError as he:
+                status_code = he.code
+                resp_text = he.read().decode("utf-8", errors="replace")
+
+        if status_code == 200:
+            print(f"[Bing Indexation] ✅ Success! Post submitted to Bingbot and Microsoft Copilot for priority indexing.")
+            return True
+        else:
+            print(f"[Bing Indexation] ⚠️ Warning: Bing API returned HTTP {status_code}: {resp_text}")
+            return False
+    except Exception as e:
+        print(f"[Bing Indexation] ⚠️ Error communicating with Bing Webmaster API: {e}")
+        return False
+
+
 def main():
     parser = argparse.ArgumentParser(description="Publish daily autonomous technical blog post and cover image to Jekyll with Gemini AI.")
     parser.add_argument("--dry-run", action="store_true", help="Generate post in memory and validate without writing to disk.")
@@ -1121,7 +1207,17 @@ def main():
     parser.add_argument("--model", type=str, default=None, help="Specific Gemini model to prioritize.")
     parser.add_argument("--date", type=str, default=None, help="Custom publication date (YYYY-MM-DD).")
     parser.add_argument("--api-key", type=str, default=None, help="Gemini API Key override.")
+    parser.add_argument("--bing-api-key", type=str, default=None, help="Bing Webmaster API Key override.")
+    parser.add_argument("--submit-url", type=str, default=None, help="Submit a specific URL directly to Bing Webmaster Tools API.")
     args = parser.parse_args()
+
+    # Optional standalone URL submission mode
+    if args.submit_url:
+        print("==================================================")
+        print("   BING WEBMASTER TOOLS - URL SUBMISSION         ")
+        print("==================================================")
+        success = submit_post_to_bing(args.submit_url, api_key=args.bing_api_key)
+        sys.exit(0 if success else 1)
 
     print("==================================================")
     print("   MACH PLAYBOOK - AUTONOMOUS DAILY POST AGENT   ")
@@ -1198,10 +1294,16 @@ def main():
         print("\n".join(preview_lines))
         print("--- [END DRY RUN PREVIEW] ---\n")
         print("✔ Dry-run completed successfully. No files written to disk.")
+        post_url = f"https://mach-playbook.github.io/posts/{clean_slug}/"
+        print(f"[Bing Indexation] ℹ️ Dry-run mode: Omitting actual Bing API submission for '{post_url}'.")
     else:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(post_content)
         print(f" Successfully written post to: {filepath}")
+
+        # 10. Instant Indexation via Bing Webmaster Tools API
+        post_url = f"https://mach-playbook.github.io/posts/{clean_slug}/"
+        submit_post_to_bing(post_url=post_url, site_url="https://mach-playbook.github.io/", api_key=args.bing_api_key)
 
     print("==================================================")
     print("   WORKFLOW EXECUTION FINISHED SUCCESSFULLY      ")

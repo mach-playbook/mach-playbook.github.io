@@ -89,6 +89,9 @@ python3 scripts/publish_daily_jekyll_post.py --topic "eBPF y Cilium en Arquitect
 
 # Run with custom language
 python3 scripts/publish_daily_jekyll_post.py --lang en --dry-run
+
+# Standalone submission of any existing URL directly to Bing Webmaster Tools API
+python3 scripts/publish_daily_jekyll_post.py --submit-url "https://mach-playbook.github.io/posts/welcome-to-mach/"
 ```
 
 ---
@@ -101,4 +104,46 @@ Immediately following git commit and deployment, the workflow executes automated
 - **Tracking Ledger**: `.devto_synced.json`
 - **Canonical Preservation**: Injects `https://mach-playbook.github.io/posts/{slug}/` ensuring 100% SEO attribution.
 - **Reference**: See full specifications in [content-syndication-and-distribution.md](content-syndication-and-distribution.md).
+
+---
+
+## 5. Instant Indexation Engine (Bing Webmaster Tools & Microsoft Copilot)
+
+Whenever a new technical guide is generated and saved to `_posts/`, `scripts/publish_daily_jekyll_post.py` immediately notifies the Bing Webmaster Tools REST API via `submit_post_to_bing()` for priority indexation by Bingbot and immediate grounding into Microsoft Copilot:
+
+```mermaid
+flowchart LR
+    Publisher["publish_daily_jekyll_post.py"] -->|Write File| PostDisk["_posts/YYYY-MM-DD-slug.md"]
+    Publisher -->|submit_post_to_bing| BingAPI["Bing Webmaster SubmitUrlBatch API"]
+    BingAPI --> Bingbot["Bingbot Priority Crawler"]
+    BingAPI --> Copilot["Microsoft Copilot Grounding Index"]
+```
+
+### 5.1 Endpoint & Authentication
+- **Endpoint**: `POST https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey={BING_WEBMASTER_API_KEY}`
+- **Authentication**: Query parameter `apikey` resolved from environment variable `BING_WEBMASTER_API_KEY` (or local `.env` fallback, or `--bing-api-key` CLI override).
+- **Headers**:
+  ```json
+  {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 MACHPlaybookBot/1.0",
+    "Content-Type": "application/json; charset=utf-8"
+  }
+  ```
+
+### 5.2 Payload Structure
+```json
+{
+  "siteUrl": "https://mach-playbook.github.io/",
+  "urlList": [
+    "https://mach-playbook.github.io/posts/change-data-capture-cdc-con-debezium-y-kafka-para-sincronizar-erps-legados-con-almacenes-de-lectura/"
+  ]
+}
+```
+
+### 5.3 Resilience & Fault Isolation
+1. **Non-Blocking Operation**: Network timeouts, quota limits, or API outages emit explicit warnings (`⚠️ Warning: Bing API returned HTTP {status_code}`) without terminating or failing the publication pipeline.
+2. **Missing Key Gracefulness**: If `BING_WEBMASTER_API_KEY` is not configured, the script logs an informational notice (`ℹ️ BING_WEBMASTER_API_KEY is not configured; skipping instant indexing on Bing`) and exits cleanly.
+3. **Dry-Run Mode Safety**: In `--dry-run` executions, actual network submission is bypassed and logged as preview.
+4. **CI/CD Secret Injection**: The repository secret `BING_WEBMASTER_API_KEY` is injected directly into `.github/workflows/daily-blog-post.yml` under the `Run Autonomous Daily Post Agent` step.
+
 

@@ -7,7 +7,7 @@ lang: es
 categories: [Seguridad Enterprise, Composable Commerce]
 tags: [mach, cloudflare-turnstile, zero-trust, cdn-edge, security, performance]
 image:
-  path: /assets/img/posts/2026-10-22-deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnestile.png
+  path: /assets/img/posts/2026-10-22-deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile.png
 ---
 
 Durante el último evento de alta demanda estacional, nuestra plataforma de comercio electrónico basada en MACH experimentó una saturación sutil pero devastadora: los microservicios de inventario y autenticación colapsaron, no por tráfico legítimo de usuarios, sino por un enjambre distribuido de agentes maliciosos que eludieron las reglas tradicionales de WAF basadas en huellas dactilares IP y firmas estáticas. Al separar el frontend (ejecutándose en Vercel Edge con Next.js) del backend agnóstico a través de una API Gateway GraphQL, dejamos expuestas las mutaciones críticas—como `executeCheckout`, `mutation.signIn` y `mutation.reserveInventory`—a solicitudes HTTP automatizadas originadas desde redes residenciales rotativas. Las herramientas tradicionales de mitigación basadas en JavaScript intrusivo o CAPTCHAs visuales destruyeron las métricas de Core Web Vitals (aumentando el TBT en 450ms) y degradaron la conversión móvil en un 18%. El desafío de Día 2 no era simplemente bloquear bots, sino hacerlo de manera invisible en una arquitectura desacoplada donde el origen no confía en el cliente y el borde debe decidir la validación de identidad sin penalizar el rendimiento del usuario real.

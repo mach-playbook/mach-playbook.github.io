@@ -60,6 +60,7 @@ jobs:
       - name: Run Autonomous Daily Post Agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
         run: |
           EXTRA_ARGS=""
           

@@ -5,6 +5,20 @@
 
 ---
 
+## [2026-10-09] feat | Autonomous Daily Post Instant Indexation via Bing Webmaster Tools & Microsoft Copilot API
+
+- **Impacted Files**: `scripts/publish_daily_jekyll_post.py`, `.github/workflows/daily-blog-post.yml`, `wiki/publishing-pipeline-and-deduplication.md`, `wiki/content-syndication-and-distribution.md`, `wiki/index.md`, `wiki/log.md`
+- **Summary**:
+  - Analyzed and adapted the Bing Webmaster Tools instant indexation architecture from the Freelance México project (`freelancemexico/wiki/blog-automation.md`).
+  - Extended `scripts/publish_daily_jekyll_post.py` with `submit_post_to_bing(post_url, site_url, api_key)` calling the `SubmitUrlBatch` endpoint (`POST https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey={api_key}`).
+  - Configured canonical post URL resolution (`https://mach-playbook.github.io/posts/{clean_slug}/`) matching Jekyll Chirpy `:title` permalinks.
+  - Built resilient fault tolerance: non-blocking execution, HTTP timeout handling (20s), graceful handling of missing keys, and `--dry-run` safety.
+  - Added CLI testing capabilities: `--bing-api-key` override and `--submit-url` for on-demand standalone URL submission.
+  - Injected GitHub repository secret `BING_WEBMASTER_API_KEY` into the CI/CD pipeline in `.github/workflows/daily-blog-post.yml` under the `Run Autonomous Daily Post Agent` step.
+  - Modularly updated and cross-linked LLM Wiki pages following Karpathy architecture standards (`publishing-pipeline-and-deduplication.md`, `content-syndication-and-distribution.md`, `index.md`, `log.md`).
+
+---
+
 ## [2026-10-09] feat | Multi-Platform Content Syndication & Social Amplification (DEV.to, Medium, LinkedIn, X & Buffer)
 
 - **Impacted Files**: `scripts/publish_to_devto.py`, `.devto_synced.json`, `.github/workflows/daily-blog-post.yml`, `wiki/content-syndication-and-distribution.md`, `wiki/publishing-pipeline-and-deduplication.md`, `wiki/index.md`, `wiki/log.md`
