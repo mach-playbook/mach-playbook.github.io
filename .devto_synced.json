@@ -778,5 +778,11 @@
     "url": "https://dev.to/merolhack/inferencia-de-precios-dinamicos-en-el-edge-optimizando-el-p99-mediante-webassembly-y-modelos-517n",
     "canonical_url": "https://mach-playbook.github.io/posts/pricing-dinamico-en-el-edge-con-inferencia-de-modelos-ligeros-sin-afectar-la-latencia-p99/",
     "synced_at": "2026-10-21T17:51:15Z"
+  },
+  "2026-10-22-deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile.md": {
+    "id": 4899002,
+    "url": "https://dev.to/merolhack/mitigacion-de-denegacion-de-inventario-y-credential-stuffing-en-frontends-headless-con-cloudflare-2ac",
+    "canonical_url": "https://mach-playbook.github.io/posts/deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile/",
+    "synced_at": "2026-10-22T18:03:46Z"
   }
 }
