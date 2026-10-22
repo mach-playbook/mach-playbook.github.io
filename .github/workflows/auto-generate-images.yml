@@ -1,13 +1,6 @@
 name: Auto Generate Missing Post Images
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '_posts/**'
-      - 'scripts/generate-images.js'
-      - '.github/workflows/auto-generate-images.yml'
   workflow_dispatch:
 
 jobs:
