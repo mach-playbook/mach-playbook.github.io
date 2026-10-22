@@ -292,5 +292,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-22-deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile.md": {
+    "title": "Mitigación de Denegación de Inventario y Credential Stuffing en Frontends Headless con Cloudflare Turnstile",
+    "url": "https://mach-playbook.github.io/posts/deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile/",
+    "scheduled_at": "2026-10-22 18:03:53 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ada5008399af6f1f72bde6d",
+        "dueAt": "2026-11-02T15:34:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ada5009ad1fc1b5527cb02c",
+        "dueAt": "2026-10-30T20:36:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
