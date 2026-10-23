@@ -214,7 +214,7 @@ layout: default
 
 <!-- Static Crawl Fallback for Search Engine Crawlers (Googlebot) -->
 <noscript>
-  <div class="mt-4 p-3 border rounded bg-light text-start" id="static-crawler-archive">
+  <div class="mt-4 p-3 border rounded text-start" id="static-crawler-archive" style="background-color: var(--card-bg, #1e1e22); border-color: var(--card-border-color, #2d2d34); color: var(--text-color, #cbd5e1);">
     <h5 class="h6 font-weight-bold mb-2">Directorio Completo de Artículos / Full Article Archive</h5>
     <ul class="list-unstyled mb-0 small">
       {% for post in all_posts offset: 10 %}
