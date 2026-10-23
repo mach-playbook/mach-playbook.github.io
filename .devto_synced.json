@@ -784,5 +784,11 @@
     "url": "https://dev.to/merolhack/mitigacion-de-denegacion-de-inventario-y-credential-stuffing-en-frontends-headless-con-cloudflare-2ac",
     "canonical_url": "https://mach-playbook.github.io/posts/deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile/",
     "synced_at": "2026-10-22T18:03:46Z"
+  },
+  "2026-10-23-rotacion-automatica-de-claves-criptograficas-y-certificados-tls-con-cert-manager-y-vault.md": {
+    "id": 4906874,
+    "url": "https://dev.to/merolhack/mitigacion-de-incidentes-por-caducidad-de-secretos-en-ecosistemas-mach-rotacion-cero-downtime-con-17jd",
+    "canonical_url": "https://mach-playbook.github.io/posts/rotacion-automatica-de-claves-criptograficas-y-certificados-tls-con-cert-manager-y-vault/",
+    "synced_at": "2026-10-23T17:47:05Z"
   }
 }

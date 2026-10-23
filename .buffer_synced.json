@@ -313,5 +313,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-23-rotacion-automatica-de-claves-criptograficas-y-certificados-tls-con-cert-manager-y-vault.md": {
+    "title": "Mitigación de Incidentes por Caducidad de Secretos en Ecosistemas MACH: Rotación Cero-Downtime con cert-manager y Vault",
+    "url": "https://mach-playbook.github.io/posts/rotacion-automatica-de-claves-criptograficas-y-certificados-tls-con-cert-manager-y-vault/",
+    "scheduled_at": "2026-10-23 17:47:09 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6adb9d9c3d5b27036b45da31",
+        "dueAt": "2026-11-03T15:05:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6adb9d9d8b3d437ddc7c271c",
+        "dueAt": "2026-10-31T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
