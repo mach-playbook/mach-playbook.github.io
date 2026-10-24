@@ -790,5 +790,11 @@
     "url": "https://dev.to/merolhack/mitigacion-de-incidentes-por-caducidad-de-secretos-en-ecosistemas-mach-rotacion-cero-downtime-con-17jd",
     "canonical_url": "https://mach-playbook.github.io/posts/rotacion-automatica-de-claves-criptograficas-y-certificados-tls-con-cert-manager-y-vault/",
     "synced_at": "2026-10-23T17:47:05Z"
+  },
+  "2026-10-24-observabilidad-cardinal-con-opentelemetry-jaeger-y-metricas-red-en-microservicios.md": {
+    "id": 4911425,
+    "url": "https://dev.to/merolhack/dominando-la-explosion-de-cardinalidad-opentelemetry-jaeger-y-metricas-red-bajo-cargas-masivas-del",
+    "canonical_url": "https://mach-playbook.github.io/posts/observabilidad-cardinal-con-opentelemetry-jaeger-y-metricas-red-en-microservicios/",
+    "synced_at": "2026-10-24T16:32:37Z"
   }
 }

@@ -334,5 +334,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-24-observabilidad-cardinal-con-opentelemetry-jaeger-y-metricas-red-en-microservicios.md": {
+    "title": "Dominando la Explosión de Cardinalidad: OpenTelemetry, Jaeger y Métricas RED Bajo Cargas Masivas",
+    "url": "https://mach-playbook.github.io/posts/observabilidad-cardinal-con-opentelemetry-jaeger-y-metricas-red-en-microservicios/",
+    "scheduled_at": "2026-10-24 16:32:42 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6adcdda93d5b27036b93c3ed",
+        "dueAt": "2026-11-04T15:49:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6adcddaabd33ce99c3326cf0",
+        "dueAt": "2026-11-04T04:18:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
