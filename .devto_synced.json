@@ -796,5 +796,11 @@
     "url": "https://dev.to/merolhack/dominando-la-explosion-de-cardinalidad-opentelemetry-jaeger-y-metricas-red-bajo-cargas-masivas-del",
     "canonical_url": "https://mach-playbook.github.io/posts/observabilidad-cardinal-con-opentelemetry-jaeger-y-metricas-red-en-microservicios/",
     "synced_at": "2026-10-24T16:32:37Z"
+  },
+  "2026-10-25-degradacion-elegante-de-experiencia-de-usuario-modo-fallback-cuando-un-microservicio-critico-cae.md": {
+    "id": 4916594,
+    "url": "https://dev.to/merolhack/resiliencia-de-borde-y-patrones-de-degradacion-elegante-ante-la-caida-de-microservicios-criticos-2n5a",
+    "canonical_url": "https://mach-playbook.github.io/posts/degradacion-elegante-de-experiencia-de-usuario-modo-fallback-cuando-un-microservicio-critico-cae/",
+    "synced_at": "2026-10-25T17:05:15Z"
   }
 }

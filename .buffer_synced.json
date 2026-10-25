@@ -355,5 +355,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-25-degradacion-elegante-de-experiencia-de-usuario-modo-fallback-cuando-un-microservicio-critico-cae.md": {
+    "title": "Resiliencia de Borde y Patrones de Degradación Elegante ante la Caída de Microservicios Críticos",
+    "url": "https://mach-playbook.github.io/posts/degradacion-elegante-de-experiencia-de-usuario-modo-fallback-cuando-un-microservicio-critico-cae/",
+    "scheduled_at": "2026-10-25 17:05:19 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ade36ce6887a2efc1166e04",
+        "dueAt": "2026-11-05T15:32:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ade36cf3d5b27036be29dee",
+        "dueAt": "2026-11-04T23:33:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
