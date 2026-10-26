@@ -802,5 +802,11 @@
     "url": "https://dev.to/merolhack/resiliencia-de-borde-y-patrones-de-degradacion-elegante-ante-la-caida-de-microservicios-criticos-2n5a",
     "canonical_url": "https://mach-playbook.github.io/posts/degradacion-elegante-de-experiencia-de-usuario-modo-fallback-cuando-un-microservicio-critico-cae/",
     "synced_at": "2026-10-25T17:05:15Z"
+  },
+  "2026-10-26-kafka-schema-registry-y-apache-avro-para-evolucion-compatible-de-mensajeria.md": {
+    "id": 4923787,
+    "url": "https://dev.to/merolhack/gobernanza-de-contratos-y-evolucion-de-esquemas-en-kafka-prevencion-de-corrupcion-de-datos-con-59jb",
+    "canonical_url": "https://mach-playbook.github.io/posts/kafka-schema-registry-y-apache-avro-para-evolucion-compatible-de-mensajeria/",
+    "synced_at": "2026-10-26T19:06:55Z"
   }
 }

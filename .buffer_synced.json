@@ -376,5 +376,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-26-kafka-schema-registry-y-apache-avro-para-evolucion-compatible-de-mensajeria.md": {
+    "title": "Gobernanza de Contratos y Evolución de Esquemas en Kafka: Prevención de Corrupción de Datos con Avro y Schema Registry",
+    "url": "https://mach-playbook.github.io/posts/kafka-schema-registry-y-apache-avro-para-evolucion-compatible-de-mensajeria/",
+    "scheduled_at": "2026-10-26 19:07:01 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6adfa4d4e0ae5134fabb08dc",
+        "dueAt": "2026-11-06T15:52:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6adfa4d5188ed7b8726b6bae",
+        "dueAt": "2026-11-05T21:16:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
