@@ -397,5 +397,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-27-negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados.md": {
+    "title": "Negociación de Contratos SaaS Enterprise: Cláusulas de Salida, Migracion y SLAs Agregados",
+    "url": "https://mach-playbook.github.io/posts/negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados/",
+    "scheduled_at": "2026-10-27 18:36:30 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ae0ef2dc9f6d4b0c922dc0b",
+        "dueAt": "2026-11-09T15:34:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae0ef2e327423179f36181f",
+        "dueAt": "2026-11-06T20:36:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

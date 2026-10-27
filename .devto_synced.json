@@ -808,5 +808,11 @@
     "url": "https://dev.to/merolhack/gobernanza-de-contratos-y-evolucion-de-esquemas-en-kafka-prevencion-de-corrupcion-de-datos-con-59jb",
     "canonical_url": "https://mach-playbook.github.io/posts/kafka-schema-registry-y-apache-avro-para-evolucion-compatible-de-mensajeria/",
     "synced_at": "2026-10-26T19:06:55Z"
+  },
+  "2026-10-27-negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados.md": {
+    "id": 4930219,
+    "url": "https://dev.to/merolhack/negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados-4nd8",
+    "canonical_url": "https://mach-playbook.github.io/posts/negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados/",
+    "synced_at": "2026-10-27T18:36:26Z"
   }
 }
