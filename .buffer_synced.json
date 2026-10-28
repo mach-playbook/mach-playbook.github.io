@@ -418,5 +418,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-28-migracion-de-salesforce-commerce-cloud-a-stack-mach-lecciones-aprendidas-y-trade-offs.md": {
+    "title": "De Monolito a Composable: Diseccionando la Migración de Salesforce Commerce Cloud a un Stack MACH Enterprise",
+    "url": "https://mach-playbook.github.io/posts/migracion-de-salesforce-commerce-cloud-a-stack-mach-lecciones-aprendidas-y-trade-offs/",
+    "scheduled_at": "2026-10-28 18:44:49 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ae242a08841a32106af77cd",
+        "dueAt": "2026-11-10T15:05:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae242a000ee4c4cb9e8aa94",
+        "dueAt": "2026-11-07T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

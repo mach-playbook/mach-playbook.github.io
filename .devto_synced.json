@@ -814,5 +814,11 @@
     "url": "https://dev.to/merolhack/negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados-4nd8",
     "canonical_url": "https://mach-playbook.github.io/posts/negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados/",
     "synced_at": "2026-10-27T18:36:26Z"
+  },
+  "2026-10-28-migracion-de-salesforce-commerce-cloud-a-stack-mach-lecciones-aprendidas-y-trade-offs.md": {
+    "id": 4936394,
+    "url": "https://dev.to/merolhack/de-monolito-a-composable-diseccionando-la-migracion-de-salesforce-commerce-cloud-a-un-stack-mach-hg",
+    "canonical_url": "https://mach-playbook.github.io/posts/migracion-de-salesforce-commerce-cloud-a-stack-mach-lecciones-aprendidas-y-trade-offs/",
+    "synced_at": "2026-10-28T18:44:44Z"
   }
 }
