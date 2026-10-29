@@ -820,5 +820,11 @@
     "url": "https://dev.to/merolhack/de-monolito-a-composable-diseccionando-la-migracion-de-salesforce-commerce-cloud-a-un-stack-mach-hg",
     "canonical_url": "https://mach-playbook.github.io/posts/migracion-de-salesforce-commerce-cloud-a-stack-mach-lecciones-aprendidas-y-trade-offs/",
     "synced_at": "2026-10-28T18:44:44Z"
+  },
+  "2026-10-29-patron-outbox-bidireccional-para-conciliacion-de-pagos-y-facturacion-electronica-fiscal.md": {
+    "id": 4943013,
+    "url": "https://dev.to/merolhack/patron-outbox-bidireccional-conciliacion-de-pagos-y-facturacion-electronica-fiscal-sin-doble-gasto-462j",
+    "canonical_url": "https://mach-playbook.github.io/posts/patron-outbox-bidireccional-para-conciliacion-de-pagos-y-facturacion-electronica-fiscal/",
+    "synced_at": "2026-10-29T18:49:00Z"
   }
 }

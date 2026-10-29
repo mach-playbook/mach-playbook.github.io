@@ -439,5 +439,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-29-patron-outbox-bidireccional-para-conciliacion-de-pagos-y-facturacion-electronica-fiscal.md": {
+    "title": "Patrón Outbox Bidireccional: Conciliación de Pagos y Facturación Electrónica Fiscal sin Doble Gasto ni Multas Regulatorias",
+    "url": "https://mach-playbook.github.io/posts/patron-outbox-bidireccional-para-conciliacion-de-pagos-y-facturacion-electronica-fiscal/",
+    "scheduled_at": "2026-10-29 18:49:05 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ae3952031868ec16fbf1451",
+        "dueAt": "2026-11-11T15:49:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae3952118a6132aaf6c7c60",
+        "dueAt": "2026-11-11T04:18:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
