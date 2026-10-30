@@ -460,5 +460,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-30-arquitectura-de-seguridad-en-apis-graphql-prevencion-de-ataques-de-complejidad-de-consulta-y-dos.md": {
+    "title": "Mitigación de Denegación de Servicio en GraphQL: Análisis de Costes de Consulta y Defensa en Profundidad en el Edge",
+    "url": "https://mach-playbook.github.io/posts/arquitectura-de-seguridad-en-apis-graphql-prevencion-de-ataques-de-complejidad-de-consulta-y-dos/",
+    "scheduled_at": "2026-10-30 18:31:34 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ae4e28510a950f1373a7ccf",
+        "dueAt": "2026-11-12T15:32:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae4e285260ad0ee5bc22a21",
+        "dueAt": "2026-11-11T23:33:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

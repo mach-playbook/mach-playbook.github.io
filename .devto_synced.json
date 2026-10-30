@@ -826,5 +826,11 @@
     "url": "https://dev.to/merolhack/patron-outbox-bidireccional-conciliacion-de-pagos-y-facturacion-electronica-fiscal-sin-doble-gasto-462j",
     "canonical_url": "https://mach-playbook.github.io/posts/patron-outbox-bidireccional-para-conciliacion-de-pagos-y-facturacion-electronica-fiscal/",
     "synced_at": "2026-10-29T18:49:00Z"
+  },
+  "2026-10-30-arquitectura-de-seguridad-en-apis-graphql-prevencion-de-ataques-de-complejidad-de-consulta-y-dos.md": {
+    "id": 4949068,
+    "url": "https://dev.to/merolhack/mitigacion-de-denegacion-de-servicio-en-graphql-analisis-de-costes-de-consulta-y-defensa-en-2a3d",
+    "canonical_url": "https://mach-playbook.github.io/posts/arquitectura-de-seguridad-en-apis-graphql-prevencion-de-ataques-de-complejidad-de-consulta-y-dos/",
+    "synced_at": "2026-10-30T18:31:29Z"
   }
 }
