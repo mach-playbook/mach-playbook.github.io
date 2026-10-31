@@ -481,5 +481,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-10-31-estrategias-de-renderizado-hibrido-ssg-ssr-e-isr-en-plataformas-omnicanal.md": {
+    "title": "Latencia en el Edge: Resiliencia y Consistencia en Renderizado Híbrido para E-Commerce de Alta Concurrencia",
+    "url": "https://mach-playbook.github.io/posts/estrategias-de-renderizado-hibrido-ssg-ssr-e-isr-en-plataformas-omnicanal/",
+    "scheduled_at": "2026-10-31 17:29:45 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ae625891ee172cd6db43af5",
+        "dueAt": "2026-11-13T15:52:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae62589cf3a3112f3b51ea7",
+        "dueAt": "2026-11-12T21:16:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

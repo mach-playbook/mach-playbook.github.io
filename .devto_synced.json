@@ -832,5 +832,11 @@
     "url": "https://dev.to/merolhack/mitigacion-de-denegacion-de-servicio-en-graphql-analisis-de-costes-de-consulta-y-defensa-en-2a3d",
     "canonical_url": "https://mach-playbook.github.io/posts/arquitectura-de-seguridad-en-apis-graphql-prevencion-de-ataques-de-complejidad-de-consulta-y-dos/",
     "synced_at": "2026-10-30T18:31:29Z"
+  },
+  "2026-10-31-estrategias-de-renderizado-hibrido-ssg-ssr-e-isr-en-plataformas-omnicanal.md": {
+    "id": 4953959,
+    "url": "https://dev.to/merolhack/latencia-en-el-edge-resiliencia-y-consistencia-en-renderizado-hibrido-para-e-commerce-de-alta-26le",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-renderizado-hibrido-ssg-ssr-e-isr-en-plataformas-omnicanal/",
+    "synced_at": "2026-10-31T17:29:41Z"
   }
 }
