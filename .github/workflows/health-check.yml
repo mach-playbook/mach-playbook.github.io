@@ -1,0 +1,75 @@
+name: Periodic Health & Uptime Audit
+
+on:
+  schedule:
+    # Corre diariamente a las 06:00 UTC (00:00 CST)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Production Endpoint & GitGuardian Health Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Smoke Test Live Endpoints
+        env:
+          TARGET_HOST: ${{ vars.PRODUCTION_URL || 'https://mach-playbook.github.io' }}
+        run: |
+          ENDPOINTS=(
+            "/"
+            "/categories/"
+            "/tags/"
+            "/archives/"
+            "/about/"
+            "/resources/"
+            "/glossary/"
+            "/privacy/"
+            "/terms/"
+            "/contact/"
+            "/sitemap.xml"
+            "/robots.txt"
+            "/ads.txt"
+          )
+          FAILURES=0
+
+          echo "🔍 Auditando endpoints core en $TARGET_HOST..."
+          for ep in "${ENDPOINTS[@]}"; do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 "$TARGET_HOST$ep" || echo "000")
+            if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
+              echo "  ✓ $ep -> HTTP $HTTP_CODE (OK)"
+            else
+              echo "  ❌ $ep -> HTTP $HTTP_CODE (FAILED)"
+              FAILURES=$((FAILURES + 1))
+            fi
+          done
+
+          if [ "$FAILURES" -gt 0 ]; then
+            echo "::error::$FAILURES endpoint(s) core fallaron en la auditoría de disponibilidad."
+            exit 1
+          fi
+          echo "🎉 Todos los endpoints core respondieron con éxito."
+
+      - name: GitGuardian Security & Secret Audit Probe
+        id: gitguardian
+        env:
+          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+        run: |
+          echo "🛡️ Ejecutando auditoría de seguridad e incidentes en GitGuardian..."
+          if [ -z "$GITGUARDIAN_API_KEY" ]; then
+            echo "::warning::Falta el secreto GITGUARDIAN_API_KEY en GitHub Actions Secrets."
+          else
+            python3 scripts/manage_gitguardian.py --report --strict
+          fi

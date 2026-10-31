@@ -262,6 +262,13 @@
   - Integrated `test-topic-generator.py` into `Dockerfile` test stage and `docker-compose.yml`.
   - Executed tests inside Docker test container (`mach-playbook-test`), passing 8/8 tests in 4.7s. Verified 100% AdSense compliance (13/13 PASS) and zero duplicate posts.
 
+2026-10-31 00:15: GitGuardian PAT Integration, Security Secret Audit Probe & Health-Check Workflow
+- Verified `.env` is strictly ignored by Git (`.gitignore`).
+- Injected `GITGUARDIAN_API_KEY` into GitHub Actions Secrets (`mach-playbook/mach-playbook.github.io`) using `gh secret set`.
+- Queried GitGuardian REST API (`/v1/incidents/secrets`): confirmed 0 secret leaks or active incidents exist for `mach-playbook`.
+- Implemented `scripts/manage_gitguardian.py` supporting incident listing, inspection, resolution, ignore options, automatic 429 rate limit retries, and CI/CD markdown summary generation.
+- Created `.github/workflows/health-check.yml` ("Periodic Health & Uptime Audit") to smoke-test core endpoints and run automated GitGuardian security posture audits.
+
 ---
 
 ## 4. MANDATORY SECONDARY MODEL DELEGATION VIA OLLAMA MCP (`gemma4:cloud` &rarr; `qwen3:8b-8k`)

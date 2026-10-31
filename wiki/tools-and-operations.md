@@ -68,6 +68,12 @@ python3 scripts/test-e2e-browser.py
 ```
 Drives Headless Chrome via WebSocket connection to Chrome DevTools Protocol (CDP), validating computed geometry (`getBoundingClientRect()`), layout stability, and responsive rendering across 1707x932, 1440x900, and 390x844 viewports.
 
+### I. GitGuardian Security Posture & Health Probe
+```bash
+python3 scripts/manage_gitguardian.py --report
+```
+Queries the GitGuardian v1 REST API using `GITGUARDIAN_API_KEY` (configured in `.env` and GitHub Actions Secrets) to inspect and report on exposed secrets. Integrated into `.github/workflows/health-check.yml` ("Periodic Health & Uptime Audit") to monitor security posture and verify 0 active secret incidents.
+
 ---
 
 ## 3. Local Docker Testing (HTML-Proofer)
