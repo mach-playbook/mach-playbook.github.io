@@ -502,5 +502,19 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-01-optimizacion-de-cold-starts-y-conexiones-pooling-en-serverless-con-google-cloud-run-y-aws-lambda.md": {
+    "title": "Colapso de Conexiones y Latencia P99: Patrones de Pooling y Mitigación de Cold Starts en AWS Lambda y Google Cloud Run",
+    "url": "https://mach-playbook.github.io/posts/optimizacion-de-cold-starts-y-conexiones-pooling-en-serverless-con-google-cloud-run-y-aws-lambda/",
+    "scheduled_at": "2026-11-01 18:15:01 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae781a5142f545151f4568f",
+        "dueAt": "2026-11-13T20:36:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
