@@ -516,5 +516,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-02-tokenizacion-de-datos-sensibles-y-cumplimiento-pci-dss-saq-a-en-checkouts-desacoplados.md": {
+    "title": "Blindaje de Checkouts Headless: Tokenización Desacoplada y Cumplimiento PCI-DSS v4.0 SAQ-A",
+    "url": "https://mach-playbook.github.io/posts/tokenizacion-de-datos-sensibles-y-cumplimiento-pci-dss-saq-a-en-checkouts-desacoplados/",
+    "scheduled_at": "2026-11-02 22:05:37 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6ae9093048d61d07d55d1547",
+        "dueAt": "2026-11-16T15:34:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6ae9093090c1e19b034994ac",
+        "dueAt": "2026-11-14T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

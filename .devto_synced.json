@@ -844,5 +844,11 @@
     "url": "https://dev.to/merolhack/colapso-de-conexiones-y-latencia-p99-patrones-de-pooling-y-mitigacion-de-cold-starts-en-aws-lambda-290h",
     "canonical_url": "https://mach-playbook.github.io/posts/optimizacion-de-cold-starts-y-conexiones-pooling-en-serverless-con-google-cloud-run-y-aws-lambda/",
     "synced_at": "2026-11-01T18:14:57Z"
+  },
+  "2026-11-02-tokenizacion-de-datos-sensibles-y-cumplimiento-pci-dss-saq-a-en-checkouts-desacoplados.md": {
+    "id": 4965292,
+    "url": "https://dev.to/merolhack/blindaje-de-checkouts-headless-tokenizacion-desacoplada-y-cumplimiento-pci-dss-v40-saq-a-3oah",
+    "canonical_url": "https://mach-playbook.github.io/posts/tokenizacion-de-datos-sensibles-y-cumplimiento-pci-dss-saq-a-en-checkouts-desacoplados/",
+    "synced_at": "2026-11-02T22:05:32Z"
   }
 }
