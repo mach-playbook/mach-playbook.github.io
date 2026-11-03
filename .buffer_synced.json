@@ -537,5 +537,19 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-03-web-workers-y-off-main-thread-architecture-para-computacion-pesada-en-el-navegador.md": {
+    "title": "Eliminando el Bloqueo de UI: Arquitectura Off-Main-Thread con Web Workers y Transferable Streams en Frontends Headless",
+    "url": "https://mach-playbook.github.io/posts/web-workers-y-off-main-thread-architecture-para-computacion-pesada-en-el-navegador/",
+    "scheduled_at": "2026-11-03 19:56:58 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6aea3c8a5fa3d509fa3d7652",
+        "dueAt": "2026-11-17T15:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

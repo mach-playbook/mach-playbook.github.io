@@ -850,5 +850,11 @@
     "url": "https://dev.to/merolhack/blindaje-de-checkouts-headless-tokenizacion-desacoplada-y-cumplimiento-pci-dss-v40-saq-a-3oah",
     "canonical_url": "https://mach-playbook.github.io/posts/tokenizacion-de-datos-sensibles-y-cumplimiento-pci-dss-saq-a-en-checkouts-desacoplados/",
     "synced_at": "2026-11-02T22:05:32Z"
+  },
+  "2026-11-03-web-workers-y-off-main-thread-architecture-para-computacion-pesada-en-el-navegador.md": {
+    "id": 4971393,
+    "url": "https://dev.to/merolhack/eliminando-el-bloqueo-de-ui-arquitectura-off-main-thread-con-web-workers-y-transferable-streams-en-2fgk",
+    "canonical_url": "https://mach-playbook.github.io/posts/web-workers-y-off-main-thread-architecture-para-computacion-pesada-en-el-navegador/",
+    "synced_at": "2026-11-03T19:56:54Z"
   }
 }
