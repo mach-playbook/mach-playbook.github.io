@@ -551,5 +551,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-04-pruebas-de-inyeccion-de-caos-en-produccion-con-gremlin-y-chaos-toolkit-para-validar-slas.md": {
+    "title": "Validación de SLAs Críticos en Producción: Inyección de Caos con Gremlin y Chaos Toolkit",
+    "url": "https://mach-playbook.github.io/posts/pruebas-de-inyeccion-de-caos-en-produccion-con-gremlin-y-chaos-toolkit-para-validar-slas/",
+    "scheduled_at": "2026-11-04 20:14:18 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6aeb92198aec178794a4dce2",
+        "dueAt": "2026-11-18T15:49:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6aeb921a8aec178794a4dd10",
+        "dueAt": "2026-11-18T04:18:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

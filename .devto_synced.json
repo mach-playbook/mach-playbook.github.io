@@ -856,5 +856,11 @@
     "url": "https://dev.to/merolhack/eliminando-el-bloqueo-de-ui-arquitectura-off-main-thread-con-web-workers-y-transferable-streams-en-2fgk",
     "canonical_url": "https://mach-playbook.github.io/posts/web-workers-y-off-main-thread-architecture-para-computacion-pesada-en-el-navegador/",
     "synced_at": "2026-11-03T19:56:54Z"
+  },
+  "2026-11-04-pruebas-de-inyeccion-de-caos-en-produccion-con-gremlin-y-chaos-toolkit-para-validar-slas.md": {
+    "id": 4977511,
+    "url": "https://dev.to/merolhack/validacion-de-slas-criticos-en-produccion-inyeccion-de-caos-con-gremlin-y-chaos-toolkit-1632",
+    "canonical_url": "https://mach-playbook.github.io/posts/pruebas-de-inyeccion-de-caos-en-produccion-con-gremlin-y-chaos-toolkit-para-validar-slas/",
+    "synced_at": "2026-11-04T20:14:13Z"
   }
 }
