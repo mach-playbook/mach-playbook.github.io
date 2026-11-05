@@ -862,5 +862,11 @@
     "url": "https://dev.to/merolhack/validacion-de-slas-criticos-en-produccion-inyeccion-de-caos-con-gremlin-y-chaos-toolkit-1632",
     "canonical_url": "https://mach-playbook.github.io/posts/pruebas-de-inyeccion-de-caos-en-produccion-con-gremlin-y-chaos-toolkit-para-validar-slas/",
     "synced_at": "2026-11-04T20:14:13Z"
+  },
+  "2026-11-05-estrategias-de-despliegue-canary-y-bluegreen-con-argocd-y-flagger-en-kubernetes.md": {
+    "id": 4984215,
+    "url": "https://dev.to/merolhack/validacion-progresiva-y-cero-downtime-despliegues-canary-y-bluegreen-con-argocd-flagger-y-178e",
+    "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-despliegue-canary-y-bluegreen-con-argocd-y-flagger-en-kubernetes/",
+    "synced_at": "2026-11-05T20:28:14Z"
   }
 }

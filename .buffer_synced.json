@@ -572,5 +572,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-05-estrategias-de-despliegue-canary-y-bluegreen-con-argocd-y-flagger-en-kubernetes.md": {
+    "title": "Validación Progresiva y Cero Downtime: Despliegues Canary y Blue/Green con ArgoCD, Flagger y Service Mesh en Kubernetes",
+    "url": "https://mach-playbook.github.io/posts/estrategias-de-despliegue-canary-y-bluegreen-con-argocd-y-flagger-en-kubernetes/",
+    "scheduled_at": "2026-11-05 20:28:17 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6aece6e1be5773ab370779ed",
+        "dueAt": "2026-11-19T15:32:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6aece6e1795d2fe87367ef5e",
+        "dueAt": "2026-11-18T23:33:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
