@@ -868,5 +868,11 @@
     "url": "https://dev.to/merolhack/validacion-progresiva-y-cero-downtime-despliegues-canary-y-bluegreen-con-argocd-flagger-y-178e",
     "canonical_url": "https://mach-playbook.github.io/posts/estrategias-de-despliegue-canary-y-bluegreen-con-argocd-y-flagger-en-kubernetes/",
     "synced_at": "2026-11-05T20:28:14Z"
+  },
+  "2026-11-06-ab-testing-en-el-edge-sin-layout-shifts-zero-cls-con-middleware-edge.md": {
+    "id": 4990320,
+    "url": "https://dev.to/merolhack/eliminacion-de-cumulative-layout-shift-cls-en-ab-testing-arquitectura-edge-native-con-19ji",
+    "canonical_url": "https://mach-playbook.github.io/posts/ab-testing-en-el-edge-sin-layout-shifts-zero-cls-con-middleware-edge/",
+    "synced_at": "2026-11-06T19:49:57Z"
   }
 }

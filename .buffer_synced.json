@@ -593,5 +593,26 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-06-ab-testing-en-el-edge-sin-layout-shifts-zero-cls-con-middleware-edge.md": {
+    "title": "Eliminación de Cumulative Layout Shift (CLS) en A/B Testing: Arquitectura Edge-Native con HTMLRewriter y Multi-Origin Routing",
+    "url": "https://mach-playbook.github.io/posts/ab-testing-en-el-edge-sin-layout-shifts-zero-cls-con-middleware-edge/",
+    "scheduled_at": "2026-11-06 19:50:01 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6aee2f69229bf05daf07a4f7",
+        "dueAt": "2026-11-20T15:52:00.000Z",
+        "status": "scheduled"
+      },
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6aee2f69a7751de7c9a43b65",
+        "dueAt": "2026-11-19T21:16:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
