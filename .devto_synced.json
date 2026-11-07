@@ -874,5 +874,11 @@
     "url": "https://dev.to/merolhack/eliminacion-de-cumulative-layout-shift-cls-en-ab-testing-arquitectura-edge-native-con-19ji",
     "canonical_url": "https://mach-playbook.github.io/posts/ab-testing-en-el-edge-sin-layout-shifts-zero-cls-con-middleware-edge/",
     "synced_at": "2026-11-06T19:49:57Z"
+  },
+  "2026-11-07-auditoria-forense-de-facturas-cloud-detectando-desperdicios-en-instancias-kubernetes-y-discos-huerfanos.md": {
+    "id": 4994879,
+    "url": "https://dev.to/merolhack/auditoria-forense-de-facturas-cloud-deteccion-y-erradicacion-de-desperdicio-en-kubernetes-y-1l72",
+    "canonical_url": "https://mach-playbook.github.io/posts/auditoria-forense-de-facturas-cloud-detectando-desperdicios-en-instancias-kubernetes-y-discos-huerfanos/",
+    "synced_at": "2026-11-07T17:56:32Z"
   }
 }

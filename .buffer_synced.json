@@ -614,5 +614,19 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-07-auditoria-forense-de-facturas-cloud-detectando-desperdicios-en-instancias-kubernetes-y-discos-huerfanos.md": {
+    "title": "Auditoría Forense de Facturas Cloud: Detección y Erradicación de Desperdicio en Kubernetes y Almacenamiento Huérfano",
+    "url": "https://mach-playbook.github.io/posts/auditoria-forense-de-facturas-cloud-detectando-desperdicios-en-instancias-kubernetes-y-discos-huerfanos/",
+    "scheduled_at": "2026-11-07 17:56:36 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6aef6654562f2e6de9710942",
+        "dueAt": "2026-11-20T20:36:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
