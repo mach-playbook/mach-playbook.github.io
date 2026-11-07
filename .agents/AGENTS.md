@@ -92,3 +92,17 @@ Whenever new content (posts, pages, tabs) is generated—whether in **Antigravit
 - **Ollama API Endpoint**: `http://localhost:11434/v1/chat/completions`
 - **MCP Bridge**: `C:\Users\lenin\Documents\AIDevelopment\ollama\ollama_mcp_server.py`
 
+---
+
+## 5. MANDATORY ZERO-HANG PROTOCOL FOR UNATTENDED / BACKGROUND EXECUTION
+
+> ⚠️ **MANDATORY DIRECTIVE FOR ALL AGENTS DURING UNATTENDED RUNS**:
+> Whenever the agent operates autonomously or in background tasks without immediate human presence, it MUST strictly enforce the **Zero-Hang Protocol** ([`wiki/preventing-unattended-hangs-and-process-timeouts.md`](file:///ubuntu-20.04/home/merolhack/fl/mach-playbook/wiki/preventing-unattended-hangs-and-process-timeouts.md)):
+>
+> 1. **Zero `sudo`**: NEVER run `sudo` in WSL/bash commands. For Docker privileged actions, use `docker exec -u 0 <container> ...`.
+> 2. **Mandatory Timeouts**: Wrap all long-running shell commands with GNU `timeout` (e.g. `timeout 300s docker build ...`, `timeout 180s bundle exec jekyll build`).
+> 3. **Decouple `stdin`**: Always pipe `< /dev/null` or pass non-interactive flags (`GIT_TERMINAL_PROMPT=0`, `DEBIAN_FRONTEND=noninteractive`, `--yes`) so any unexpected interactive prompt fails immediately rather than freezing for hours.
+> 4. **Socket Timeouts**: Every network/HTTP call in Python (`requests`, `urllib`) or Node.js (`fetch`) MUST include an explicit timeout (`timeout=15`, `AbortSignal.timeout(...)`).
+> 5. **Disk Checkpoints**: Batch operations MUST log progress in a persistent state file (`.progress.json`) to allow automatic resume on interruption.
+
+

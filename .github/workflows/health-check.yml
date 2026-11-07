@@ -73,3 +73,4 @@ jobs:
           else
             python3 scripts/manage_gitguardian.py --report --strict
           fi
+

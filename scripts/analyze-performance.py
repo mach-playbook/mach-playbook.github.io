@@ -15,7 +15,7 @@ def audit_url(url, label):
     print(f"   AUDIT: {label} ({url})")
     print(f"========================================================")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    html = urllib.request.urlopen(req).read().decode('utf-8')
+    html = urllib.request.urlopen(req, timeout=15).read().decode('utf-8')
     auditor = TagAuditor()
     auditor.feed(html)
 

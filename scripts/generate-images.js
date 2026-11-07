@@ -123,7 +123,10 @@ async function generateImage(title, index) {
   try {
     const photoIndex = index % unsplashITPhotos.length;
     const unsplashUrl = unsplashITPhotos[photoIndex];
-    const response = await fetch(unsplashUrl);
+    const unsplashController = new AbortController();
+    const unsplashTimeout = setTimeout(() => unsplashController.abort(), 4000);
+    const response = await fetch(unsplashUrl, { signal: unsplashController.signal });
+    clearTimeout(unsplashTimeout);
     if (response.ok) {
       const arrayBuffer = await response.arrayBuffer();
       return Buffer.from(arrayBuffer).toString('base64');

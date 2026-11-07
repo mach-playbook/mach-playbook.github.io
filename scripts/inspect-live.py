@@ -3,7 +3,7 @@ import re
 
 url = 'https://mach-playbook.github.io/'
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-html = urllib.request.urlopen(req).read().decode('utf-8')
+html = urllib.request.urlopen(req, timeout=15).read().decode('utf-8')
 
 print("PRELOADS IN PRODUCTION:")
 for p in re.findall(r'<link[^>]*preload[^>]*>', html):

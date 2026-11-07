@@ -5,6 +5,23 @@
 
 ---
 
+## [2026-11-07] feat | Operational Zero-Hang Protocol Implementation for Unattended & Autonomous Runs
+
+- **Impacted Files**: `wiki/preventing-unattended-hangs-and-process-timeouts.md`, `wiki/index.md`, `.agents/AGENTS.md`, `.github/workflows/daily-blog-post.yml`, `.github/workflows/pages-deploy.yml`, `.github/workflows/auto-generate-images.yml`, `scripts/publish_to_devto.py`, `scripts/generate-images.js`, `scripts/test-e2e-browser.py`, `scripts/analyze-performance.py`, `scripts/find-live-occurrences.py`, `scripts/inspect-all-imgs.py`, `scripts/inspect-live.py`, `scripts/list-urls.py`, `wiki/log.md`
+- **Summary**:
+  - Analyzed and adapted the operational Zero-Hang Protocol from `dqro.mx` (`preventing-unattended-hangs-and-process-timeouts.md`) into `mach-playbook`.
+  - Created canonical documentation in `wiki/preventing-unattended-hangs-and-process-timeouts.md` establishing the 5 Immutable Principles:
+    1. Zero `sudo` (prohibition in shell/CI; use `docker exec -u 0`).
+    2. Mandatory timeouts via GNU `timeout` in shell and `timeout-minutes` in GitHub Actions.
+    3. Decoupling of stdin (`< /dev/null`) and non-interactive flags (`GIT_TERMINAL_PROMPT=0`, etc.).
+    4. Mandatory socket timeouts across all HTTP/network libraries (`requests`, `urllib.request`, `fetch`).
+    5. Persistent heartbeat watchdogs and disk checkpoints (`.progress.json`) for batch workflows.
+  - Hardened GitHub Actions workflows by adding `timeout-minutes: 15` and `GIT_TERMINAL_PROMPT: '0'` to prevent indefinite runner hangs.
+  - Added missing socket timeouts to `scripts/publish_to_devto.py`, `scripts/generate-images.js` (Unsplash fallback), `scripts/test-e2e-browser.py` (CDP JSON endpoints), and inspection scripts.
+  - Updated `.agents/AGENTS.md` and `wiki/index.md` so all autonomous AI agent sessions strictly adhere to the Zero-Hang Protocol during unattended runs.
+
+---
+
 ## [2026-10-09] feat | Autonomous Daily Post Instant Indexation via Bing Webmaster Tools & Microsoft Copilot API
 
 - **Impacted Files**: `scripts/publish_daily_jekyll_post.py`, `.github/workflows/daily-blog-post.yml`, `wiki/publishing-pipeline-and-deduplication.md`, `wiki/content-syndication-and-distribution.md`, `wiki/index.md`, `wiki/log.md`

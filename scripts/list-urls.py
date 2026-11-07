@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import urllib.request
 
 url = 'https://mach-playbook.github.io/sitemap.xml'
-req = urllib.request.urlopen(url)
+req = urllib.request.urlopen(url, timeout=15)
 xml_data = req.read()
 
 root = ET.fromstring(xml_data)

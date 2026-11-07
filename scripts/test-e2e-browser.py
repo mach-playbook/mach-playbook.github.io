@@ -88,7 +88,7 @@ def main():
     time.sleep(2)
 
     try:
-        tabs = json.loads(urllib.request.urlopen("http://localhost:9455/json").read().decode())
+        tabs = json.loads(urllib.request.urlopen("http://localhost:9455/json", timeout=10).read().decode())
         page_tabs = [t for t in tabs if t.get("type") == "page"]
         ws_desktop = page_tabs[0]["webSocketDebuggerUrl"]
 
@@ -185,7 +185,7 @@ def main():
     time.sleep(2)
 
     try:
-        tabs_m = json.loads(urllib.request.urlopen("http://localhost:9456/json").read().decode())
+        tabs_m = json.loads(urllib.request.urlopen("http://localhost:9456/json", timeout=10).read().decode())
         page_tabs_m = [t for t in tabs_m if t.get("type") == "page"]
         ws_mobile = page_tabs_m[0]["webSocketDebuggerUrl"]
 

@@ -94,7 +94,7 @@ def publish_to_devto(api_key, post_data, published=True):
         }
     }
 
-    response = requests.post(DEVTO_API_URL, json=payload, headers=headers)
+    response = requests.post(DEVTO_API_URL, json=payload, headers=headers, timeout=15)
     return response
 
 def main():
