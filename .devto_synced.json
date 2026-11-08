@@ -880,5 +880,11 @@
     "url": "https://dev.to/merolhack/auditoria-forense-de-facturas-cloud-deteccion-y-erradicacion-de-desperdicio-en-kubernetes-y-1l72",
     "canonical_url": "https://mach-playbook.github.io/posts/auditoria-forense-de-facturas-cloud-detectando-desperdicios-en-instancias-kubernetes-y-discos-huerfanos/",
     "synced_at": "2026-11-07T17:56:32Z"
+  },
+  "2026-11-08-seguridad-en-el-cliente-content-security-policy-csp-estricto-y-proteccion-xss-en-spas.md": {
+    "id": 4999768,
+    "url": "https://dev.to/merolhack/blindaje-client-side-en-arquitecturas-headless-content-security-policy-estricto-nonces-dinamicos-27am",
+    "canonical_url": "https://mach-playbook.github.io/posts/seguridad-en-el-cliente-content-security-policy-csp-estricto-y-proteccion-xss-en-spas/",
+    "synced_at": "2026-11-08T18:12:38Z"
   }
 }

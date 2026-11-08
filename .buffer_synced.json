@@ -628,5 +628,19 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-08-seguridad-en-el-cliente-content-security-policy-csp-estricto-y-proteccion-xss-en-spas.md": {
+    "title": "Blindaje Client-Side en Arquitecturas Headless: Content Security Policy Estricto, Nonces Dinámicos y Trusted Types",
+    "url": "https://mach-playbook.github.io/posts/seguridad-en-el-cliente-content-security-policy-csp-estricto-y-proteccion-xss-en-spas/",
+    "scheduled_at": "2026-11-08 18:12:42 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9375c6a5c39ccb66587b3",
+        "service": "linkedin",
+        "post_id": "6af0bb9a562f2e6de9d424d7",
+        "dueAt": "2026-11-21T14:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
