@@ -642,5 +642,19 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-09-finops-cultural-asignacion-de-costos-de-infraestructura-directamente-a-equipos-de-producto-showbackchargeback.md": {
+    "title": "Rompiendo el Agujero Negro Cloud: Atribución Granular de Costos, Showback y Chargeback en Arquitecturas Distribuidas",
+    "url": "https://mach-playbook.github.io/posts/finops-cultural-asignacion-de-costos-de-infraestructura-directamente-a-equipos-de-producto-showbackchargeback/",
+    "scheduled_at": "2026-11-09 22:51:35 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6af24e772720157e37386ea2",
+        "dueAt": "2026-11-23T15:34:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }

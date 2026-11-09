@@ -886,5 +886,11 @@
     "url": "https://dev.to/merolhack/blindaje-client-side-en-arquitecturas-headless-content-security-policy-estricto-nonces-dinamicos-27am",
     "canonical_url": "https://mach-playbook.github.io/posts/seguridad-en-el-cliente-content-security-policy-csp-estricto-y-proteccion-xss-en-spas/",
     "synced_at": "2026-11-08T18:12:38Z"
+  },
+  "2026-11-09-finops-cultural-asignacion-de-costos-de-infraestructura-directamente-a-equipos-de-producto-showbackchargeback.md": {
+    "id": 5007171,
+    "url": "https://dev.to/merolhack/rompiendo-el-agujero-negro-cloud-atribucion-granular-de-costos-showback-y-chargeback-en-2jll",
+    "canonical_url": "https://mach-playbook.github.io/posts/finops-cultural-asignacion-de-costos-de-infraestructura-directamente-a-equipos-de-producto-showbackchargeback/",
+    "synced_at": "2026-11-09T22:51:31Z"
   }
 }
