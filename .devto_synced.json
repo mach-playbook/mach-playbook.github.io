@@ -892,5 +892,11 @@
     "url": "https://dev.to/merolhack/rompiendo-el-agujero-negro-cloud-atribucion-granular-de-costos-showback-y-chargeback-en-2jll",
     "canonical_url": "https://mach-playbook.github.io/posts/finops-cultural-asignacion-de-costos-de-infraestructura-directamente-a-equipos-de-producto-showbackchargeback/",
     "synced_at": "2026-11-09T22:51:31Z"
+  },
+  "2026-11-10-bff-backend-for-frontend-ultraligero-con-hono-y-cloudflare-workers.md": {
+    "id": 5012608,
+    "url": "https://dev.to/merolhack/bff-ultraligero-con-hono-y-cloudflare-workers-eliminando-la-latencia-de-agregacion-y-el-cold-start-ccp",
+    "canonical_url": "https://mach-playbook.github.io/posts/bff-backend-for-frontend-ultraligero-con-hono-y-cloudflare-workers/",
+    "synced_at": "2026-11-10T20:11:10Z"
   }
 }

@@ -656,5 +656,19 @@
         "status": "scheduled"
       }
     ]
+  },
+  "2026-11-10-bff-backend-for-frontend-ultraligero-con-hono-y-cloudflare-workers.md": {
+    "title": "BFF Ultraligero con Hono y Cloudflare Workers: Eliminando la Latencia de Agregación y el Cold Start en Arquitecturas Composable",
+    "url": "https://mach-playbook.github.io/posts/bff-backend-for-frontend-ultraligero-con-hono-y-cloudflare-workers/",
+    "scheduled_at": "2026-11-10 20:11:14 UTC",
+    "channels": [
+      {
+        "channel_id": "6ac9378e6a5c39ccb6658af6",
+        "service": "twitter",
+        "post_id": "6af37a62ead9c53d41ba7714",
+        "dueAt": "2026-11-24T15:05:00.000Z",
+        "status": "scheduled"
+      }
+    ]
   }
 }
