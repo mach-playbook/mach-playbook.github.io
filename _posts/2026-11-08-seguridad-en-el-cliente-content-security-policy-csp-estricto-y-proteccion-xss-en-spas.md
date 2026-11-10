@@ -165,6 +165,7 @@ export const config = {
 
 El nonce generado en el Edge debe inyectarse en el árbol de componentes del servidor para asegurar que los scripts de hidratación del framework contengan el atributo requerido.
 
+{% raw %}
 ```typescript
 // app/layout.tsx
 import { headers } from 'next/headers';
@@ -202,6 +203,7 @@ export default async function RootLayout({
   );
 }
 ```
+{% endraw %}
 
 ---
 
@@ -287,6 +289,7 @@ export function getSafeHTML(untrustedHtml: string): any {
 
 Al utilizar este patrón en un componente de renderizado de CMS (por ejemplo, descripciones de producto provenientes de Contentful o Sanity):
 
+{% raw %}
 ```tsx
 // src/components/RichTextRenderer.tsx
 'use client';
@@ -311,6 +314,7 @@ export const RichTextRenderer: React.FC<Props> = ({ rawCmsHtml }) => {
   );
 };
 ```
+{% endraw %}
 
 ---
 
