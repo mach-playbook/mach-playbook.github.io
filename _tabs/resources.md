@@ -3,6 +3,7 @@ title: Resources
 icon: fas fa-compass
 order: 4
 mermaid: true
+no_ads: true
 ---
 
 <div class="lang-block lang-es" markdown="1">

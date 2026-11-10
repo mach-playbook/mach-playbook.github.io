@@ -828,5 +828,17 @@
 
   <!-- Google AdSense - Activated (Direct async load for crawler compatibility) -->
   <meta name="google-adsense-account" content="ca-pub-2700240339792942">
+  {%- comment -%}
+    AdSense remediation (2026-11-10, "replicated content" / "low value" issue):
+    NEVER serve ads on list/aggregation or link-curation pages. Direct <script async> is kept
+    (crawler compatibility) on pages with original content only. List pages are also noindex.
+  {%- endcomment -%}
+  {%- assign list_layouts = 'archives,tags,categories,category,tag' | split: ',' -%}
+  {%- assign is_list_page = false -%}
+  {%- if list_layouts contains page.layout or page.no_ads -%}{%- assign is_list_page = true -%}{%- endif -%}
+  {%- if is_list_page -%}
+  <meta name="robots" content="noindex,follow">
+  {%- else -%}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2700240339792942" crossorigin="anonymous"></script>
+  {%- endif %}
 </head>

@@ -1,9 +1,11 @@
 name: Autonomous Daily Blog Post Agent
 
 on:
-  schedule:
-    # Runs daily at 13:00 UTC (07:00 AM America/Mexico_City)
-    - cron: '0 13 * * *'
+  # PAUSED 2026-11-10: AdSense "Low value content" / scaled-content remediation.
+  # Re-enable only after AdSense approval and with human-curated topics.
+  # schedule:
+  #   # Runs daily at 13:00 UTC (07:00 AM America/Mexico_City)
+  #   - cron: '0 13 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

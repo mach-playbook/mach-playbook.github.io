@@ -2,6 +2,7 @@
 title: Glossary
 icon: fas fa-book
 order: 6
+no_ads: true
 ---
 
 <div class="lang-block lang-es" markdown="1">
