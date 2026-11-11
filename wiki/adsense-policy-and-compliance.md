@@ -210,9 +210,17 @@ A pesar de que el código cumplía con el 100% de las 13 pruebas técnicas inici
    - Added `mermaid: true` frontmatter across all updated posts to ensure native client-side SVG diagram rendering.
 5. All automated test suites (AdSense Policy, Duplicate Detector, Site Integrity, UI Components, BDD Specs) pass with 100% SUCCESS and 0 errors.
 
-### Strategic Protocol for Next Review Request
-- Do not press `Request review` immediately: allow Googlebot 7–14 days to crawl the updated, differentiated content and detect the absence of ad tags on list pages.
-- Note on custom domain: while a TLD remains ideal long-term, this deep content differentiation and zero-ad list page isolation maximizes approval probability under the current `github.io` domain without upfront monetary investment.
+### Official AdSense Review Submission (Executed 2026-11-10 18:39 CST)
+- **Status Transition**: From `Needs attention` to **`Getting ready`** (*Getting your site ready to show ads*).
+- **Ownership Verification**: `Verify site ownership` ✅ Verified.
+- **Review Status**: `Review requested` ✅ Confirmed.
+- **Pre-Submission Actions Executed**:
+  1. Remediation of all 33 duplicate boilerplate articles in `_posts/2026-04-04-*.md` with unique technical depth (>1,000 words, custom code, SRE runbooks, Mermaid diagrams).
+  2. Ad script exclusion and `noindex,follow` injection on list/taxonomy pages (`archives`, `tags`, `categories`, `resources`, `glossary`).
+  3. Pausing of daily automated publishing cron.
+  4. Integration of the interactive GCP ACE certification prep app banner in `_layouts/home.html` and `_tabs/resources.md`.
+  5. Search Console 404 validation started for all 4 previously reported URLs.
+- **Post-Submission Directive**: Keep site structure stable during the 3–14 day review window. No URL changes or deletions.
 
 ### Tooling gotcha: Chrome DevTools MCP
 - Two MCP servers exist: the browser subagent's `chrome-devtools-mcp --autoConnect` (fails with `ECONNREFUSED ::1:9222` / `DevToolsActivePort`), and the main agent's `chrome_devtools_bridge.mjs` (reads `DevToolsActivePort`, connects to `ws://127.0.0.1:9222`). Use the bridge via `call_mcp_tool(ServerName="chrome-devtools")`.

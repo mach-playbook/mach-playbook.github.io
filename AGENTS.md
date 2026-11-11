@@ -269,6 +269,15 @@
 - Implemented `scripts/manage_gitguardian.py` supporting incident listing, inspection, resolution, ignore options, automatic 429 rate limit retries, and CI/CD markdown summary generation.
 - Created `.github/workflows/health-check.yml` ("Periodic Health & Uptime Audit") to smoke-test core endpoints and run automated GitGuardian security posture audits.
 
+2026-11-10 18:39: AdSense Replicated Content Remediation & Review Submission
+- Completely remediated 33 duplicate template posts in `_posts/2026-04-04-*.md`, replacing identical boilerplate with unique, domain-specific deep dives (>1,000 words, custom code, SRE runbooks, Mermaid diagrams).
+- Excluded AdSense `<script async>` and added `noindex,follow` on low-value list pages (`archives`, `tags`, `categories`, `resources`, `glossary`).
+- Paused daily automated publisher in `.github/workflows/daily-blog-post.yml`.
+- Added GCP ACE interactive certification study guide banner to `_layouts/home.html` and `_tabs/resources.md`.
+- Initiated 404 validation in Google Search Console ("Validation started") for all 4 previously reported 404 URLs.
+- Successfully submitted site review request in Google AdSense console (`mach-playbook.github.io`). Site status transitioned from `Needs attention` to `Getting ready` ("Review requested").
+- Verified all unit test suites (AdSense Policy, UI Components, Site Integrity, Duplicate Detector) pass 100% with 0 errors.
+
 ---
 
 ## 4. MANDATORY SECONDARY MODEL DELEGATION VIA OLLAMA MCP (`gemma4:cloud` &rarr; `qwen3:8b-8k`)
