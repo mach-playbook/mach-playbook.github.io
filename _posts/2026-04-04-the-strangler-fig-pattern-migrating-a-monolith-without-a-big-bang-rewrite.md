@@ -8,6 +8,7 @@ categories: [Architecture, Microservices]
 tags: [architecture, devops, microservices]
 image:
   path: /assets/img/posts/2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.png
+mermaid: true
 ---
 
 Attempting a "Big Bang" rewrite of a critical enterprise monolithic system—where engineering freezes feature development for a year to rewrite the entire codebase from scratch—is one of the most high-risk maneuvers in software engineering. Statistics show that the majority of Big Bang rewrites exceed budget, suffer massive delays, or fail outright due to lost business logic edge cases.
@@ -83,104 +84,97 @@ The Strangler Fig pattern mitigates risk by turning an overwhelming system overh
 
 ---
 
-## Architectural Deep Dive: Enterprise Design Patterns
+## Architectural Deep Dive: Envoy Traffic Shadowing & Dark Launch Strangling
 
-When implementing this architecture in production-scale enterprise environments, software engineering teams must account for distributed system complexities including network partitions, transient downstream latencies, and cross-cutting security boundaries.
+The most reliable mechanism for executing a Strangler Fig migration without user-facing downtime is **Traffic Shadowing (Dark Launching)**. Using an edge proxy like Envoy or Cloudflare Workers, incoming live production traffic to legacy endpoints is simultaneously mirrored to the newly developed microservice.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               DISTRIBUTED RUNTIME RESILIENCE TOPOLOGY                  │
-├────────────────────────────────────────────────────────────────────────┤
-│  Client Traffic -> [Edge Ingress / TLS 1.3]                            │
-│                         │                                              │
-│                  [API Gateway / Auth]                                  │
-│                         │                                              │
-│             ┌───────────┴───────────┐                                  │
-│             ▼                       ▼                                  │
-│   [Domain Service A] <==gRPC==> [Domain Service B]                     │
-│        │                                 │                             │
-│   (Isolated DB)                   (Isolated DB)                        │
-└────────────────────────────────────────────────────────────────────────┘
+The legacy monolith's response is returned to the user, while the new microservice's response, latency, and database persistence are evaluated asynchronously in the background.
+
+```mermaid
+flowchart TD
+    Client["Client Request<br/>POST /api/checkout"] --> Proxy["Envoy Interceptor Proxy"]
+
+    Proxy -->|Primary Live Call| Monolith["Legacy Monolith<br/>(Returns 200 OK to User)"]
+    Monolith --> Client
+
+    Proxy -.->|Shadow Copy (100% Asynchronous)| NewService["New Checkout Microservice<br/>(Canary Staging)"]
+    NewService --> ComparisonEngine["Shadow Comparator Engine<br/>(Verifies Response Consistency)"]
 ```
 
-### 1. Concrete Code Implementation & Middleware
+### 1. Concrete Implementation: Envoy Traffic Shadowing Specification
 
-The following production-tested implementation demonstrates how to enforce resilience, telemetry tracking, and defensive input sanitization in enterprise microservices:
+The following Envoy / Istio `VirtualService` configuration mirrors 100% of production traffic from the legacy monolith to the new microservice:
 
 ```yaml
-# Production Envoy Rate-Limiting & Circuit Breaking Filter Configuration
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
 metadata:
-  name: mach-edge-routing
+  name: strangler-checkout-route
   namespace: production
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: "5"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "15"
-    nginx.ingress.kubernetes.io/limit-rps: "50"
-    nginx.ingress.kubernetes.io/limit-connections: "20"
 spec:
-  rules:
-    - host: api.enterprise.internal
-      http:
-        paths:
-          - path: /api/v1/core
-            pathType: Prefix
-            backend:
-              service:
-                name: core-microservice
-                port:
-                  number: 8080
+  hosts:
+    - api.machplaybook.com
+  http:
+    - match:
+        - uri:
+            prefix: /api/checkout
+      route:
+        - destination:
+            host: legacy-monolith.production.svc.cluster.local
+            port:
+              number: 8080
+          weight: 100
+      # Asynchronously mirror real traffic to new microservice
+      mirror:
+        host: new-checkout-service.production.svc.cluster.local
+        port:
+          number: 8080
+      mirrorPercentage:
+        value: 100.0
 ```
 
 ---
 
 ## SRE Failure Modes & Production Troubleshooting Playbook
 
-Operating distributed systems in mission-critical environments requires clear diagnostic workflows for high-severity incidents. Below are the most common production failure modes and actionable mitigation runbooks:
-
-### Incident Scenario A: Cascading Upstream Latency Spikes
-* **Root Cause:** A degraded third-party API or downstream database lock causes thread pool starvation in the calling service, causing upstream Gateway timeouts.
-* **Diagnostic Command:**
+### Incident Scenario A: Shadow Traffic Mutating Legacy Production Storage (Write Leak)
+* **Root Cause:** A shadowed POST request reached the new microservice, which was accidentally configured with connection credentials to the production database instead of a shadow/mock database, causing duplicate records.
+* **Telemetry & Diagnostic Command:**
   ```bash
-  kubectl logs -n production -l app=core-microservice --tail=100 | grep -E "TIMEOUT|504|DEADLINE_EXCEEDED"
+  # Check for shadow transaction headers in production database logs
+  SELECT count(*) FROM orders WHERE user_agent LIKE '%Envoy-Shadow%';
   ```
 * **Mitigation Protocol:**
-  1. Trigger dynamic circuit breaking in Envoy / NGINX to immediately short-circuit 100% of non-essential downstream calls.
-  2. Scale the frontend replica set to absorb connection backpressure while downstream autoscaling provisions compute.
+  1. Enforce read-only or dry-run database credentials in shadowed canary environments.
+  2. Implement an application-level header check (`X-Envoy-Decorated: shadow`) that skips database writes in mirrored pipelines.
 
-### Incident Scenario B: Data Pipeline Inconsistency During Network Partitions
-* **Root Cause:** Asynchronous messaging queues accumulate unacknowledged messages due to consumer schema deserialization mismatches.
-* **Diagnostic Command:**
+### Incident Scenario B: Route Splitting Drift Causing Split-Brain Session State
+* **Root Cause:** An edge routing rule migrated `/orders` to the new microservice while `/cart` remained on the legacy monolith. Session state was stored in legacy PHP cookies rather than centralized Redis, logging users out when viewing orders.
+* **Telemetry & Diagnostic Command:**
   ```bash
-  curl -s "http://monitoring.internal:9090/api/v1/query?query=kafka_consumer_lag"
+  # Count HTTP 401 Unauthorized spikes on strangler cutover endpoints
+  awk '$7 ~ /^\/orders/ && $9 == 401' /var/log/nginx/access.log | wc -l
   ```
 * **Mitigation Protocol:**
-  1. Route malformed payloads to a Dead Letter Queue (DLQ) for asynchronous inspection.
-  2. Deploy hotfix patches with backward-compatible schema definitions.
+  1. Externalize session management to a shared distributed Redis cluster before starting endpoint strangling.
+  2. Implement a unified JWT authentication gateway that validates credentials upstream of both legacy and modern services.
 
 ---
 
-## Architectural Trade-off Analysis Matrix
+## Architectural Trade-off Analysis: Strangler Migration Approaches
 
-Every architectural decision involves explicit trade-offs across latency, consistency, operational complexity, and cloud infrastructure cost:
-
-| Architectural Strategy | Latency Profile | Fault Tolerance | Operational Complexity | Cost Efficiency |
+| Approach | Risk Profile | Rollback Speed | Operational Overhead | Infrastructure Cost |
 | :--- | :--- | :--- | :--- | :--- |
-| **Monolithic Synchronous Calls** | Ultra-low (in-memory) | Low (Single Point of Failure) | Minimal | High in early stage |
-| **API Gateway + Synchronous REST** | Moderate (network overhead) | Moderate (isolated boundaries) | Moderate | Moderate |
-| **Event-Driven Asynchronous Mesh** | Eventual consistency | High (durable message queues) | High (tracing, DLQ required) | High at scale |
-| **Distributed Edge Caching** | Near-zero for reads | High (replicated edge nodes) | Moderate | High ROI for high read-ratios |
+| **Big-Bang Rewrite** | Catastrophic (All or nothing) | Impossible (Months of work lost) | Low until launch | Low until launch |
+| **Edge Proxy Strangler (Envoy)** | Minimal (Endpoint by endpoint) | Instantaneous (Change proxy rule)| Moderate (Dual infrastructure)| Moderate |
+| **CDC Event-Driven Strangler** | Very Low (Asynchronous sync) | High | High (Debezium, Kafka sync) | High |
 
 ---
 
-## Production Verification Checklist
+## Strangler Fig Production Migration Checklist
 
-Before promoting architectural changes to enterprise production clusters, verify that your engineering team has satisfied the following operational gates:
-
-* [ ] Comprehensive contract tests (OpenAPI / Pact) executed and passing in CI/CD.
-* [ ] Distributed tracing spans propagated across all outbound HTTP/gRPC request headers.
-* [ ] Rate limiting, exponential backoff, and circuit breaker thresholds validated under chaos testing (e.g., Chaos Mesh / Litmus).
-* [ ] Resource requests, memory limits, and horizontal pod autoscaler (HPA) policies configured.
-* [ ] Zero-downtime deployment strategy (Canary or Blue/Green) tested against live traffic replication.
+* [ ] Unified authentication gateway established upstream of both legacy and new services.
+* [ ] Session storage externalized from legacy application memory into shared Redis.
+* [ ] Traffic shadowing (dark launching) executed and compared with zero discrepancies.
+* [ ] Automated database synchronization (CDC) active between legacy and modern databases.
+* [ ] Granular instant rollback routing rules verified in edge reverse proxies.
