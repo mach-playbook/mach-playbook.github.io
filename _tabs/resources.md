@@ -18,6 +18,8 @@ Este directorio curado te conecta directamente con los organismos oficiales de e
 
 > 🚀 **Comunidad Oficial en daily.dev**: Únete a nuestro Squad **[MACH Architecture & Composable Systems](https://daily.dev/squads/machplaybook){:target="_blank" rel="noopener"}** para recibir análisis semanales de arquitectura, debatir patrones de diseño e interactuar con otros ingenieros.
 
+> ☁️ **Herramienta Interactiva de Certificación Google Cloud**: Practica con nuestro **[Simulador Interactivo de Examen GCP ACE v4.0](https://mach-playbook.github.io/gcp-ace-interactive-study-guide/){:target="_blank" rel="noopener"}** (Next.js app interactiva con cuestionarios CLI gcloud, árboles de decisión de Compute/Storage y flashcards de trampas de examen).
+
 ## 1. The MACH Alliance y Estándares de Certificación
 
 La [MACH Alliance](https://machalliance.org/){:target="_blank" rel="noopener"} es la organización sin fines de lucro dedicada a promover ecosistemas tecnológicos empresariales abiertos y de máxima especialización (*best-of-breed*).
@@ -119,6 +121,8 @@ This curated directory connects you directly with the official standards bodies,
 ---
 
 > 🚀 **Official daily.dev Community**: Join our Squad **[MACH Architecture & Composable Systems](https://daily.dev/squads/machplaybook){:target="_blank" rel="noopener"}** for weekly architecture deep-dives, discussions, and developer updates.
+
+> ☁️ **Interactive Google Cloud Certification Tool**: Practice with our **[GCP ACE v4.0 Interactive Exam Prep Simulator](https://mach-playbook.github.io/gcp-ace-interactive-study-guide/){:target="_blank" rel="noopener"}** (Next.js interactive app featuring gcloud CLI quizzes, Compute/Storage decision trees, and exam trap flashcards).
 
 ## 1. The MACH Alliance & Certification Standards
 
