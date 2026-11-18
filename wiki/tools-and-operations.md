@@ -74,6 +74,21 @@ python3 scripts/manage_gitguardian.py --report
 ```
 Queries the GitGuardian v1 REST API using `GITGUARDIAN_API_KEY` (configured in `.env` and GitHub Actions Secrets) to inspect and report on exposed secrets. Integrated into `.github/workflows/health-check.yml` ("Periodic Health & Uptime Audit") to monitor security posture and verify 0 active secret incidents.
 
+### J. Taxonomy Normalizer, GEO Index, IndexNow & Telemetry Auditor
+```bash
+# Normalize taxonomy to 7 pillars + 21 tags and enforce seo_title <= 66 chars
+python3 scripts/normalize-taxonomy.py
+
+# Regenerate /llms.txt and /llms-full.txt for AI search engines (GEO)
+python3 scripts/generate-llms-txt.py
+
+# Submit canonical indexable URLs + llms.txt to IndexNow (Bing & Copilot)
+python3 scripts/submit-indexnow.py
+
+# Unified audit of sitemap noindex leaks, title lengths, and GH Actions logs
+python3 scripts/fetch-telemetry-and-logs.py --sitemap-source live
+```
+
 ---
 
 ## 3. Local Docker Testing (HTML-Proofer)

@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Infraestructura Inmutable y Despliegues Blue/Green en Google Cloud Run"
+seo_title: "Infraestructura Inmutable y Despliegues Blue/Green en Google Cloud"
 date: 2026-07-31 15:00:00 -0600
 lang: es
-categories: [DevOps & CI/CD, Automatización]
-tags: [ci-cd, cloud-native, devops, gcp]
+categories: [DevOps & CI/CD]
+tags: [ci-cd, cloud-native, devops, gcp, kubernetes]
 image:
   path: /assets/img/posts/2026-07-31-infraestructura-inmutable-despliegues-blue-green-cloud-run.png
 ---

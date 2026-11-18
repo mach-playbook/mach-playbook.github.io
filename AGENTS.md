@@ -278,6 +278,15 @@
 - Successfully submitted site review request in Google AdSense console (`mach-playbook.github.io`). Site status transitioned from `Needs attention` to `Getting ready` ("Review requested").
 - Verified all unit test suites (AdSense Policy, UI Components, Site Integrity, Duplicate Detector) pass 100% with 0 errors.
 
+2026-11-18 09:00: Multi-Platform Telemetry Audit & Full Phases 1–3 Remediation Deployment
+- Synchronized `main` with `origin/main` and audited GA4, GSC, AdSense, Bing Webmaster Tools, and GitHub Actions server logs.
+- Fixed `sitemap.xml` `noindex` contradiction via `_config.yml` defaults, tab frontmatter `sitemap: false`, and `_plugins/posts-lastmod-hook.rb` (`:pre_render` hook), shrinking `sitemap.xml` from 522 to 156 clean indexable URLs (0 `noindex` leaks).
+- Created `scripts/normalize-taxonomy.py` to consolidate 70 categories / 291 tags to the 7 canonical MACH pillars and 21 tags, and generated `seo_title` across 143 long-title posts with <= 70-char `<title>` enforcement in `_includes/head.html`.
+- Upgraded CI workflows (`.github/workflows/*.yml`) to `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` and `ubuntu-24.04`.
+- Enabled GA4 `generate_lead`, `tool_interaction`, `page_not_found`, and automatic `navigator.globalPrivacyControl` (GPC) consent + US 2027 privacy disclosures (`_tabs/privacy.md`).
+- Deployed IndexNow (`4f8b9e2d1a7c6b3e5f0d8a9c2e4b7d1f.txt` + `scripts/submit-indexnow.py`), GEO corpus files (`llms.txt` / `llms-full.txt`), Interactive Tool #3 (`#openapi-rate-limit-app` in `_tabs/tools.md`), and `scripts/fetch-telemetry-and-logs.py`.
+- Validated full Docker test stage (`mach-playbook:test`) passing all Python suites (36/36 integrity checks, 14/14 AdSense checks, 11/11 UI, 19/19 BDD, 8/8 topic tests) and `HTML-Proofer` (190 files, 1,899 internal links, 0 errors).
+
 ---
 
 ## 4. MANDATORY SECONDARY MODEL DELEGATION VIA OLLAMA MCP (`gemma4:cloud` &rarr; `qwen3:8b-8k`)

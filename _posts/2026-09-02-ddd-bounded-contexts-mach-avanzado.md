@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Domain-Driven Design Avanzado en MACH: Bounded Contexts, Aggregates y Domain Events"
+seo_title: "Domain-Driven Design Avanzado en MACH"
 date: 2026-09-02 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [ddd, domain-driven-design, bounded-contexts, aggregates, domain-events, mach, microservices]
+categories: [Microservicios]
+tags: [architecture, microservices, event-driven, distributed-systems, cloud-native]
 image:
   path: /assets/img/posts/2026-09-02-ddd-bounded-contexts-mach-avanzado.png
 ---

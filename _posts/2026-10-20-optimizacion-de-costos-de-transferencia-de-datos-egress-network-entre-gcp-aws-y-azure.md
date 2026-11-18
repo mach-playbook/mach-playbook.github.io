@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "La Hemorragia Silenciosa del Egress: Ingeniería de Tráfico y Unit Economics en Arquitecturas Multi-Cloud"
+seo_title: "La Hemorragia Silenciosa del Egress"
 date: 2026-10-20 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, FinOps]
-tags: [egress, multi-cloud, networking, finops, aws, gcp, azure]
+categories: [Data Engineering]
+tags: [finops, aws, gcp, ai-engineering, data-engineering]
 image:
   path: /assets/img/posts/2026-10-20-optimizacion-de-costos-de-transferencia-de-datos-egress-network-entre-gcp-aws-y-azure.png
 ---

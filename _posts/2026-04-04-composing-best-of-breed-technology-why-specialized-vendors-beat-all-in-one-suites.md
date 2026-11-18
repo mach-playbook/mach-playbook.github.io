@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Composing Best-of-Breed Technology: Why Specialized Vendors Beat All-in-One Suites"
+seo_title: "Composing Best-of-Breed Technology"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Enterprise Architecture, FinOps]
-tags: [architecture, cloud-native, finops, headless]
+categories: [Headless & Frontend]
+tags: [architecture, cloud-native, finops, headless, ai-engineering]
 image:
   path: /assets/img/posts/2026-04-04-composing-best-of-breed-technology-why-specialized-vendors-beat-all-in-one-suites.png
 mermaid: true

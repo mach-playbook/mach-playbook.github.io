@@ -766,15 +766,15 @@ def generate_fallback_article(topic: str, pillar: str, slug: str, lang: str, pos
     is_com   = any(k in tl for k in ["commerce","checkout","pago","inventario","catalog","pbc","strangler","monolito"])
 
     if lang == "es":
-        if is_api:    cats,tags = "[Diseno de APIs, Microservicios]",         "[mach, api-first, graphql, openapi, microservicios, arquitectura, cloud-native]"
-        elif is_event: cats,tags = "[Sistemas Distribuidos, Microservicios]",  "[mach, event-driven, kafka, microservicios, resiliencia, arquitectura, cloud-native]"
-        elif is_sec:   cats,tags = "[Seguridad, Microservicios]",               "[mach, zero-trust, seguridad, kubernetes, mtls, arquitectura, cloud-native]"
-        elif is_infra: cats,tags = "[DevOps, Arquitectura Cloud]",              "[mach, kubernetes, gitops, ci-cd, devops, arquitectura, cloud-native]"
-        elif is_head:  cats,tags = "[Headless y Frontend, Arquitectura Cloud]", "[mach, headless, frontend, composable-commerce, arquitectura, cloud-native, performance]"
-        elif is_fin:   cats,tags = "[Estrategia Enterprise, Arquitectura Cloud]","[mach, finops, roi, estrategia, arquitectura, cloud-native, enterprise]"
-        elif is_com:   cats,tags = "[Composable Commerce, Arquitectura Cloud]", "[mach, composable-commerce, headless, arquitectura, cloud-native, ecommerce, pbcs]"
-        elif is_data:  cats,tags = "[Arquitectura de Datos, Microservicios]",   "[mach, database, sharding, postgres, arquitectura, cloud-native, consistencia]"
-        else:          cats,tags = "[Arquitectura Cloud, Microservicios]",       "[mach, microservicios, cloud-native, api-first, resiliencia, arquitectura, devops]"
+        if is_api:    cats,tags = "[API Design]",             "[api-first, microservices, architecture, cloud-native, security]"
+        elif is_event: cats,tags = "[Microservicios]",        "[event-driven, microservices, distributed-systems, cloud-native, architecture]"
+        elif is_sec:   cats,tags = "[Security & Observability]", "[security, observability, kubernetes, microservices, cloud-native]"
+        elif is_infra: cats,tags = "[DevOps & CI/CD]",        "[devops, ci-cd, kubernetes, cloud-native, architecture]"
+        elif is_head:  cats,tags = "[Headless & Frontend]",   "[headless, nextjs, api-first, cloud-native, architecture]"
+        elif is_fin:   cats,tags = "[Arquitectura Cloud]",    "[finops, cloud-native, architecture, microservices, devops]"
+        elif is_com:   cats,tags = "[Headless & Frontend]",   "[headless, microservices, api-first, cloud-native, architecture]"
+        elif is_data:  cats,tags = "[Data Engineering]",      "[data-engineering, postgresql, distributed-systems, cloud-native, architecture]"
+        else:          cats,tags = "[Arquitectura Cloud]",    "[microservices, cloud-native, api-first, distributed-systems, architecture, devops]"
 
         if is_event:
             diagram = "sequenceDiagram\n    participant C as Cliente\n    participant P as Productor Kafka\n    participant B as Kafka Broker\n    participant W as Worker Consumidor\n    participant D as Base de Datos\n    C->>P: Publicar Evento de Dominio\n    P->>D: Escribir en Tabla Outbox (ACID)\n    P->>B: Publicar via CDC Debezium\n    B-->>W: Consumir at-least-once\n    W->>D: Actualizar Proyeccion\n    W-->>C: ACK / Webhook"
@@ -863,15 +863,15 @@ def generate_fallback_article(topic: str, pillar: str, slug: str, lang: str, pos
 
     else:
         # English version
-        if is_api:    cats,tags = "[API Design, Microservices]",             "[mach, api-first, graphql, openapi, microservices, architecture, cloud-native]"
-        elif is_event: cats,tags = "[Distributed Systems, Microservices]",   "[mach, event-driven, kafka, microservices, resilience, architecture, cloud-native]"
-        elif is_sec:   cats,tags = "[Security, Microservices]",               "[mach, zero-trust, security, kubernetes, mtls, architecture, cloud-native]"
-        elif is_infra: cats,tags = "[DevOps, Cloud Architecture]",            "[mach, kubernetes, gitops, ci-cd, devops, architecture, cloud-native]"
-        elif is_head:  cats,tags = "[Headless and Frontend, Cloud Architecture]","[mach, headless, frontend, composable-commerce, architecture, cloud-native, performance]"
-        elif is_fin:   cats,tags = "[Enterprise Architecture, FinOps]",       "[mach, finops, roi, strategy, architecture, cloud-native, enterprise]"
-        elif is_com:   cats,tags = "[Composable Commerce, Cloud Architecture]","[mach, composable-commerce, headless, architecture, cloud-native, ecommerce, pbcs]"
-        elif is_data:  cats,tags = "[Data Architecture, Microservices]",      "[mach, database, sharding, postgres, architecture, cloud-native, consistency]"
-        else:          cats,tags = "[Architecture, Microservices]",           "[mach, microservices, cloud-native, api-first, resilience, architecture, devops]"
+        if is_api:    cats,tags = "[API Design]",             "[api-first, microservices, architecture, cloud-native, security]"
+        elif is_event: cats,tags = "[Microservicios]",        "[event-driven, microservices, distributed-systems, cloud-native, architecture]"
+        elif is_sec:   cats,tags = "[Security & Observability]", "[security, observability, kubernetes, microservices, cloud-native]"
+        elif is_infra: cats,tags = "[DevOps & CI/CD]",        "[devops, ci-cd, kubernetes, cloud-native, architecture]"
+        elif is_head:  cats,tags = "[Headless & Frontend]",   "[headless, nextjs, api-first, cloud-native, architecture]"
+        elif is_fin:   cats,tags = "[Arquitectura Cloud]",    "[finops, cloud-native, architecture, microservices, devops]"
+        elif is_com:   cats,tags = "[Headless & Frontend]",   "[headless, microservices, api-first, cloud-native, architecture]"
+        elif is_data:  cats,tags = "[Data Engineering]",      "[data-engineering, postgresql, distributed-systems, cloud-native, architecture]"
+        else:          cats,tags = "[Arquitectura Cloud]",    "[microservices, cloud-native, api-first, distributed-systems, architecture, devops]"
 
         sections = [
             "---", "mermaid: true", "layout: post",
@@ -1127,15 +1127,54 @@ lang: {lang}""", 1)
     return content
 
 
+def submit_post_to_indexnow(
+    post_url: str,
+    host: str = "mach-playbook.github.io",
+    key: str = "4f8b9e2d1a7c6b3e5f0d8a9c2e4b7d1f"
+) -> bool:
+    """
+    Submits newly published URLs to IndexNow (Bing & Microsoft Copilot instant crawling).
+    Non-blocking: logs status and returns gracefully on network errors.
+    """
+    endpoint = "https://api.indexnow.org/indexnow"
+    payload = {
+        "host": host,
+        "key": key,
+        "keyLocation": f"https://{host}/{key}.txt",
+        "urlList": [post_url, f"https://{host}/llms.txt"]
+    }
+    headers = {
+        "User-Agent": "MACHPlaybook-IndexNow/1.0",
+        "Content-Type": "application/json; charset=utf-8"
+    }
+    try:
+        data_bytes = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(endpoint, data=data_bytes, headers=headers, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                status_code = resp.status
+        except urllib.error.HTTPError as he:
+            status_code = he.code
+        if status_code in (200, 202):
+            print(f"[IndexNow] ✅ Submitted '{post_url}' to IndexNow (HTTP {status_code}).")
+            return True
+        print(f"[IndexNow] ⚠️ IndexNow returned HTTP {status_code}.")
+        return False
+    except Exception as e:
+        print(f"[IndexNow] ⚠️ Error submitting to IndexNow: {e}")
+        return False
+
+
 def submit_post_to_bing(
     post_url: str,
     site_url: str = "https://mach-playbook.github.io/",
     api_key: Optional[str] = None
 ) -> bool:
     """
-    Submits the published article URL to Bing Webmaster Tools API (SubmitUrlBatch)
+    Submits the published article URL to IndexNow and Bing Webmaster Tools API (SubmitUrlBatch)
     for immediate priority crawling by Bingbot and ingestion into Microsoft Copilot.
     """
+    submit_post_to_indexnow(post_url=post_url)
     resolved_api_key = api_key or os.getenv("BING_WEBMASTER_API_KEY")
     if not resolved_api_key:
         # Fallback check in local .env

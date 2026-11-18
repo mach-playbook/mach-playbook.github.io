@@ -4,6 +4,7 @@ icon: fas fa-compass
 order: 4
 mermaid: true
 no_ads: true
+sitemap: false
 ---
 
 <div class="lang-block lang-es" markdown="1">

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del Eventual Consistency: Resolviendo el Laberinto de Transacciones Multi-Vendor con Temporal.io y Sagas Orquestadas"
+seo_title: "Más allá del Eventual Consistency"
 date: 2026-10-02 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Composable Commerce]
-tags: [temporal-io, saga-pattern, microservices, supply-chain, distributed-systems, mach-architecture]
+categories: [Headless & Frontend]
+tags: [microservices, distributed-systems, architecture, ai-engineering, event-driven]
 image:
   path: /assets/img/posts/2026-10-02-patron-saga-coreografiado-vs-orquestado-con-temporalio-en-cadenas-de-suministro-multi-vendor.png
 ---

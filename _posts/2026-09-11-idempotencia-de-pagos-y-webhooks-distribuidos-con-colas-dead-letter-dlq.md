@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Idempotencia de Pagos y Webhooks Distribuidos: Estrategias de Resiliencia con DLQ en Arquitecturas Composable"
+seo_title: "Idempotencia de Pagos y Webhooks Distribuidos"
 date: 2026-09-11 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [idempotencia, webhooks, serverless, event-driven, payments, distributed-systems, mach]
+categories: [API Design]
+tags: [event-driven, distributed-systems, architecture, ai-engineering, headless]
 image:
   path: /assets/img/posts/2026-09-11-idempotencia-de-pagos-y-webhooks-distribuidos-con-colas-dead-letter-dlq.png
 ---

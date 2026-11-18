@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Multi-tenancy en Arquitecturas SaaS con MACH: Aislamiento, Escalado y Modelo de Datos"
+seo_title: "Multi-tenancy en Arquitecturas SaaS con MACH"
 date: 2026-08-24 09:00:00 -0600
 lang: es
-categories: [SaaS, Arquitectura Cloud]
-tags: [multi-tenancy, saas, mach, postgres, kubernetes, cloud-native, microservices]
+categories: [DevOps & CI/CD]
+tags: [architecture, kubernetes, cloud-native, microservices, finops, data-engineering]
 image:
   path: /assets/img/posts/2026-08-24-multi-tenancy-arquitecturas-saas-mach.png
 ---

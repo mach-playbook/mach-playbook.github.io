@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Service Mesh con Istio en Produccion MACH: Trafico, Seguridad mTLS y Observabilidad"
+seo_title: "Service Mesh con Istio en Produccion MACH"
 date: 2026-08-27 09:00:00 -0600
 lang: es
-categories: [Cloud-Native, DevOps]
-tags: [service-mesh, istio, mtls, observability, kubernetes, mach, zero-trust]
+categories: [Security & Observability]
+tags: [kubernetes, security, observability, architecture, cloud-native]
 image:
   path: /assets/img/posts/2026-08-27-service-mesh-istio-mach-produccion.png
 ---

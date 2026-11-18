@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Case Study: Sephora's Omnichannel Transformation with Headless Architecture"
+seo_title: "Case Study: Sephora's Omnichannel Transformation with Headless"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Headless & Frontend, Architecture]
-tags: [architecture, cloud-native, headless]
+categories: [Headless & Frontend]
+tags: [architecture, cloud-native, headless, nextjs, api-first]
 image:
   path: /assets/img/posts/2026-04-04-case-study-sephoras-omnichannel-transformation-with-headless-architecture.png
 mermaid: true

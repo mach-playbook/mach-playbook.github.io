@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Rate Limiting y Throttling en APIs MACH: Proteccion Multicapa sin Impactar Performance"
+seo_title: "Rate Limiting y Throttling en APIs MACH"
 date: 2026-08-29 09:00:00 -0600
 lang: es
-categories: [API Design, Seguridad]
-tags: [rate-limiting, throttling, api-gateway, mach, microservices, redis, token-bucket]
+categories: [Security & Observability]
+tags: [api-first, architecture, microservices, distributed-systems, qa-automation]
 image:
   path: /assets/img/posts/2026-08-29-api-rate-limiting-mach-microservicios.png
 ---

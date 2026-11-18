@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Blindaje de Checkouts Headless: Tokenización Desacoplada y Cumplimiento PCI-DSS v4.0 SAQ-A"
+seo_title: "Blindaje de Checkouts Headless"
 date: 2026-11-02 09:00:00 -0600
 lang: es
-categories: [Seguridad Zero Trust, Composable Commerce]
-tags: [pci-dss, tokenizacion, checkout-headless, cde, zero-trust, edge-security, composable]
+categories: [Security & Observability]
+tags: [security, headless, data-engineering, observability, cloud-native]
 image:
   path: /assets/img/posts/2026-11-02-tokenizacion-de-datos-sensibles-y-cumplimiento-pci-dss-saq-a-en-checkouts-desacoplados.png
 ---

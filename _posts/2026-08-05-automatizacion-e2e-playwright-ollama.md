@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Automatización Inteligente: Pruebas E2E con Playwright y Modelos Locales mediante Ollama"
+seo_title: "Automatización Inteligente: Pruebas E2E con Playwright y Modelos"
 date: 2026-08-05 14:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [ai-engineering, ci-cd, qa-automation]
+categories: [DevOps & CI/CD]
+tags: [ai-engineering, ci-cd, qa-automation, devops, kubernetes]
 image:
   path: /assets/img/posts/2026-08-05-automatizacion-e2e-playwright-ollama.png
 ---

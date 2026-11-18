@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Database Sharding para Microservicios MACH: Estrategias de Particionado a Escala Global"
+seo_title: "Database Sharding para Microservicios MACH"
 date: 2026-08-28 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Data Engineering]
-tags: [database-sharding, postgresql, mach, microservices, distributed-systems, scalability]
+categories: [Data Engineering]
+tags: [postgresql, architecture, microservices, distributed-systems, ai-engineering, data-engineering]
 image:
   path: /assets/img/posts/2026-08-28-database-sharding-mach-microservicios.png
 ---

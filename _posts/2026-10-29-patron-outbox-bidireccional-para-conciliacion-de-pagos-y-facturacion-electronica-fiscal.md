@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Patrón Outbox Bidireccional: Conciliación de Pagos y Facturación Electrónica Fiscal sin Doble Gasto ni Multas Regulatorias"
+seo_title: "Patrón Outbox Bidireccional: Conciliación de Pagos y Facturación"
 date: 2026-10-29 09:00:00 -0600
 lang: es
-categories: [Arquitectura de Software, Transaccionalidad Distribuida]
-tags: [patron outbox, facturacion electronica, conciliacion, microservicios, postgresql, composable commerce]
+categories: [Data Engineering]
+tags: [microservices, postgresql, finops, ai-engineering, event-driven]
 image:
   path: /assets/img/posts/2026-10-29-patron-outbox-bidireccional-para-conciliacion-de-pagos-y-facturacion-electronica-fiscal.png
 ---

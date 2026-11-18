@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "De la Rigidez al Agilismo: Transición de Catálogos Monolíticos a Motores Composable PIM (Akeneo, Pimcore)"
+seo_title: "De la Rigidez al Agilismo: Transición de Catálogos Monolíticos a"
 date: 2026-08-17 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura de Datos]
-tags: [pim, mach, akeneo, pimcore, microservicios, ecommerce, headless]
+categories: [Data Engineering]
+tags: [architecture, microservices, headless, data-engineering, postgresql]
 image:
   path: /assets/img/posts/2026-08-17-transicion-de-catalogos-monoliticos-a-motores-composable-pim-akeneo-pimcore.png
 ---

@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Gestión de APIs Empresariales: Integrando Apigee, MuleSoft y Salesforce Data Cloud"
+seo_title: "Gestión de APIs Empresariales"
 date: 2026-08-05 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [api-first, cloud-native, data-engineering, gcp, headless]
+categories: [API Design]
+tags: [api-first, cloud-native, data-engineering, gcp, headless, ai-engineering]
 image:
   path: /assets/img/posts/2026-08-05-gestion-apis-apigee-mulesoft-salesforce.png
 ---

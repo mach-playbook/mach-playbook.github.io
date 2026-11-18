@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá de los Microservicios: Diagnóstico y Remediación del Monolito Distribuido en Ecosistemas MACH"
+seo_title: "Más allá de los Microservicios"
 date: 2026-09-16 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Estrategia Enterprise]
-tags: [microservicios, mach, distributed-systems, architecture-patterns, devops, cloud-native]
+categories: [DevOps & CI/CD]
+tags: [microservices, architecture, distributed-systems, devops, cloud-native, ai-engineering]
 image:
   path: /assets/img/posts/2026-09-16-como-evitar-la-trampa-del-monolito-distribuido-senales-de-alerta-y-remediacion.png
 ---

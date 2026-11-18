@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Estrategias de Pricing Dinámico y Motores de Promociones Desacoplados en Arquitecturas MACH"
+seo_title: "Estrategias de Pricing Dinámico y Motores de Promociones"
 date: 2026-09-23 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura Cloud]
-tags: [mach, pricing-dinamico, microservicios, api-first, headless, comercio-electronico]
+categories: [API Design]
+tags: [architecture, microservices, api-first, headless, ai-engineering]
 image:
   path: /assets/img/posts/2026-09-23-estrategias-de-pricing-dinamico-y-motores-de-promociones-desacoplados.png
 ---

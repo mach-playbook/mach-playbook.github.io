@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Auditoría Forense de Facturas Cloud: Detección y Erradicación de Desperdicio en Kubernetes y Almacenamiento Huérfano"
+seo_title: "Auditoría Forense de Facturas Cloud"
 date: 2026-11-07 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, FinOps & Unit Economics]
-tags: [finops, kubernetes, aws, ebs, karpenter, cloud-cost, cost-optimization]
+categories: [DevOps & CI/CD]
+tags: [finops, kubernetes, aws, ai-engineering, devops]
 image:
   path: /assets/img/posts/2026-11-07-auditoria-forense-de-facturas-cloud-detectando-desperdicios-en-instancias-kubernetes-y-discos-huerfanos.png
 ---

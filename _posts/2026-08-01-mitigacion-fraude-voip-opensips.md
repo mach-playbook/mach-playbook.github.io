@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Ingeniería de Tráfico VoIP: Mitigación de Fraude y Gestión de Capacidad con OpenSIPS"
+seo_title: "Ingeniería de Tráfico VoIP: Mitigación de Fraude y Gestión de"
 date: 2026-08-01 14:00:00 -0600
 lang: es
-categories: [Seguridad & Observabilidad, Cloud-Native]
-tags: [microservices, security, telecom]
+categories: [Security & Observability]
+tags: [microservices, security, telecom, observability, cloud-native]
 image:
   path: /assets/img/posts/2026-08-01-mitigacion-fraude-voip-opensips.png
 ---

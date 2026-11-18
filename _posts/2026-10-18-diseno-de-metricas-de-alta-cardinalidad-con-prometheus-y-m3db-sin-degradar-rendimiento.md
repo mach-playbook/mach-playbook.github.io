@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Ingesta Masiva sin OOMKilled: Arquitectura de Métricas de Alta Cardinalidad con Prometheus y M3DB"
+seo_title: "Ingesta Masiva sin OOMKilled"
 date: 2026-10-18 09:00:00 -0600
 lang: es
-categories: [Observabilidad Enterprise, Resiliencia Cloud]
-tags: [prometheus, m3db, tsdb, alta-cardinalidad, kubernetes, telemetria, sre]
+categories: [Security & Observability]
+tags: [observability, kubernetes, security, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-10-18-diseno-de-metricas-de-alta-cardinalidad-con-prometheus-y-m3db-sin-degradar-rendimiento.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Rotura Silenciosa en Producción: Mitigación de Despliegues Acoplados mediante Pruebas de Contrato con Pact y Can Broker"
+seo_title: "Rotura Silenciosa en Producción"
 date: 2026-10-16 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [pact, api-first, ci-cd, contract-testing, microservices, enterprise-architecture]
+categories: [DevOps & CI/CD]
+tags: [qa-automation, api-first, ci-cd, microservices, ai-engineering]
 image:
   path: /assets/img/posts/2026-10-16-gobernanza-de-apis-pruebas-de-contrato-automatizadas-con-pact-en-pipelines-cicd.png
 ---

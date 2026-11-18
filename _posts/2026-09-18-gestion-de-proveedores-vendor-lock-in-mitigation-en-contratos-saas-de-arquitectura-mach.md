@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mitigación de Vendor Lock-in en el Ecosistema MACH: Estrategias de Salida, Abstracción y Gobernanza SaaS"
+seo_title: "Mitigación de Vendor Lock-in en el Ecosistema MACH"
 date: 2026-09-18 09:00:00 -0600
 lang: es
-categories: [Estrategia Enterprise, Arquitectura Cloud]
-tags: [vendor lock-in, mach-architecture, composable-commerce, finops, saas, api strategy]
+categories: [API Design]
+tags: [architecture, headless, finops, ai-engineering, api-first]
 image:
   path: /assets/img/posts/2026-09-18-gestion-de-proveedores-vendor-lock-in-mitigation-en-contratos-saas-de-arquitectura-mach.png
 ---

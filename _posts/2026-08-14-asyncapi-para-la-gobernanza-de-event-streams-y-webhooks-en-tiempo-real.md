@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "AsyncAPI para la Gobernanza de Event Streams y Webhooks en Tiempo Real"
+seo_title: "AsyncAPI para la Gobernanza de Event Streams y Webhooks en Tiempo"
 date: 2026-08-14 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, API-First]
-tags: [asyncapi, event-driven architecture, webhooks, kafka, composable-commerce, gobernanza de datos]
+categories: [API Design]
+tags: [event-driven, headless, api-first, microservices, architecture]
 image:
   path: /assets/img/posts/2026-08-14-asyncapi-para-la-gobernanza-de-event-streams-y-webhooks-en-tiempo-real.png
 ---

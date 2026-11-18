@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mitigación de Denegación de Inventario y Credential Stuffing en Frontends Headless con Cloudflare Turnstile"
+seo_title: "Mitigación de Denegación de Inventario y Credential Stuffing en"
 date: 2026-10-22 09:00:00 -0600
 lang: es
-categories: [Seguridad Enterprise, Composable Commerce]
-tags: [mach, cloudflare-turnstile, zero-trust, cdn-edge, security, performance]
+categories: [Security & Observability]
+tags: [architecture, security, cloud-native, ai-engineering, headless]
 image:
   path: /assets/img/posts/2026-10-22-deteccion-y-mitigacion-de-bots-maliciosos-en-frontends-headless-con-cloudflare-turnstile.png
 ---

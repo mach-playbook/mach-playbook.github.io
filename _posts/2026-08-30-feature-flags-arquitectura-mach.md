@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Feature Flags en Arquitectura MACH: Releases Controlados y Experimentacion Continua"
+seo_title: "Feature Flags en Arquitectura MACH"
 date: 2026-08-30 09:00:00 -0600
 lang: es
-categories: [DevOps, Arquitectura Cloud]
-tags: [feature-flags, feature-toggles, launchdarkly, mach, devops, experimentation, ab-testing]
+categories: [DevOps & CI/CD]
+tags: [ci-cd, architecture, devops, kubernetes, cloud-native]
 image:
   path: /assets/img/posts/2026-08-30-feature-flags-arquitectura-mach.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Jerarquías Corporativas Multi-Nivel y Motores de Precios Dinámicos en Composable B2B: Arquitectura de Baja Latencia y Cero Bloqueos"
+seo_title: "Jerarquías Corporativas Multi-Nivel y Motores de Precios Dinámicos"
 date: 2026-10-10 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura Distribuida]
-tags: [composable-commerce, b2b, pricing-engine, microservices, performance, cdc]
+categories: [Data Engineering]
+tags: [headless, microservices, cloud-native, event-driven, ai-engineering]
 image:
   path: /assets/img/posts/2026-10-10-composable-b2b-commerce-reglas-complejas-de-precios-y-cuentas-corporativas.png
 ---

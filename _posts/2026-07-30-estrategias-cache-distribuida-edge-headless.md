@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Estrategias de Caché Distribuida y Edge Computing en Arquitecturas Headless"
+seo_title: "Estrategias de Caché Distribuida y Edge Computing en Arquitecturas"
 date: 2026-07-30 09:00:00 -0600
-categories: [Arquitectura Cloud, Microservicios]
+categories: [Security & Observability]
 tags: [cloud-native, distributed-systems, gcp, headless, nextjs, observability]
 lang: es
 image:

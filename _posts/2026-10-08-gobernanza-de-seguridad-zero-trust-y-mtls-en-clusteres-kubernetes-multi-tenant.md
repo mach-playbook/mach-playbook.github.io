@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Blindaje de Identidad Criptográfica: Gobernanza Zero Trust y mTLS en Clústeres Kubernetes Multi-Tenant de Alta Densidad"
+seo_title: "Blindaje de Identidad Criptográfica"
 date: 2026-10-08 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [kubernetes, zero trust, mtls, spiffe, cybersecurity, service mesh, cloud-native]
+categories: [Security & Observability]
+tags: [kubernetes, security, cloud-native, observability, microservices]
 image:
   path: /assets/img/posts/2026-10-08-gobernanza-de-seguridad-zero-trust-y-mtls-en-clusteres-kubernetes-multi-tenant.png
 ---

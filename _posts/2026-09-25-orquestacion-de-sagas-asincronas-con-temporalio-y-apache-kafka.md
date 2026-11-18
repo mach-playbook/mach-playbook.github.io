@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Consistencia Eventual sin Dolor: Resolviendo el Infierno de las Sagas Coreografiadas con Temporal.io y Kafka"
+seo_title: "Consistencia Eventual sin Dolor"
 date: 2026-09-25 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [temporal, kafka, sagas, distributed-systems, event-driven, cloud-native, composable-commerce]
+categories: [Microservicios]
+tags: [event-driven, distributed-systems, cloud-native, headless, ai-engineering]
 image:
   path: /assets/img/posts/2026-09-25-orquestacion-de-sagas-asincronas-con-temporalio-y-apache-kafka.png
 ---

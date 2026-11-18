@@ -2,10 +2,12 @@
 mermaid: true
 layout: post
 title: "Resiliencia Dinámica: Rate Limiting Adaptativo y Algoritmos Token Bucket en Arquitecturas MACH de Alta Escala"
+seo_title: "Algoritmo Token Bucket y Rate Limiting Adaptativo en APIs"
+description: "Implementación práctica del algoritmo Token Bucket y Rate Limiting adaptativo en API Gateways (Kong, Envoy) con Redis y Lua para proteger microservicios MACH."
 date: 2026-09-13 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [api-gateway, rate-limiting, token-bucket, resiliencia, mach, distributed-systems]
+categories: [API Design]
+tags: [api-first, distributed-systems, architecture, ai-engineering, microservices]
 image:
   path: /assets/img/posts/2026-09-13-estrategias-de-rate-limiting-adaptativo-y-algoritmos-token-bucket-en-api-gateways.png
 ---
@@ -27,8 +29,8 @@ Imagine un escenario de *Black Friday*. Su servicio de inventario puede manejar 
 A diferencia del algoritmo de *Fixed Window* (ventana fija), que puede permitir el doble de tráfico en el borde de la ventana de tiempo, el **Token Bucket** permite ráfagas (*bursts*) controladas, lo cual es vital para aplicaciones web modernas donde la carga de una página puede disparar múltiples llamadas asíncronas.
 
 ### Funcionamiento Lógico
-1. Un "cubo" se llena de tokens a una tasa constante ($R$).
-2. El cubo tiene una capacidad máxima ($B$).
+1. Un "cubo" se llena de tokens a una tasa constante (R).
+2. El cubo tiene una capacidad máxima (B).
 3. Cada petición consume un token.
 4. Si no hay tokens, la petición se rechaza (HTTP 429).
 
@@ -177,3 +179,8 @@ Para mover su arquitectura MACH hacia un modelo de resiliencia adaptativa, siga 
 - [ ] **Pruebas de Caos:** Ejecute simulaciones de inyección de latencia (usando herramientas como Gremlin o AWS Fault Injection Simulator) para validar que el Rate Limiting adaptativo reacciona reduciendo el throughput antes de que el servicio colapse.
 
 El Rate Limiting no es solo una medida de seguridad; es una herramienta de gestión de producto que garantiza que, incluso en los momentos de mayor estrés, su plataforma siga siendo funcional para sus clientes más valiosos. En el mundo MACH, la elegancia técnica y la estabilidad operativa deben caminar de la mano.
+
+### Herramientas y Lecturas Complementarias
+
+* Diseña tu política de cuotas y genera la especificación OpenAPI 3.1 lista para tu Gateway con nuestro [Generador Interactivo OpenAPI 3.1 + Token Bucket](/tools/#openapi-rate-limit-app).
+* Protege la compatibilidad hacia atrás al introducir nuevas políticas de tráfico revisando [Migración y Versionado No Destructivo de APIs RESTful en Entornos Empresariales](/posts/migracion-y-versionado-no-destructivo-de-apis-restful-en-entornos-empresariales/).

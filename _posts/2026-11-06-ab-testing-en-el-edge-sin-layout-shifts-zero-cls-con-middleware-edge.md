@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Eliminación de Cumulative Layout Shift (CLS) en A/B Testing: Arquitectura Edge-Native con HTMLRewriter y Multi-Origin Routing"
+seo_title: "Eliminación de Cumulative Layout Shift (CLS) en A/B Testing"
 date: 2026-11-06 09:00:00 -0600
 lang: es
-categories: [Headless Frontend, Edge Computing]
-tags: [edge computing, ab testing, core web vitals, cloudflare workers, nextjs, performance]
+categories: [Headless & Frontend]
+tags: [nextjs, cloud-native, qa-automation, headless, api-first]
 image:
   path: /assets/img/posts/2026-11-06-ab-testing-en-el-edge-sin-layout-shifts-zero-cls-con-middleware-edge.png
 ---

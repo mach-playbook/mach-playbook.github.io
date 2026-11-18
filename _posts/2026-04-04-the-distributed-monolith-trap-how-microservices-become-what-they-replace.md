@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "The Distributed Monolith Trap: How Microservices Become What They Replace"
+seo_title: "The Distributed Monolith Trap"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, cloud-native, microservices]
+categories: [Microservicios]
+tags: [architecture, cloud-native, microservices, distributed-systems, event-driven]
 image:
   path: /assets/img/posts/2026-04-04-the-distributed-monolith-trap-how-microservices-become-what-they-replace.png
 mermaid: true

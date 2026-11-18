@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Patrones Avanzados de API Gateway en MACH: Backend for Frontend, Aggregation y Edge Logic"
+seo_title: "Patrones Avanzados de API Gateway en MACH"
 date: 2026-08-31 09:00:00 -0600
 lang: es
-categories: [API Design, Arquitectura Cloud]
-tags: [api-gateway, bff, mach, microservices, aggregation, edge, kong, apigee]
+categories: [API Design]
+tags: [api-first, architecture, microservices, cloud-native, headless]
 image:
   path: /assets/img/posts/2026-08-31-api-gateway-patterns-mach.png
 ---

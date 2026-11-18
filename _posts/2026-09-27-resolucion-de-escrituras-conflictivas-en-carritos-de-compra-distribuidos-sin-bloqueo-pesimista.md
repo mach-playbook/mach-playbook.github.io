@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Resolución de Escrituras Conflictivas en Carritos de Compra Distribuidos sin Bloqueo Pesimista"
+seo_title: "Resolución de Escrituras Conflictivas en Carritos de Compra"
 date: 2026-09-27 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Compras Composable]
-tags: [crdt, concurrencia, microservicios, composable commerce, transaccionalidad, distributed systems]
+categories: [Headless & Frontend]
+tags: [microservices, headless, nextjs, api-first, cloud-native]
 image:
   path: /assets/img/posts/2026-09-27-resolucion-de-escrituras-conflictivas-en-carritos-de-compra-distribuidos-sin-bloqueo-pesimista.png
 ---

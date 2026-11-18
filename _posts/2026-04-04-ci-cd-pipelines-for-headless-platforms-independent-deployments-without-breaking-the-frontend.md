@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "CI/CD Pipelines for Headless Platforms: Independent Deployments Without Breaking the Frontend"
+seo_title: "CI/CD Pipelines for Headless Platforms"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [DevOps & CI/CD, Cloud-Native]
-tags: [ci-cd, devops, headless, microservices]
+categories: [DevOps & CI/CD]
+tags: [ci-cd, devops, headless, microservices, kubernetes]
 image:
   path: /assets/img/posts/2026-04-04-ci-cd-pipelines-for-headless-platforms-independent-deployments-without-breaking-the-frontend.png
 mermaid: true

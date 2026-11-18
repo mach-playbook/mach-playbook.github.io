@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Implementing API Governance: Enforcing Consistency Across All Your Services"
+seo_title: "Implementing API Governance: Enforcing Consistency Across All Your"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Microservices]
-tags: [api-first, architecture, cloud-native, devops]
+categories: [DevOps & CI/CD]
+tags: [api-first, architecture, cloud-native, devops, ci-cd]
 image:
   path: /assets/img/posts/2026-04-04-implementing-api-governance-enforcing-consistency-across-all-your-services.png
 mermaid: true

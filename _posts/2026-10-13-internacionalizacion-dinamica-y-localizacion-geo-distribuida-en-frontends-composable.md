@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Latencia de Borde y Consistencia de Localización: Resolviendo el Cuello de Botella de i18n en Arquitecturas Composable Globales"
+seo_title: "Latencia de Borde y Consistencia de Localización"
 date: 2026-10-13 09:00:00 -0600
 lang: es
-categories: [Frontend Moderno, Arquitectura Cloud]
-tags: [i18n, edge computing, composable commerce, nextjs, localization, performance]
+categories: [Headless & Frontend]
+tags: [nextjs, cloud-native, ai-engineering, headless, api-first]
 image:
   path: /assets/img/posts/2026-10-13-internacionalizacion-dinamica-y-localizacion-geo-distribuida-en-frontends-composable.png
 ---

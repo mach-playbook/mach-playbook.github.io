@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Gobernanza de Contratos y Evolución de Esquemas en Kafka: Prevención de Corrupción de Datos con Avro y Schema Registry"
+seo_title: "Gobernanza de Contratos y Evolución de Esquemas en Kafka"
 date: 2026-10-26 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Integraciones Distribuidas]
-tags: [kafka, schema-registry, avro, event-driven, microservices, mach]
+categories: [Data Engineering]
+tags: [event-driven, microservices, architecture, ai-engineering, security, data-engineering]
 image:
   path: /assets/img/posts/2026-10-26-kafka-schema-registry-y-apache-avro-para-evolucion-compatible-de-mensajeria.png
 ---

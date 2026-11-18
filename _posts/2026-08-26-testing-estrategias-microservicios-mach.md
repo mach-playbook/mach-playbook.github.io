@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Estrategias de Testing para Microservicios MACH: De Unit Tests a Contract Testing"
+seo_title: "Estrategias de Testing para Microservicios MACH"
 date: 2026-08-26 09:00:00 -0600
 lang: es
-categories: [Testing, DevOps]
-tags: [testing, contract-testing, pact, microservices, mach, devops, tdd]
+categories: [DevOps & CI/CD]
+tags: [qa-automation, microservices, architecture, devops, ai-engineering]
 image:
   path: /assets/img/posts/2026-08-26-testing-estrategias-microservicios-mach.png
 ---

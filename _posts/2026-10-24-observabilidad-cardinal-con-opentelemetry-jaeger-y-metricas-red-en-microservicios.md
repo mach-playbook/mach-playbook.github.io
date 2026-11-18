@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Dominando la Explosión de Cardinalidad: OpenTelemetry, Jaeger y Métricas RED Bajo Cargas Masivas"
+seo_title: "Dominando la Explosión de Cardinalidad"
 date: 2026-10-24 09:00:00 -0600
 lang: es
-categories: [Cloud Native, Microservicios]
-tags: [opentelemetry, jaeger, metricas-red, observabilidad, tracing-distribuido, kubernetes, rendimiento]
+categories: [Security & Observability]
+tags: [observability, kubernetes, security, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-10-24-observabilidad-cardinal-con-opentelemetry-jaeger-y-metricas-red-en-microservicios.png
 ---

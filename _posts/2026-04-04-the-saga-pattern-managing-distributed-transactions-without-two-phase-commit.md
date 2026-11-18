@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "The Saga Pattern: Managing Distributed Transactions Without Two-Phase Commit"
+seo_title: "The Saga Pattern: Managing Distributed Transactions Without"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, distributed-systems, event-driven, microservices]
+categories: [Microservicios]
+tags: [architecture, distributed-systems, event-driven, microservices, cloud-native]
 image:
   path: /assets/img/posts/2026-04-04-the-saga-pattern-managing-distributed-transactions-without-two-phase-commit.png
 mermaid: true

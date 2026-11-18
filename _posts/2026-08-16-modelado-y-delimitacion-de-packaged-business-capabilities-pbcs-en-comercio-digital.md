@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá de los Microservicios: Modelado Estratégico de Packaged Business Capabilities (PBCs) en Composable Commerce"
+seo_title: "Modelado de Packaged Business Capabilities (PBCs) en MACH"
 date: 2026-08-16 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura de Software]
-tags: [mach, pbcs, microservicios, ddd, enterprise-architecture, digital-commerce]
+categories: [Headless & Frontend]
+tags: [architecture, microservices, headless, nextjs, api-first]
 image:
   path: /assets/img/posts/2026-08-16-modelado-y-delimitacion-de-packaged-business-capabilities-pbcs-en-comercio-digital.png
 ---

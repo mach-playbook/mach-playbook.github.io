@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "Platform Engineering con Backstage: Construyendo un IDP Interno para Equipos MACH"
+seo_title: "Microservicios con Backstage: Guía IDP, YAML y QA Testing"
+description: "Guía práctica de Platform Engineering con Backstage para microservicios MACH: arquitectura IDP, plantillas catalog-info.yaml, flujos para equipos de QA testing y métricas DevEx."
 date: 2026-08-23 09:00:00 -0600
 lang: es
-categories: [Platform Engineering, DevOps]
-tags: [platform-engineering, backstage, idp, developer-experience, devops, kubernetes, microservices]
+categories: [DevOps & CI/CD]
+tags: [devops, kubernetes, microservices, ci-cd, cloud-native]
 image:
   path: /assets/img/posts/2026-08-23-platform-engineering-backstage-idp-interno.png
 ---
@@ -90,3 +92,8 @@ El Platform Engineering con Backstage no es un lujo para organizaciones MACH mad
 Las organizaciones que invierten en Platform Engineering con una mentalidad de producto (tratar al IDP como un producto con usuarios, metricas y roadmap) son las que logran el mayor retorno de esta inversion. El equipo de Platform Engineering actua como un multiplicador de fuerza que permite a cada squad de producto moverse mas rapido con menos fricciones de infraestructura.
 
 En el contexto de la arquitectura MACH, donde la velocidad de iteracion es el principal diferenciador competitivo, un IDP bien construido es quizas la inversion de ingenieria con mayor ROI que una organizacion puede hacer en 2026.
+
+## Recursos Relacionados para Equipos de Plataforma y QA
+
+* Si tus plantillas de Backstage automatizan contratos API para equipos de desarrollo y testing, complementa la estrategia con nuestra guía de [Migración y Versionado No Destructivo de APIs RESTful en Entornos Empresariales](/posts/migracion-y-versionado-no-destructivo-de-apis-restful-en-entornos-empresariales/).
+* Evalúa el nivel de madurez de tus dominios y genera contratos listos para tu catálogo en nuestro [Centro de Herramientas Interactivas MACH](/tools/).

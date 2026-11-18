@@ -4,8 +4,8 @@ layout: post
 title: "Sizing Your Microservices: How to Find the Right Service Granularity"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, cloud-native, microservices]
+categories: [Microservicios]
+tags: [architecture, cloud-native, microservices, distributed-systems, event-driven]
 image:
   path: /assets/img/posts/2026-04-04-sizing-your-microservices-how-to-find-the-right-service-granularity.png
 mermaid: true

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Negociación de Contratos SaaS Enterprise: Cláusulas de Salida, Migracion y SLAs Agregados"
+seo_title: "Negociación de Contratos SaaS Enterprise"
 date: 2026-10-27 09:00:00 -0600
 lang: es
-categories: [FinOps y Multi-Vendor, Arquitectura Cloud]
-tags: [mach, finops, saas, enterprise, governance, architecture]
+categories: [Arquitectura Cloud]
+tags: [architecture, finops, ai-engineering, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-10-27-negociacion-de-contratos-saas-enterprise-clausulas-de-salida-migracion-y-slas-agregados.png
 ---

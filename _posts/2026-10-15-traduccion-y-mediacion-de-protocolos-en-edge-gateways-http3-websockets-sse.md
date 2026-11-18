@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mediación de Protocolos en Edge Gateways: Degradación de HTTP/3 a WebSockets y SSE bajo Alta Concurrencia"
+seo_title: "Mediación de Protocolos en Edge Gateways"
 date: 2026-10-15 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, API-First & Integraciones]
-tags: [edge-gateways, http3, websockets, sse, microservicios, zero-trust]
+categories: [Security & Observability]
+tags: [microservices, security, ai-engineering, observability, cloud-native]
 image:
   path: /assets/img/posts/2026-10-15-traduccion-y-mediacion-de-protocolos-en-edge-gateways-http3-websockets-sse.png
 ---

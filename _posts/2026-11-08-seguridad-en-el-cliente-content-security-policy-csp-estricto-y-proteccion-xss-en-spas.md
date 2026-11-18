@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Blindaje Client-Side en Arquitecturas Headless: Content Security Policy Estricto, Nonces Dinámicos y Trusted Types"
+seo_title: "Blindaje Client-Side en Arquitecturas Headless"
 date: 2026-11-08 09:00:00 -0600
 lang: es
-categories: [Arquitectura Frontend, Seguridad Cloud]
-tags: [headless, csp, xss, trusted-types, nextjs, edge-computing, appsec]
+categories: [Security & Observability]
+tags: [headless, nextjs, cloud-native, security, observability]
 image:
   path: /assets/img/posts/2026-11-08-seguridad-en-el-cliente-content-security-policy-csp-estricto-y-proteccion-xss-en-spas.png
 ---

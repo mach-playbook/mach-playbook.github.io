@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "FinOps para MACH: Control de Costos y Optimización de Facturación Multi-Vendor"
+seo_title: "FinOps para MACH: Control de Costos y Optimización de Facturación"
 date: 2026-09-10 09:00:00 -0600
 lang: es
-categories: [Estrategia Enterprise, FinOps & ROI]
-tags: [finops, mach-architecture, composable-commerce, cloud cost, multi-vendor, serverless]
+categories: [Arquitectura Cloud]
+tags: [finops, architecture, headless, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-09-10-finops-para-mach-control-de-costos-y-optimizacion-de-facturacion-multi-vendor.png
 ---

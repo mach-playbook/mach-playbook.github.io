@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Métricas Letales y Fugas de Memoria en Micro-Frontends: Arquitectura de Module Federation a Escala Enterprise"
+seo_title: "Métricas Letales y Fugas de Memoria en Micro-Frontends"
 date: 2026-09-24 09:00:00 -0600
 lang: es
-categories: [Arquitectura Headless, Frontend Moderno]
-tags: [module-federation, micro-frontends, web-performance, webpack, enterprise-architecture, headless]
+categories: [Headless & Frontend]
+tags: [headless, ai-engineering, nextjs, api-first, cloud-native]
 image:
   path: /assets/img/posts/2026-09-24-micro-frontends-con-module-federation-modularizacion-sin-perdida-de-rendimiento.png
 ---

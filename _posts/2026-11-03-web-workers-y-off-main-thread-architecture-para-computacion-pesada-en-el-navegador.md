@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Eliminando el Bloqueo de UI: Arquitectura Off-Main-Thread con Web Workers y Transferable Streams en Frontends Headless"
+seo_title: "Eliminando el Bloqueo de UI: Arquitectura Off-Main-Thread con Web"
 date: 2026-11-03 09:00:00 -0600
 lang: es
-categories: [Headless Frontend, Arquitectura Web]
-tags: [web workers, off-main-thread, webassembly, performance, headless commerce, transferable objects]
+categories: [Headless & Frontend]
+tags: [cloud-native, headless, nextjs, api-first, architecture]
 image:
   path: /assets/img/posts/2026-11-03-web-workers-y-off-main-thread-architecture-para-computacion-pesada-en-el-navegador.png
 ---

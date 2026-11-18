@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Circuit Breaker Pattern: Protecting Your Services from Cascading Failures"
+seo_title: "Circuit Breaker Pattern: Protecting Your Services from Cascading"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [distributed-systems, kubernetes, microservices]
+categories: [DevOps & CI/CD]
+tags: [distributed-systems, kubernetes, microservices, devops, ci-cd]
 image:
   path: /assets/img/posts/2026-04-04-circuit-breaker-pattern-protecting-your-services-from-cascading-failures.png
 mermaid: true

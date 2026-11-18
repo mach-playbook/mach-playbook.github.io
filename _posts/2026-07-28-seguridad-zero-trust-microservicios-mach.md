@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Implementación de Seguridad Zero Trust en Arquitecturas MACH y APIs Nativas de la Nube"
+seo_title: "Seguridad Zero Trust y mTLS en Microservicios MACH Cloud"
 date: 2026-07-28 14:15:00 -0600
 lang: es
-categories: [Seguridad & Observabilidad, Cloud-Native]
-tags: [api-first, cloud-native, microservices, security]
+categories: [Security & Observability]
+tags: [api-first, cloud-native, microservices, security, observability]
 image:
   path: /assets/img/posts/2026-07-28-seguridad-zero-trust-microservicios-mach.png
 ---

@@ -197,6 +197,16 @@ defaults:
       layout: page
       permalink: /:title/
       mermaid: true # Enable Mermaid diagram rendering on tabs
+  - scope:
+      path: ""
+      type: category
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+      type: tag
+    values:
+      sitemap: false
 
 sass:
   style: compressed

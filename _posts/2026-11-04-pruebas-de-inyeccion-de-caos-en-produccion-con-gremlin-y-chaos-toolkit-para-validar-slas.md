@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Validación de SLAs Críticos en Producción: Inyección de Caos con Gremlin y Chaos Toolkit"
+seo_title: "Validación de SLAs Críticos en Producción"
 date: 2026-11-04 09:00:00 -0600
 lang: es
-categories: [Operaciones Día 2, Resiliencia Cloud]
-tags: [chaos-engineering, gremlin, chaos-toolkit, sla-validation, kubernetes, observability, mach]
+categories: [Security & Observability]
+tags: [kubernetes, observability, architecture, qa-automation, security]
 image:
   path: /assets/img/posts/2026-11-04-pruebas-de-inyeccion-de-caos-en-produccion-con-gremlin-y-chaos-toolkit-para-validar-slas.png
 ---

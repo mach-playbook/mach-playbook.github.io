@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Orquestación de Microservicios: Estrategias de CI/CD en Entornos Multi-Repositorio"
+seo_title: "CI/CD para Microservicios en Entornos Multi-Repositorio"
 date: 2026-08-03 14:00:00 -0600
 lang: es
-categories: [DevOps & CI/CD, Automatización]
-tags: [ci-cd, devops, microservices, qa-automation]
+categories: [DevOps & CI/CD]
+tags: [ci-cd, devops, microservices, qa-automation, ai-engineering]
 image:
   path: /assets/img/posts/2026-08-03-ci-cd-microservicios-multi-repositorio.png
 ---

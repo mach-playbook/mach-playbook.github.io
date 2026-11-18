@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá de los Retries: Dominando la Resiliencia y el Circuit Breaking Avanzado con Envoy e Istio"
+seo_title: "Más allá de los Retries: Dominando la Resiliencia y el Circuit"
 date: 2026-09-12 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [istio, envoy, service-mesh, resilience, circuit-breaking, cloud-native]
+categories: [Microservicios]
+tags: [kubernetes, distributed-systems, cloud-native, ai-engineering, microservices]
 image:
   path: /assets/img/posts/2026-09-12-resiliencia-y-circuit-breaking-avanzado-con-envoy-proxy-e-istio-service-mesh.png
 ---

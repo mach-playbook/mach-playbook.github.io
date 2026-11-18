@@ -1,11 +1,14 @@
 name: Auto Generate Missing Post Images
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   workflow_dispatch:
 
 jobs:
   generate-images:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     if: github.actor != 'github-actions[bot]'
     permissions:
@@ -19,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Run Image Generation Script
         run: node scripts/generate-images.js --force

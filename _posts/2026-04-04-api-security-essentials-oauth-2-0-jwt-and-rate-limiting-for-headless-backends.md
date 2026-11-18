@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "API Security Essentials: OAuth 2.0, JWT, and Rate Limiting for Headless Backends"
+seo_title: "API Security Essentials: OAuth 2.0, JWT, and Rate Limiting for"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Security & Observability, Cloud-Native]
-tags: [api-first, headless, security]
+categories: [Security & Observability]
+tags: [api-first, headless, security, ai-engineering, observability]
 image:
   path: /assets/img/posts/2026-04-04-api-security-essentials-oauth-2-0-jwt-and-rate-limiting-for-headless-backends.png
 mermaid: true

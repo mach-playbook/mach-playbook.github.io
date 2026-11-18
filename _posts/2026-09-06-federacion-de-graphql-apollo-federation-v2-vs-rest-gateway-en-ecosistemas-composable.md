@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Federación de GraphQL (Apollo Federation v2) vs REST Gateway: Orquestación de API en la Era del Composable Commerce"
+seo_title: "Federación de GraphQL (Apollo Federation v2) vs REST Gateway"
 date: 2026-09-06 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [graphql, apollo-federation, rest-api, composable-commerce, mach, api-gateway, microservices]
+categories: [API Design]
+tags: [api-first, headless, architecture, microservices, cloud-native]
 image:
   path: /assets/img/posts/2026-09-06-federacion-de-graphql-apollo-federation-v2-vs-rest-gateway-en-ecosistemas-composable.png
 ---

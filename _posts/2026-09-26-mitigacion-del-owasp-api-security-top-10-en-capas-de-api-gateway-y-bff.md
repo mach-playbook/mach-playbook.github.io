@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mitigación Crítica del OWASP API Security Top 10 en Capas de API Gateway y BFF"
+seo_title: "Mitigación Crítica del OWASP API Security Top 10 en Capas de API"
 date: 2026-09-26 09:00:00 -0600
 lang: es
-categories: [Seguridad Cloud, Arquitectura de Software]
-tags: [owasp-api, api-gateway, bff, zero-trust, cloud-native, microservicios, composable-commerce]
+categories: [Security & Observability]
+tags: [api-first, security, cloud-native, microservices, headless]
 image:
   path: /assets/img/posts/2026-09-26-mitigacion-del-owasp-api-security-top-10-en-capas-de-api-gateway-y-bff.png
 ---

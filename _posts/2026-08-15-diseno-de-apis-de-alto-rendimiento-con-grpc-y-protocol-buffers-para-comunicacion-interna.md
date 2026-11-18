@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Diseño de APIs de Alto Rendimiento con gRPC y Protocol Buffers para Comunicación Interna"
+seo_title: "Diseño de APIs de Alto Rendimiento con gRPC y Protocol Buffers"
 date: 2026-08-15 09:00:00 -0600
 lang: es
-categories: [Diseño de APIs, Microservicios]
-tags: [mach, microservicios, cloud-native, api-first, resiliencia, arquitectura, devops]
+categories: [DevOps & CI/CD]
+tags: [architecture, microservices, cloud-native, api-first, distributed-systems, devops]
 image:
   path: /assets/img/posts/2026-08-15-diseno-de-apis-de-alto-rendimiento-con-grpc-y-protocol-buffers-para-comunicacion-interna.png
 ---

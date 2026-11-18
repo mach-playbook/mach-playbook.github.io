@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Orquestación de Checkout Composable: Estrategias Multi-Adquirente para Resiliencia y Optimización de Costos en Escala Enterprise"
+seo_title: "Orquestación de Checkout Composable"
 date: 2026-09-20 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura Cloud]
-tags: [mach, payments, checkout, microservices, fintech, scalability, cloud-native]
+categories: [Headless & Frontend]
+tags: [architecture, microservices, cloud-native, finops, ai-engineering, headless]
 image:
   path: /assets/img/posts/2026-09-20-orquestacion-de-checkout-composable-y-pasarelas-de-pago-multi-adquirente.png
 ---

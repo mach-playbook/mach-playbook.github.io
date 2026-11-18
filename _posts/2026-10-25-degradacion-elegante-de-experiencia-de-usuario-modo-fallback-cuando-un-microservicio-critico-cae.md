@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Resiliencia de Borde y Patrones de Degradación Elegante ante la Caída de Microservicios Críticos"
+seo_title: "Resiliencia de Borde y Patrones de Degradación Elegante ante la"
 date: 2026-10-25 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Operaciones y Resiliencia]
-tags: [mach, microservicios, resiliencia, circuit-breaker, fallback, composable-commerce]
+categories: [Microservicios]
+tags: [architecture, microservices, distributed-systems, headless, ai-engineering]
 image:
   path: /assets/img/posts/2026-10-25-degradacion-elegante-de-experiencia-de-usuario-modo-fallback-cuando-un-microservicio-critico-cae.png
 ---

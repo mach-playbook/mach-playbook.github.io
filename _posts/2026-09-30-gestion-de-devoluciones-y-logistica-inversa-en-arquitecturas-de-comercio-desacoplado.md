@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Logística Inversa y el Infierno de la Consistencia: Arquitectura de Devoluciones en Ecosistemas Composable"
+seo_title: "Logística Inversa y el Infierno de la Consistencia"
 date: 2026-09-30 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura de Sistemas]
-tags: [logística inversa, microservicios, event-driven, mach, ecommerce, api-first]
+categories: [API Design]
+tags: [microservices, event-driven, architecture, headless, api-first, ai-engineering]
 image:
   path: /assets/img/posts/2026-09-30-gestion-de-devoluciones-y-logistica-inversa-en-arquitecturas-de-comercio-desacoplado.png
 ---

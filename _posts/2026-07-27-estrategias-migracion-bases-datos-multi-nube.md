@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Estrategias de Migración de Bases de Datos Relacionales: De AWS RDS a GCP Cloud SQL"
+seo_title: "Estrategias de Migración de Bases de Datos Relacionales"
 date: 2026-07-27 10:00:00 -0600
-categories: [Bases de Datos, Sistemas Distribuidos]
+categories: [Data Engineering]
 tags: [architecture, aws, cloud-native, data-engineering, gcp, postgresql]
 lang: es
 image:

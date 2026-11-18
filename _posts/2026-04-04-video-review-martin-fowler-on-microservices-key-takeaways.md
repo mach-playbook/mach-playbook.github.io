@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Video Review: Martin Fowler on Microservices — Key Takeaways"
+seo_title: "Video Review: Martin Fowler on Microservices Key Takeaways"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, cloud-native, microservices]
+categories: [Microservicios]
+tags: [architecture, cloud-native, microservices, distributed-systems, event-driven]
 image:
   path: /assets/img/posts/2026-04-04-video-review-martin-fowler-on-microservices-key-takeaways.png
 mermaid: true

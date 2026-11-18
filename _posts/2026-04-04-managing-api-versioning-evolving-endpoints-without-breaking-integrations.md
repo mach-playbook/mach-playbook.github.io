@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Managing API Versioning: Evolving Endpoints Without Breaking Integrations"
+seo_title: "Managing API Versioning: Evolving Endpoints Without Breaking"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Microservices]
-tags: [api-first, architecture, cloud-native]
+categories: [API Design]
+tags: [api-first, architecture, cloud-native, microservices, security]
 image:
   path: /assets/img/posts/2026-04-04-managing-api-versioning-evolving-endpoints-without-breaking-integrations.png
 mermaid: true

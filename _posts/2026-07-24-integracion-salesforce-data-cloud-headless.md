@@ -2,10 +2,11 @@
 lang: es
 layout: post
 title: "Orquestación de Datos de Clientes: Integrando Salesforce Data Cloud en Arquitecturas Headless"
+seo_title: "Orquestación de Datos de Clientes"
 author: leninmeza
 date: 2026-07-24 00:00:00 -0600
-categories: [Bases de Datos, Sistemas Distribuidos]
-tags: [api-first, cloud-native, data-engineering, headless]
+categories: [API Design]
+tags: [api-first, cloud-native, data-engineering, headless, microservices]
 image:
   path: /assets/img/posts/2026-07-24-integracion-salesforce-data-cloud-headless.png
 ---

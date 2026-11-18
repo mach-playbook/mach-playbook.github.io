@@ -5,6 +5,21 @@
 
 ---
 
+## [2026-11-18] fix+feat | Multi-Platform Telemetry Audit, Sitemap Noindex Cleanup, Taxonomy Normalization, Node 24 CI, GA4 Key Events, IndexNow, GEO llms.txt & OpenAPI Tool #3
+
+- **Impacted Files**: `_config.yml`, `_plugins/posts-lastmod-hook.rb`, `_includes/head.html`, `_includes/analytics/google.html`, `_tabs/archives.md`, `_tabs/categories.md`, `_tabs/tags.md`, `_tabs/resources.md`, `_tabs/glossary.md`, `_tabs/contact.md`, `_tabs/privacy.md`, `_tabs/tools.md`, `_posts/*.md`, `4f8b9e2d1a7c6b3e5f0d8a9c2e4b7d1f.txt`, `llms.txt`, `llms-full.txt`, `scripts/normalize-taxonomy.py`, `scripts/submit-indexnow.py`, `scripts/generate-llms-txt.py`, `scripts/fetch-telemetry-and-logs.py`, `scripts/publish_daily_jekyll_post.py`, `scripts/test-adsense-compliance.py`, `scripts/test-site-integrity.py`, `.github/workflows/*.yml`, `wiki/tools-and-operations.md`, `AGENTS.md`
+- **Summary**:
+  - Audited production telemetry across GA4 (81 users/7d, 0 Key Events, 1 view on 404), GSC (41 indexed, 366 `noindex` URLs leaked inside `sitemap.xml`, 1 `Crawled - currently not indexed`), Google AdSense (`Getting ready` since Nov 10, 0 Policy Center issues, US 2027 privacy notice), Bing Webmaster Tools (1K Copilot citations, 7 High Severity errors: missing IndexNow + 6 titles >70 chars), and GitHub Actions server logs (Node.js 20 deprecation warnings).
+  - Eliminated 366 `noindex` URL leaks from `sitemap.xml` via `_config.yml` defaults, tab frontmatter `sitemap: false`, and `_plugins/posts-lastmod-hook.rb` `:pre_render` hook (reducing `sitemap.xml` from 522 to 156 clean indexable URLs).
+  - Created `scripts/normalize-taxonomy.py` consolidating 70 categories / 291 tags back to the 7 canonical MACH pillars and 21 technical tags, and adding `seo_title` (<= 66 chars) across 143 posts with `<title>` length enforcement (<= 70 chars) in `_includes/head.html`.
+  - Upgraded CTR metadata and internal cross-linking across Backstage IDP, Token Bucket, and API Versioning posts (also removing raw math symbols from the Token Bucket guide).
+  - Updated all 4 GitHub Actions workflows to `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` and `ubuntu-24.04`.
+  - Added GA4 `generate_lead` (`_tabs/contact.md`), `tool_interaction` (`_tabs/tools.md`), `page_not_found` (`_includes/analytics/google.html`), and automatic `navigator.globalPrivacyControl` (GPC / UOOM) consent defaults + US 2027 privacy policy disclosures (`_tabs/privacy.md`).
+  - Added native IndexNow key (`4f8b9e2d1a7c6b3e5f0d8a9c2e4b7d1f.txt`), `scripts/submit-indexnow.py`, GEO files (`llms.txt` and `llms-full.txt` via `scripts/generate-llms-txt.py`), Interactive Tool #3 (`#openapi-rate-limit-app` OpenAPI 3.1 + Token Bucket generator in `_tabs/tools.md`), and `scripts/fetch-telemetry-and-logs.py`.
+  - Verified full Docker test suite (`mach-playbook:test`): 8 topic tests, 14 AdSense checks, 36 site integrity checks, 11 UI checks, 19 BDD specs, and `HTML-Proofer` (190 files, 1,899 internal links) passing with 0 errors.
+
+---
+
 ## [2026-11-07] feat | Operational Zero-Hang Protocol Implementation for Unattended & Autonomous Runs
 
 - **Impacted Files**: `wiki/preventing-unattended-hangs-and-process-timeouts.md`, `wiki/index.md`, `.agents/AGENTS.md`, `.github/workflows/daily-blog-post.yml`, `.github/workflows/pages-deploy.yml`, `.github/workflows/auto-generate-images.yml`, `scripts/publish_to_devto.py`, `scripts/generate-images.js`, `scripts/test-e2e-browser.py`, `scripts/analyze-performance.py`, `scripts/find-live-occurrences.py`, `scripts/inspect-all-imgs.py`, `scripts/inspect-live.py`, `scripts/list-urls.py`, `wiki/log.md`

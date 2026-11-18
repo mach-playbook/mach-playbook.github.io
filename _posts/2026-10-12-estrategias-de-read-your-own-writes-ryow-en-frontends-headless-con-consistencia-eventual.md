@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del Optimistic UI: Arquitectura de Consistencia Causal para Sistemas Headless de Alta Disponibilidad"
+seo_title: "Más allá del Optimistic UI: Arquitectura de Consistencia Causal"
 date: 2026-10-12 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [ryow, eventual consistency, cqrs, headless, composable commerce, distributed systems, event-driven]
+categories: [Data Engineering]
+tags: [event-driven, headless, ai-engineering, data-engineering, postgresql]
 image:
   path: /assets/img/posts/2026-10-12-estrategias-de-read-your-own-writes-ryow-en-frontends-headless-con-consistencia-eventual.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del Circuit Breaker: Patrones Avanzados de Resiliencia y Consistencia en Ecosistemas MACH de Escala Global"
+seo_title: "Más allá del Circuit Breaker"
 date: 2026-08-18 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [resiliencia, mach, microservicios, saga-pattern, outbox-pattern, distributed-systems, cloud-native]
+categories: [Data Engineering]
+tags: [distributed-systems, architecture, microservices, cloud-native, ai-engineering]
 image:
   path: /assets/img/posts/2026-08-18-patrones-avanzados-de-resiliencia-y-consistencia-en-arquitecturas-mach-edicion-20260818.png
 ---

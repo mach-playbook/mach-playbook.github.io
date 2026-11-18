@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "The Strangler Fig Pattern: Migrating a Monolith Without a Big Bang Rewrite"
+seo_title: "Strangler Fig Pattern: Migrating Monoliths Without Rewrites"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, devops, microservices]
+categories: [DevOps & CI/CD]
+tags: [architecture, devops, microservices, ci-cd, kubernetes]
 image:
   path: /assets/img/posts/2026-04-04-the-strangler-fig-pattern-migrating-a-monolith-without-a-big-bang-rewrite.png
 mermaid: true

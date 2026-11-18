@@ -212,10 +212,10 @@ def run_adsense_tests():
     else:
         with open(tools_path, "r", encoding="utf-8") as f:
             tools_content = f.read()
-        if "mach-calculator-app" in tools_content and "tco-simulator-app" in tools_content:
-            print("[PASS] Interactive Engineering Tools verified (_tabs/tools.md with MACH Calculator & TCO Simulator)")
+        if "mach-calculator-app" in tools_content and "tco-simulator-app" in tools_content and "openapi-rate-limit-app" in tools_content:
+            print("[PASS] Interactive Engineering Tools verified (_tabs/tools.md with MACH Calculator, TCO Simulator & OpenAPI Rate-Limit Generator)")
         else:
-            failures.append("FAIL: _tabs/tools.md missing interactive apps (mach-calculator-app / tco-simulator-app)!")
+            failures.append("FAIL: _tabs/tools.md missing interactive apps (mach-calculator-app / tco-simulator-app / openapi-rate-limit-app)!")
 
     print("--------------------------------------------------")
     if failures:

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Colapso de Conexiones y Latencia P99: Patrones de Pooling y Mitigación de Cold Starts en AWS Lambda y Google Cloud Run"
+seo_title: "Colapso de Conexiones y Latencia P99"
 date: 2026-11-01 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [serverless, aws lambda, google cloud run, connection pooling, rds, cold starts]
+categories: [Microservicios]
+tags: [gcp, aws, ai-engineering, microservices, distributed-systems]
 image:
   path: /assets/img/posts/2026-11-01-optimizacion-de-cold-starts-y-conexiones-pooling-en-serverless-con-google-cloud-run-y-aws-lambda.png
 ---

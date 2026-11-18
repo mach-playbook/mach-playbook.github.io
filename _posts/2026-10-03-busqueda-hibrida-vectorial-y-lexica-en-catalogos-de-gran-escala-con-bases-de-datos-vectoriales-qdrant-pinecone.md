@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del RAG: Arquitectura de Búsqueda Híbrida de Baja Latencia para Catálogos de +100M de SKUs"
+seo_title: "Más allá del RAG: Arquitectura de Búsqueda Híbrida de Baja"
 date: 2026-10-03 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, AI Composable]
-tags: [vector-databases, qdrant, pinecone, search-architecture, mach, hybrid-search, semantic-search]
+categories: [Data Engineering]
+tags: [architecture, ai-engineering, data-engineering, postgresql, distributed-systems]
 image:
   path: /assets/img/posts/2026-10-03-busqueda-hibrida-vectorial-y-lexica-en-catalogos-de-gran-escala-con-bases-de-datos-vectoriales-qdrant-pinecone.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Optimización del TBT en E-Commerce Global: React Server Components e Hidratación Parcial en Arquitecturas Headless"
+seo_title: "Optimización del TBT en E-Commerce Global"
 date: 2026-09-29 09:00:00 -0600
 lang: es
-categories: [Frontend Moderno, Headless Commerce]
-tags: [react server components, headless, partial hydration, performance, nextjs, tbt]
+categories: [Headless & Frontend]
+tags: [headless, cloud-native, nextjs, ai-engineering, api-first]
 image:
   path: /assets/img/posts/2026-09-29-estrategias-de-hidratacion-parcial-y-react-server-components-en-arquitecturas-headless.png
 ---

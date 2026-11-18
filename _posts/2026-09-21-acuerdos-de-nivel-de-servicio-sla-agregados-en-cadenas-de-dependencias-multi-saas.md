@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Acuerdos de Nivel de Servicio (SLA) Agregados en Cadenas de Dependencias Multi-SaaS"
+seo_title: "Acuerdos de Nivel de Servicio (SLA) Agregados en Cadenas de"
 date: 2026-09-21 09:00:00 -0600
 lang: es
-categories: [Estrategia Enterprise, Resiliencia Cloud]
-tags: [sla, composable, resiliencia, finops, multi-saas, sre, mach]
+categories: [Arquitectura Cloud]
+tags: [distributed-systems, finops, architecture, ai-engineering, cloud-native]
 image:
   path: /assets/img/posts/2026-09-21-acuerdos-de-nivel-de-servicio-sla-agregados-en-cadenas-de-dependencias-multi-saas.png
 ---

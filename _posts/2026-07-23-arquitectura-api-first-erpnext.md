@@ -2,9 +2,10 @@
 lang: es
 layout: post
 title: "Arquitectura API-First para la Integración de Facturación Electrónica y Timbrado en Sistemas ERP"
+seo_title: "Arquitectura API-First para la Integración de Facturación"
 author: leninmeza
 date: 2026-07-23 00:00:00 -0600
-categories: [Arquitectura Cloud, Microservicios]
+categories: [Security & Observability]
 tags: [api-first, finops, headless, microservices, security]
 image:
   path: /assets/img/posts/2026-07-23-arquitectura-api-first-erpnext.png

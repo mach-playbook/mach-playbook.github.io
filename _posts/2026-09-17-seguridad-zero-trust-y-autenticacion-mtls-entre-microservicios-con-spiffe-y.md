@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Seguridad Zero Trust y Autenticacion mTLS entre Microservicios con SPIFFE y SPIRE"
+seo_title: "Seguridad Zero Trust y Autenticacion mTLS entre Microservicios con"
 date: 2026-09-17 09:00:00 -0600
 lang: es
-categories: [Seguridad, Microservicios]
-tags: [mach, zero-trust, seguridad, kubernetes, mtls, arquitectura, cloud-native]
+categories: [Security & Observability]
+tags: [architecture, security, kubernetes, cloud-native, observability]
 image:
   path: /assets/img/posts/2026-09-17-seguridad-zero-trust-y-autenticacion-mtls-entre-microservicios-con-spiffe-y.png
 ---

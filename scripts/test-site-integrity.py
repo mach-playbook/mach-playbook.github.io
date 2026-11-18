@@ -215,6 +215,50 @@ def main():
         print(f"[PASS] Performance: All {clean_posts_count} articles without diagrams keep 'mermaid: false' (0 overhead)")
         passes += 1
 
+    # 6. Sitemap Noindex Cleanliness & SEO Title Length Checks
+    import xml.etree.ElementTree as ET
+    sitemap_path = os.path.join(site_dir, "sitemap.xml")
+    if not os.path.exists(sitemap_path):
+        failures.append("FAIL: _site/sitemap.xml is missing!")
+    else:
+        tree = ET.parse(sitemap_path)
+        ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+        locs = [el.find(f"{ns}loc").text.strip() for el in tree.getroot().findall(f"{ns}url") if el.find(f"{ns}loc") is not None]
+        noindex_prefixes = ("/tags/", "/categories/", "/archives/", "/resources/", "/glossary/")
+        leaked = [u for u in locs if any(p in u for p in noindex_prefixes)]
+        if len(locs) < 155:
+            failures.append(f"FAIL: _site/sitemap.xml has only {len(locs)} URLs, expected >= 155 indexable URLs!")
+        elif leaked:
+            failures.append(f"FAIL: _site/sitemap.xml contains {len(leaked)} noindex URL(s), e.g. {leaked[:3]}")
+        else:
+            print(f"[PASS] Sitemap SEO: _site/sitemap.xml has {len(locs)} indexable URLs and 0 noindex leaks")
+            passes += 1
+
+    # 7. Title Length <= 70 Chars on All Built Posts
+    post_html_files = sorted(glob.glob(os.path.join(site_dir, "posts", "*", "index.html")))
+    long_titles = []
+    for p_html in post_html_files:
+        with open(p_html, "r", encoding="utf-8") as f:
+            p_soup = BeautifulSoup(f.read(), "html.parser")
+        t_text = p_soup.title.get_text().strip() if p_soup.title else ""
+        if len(t_text) > 70:
+            long_titles.append((os.path.relpath(p_html, site_dir), len(t_text), t_text))
+    if long_titles:
+        for rel, l, t in long_titles[:5]:
+            failures.append(f"FAIL: Post <title> exceeds 70 chars ({l}): {rel} -> '{t}'")
+    else:
+        print(f"[PASS] SEO Titles: All {len(post_html_files)} built post pages have <title> <= 70 characters")
+        passes += 1
+
+    # 8. GEO (llms.txt / llms-full.txt) & IndexNow Key File Presence
+    for static_asset in ("llms.txt", "llms-full.txt", "4f8b9e2d1a7c6b3e5f0d8a9c2e4b7d1f.txt"):
+        asset_path = os.path.join(site_dir, static_asset)
+        if os.path.exists(asset_path) and os.path.getsize(asset_path) > 0:
+            print(f"[PASS] GEO & IndexNow: _site/{static_asset} verified ({os.path.getsize(asset_path)} bytes)")
+            passes += 1
+        else:
+            failures.append(f"FAIL: _site/{static_asset} is missing or empty!")
+
     print("-" * 60)
     if failures:
         print(f"FAILED: {len(failures)} test failures detected:")

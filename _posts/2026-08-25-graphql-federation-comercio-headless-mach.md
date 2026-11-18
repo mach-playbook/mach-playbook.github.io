@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "GraphQL Federation en Comercio Headless: Unificando Microservicios MACH con un Supergraph"
+seo_title: "GraphQL Federation en Comercio Headless"
 date: 2026-08-25 09:00:00 -0600
 lang: es
-categories: [API Design, Microservices]
-tags: [graphql, federation, headless-commerce, mach, api-design, supergraph, apollo]
+categories: [API Design]
+tags: [api-first, architecture, headless, microservices, cloud-native]
 image:
   path: /assets/img/posts/2026-08-25-graphql-federation-comercio-headless-mach.png
 ---

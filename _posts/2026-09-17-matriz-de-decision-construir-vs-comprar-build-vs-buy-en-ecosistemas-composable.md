@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Matriz de Decisión: Construir vs Comprar (Build vs Buy) en Ecosistemas Composable"
+seo_title: "Matriz de Decisión: Construir vs Comprar (Build vs Buy) en"
 date: 2026-09-17 09:00:00 -0600
 lang: es
-categories: [Estrategia Enterprise, Arquitectura MACH]
-tags: [composable-commerce, build-vs-buy, finops, mach-architecture, enterprise-strategy, microservices]
+categories: [Microservicios]
+tags: [headless, finops, architecture, microservices, distributed-systems]
 image:
   path: /assets/img/posts/2026-09-17-matriz-de-decision-construir-vs-comprar-build-vs-buy-en-ecosistemas-composable.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "De Monolito a Composable: Diseccionando la Migración de Salesforce Commerce Cloud a un Stack MACH Enterprise"
+seo_title: "De Monolito a Composable: Diseccionando la Migración de Salesforce"
 date: 2026-10-28 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Arquitectura Cloud]
-tags: [mach, salesforce-commerce-cloud, microservices, headless, api-first, cloud-native]
+categories: [API Design]
+tags: [architecture, microservices, headless, api-first, cloud-native]
 image:
   path: /assets/img/posts/2026-10-28-migracion-de-salesforce-commerce-cloud-a-stack-mach-lecciones-aprendidas-y-trade-offs.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Gestión de Inventario en Tiempo Real y Consistencia Distribuida en Composable Commerce"
+seo_title: "Gestión de Inventario en Tiempo Real y Consistencia Distribuida en"
 date: 2026-09-22 09:00:00 -0600
 lang: es
-categories: [Arquitectura MACH, Composable Commerce]
-tags: [arquitectura mach, inventario en tiempo real, consistencia eventual, cqrs, event sourcing, node.js]
+categories: [Data Engineering]
+tags: [event-driven, ai-engineering, headless, data-engineering, postgresql]
 image:
   path: /assets/img/posts/2026-09-22-gestion-de-inventario-en-tiempo-real-y-consistencia-distribuida-en-composable-commerce.png
 ---

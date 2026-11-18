@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Estructura Organizacional: Equipos Stream-Aligned e Inversión Conway en Equipos MACH"
+seo_title: "Estructura Organizacional: Equipos Stream-Aligned e Inversión"
 date: 2026-09-19 09:00:00 -0600
 lang: es
-categories: [Estrategia Enterprise, Arquitectura MACH]
-tags: [team-topologies, conway-law, stream-aligned, composable-commerce, platform-engineering, digital-transformation]
+categories: [Arquitectura Cloud]
+tags: [headless, devops, cloud-native, architecture, microservices]
 image:
   path: /assets/img/posts/2026-09-19-estructura-organizacional-equipos-stream-aligned-e-inversion-conway-en-equipos-mach.png
 ---

@@ -60,14 +60,23 @@
       {%- capture title -%}
         {%- if page.collection == 'tabs' -%}
           {%- assign tab_key = page.title | downcase -%}
-          {{- site.data.locales[include.lang].tabs[tab_key] -}}
+          {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
         {%- else -%}
-          {{- page.title -}}
+          {{- page.seo_title | default: page.title -}}
         {%- endif -%}
       {%- endcapture -%}
-      {{- title | append: ' | ' -}}
+      {%- assign title_clean = title | strip -%}
+      {%- assign title_len = title_clean | size -%}
+      {%- if title_len > 70 -%}
+        {{- title_clean | truncate: 68, '' -}}
+      {%- elsif title_len > 54 -%}
+        {{- title_clean -}}
+      {%- else -%}
+        {{- title_clean | append: ' | ' | append: site.title -}}
+      {%- endif -%}
+    {%- else -%}
+      {{- site.title -}}
     {%- endunless -%}
-    {{- site.title -}}
   </title>
 
   {% include_cached favicons.html %}

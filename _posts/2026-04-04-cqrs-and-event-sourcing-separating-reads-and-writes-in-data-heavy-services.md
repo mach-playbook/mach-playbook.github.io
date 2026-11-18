@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "CQRS and Event Sourcing: Separating Reads and Writes in Data-Heavy Services"
+seo_title: "CQRS and Event Sourcing: Separating Reads and Writes in Data-Heavy"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Data & AI, Distributed Systems]
-tags: [data-engineering, event-driven, microservices]
+categories: [Data Engineering]
+tags: [data-engineering, event-driven, microservices, postgresql, distributed-systems]
 image:
   path: /assets/img/posts/2026-04-04-cqrs-and-event-sourcing-separating-reads-and-writes-in-data-heavy-services.png
 mermaid: true

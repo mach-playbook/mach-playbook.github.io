@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mitigación de Incidentes por Caducidad de Secretos en Ecosistemas MACH: Rotación Cero-Downtime con cert-manager y Vault"
+seo_title: "Mitigación de Incidentes por Caducidad de Secretos en Ecosistemas"
 date: 2026-10-23 09:00:00 -0600
 lang: es
-categories: [Seguridad Cloud, Arquitectura Enterprise]
-tags: [zero trust, kubernetes, vault, cert-manager, tls, criptografia]
+categories: [Security & Observability]
+tags: [kubernetes, security, observability, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-10-23-rotacion-automatica-de-claves-criptograficas-y-certificados-tls-con-cert-manager-y-vault.png
 ---

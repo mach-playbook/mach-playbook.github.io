@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Feature Flagging in Cloud-Native Deployments: Canary Releases and Zero-Downtime Rollouts"
+seo_title: "Feature Flagging in Cloud-Native Deployments"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [DevOps & CI/CD, Cloud-Native]
-tags: [architecture, cloud-native, devops]
+categories: [DevOps & CI/CD]
+tags: [architecture, cloud-native, devops, ci-cd, kubernetes]
 image:
   path: /assets/img/posts/2026-04-04-feature-flagging-in-cloud-native-deployments-canary-releases-and-zero-downtime-rollouts.png
 mermaid: true

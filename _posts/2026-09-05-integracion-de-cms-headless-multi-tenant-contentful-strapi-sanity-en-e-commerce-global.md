@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Orquestación de CMS Headless Multi-Tenant en E-Commerce Global: Estrategias de Federación y Gobierno de Datos"
+seo_title: "Orquestación de CMS Headless Multi-Tenant en E-Commerce Global"
 date: 2026-09-05 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Headless CMS]
-tags: [contentful, strapi, sanity, mach, multi-tenancy, architecture, graphql]
+categories: [API Design]
+tags: [architecture, api-first, ai-engineering, headless, data-engineering]
 image:
   path: /assets/img/posts/2026-09-05-integracion-de-cms-headless-multi-tenant-contentful-strapi-sanity-en-e-commerce-global.png
 ---

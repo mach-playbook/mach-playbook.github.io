@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Descargando la CPU del SSR: Optimización de Imágenes al Vuelo con Cloudflare Images y Next.js a Escala Enterprise"
+seo_title: "Descargando la CPU del SSR: Optimización de Imágenes al Vuelo con"
 date: 2026-10-19 09:00:00 -0600
 lang: es
-categories: [Frontend Moderno, Arquitectura Cloud]
-tags: [nextjs, cloudflare-images, headless-commerce, cdn, edge-computing, web-performance]
+categories: [Headless & Frontend]
+tags: [nextjs, cloud-native, headless, api-first, architecture]
 image:
   path: /assets/img/posts/2026-10-19-optimizacion-de-imagenes-responsive-al-vuelo-con-cloudflare-images-y-nextimage.png
 ---

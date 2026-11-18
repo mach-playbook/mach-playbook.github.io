@@ -1,5 +1,8 @@
 name: Periodic Health & Uptime Audit
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   schedule:
     # Corre diariamente a las 06:00 UTC (00:00 CST)
@@ -12,7 +15,7 @@ permissions:
 jobs:
   audit:
     name: Production Endpoint & GitGuardian Health Audit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 8
 
     steps:
@@ -34,6 +37,7 @@ jobs:
             "/tags/"
             "/archives/"
             "/about/"
+            "/tools/"
             "/resources/"
             "/glossary/"
             "/privacy/"
@@ -42,6 +46,8 @@ jobs:
             "/sitemap.xml"
             "/robots.txt"
             "/ads.txt"
+            "/llms.txt"
+            "/4f8b9e2d1a7c6b3e5f0d8a9c2e4b7d1f.txt"
           )
           FAILURES=0
 

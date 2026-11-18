@@ -2,10 +2,11 @@
 lang: es
 layout: post
 title: "Estrategias de Enrutamiento VoIP y Señalización SIP en Infraestructuras Cloud-Native"
+seo_title: "Estrategias de Enrutamiento VoIP y Señalización SIP en"
 author: leninmeza
 date: 2026-07-22 14:00:00 -0600
-categories: [Telecomunicaciones, Infraestructura Cloud]
-tags: [architecture, cloud-native, devops, telecom]
+categories: [Security & Observability]
+tags: [architecture, cloud-native, devops, telecom, ai-engineering]
 image:
   path: /assets/img/posts/2026-07-22-infraestructura-voip-cloud-native.png
 ---

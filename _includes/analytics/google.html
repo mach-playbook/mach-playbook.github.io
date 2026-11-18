@@ -1,8 +1,19 @@
-<!-- Google tag (gtag.js) - Async Non-Blocking -->
+<!-- Google tag (gtag.js) - Async Non-Blocking with GPC Consent & 404 Telemetry -->
 <script>
   (function() {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+
+    if (typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true) {
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+    }
+
     gtag('js', new Date());
     gtag('config', '{{ site.analytics.google.id }}');
 
@@ -14,6 +25,17 @@
       s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.id }}';
       document.head.appendChild(s);
     }
+    window.loadGtag = loadGtag;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.title && document.title.indexOf('404') !== -1) {
+        loadGtag();
+        gtag('event', 'page_not_found', {
+          page_location: window.location.href,
+          page_referrer: document.referrer || '(direct)'
+        });
+      }
+    });
 
     ['scroll', 'touchstart', 'click', 'keydown'].forEach(function(ev) {
       window.addEventListener(ev, loadGtag, { once: true, passive: true });

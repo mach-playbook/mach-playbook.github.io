@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Anatomía del Costo Oculto: Atribución FinOps por Transacción en Plataformas Headless Multi-Vendor"
+seo_title: "Anatomía del Costo Oculto: Atribución FinOps por Transacción en"
 date: 2026-10-11 09:00:00 -0600
 lang: es
-categories: [FinOps Cloud, Composable Commerce]
-tags: [finops, composable-commerce, headless, unit-economics, api-gateway, open-telemetry, aws]
+categories: [API Design]
+tags: [finops, headless, api-first, aws, microservices]
 image:
   path: /assets/img/posts/2026-10-11-calculo-del-costo-unitario-por-llamada-api-y-por-pedido-en-arquitecturas-headless.png
 ---

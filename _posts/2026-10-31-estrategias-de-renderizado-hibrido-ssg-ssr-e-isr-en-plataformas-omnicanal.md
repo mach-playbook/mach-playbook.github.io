@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Latencia en el Edge: Resiliencia y Consistencia en Renderizado Híbrido para E-Commerce de Alta Concurrencia"
+seo_title: "Latencia en el Edge: Resiliencia y Consistencia en Renderizado"
 date: 2026-10-31 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Composable Commerce]
-tags: [mach, ssr, isr, edge-computing, frontend, performance]
+categories: [Headless & Frontend]
+tags: [architecture, cloud-native, headless, ai-engineering, nextjs]
 image:
   path: /assets/img/posts/2026-10-31-estrategias-de-renderizado-hibrido-ssg-ssr-e-isr-en-plataformas-omnicanal.png
 ---

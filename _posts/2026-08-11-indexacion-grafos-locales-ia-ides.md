@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Ingeniería Asistida por IA: Indexación de Grafos Locales para Entornos de Desarrollo Modernos"
+seo_title: "Ingeniería Asistida por IA: Indexación de Grafos Locales para"
 date: 2026-08-11 14:00:00 -0600
 lang: es
-categories: [DevOps & CI/CD, Automatización]
-tags: [ai-engineering, devops, qa-automation]
+categories: [DevOps & CI/CD]
+tags: [ai-engineering, devops, qa-automation, ci-cd, kubernetes]
 image:
   path: /assets/img/posts/2026-08-11-indexacion-grafos-locales-ia-ides.png
 ---

@@ -4,8 +4,8 @@ layout: post
 title: "The Role of OpenAPI in Contract-Driven Development"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Microservices]
-tags: [api-first, microservices, qa-automation]
+categories: [DevOps & CI/CD]
+tags: [api-first, microservices, qa-automation, devops, ci-cd]
 image:
   path: /assets/img/posts/2026-04-04-the-role-of-openapi-in-contract-driven-development.png
 mermaid: true

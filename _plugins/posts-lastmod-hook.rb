@@ -22,3 +22,12 @@ Jekyll::Hooks.register :pages, :post_init do |page|
     page.data['last_modified_at'] = lastmod_date
   end
 end
+
+Jekyll::Hooks.register :site, :pre_render do |site|
+  noindex_layouts = %w[archives tags categories category tag]
+  (site.pages + site.documents).each do |doc|
+    if noindex_layouts.include?(doc.data['layout'].to_s) || doc.data['no_ads'] == true
+      doc.data['sitemap'] = false
+    end
+  end
+end

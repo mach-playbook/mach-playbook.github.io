@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "De Monolito a Estático: Migrando de WordPress a Arquitecturas SSG con Jekyll y GitHub Actions"
+seo_title: "De Monolito a Estático: Migrando de WordPress a Arquitecturas SSG"
 date: 2026-08-03 10:00:00 -0600
 lang: es
-categories: [Headless & Frontend, Arquitectura Cloud]
-tags: [architecture, ci-cd, cloud-native, headless]
+categories: [DevOps & CI/CD]
+tags: [architecture, ci-cd, cloud-native, headless, devops]
 image:
   path: /assets/img/posts/2026-08-03-migracion-wordpress-jekyll-github-actions.png
 ---

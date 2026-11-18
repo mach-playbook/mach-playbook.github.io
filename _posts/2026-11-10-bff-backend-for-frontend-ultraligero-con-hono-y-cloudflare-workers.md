@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "BFF Ultraligero con Hono y Cloudflare Workers: Eliminando la Latencia de Agregación y el Cold Start en Arquitecturas Composable"
+seo_title: "BFF Ultraligero con Hono y Cloudflare Workers"
 date: 2026-11-10 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, API-First]
-tags: [hono, cloudflare-workers, bff, edge-computing, serverless, composable-commerce]
+categories: [API Design]
+tags: [cloud-native, headless, ai-engineering, api-first, microservices]
 image:
   path: /assets/img/posts/2026-11-10-bff-backend-for-frontend-ultraligero-con-hono-y-cloudflare-workers.png
 ---

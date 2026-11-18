@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Puntos Ciegos en la Observabilidad Headless: Correlación de Telemetría RUM y Trazabilidad Distribuida de Extremo a Extremo"
+seo_title: "Puntos Ciegos en la Observabilidad Headless"
 date: 2026-10-07 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Frontend Moderno]
-tags: [rum, opentelemetry, headless-commerce, observability, performance, mach]
+categories: [Security & Observability]
+tags: [observability, cloud-native, architecture, ai-engineering, headless]
 image:
   path: /assets/img/posts/2026-10-07-monitoreo-de-rendimiento-real-rum-y-telemetria-de-usuario-en-tiendas-headless.png
 ---

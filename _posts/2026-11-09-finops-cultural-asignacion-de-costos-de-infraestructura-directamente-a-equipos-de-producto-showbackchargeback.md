@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Rompiendo el Agujero Negro Cloud: Atribución Granular de Costos, Showback y Chargeback en Arquitecturas Distribuidas"
+seo_title: "Rompiendo el Agujero Negro Cloud"
 date: 2026-11-09 09:00:00 -0600
 lang: es
-categories: [FinOps y Cloud Governance, Arquitectura de Plataforma]
-tags: [finops, kubernetes, opencost, chargeback, aws, unit-economics, gobernanza]
+categories: [DevOps & CI/CD]
+tags: [finops, kubernetes, aws, devops, ci-cd]
 image:
   path: /assets/img/posts/2026-11-09-finops-cultural-asignacion-de-costos-de-infraestructura-directamente-a-equipos-de-producto-showbackchargeback.png
 ---

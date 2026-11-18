@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Optimización de Contenedores Docker y Despliegues Cloud para Sistemas ERP Empresariales"
+seo_title: "Optimización de Contenedores Docker y Despliegues Cloud para"
 date: 2026-08-07 14:00:00 -0600
 lang: es
-categories: [DevOps & CI/CD, Automatización]
-tags: [cloud-native, devops, headless]
+categories: [DevOps & CI/CD]
+tags: [cloud-native, devops, headless, ai-engineering, ci-cd]
 image:
   path: /assets/img/posts/2026-08-07-optimizacion-contenedores-docker-erp.png
 ---

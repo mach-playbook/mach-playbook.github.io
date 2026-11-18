@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Ruptura de Trazabilidad en Ecosistemas Heterogéneos: Implementando W3C TraceContext a través de HTTP, gRPC, Kafka y Pasarelas SaaS Cerradas"
+seo_title: "Ruptura de Trazabilidad en Ecosistemas Heterogéneos"
 date: 2026-10-17 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Observabilidad & Resiliencia]
-tags: [opentelemetry, w3c-tracecontext, distributed-tracing, kafka, grpc, microservices]
+categories: [Security & Observability]
+tags: [observability, event-driven, api-first, microservices, finops]
 image:
   path: /assets/img/posts/2026-10-17-propagacion-de-contexto-w3c-tracecontext-a-traves-de-redes-multi-vendor-y-protocolos-hibridos.png
 ---

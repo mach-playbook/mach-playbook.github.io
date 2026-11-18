@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mitigación de Vulnerabilidades en APIs Enterprise: Blindaje contra OWASP Top 10 y Gestión Criptográfica de Tokens JWT"
+seo_title: "Mitigación de Vulnerabilidades en APIs Enterprise"
 date: 2026-10-06 09:00:00 -0600
 lang: es
-categories: [Arquitectura de Seguridad, API-First]
-tags: [mach-architecture, api-security, owasp-top-10, jwt, zero-trust, cloud-native]
+categories: [Security & Observability]
+tags: [architecture, security, cloud-native, api-first, observability]
 image:
   path: /assets/img/posts/2026-10-06-seguridad-de-apis-prevencion-de-owasp-api-top-10-y-manejo-seguro-de-tokens-jwt.png
 ---

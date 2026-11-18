@@ -4,8 +4,8 @@ layout: post
 title: "Demystifying MACH: A Beginner's Guide to Modern Architecture"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, cloud-native, headless, microservices]
+categories: [Headless & Frontend]
+tags: [architecture, cloud-native, headless, microservices, nextjs]
 image:
   path: /assets/img/posts/2026-04-04-demystifying-mach-a-beginners-guide-to-modern-architecture.png
 mermaid: true

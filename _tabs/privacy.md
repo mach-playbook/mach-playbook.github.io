@@ -8,7 +8,7 @@ order: 9
 
 # Política de Privacidad
 
-**Última actualización: Agosto 2026**
+**Última actualización: Noviembre 2026**
 
 Esta Política de Privacidad describe cómo **MACH Playbook** ("nosotros" o "nuestro sitio"), gestionado por Lenin Meza en [https://mach-playbook.github.io](https://mach-playbook.github.io/), recopila, utiliza y protege la información al navegar en nuestra plataforma.
 
@@ -37,7 +37,9 @@ Este sitio utiliza cookies para análisis web y servicios de monetización publi
 
 ---
 
-### 4. Cumplimiento GDPR y CCPA
+### 4. Cumplimiento GDPR, CCPA, Global Privacy Control (GPC) y Leyes Estatales de EE. UU. (2027)
+* **Señales Automáticas de Exclusión (UOOM / GPC):** Respetamos de forma nativa la señal del navegador **Global Privacy Control (`navigator.globalPrivacyControl`)**. Cuando un visitante navega con GPC activado, nuestro motor de telemetría configura automáticamente el consentimiento de almacenamiento publicitario y personalización (`ad_storage`, `ad_user_data`, `ad_personalization`) en estado denegado sin requerir acciones adicionales del usuario.
+* **Derechos Estatales en EE. UU. y Regulaciones Globales:** Cumplimos con GDPR (Unión Europea), CCPA/CPRA (California) y las leyes estatales de privacidad aplicables en EE. UU. (incluyendo Colorado, Connecticut, Virginia, así como Louisiana, Vermont, Oklahoma y Alabama vigentes a partir del 1 de enero de 2027).
 * Tienes el derecho de solicitar información o la eliminación de cualquier mensaje enviado voluntariamente.
 * No vendemos, alquilamos ni comercializamos datos personales a terceros bajo ninguna circunstancia.
 
@@ -52,7 +54,7 @@ Para consultas sobre privacidad o ejercicio de derechos ARCO, contáctanos en la
 
 # Privacy Policy
 
-**Last updated: August 2026**
+**Last updated: November 2026**
 
 This Privacy Policy explains how **MACH Playbook** ("we", "us", or "our"), operated by Lenin Meza at [https://mach-playbook.github.io](https://mach-playbook.github.io/), collects, uses, and protects information when you visit our website.
 
@@ -81,8 +83,9 @@ This site uses cookies for web analytics and advertising services through **Goog
 
 ---
 
-### 4. Data Protection, GDPR & CCPA Compliance
-Under GDPR (General Data Protection Regulation) and CCPA (California Consumer Privacy Act):
+### 4. Data Protection, GDPR, Global Privacy Control (GPC) & US State Privacy Laws (2027)
+Under GDPR (General Data Protection Regulation), CCPA/CPRA (California), and comprehensive US state privacy frameworks (including Colorado, Connecticut, Virginia, and Louisiana, Vermont, Oklahoma, and Alabama effective January 1, 2027):
+* **Universal Opt-Out Mechanism (UOOM / GPC):** Our platform automatically detects the browser **Global Privacy Control (`navigator.globalPrivacyControl`)** signal. When enabled, ad personalization and ad storage consent flags (`ad_storage`, `ad_user_data`, `ad_personalization`) default to denied automatically.
 * You have the right to request information regarding any personal data we process.
 * You have the right to request deletion of any communication data you submitted to us.
 * We do not sell, rent, or trade personal information to any third parties.

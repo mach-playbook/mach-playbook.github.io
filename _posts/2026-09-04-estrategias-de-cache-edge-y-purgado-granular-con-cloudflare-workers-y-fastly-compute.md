@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del TTL: Estrategias de Caché Edge y Purgado Granular con Cloudflare Workers y Fastly Compute"
+seo_title: "Más allá del TTL: Estrategias de Caché Edge y Purgado Granular con"
 date: 2026-09-04 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Frontend Moderno]
-tags: [edge-computing, cloudflare-workers, fastly, headless-commerce, performance, caching-strategies]
+categories: [Headless & Frontend]
+tags: [cloud-native, ai-engineering, headless, nextjs, api-first]
 image:
   path: /assets/img/posts/2026-09-04-estrategias-de-cache-edge-y-purgado-granular-con-cloudflare-workers-y-fastly-compute.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Validación Progresiva y Cero Downtime: Despliegues Canary y Blue/Green con ArgoCD, Flagger y Service Mesh en Kubernetes"
+seo_title: "Validación Progresiva y Cero Downtime"
 date: 2026-11-05 09:00:00 -0600
 lang: es
-categories: [Cloud Native, DevOps & SRE]
-tags: [kubernetes, argocd, flagger, gitops, canary-deployment, istio, service-mesh]
+categories: [DevOps & CI/CD]
+tags: [kubernetes, ci-cd, ai-engineering, devops, cloud-native]
 image:
   path: /assets/img/posts/2026-11-05-estrategias-de-despliegue-canary-y-bluegreen-con-argocd-y-flagger-en-kubernetes.png
 ---

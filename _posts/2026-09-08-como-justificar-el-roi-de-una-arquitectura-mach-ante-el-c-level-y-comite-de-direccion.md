@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del Hype: Cómo Justificar el ROI de una Arquitectura MACH ante el C-Level y Comité de Dirección"
+seo_title: "Más allá del Hype: Cómo Justificar el ROI de una Arquitectura MACH"
 date: 2026-09-08 09:00:00 -0600
 lang: es
-categories: [Estrategia Enterprise, FinOps]
-tags: [mach, roi, composable-commerce, finops, enterprise-architecture, digital-transformation]
+categories: [Arquitectura Cloud]
+tags: [architecture, finops, headless, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-09-08-como-justificar-el-roi-de-una-arquitectura-mach-ante-el-c-level-y-comite-de-direccion.png
 ---

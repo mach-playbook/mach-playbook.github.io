@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Optimización de Core Web Vitals (INP, LCP) en Frontends Composable con Next.js e ISR"
+seo_title: "Optimización de Core Web Vitals (INP, LCP) en Frontends Composable"
 date: 2026-09-03 09:00:00 -0600
 lang: es
-categories: [Frontend Moderno, Arquitectura Cloud]
-tags: [nextjs, core-web-vitals, headless, isr, composable-commerce, web-performance]
+categories: [Headless & Frontend]
+tags: [nextjs, headless, api-first, cloud-native, architecture]
 image:
   path: /assets/img/posts/2026-09-03-optimizacion-de-core-web-vitals-inp-lcp-en-frontends-composable-con-nextjs-e-isr.png
 ---

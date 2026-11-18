@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Patrón Strangler Fig: Cómo Desmantelar un Monolito SAP Commerce o Magento Paso a Paso"
+seo_title: "Patrón Strangler Fig: Cómo Desmantelar un Monolito SAP Commerce o"
 date: 2026-09-02 09:00:00 -0600
 lang: es
-categories: [Composable Commerce, Modernización de Arquitectura]
-tags: [strangler-fig, sap-commerce, magento, microservicios, composable, api-gateway, mach]
+categories: [API Design]
+tags: [microservices, api-first, architecture, cloud-native, security]
 image:
   path: /assets/img/posts/2026-09-02-patron-strangler-fig-como-desmantelar-un-monolito-sap-commerce-o-magento-paso-a-paso.png
 ---

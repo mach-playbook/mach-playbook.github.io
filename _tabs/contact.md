@@ -125,6 +125,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         if (response.ok) {
           form.reset();
+          if (typeof window.loadGtag === "function") window.loadGtag();
+          if (typeof window.gtag === "function") {
+            window.gtag("event", "generate_lead", {
+              method: "formspree",
+              event_category: "engagement"
+            });
+          }
           statusMsg.className = "form-status-alert mt-3 alert alert-success";
           statusMsg.innerHTML = '<i class="fas fa-check-circle me-2"></i>¡Mensaje enviado con éxito! Te responderemos a la brevedad. / Message sent successfully!';
         } else {

@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Video Review: Reacting to Netflix’s Architecture — What We Can Learn and What Doesn’t Apply"
+seo_title: "Video Review: Reacting to Netflix’s Architecture"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [architecture, aws, cloud-native, microservices, observability]
+categories: [Security & Observability]
+tags: [architecture, aws, cloud-native, microservices, observability, nextjs]
 image:
   path: /assets/img/posts/2026-04-04-video-review-reacting-to-netflixs-architecture-what-we-can-learn-and-what-doesnt-apply.png
 mermaid: true

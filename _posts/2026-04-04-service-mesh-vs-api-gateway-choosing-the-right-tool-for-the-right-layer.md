@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Service Mesh vs. API Gateway: Choosing the Right Tool for the Right Layer"
+seo_title: "Service Mesh vs. API Gateway"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [Architecture, Microservices]
-tags: [api-first, kubernetes, microservices]
+categories: [DevOps & CI/CD]
+tags: [api-first, kubernetes, microservices, devops, ci-cd]
 image:
   path: /assets/img/posts/2026-04-04-service-mesh-vs-api-gateway-choosing-the-right-tool-for-the-right-layer.png
 mermaid: true

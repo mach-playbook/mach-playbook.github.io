@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Sincronización de Alta Frecuencia en Búsqueda Composable: Resolviendo el Gap de Consistencia entre PIM y Search Engines"
+seo_title: "Sincronización de Alta Frecuencia en Búsqueda Composable"
 date: 2026-10-01 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Headless Commerce]
-tags: [algolia, meilisearch, event-driven, search-architecture, composable-commerce, performance]
+categories: [Headless & Frontend]
+tags: [event-driven, headless, cloud-native, ai-engineering, nextjs]
 image:
   path: /assets/img/posts/2026-10-01-busqueda-composable-instantanea-integracion-de-algolia-y-meilisearch-con-catalogos-dinamicos.png
 ---

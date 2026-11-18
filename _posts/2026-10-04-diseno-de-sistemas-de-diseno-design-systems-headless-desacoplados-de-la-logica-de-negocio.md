@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Arquitectura de UI Agnóstica: Desacoplando la Lógica de Negocio en Sistemas de Diseño Headless para Escala Enterprise"
+seo_title: "Arquitectura de UI Agnóstica"
 date: 2026-10-04 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Frontend Moderno]
-tags: [design systems, headless ui, mach architecture, typescript, design tokens, composable commerce]
+categories: [Headless & Frontend]
+tags: [headless, nextjs, api-first, cloud-native, architecture]
 image:
   path: /assets/img/posts/2026-10-04-diseno-de-sistemas-de-diseno-design-systems-headless-desacoplados-de-la-logica-de-negocio.png
 ---

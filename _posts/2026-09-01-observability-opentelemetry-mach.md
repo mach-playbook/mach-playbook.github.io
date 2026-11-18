@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Observabilidad con OpenTelemetry en MACH: Trazas, Metricas y Logs Unificados"
+seo_title: "Observabilidad con OpenTelemetry en MACH"
 date: 2026-09-01 09:00:00 -0600
 lang: es
-categories: [DevOps, Observabilidad]
-tags: [opentelemetry, observability, tracing, prometheus, grafana, mach, microservices]
+categories: [Security & Observability]
+tags: [observability, architecture, microservices, security, cloud-native]
 image:
   path: /assets/img/posts/2026-09-01-observability-opentelemetry-mach.png
 ---

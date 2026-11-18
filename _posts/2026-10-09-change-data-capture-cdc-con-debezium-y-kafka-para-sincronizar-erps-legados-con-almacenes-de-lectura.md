@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "CDC de Alta Resiliencia: Sincronizando ERPs Legados y Almacenes de Lectura con Debezium y Kafka"
+seo_title: "CDC de Alta Resiliencia: Sincronizando ERPs Legados y Almacenes de"
 date: 2026-10-09 09:00:00 -0600
 lang: es
-categories: [Integración Enterprise, Streaming de Datos]
-tags: [cdc, debezium, apache-kafka, erp, cqrs, data-consistency, event-driven]
+categories: [Data Engineering]
+tags: [event-driven, ai-engineering, data-engineering, postgresql, distributed-systems]
 image:
   path: /assets/img/posts/2026-10-09-change-data-capture-cdc-con-debezium-y-kafka-para-sincronizar-erps-legados-con-almacenes-de-lectura.png
 ---

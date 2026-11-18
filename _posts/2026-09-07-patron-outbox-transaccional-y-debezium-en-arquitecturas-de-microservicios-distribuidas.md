@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Consistencia Eventual Garantizada: Implementando el Patrón Outbox Transaccional con Debezium y Kafka"
+seo_title: "Consistencia Eventual Garantizada"
 date: 2026-09-07 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [outbox-pattern, debezium, kafka, cdc, event-driven, distributed-systems]
+categories: [Data Engineering]
+tags: [event-driven, distributed-systems, ai-engineering, data-engineering, postgresql]
 image:
   path: /assets/img/posts/2026-09-07-patron-outbox-transaccional-y-debezium-en-arquitecturas-de-microservicios-distribuidas.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Eliminando la Hidratación Masiva: Astro, Edge Islands y Zero-JS en E-Commerce Enterprise"
+seo_title: "Eliminando la Hidratación Masiva"
 date: 2026-10-14 09:00:00 -0600
 lang: es
-categories: [Headless Commerce, Frontend Moderno]
-tags: [astro, edge-computing, islands-architecture, performance, web-vitals, ssr]
+categories: [Headless & Frontend]
+tags: [cloud-native, headless, nextjs, api-first, architecture]
 image:
   path: /assets/img/posts/2026-10-14-astro-y-edge-islands-para-sitios-de-comercio-electronico-de-maximo-rendimiento.png
 ---

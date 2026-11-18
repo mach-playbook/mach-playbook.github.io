@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Mitigación de Denegación de Servicio en GraphQL: Análisis de Costes de Consulta y Defensa en Profundidad en el Edge"
+seo_title: "Mitigación de Denegación de Servicio en GraphQL"
 date: 2026-10-30 09:00:00 -0600
 lang: es
-categories: [Seguridad Zero Trust, Arquitectura Cloud]
-tags: [graphql, seguridad, dos, zero-trust, api-gateway, edge-computing]
+categories: [Security & Observability]
+tags: [api-first, security, cloud-native, finops, observability]
 image:
   path: /assets/img/posts/2026-10-30-arquitectura-de-seguridad-en-apis-graphql-prevencion-de-ataques-de-complejidad-de-consulta-y-dos.png
 ---

@@ -12,12 +12,31 @@ mermaid: false
    ========================================================================== */
 
 #mach-calculator-app,
-#tco-simulator-app {
+#tco-simulator-app,
+#openapi-rate-limit-app {
   background-color: var(--card-bg, #1e1e22) !important;
   border: 1px solid var(--card-border-color, #2d2d34) !important;
   border-radius: 12px !important;
   color: var(--text-color, #cbd5e1) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+.openapi-yaml-preview {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 0.78rem !important;
+  line-height: 1.45 !important;
+  max-height: 360px !important;
+  overflow: auto !important;
+  white-space: pre !important;
+}
+[data-bs-theme="light"] .openapi-yaml-preview,
+[data-mode="light"] .openapi-yaml-preview {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
 }
 
 /* App Header Titles */
@@ -690,6 +709,118 @@ Tune peak requests per second (RPS), domain count, and monthly release cadence t
   </div>
 </div>
 
+---
+
+<div class="lang-block lang-es" markdown="1">
+
+## 3. Generador y Validador Interactivo de Contratos OpenAPI 3.1 y Políticas Rate-Limiting (Token Bucket)
+
+Configura un dominio MACH, la capacidad de ráfaga (Burst Capacity B), la tasa de recarga (Refill Rate R tokens/s), la llave de partición y la política de saturación para generar y validar al instante un contrato **OpenAPI 3.1.0** con cabeceras estándar IETF `RateLimit-*`, respuestas de error **RFC 9457** (`application/problem+json`) y extensión `x-mach-rate-limit` lista para Kong, Envoy o Apigee.
+
+</div>
+
+<div class="lang-block lang-en d-none" markdown="1">
+
+## 3. Interactive OpenAPI 3.1 Contract & Token Bucket Rate-Limiting Policy Generator
+
+Select a MACH business domain, Token Bucket Burst Capacity (B), Refill Rate (R tokens/s), partitioning key, and overflow strategy to generate and validate a production-ready **OpenAPI 3.1.0** YAML specification with IETF `RateLimit-*` headers, **RFC 9457** Problem Details (`application/problem+json`), and `x-mach-rate-limit` Gateway policies.
+
+</div>
+
+<div class="card p-4 my-4 shadow-sm border" id="openapi-rate-limit-app">
+  <div class="row g-4">
+    <!-- Controles OpenAPI + Token Bucket -->
+    <div class="col-12 col-md-5 border-end">
+      <h4 class="h5 fw-bold mb-3 tools-app-title">
+        <i class="fas fa-file-code text-primary me-2"></i>
+        <span data-i18n-es="Parámetros del Contrato y Gateway" data-i18n-en="Contract & Gateway Parameters">Parámetros del Contrato y Gateway</span>
+      </h4>
+
+      <div class="mb-3">
+        <label for="oapi-domain" class="form-label small fw-bold slider-header-label" data-i18n-es="Dominio PBC / Microservicio:" data-i18n-en="PBC / Microservice Domain:">Dominio PBC / Microservicio:</label>
+        <select id="oapi-domain" class="form-select form-select-sm">
+          <option value="orders">Orders &amp; Checkout (/v1/orders)</option>
+          <option value="payments">Payments &amp; Tokenization (/v1/payments/authorize)</option>
+          <option value="inventory">Inventory &amp; Catalog (/v1/inventory/reserve)</option>
+          <option value="identity">Identity &amp; OAuth2 (/v1/oauth/token)</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="tb-burst" class="form-label small fw-bold d-flex justify-content-between slider-header-label">
+          <span data-i18n-es="Burst Capacity (B tokens):" data-i18n-en="Burst Capacity (B tokens):">Burst Capacity (B tokens):</span>
+          <span class="text-primary fw-bold" id="tb-burst-val">100 tokens</span>
+        </label>
+        <input type="range" class="form-range" id="tb-burst" min="10" max="1000" step="10" value="100">
+      </div>
+
+      <div class="mb-3">
+        <label for="tb-refill" class="form-label small fw-bold d-flex justify-content-between slider-header-label">
+          <span data-i18n-es="Refill Rate (R tokens/s):" data-i18n-en="Refill Rate (R tokens/s):">Refill Rate (R tokens/s):</span>
+          <span class="text-primary fw-bold" id="tb-refill-val">25 req/s</span>
+        </label>
+        <input type="range" class="form-range" id="tb-refill" min="5" max="500" step="5" value="25">
+      </div>
+
+      <div class="mb-3">
+        <label for="tb-key" class="form-label small fw-bold slider-header-label" data-i18n-es="Estrategia de Clave de Cuota:" data-i18n-en="Quota Partition Key:">Estrategia de Clave de Cuota:</label>
+        <select id="tb-key" class="form-select form-select-sm">
+          <option value="jwt_sub">JWT Subject (sub + tenant_id)</option>
+          <option value="api_key">X-API-Key Header (B2B Partner)</option>
+          <option value="mtls_spiffe">mTLS SPIFFE ID (Zero-Trust East-West)</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="tb-overflow" class="form-label small fw-bold slider-header-label" data-i18n-es="Política de Exceso / Saturación:" data-i18n-en="Overflow / Saturation Policy:">Política de Exceso / Saturación:</label>
+        <select id="tb-overflow" class="form-select form-select-sm">
+          <option value="reject_429">HTTP 429 Too Many Requests + Retry-After</option>
+          <option value="async_queue">HTTP 202 Async Queue Backpressure (Kafka)</option>
+        </select>
+      </div>
+
+      <div class="row g-2 text-center mt-2">
+        <div class="col-6">
+          <div class="pillar-score-card">
+            <span class="pillar-score-label" data-i18n-es="Recarga Completa (B/R)" data-i18n-en="Full Refill (B/R)">Recarga Completa (B/R)</span>
+            <strong class="pillar-score-value" id="tb-window-val">4.0 s</strong>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="pillar-score-card">
+            <span class="pillar-score-label" data-i18n-es="Estado OpenAPI 3.1" data-i18n-en="OpenAPI 3.1 Status">Estado OpenAPI 3.1</span>
+            <strong class="pillar-score-value text-success" id="oapi-validation-badge">VALID</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista Previa OpenAPI 3.1 YAML + Validación -->
+    <div class="col-12 col-md-7">
+      <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+        <h4 class="h5 fw-bold mb-0 tools-app-title">
+          <i class="fas fa-check-shield text-success me-2"></i>
+          <span data-i18n-es="Contrato OpenAPI 3.1.0 + Token Bucket YAML" data-i18n-en="OpenAPI 3.1.0 + Token Bucket YAML">Contrato OpenAPI 3.1.0 + Token Bucket YAML</span>
+        </h4>
+        <div>
+          <button type="button" class="btn btn-sm btn-outline-primary" id="copy-openapi-btn">
+            <i class="far fa-copy me-1"></i>
+            <span data-i18n-es="Copiar YAML" data-i18n-en="Copy YAML">Copiar YAML</span>
+          </button>
+          <span class="small text-success ms-2 d-none" id="copy-openapi-success" data-i18n-es="¡YAML Copiado!" data-i18n-en="YAML Copied!">¡YAML Copiado!</span>
+        </div>
+      </div>
+
+      <pre class="p-3 mb-2 openapi-yaml-preview" id="openapi-yaml-output"></pre>
+
+      <div class="tco-verdict-box p-3 mb-0 small" id="oapi-validation-notes">
+        <strong class="tco-verdict-label" data-i18n-es="Validación de Contrato:" data-i18n-en="Contract Validation:">Validación de Contrato:</strong>
+        <span class="tco-verdict-text ms-1" id="oapi-validation-text">Validando esquema OpenAPI 3.1...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // 1. LÓGICA DE LA CALCULADORA DE MADUREZ MACH
@@ -709,6 +840,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function isEnglish() {
     return localStorage.getItem('mach_playbook_lang') === 'en';
+  }
+
+  function trackToolEvent(toolName, actionName) {
+    if (typeof window.loadGtag === "function") window.loadGtag();
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "tool_interaction", {
+        tool_name: toolName,
+        tool_action: actionName,
+        event_category: "interactive_tools"
+      });
+    }
   }
 
   function calculateMaturity() {
@@ -791,7 +933,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (resultRecommendation) resultRecommendation.textContent = rec;
   }
 
-  maturityForm.addEventListener("change", calculateMaturity);
+  maturityForm.addEventListener("change", function () {
+    calculateMaturity();
+    trackToolEvent("mach_maturity_evaluator", "select_dimension");
+  });
   calculateMaturity();
 
   // Escuchar cambios de idioma para recalcular textos dinámicos
@@ -823,6 +968,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "Auditado en: https://mach-playbook.github.io/tools/\n";
 
       navigator.clipboard.writeText(textToCopy).then(function () {
+        trackToolEvent("mach_maturity_evaluator", "copy_report");
         if (copySuccessMsg) {
           copySuccessMsg.classList.remove("d-none");
           setTimeout(() => copySuccessMsg.classList.add("d-none"), 3000);
@@ -899,6 +1045,9 @@ document.addEventListener("DOMContentLoaded", function () {
     rpsSlider.addEventListener("input", updateTCO);
     servicesSlider.addEventListener("input", updateTCO);
     releasesSlider.addEventListener("input", updateTCO);
+    rpsSlider.addEventListener("change", () => trackToolEvent("tco_latency_simulator", "adjust_rps"));
+    servicesSlider.addEventListener("change", () => trackToolEvent("tco_latency_simulator", "adjust_services"));
+    releasesSlider.addEventListener("change", () => trackToolEvent("tco_latency_simulator", "adjust_releases"));
     updateTCO();
 
     window.addEventListener("storage", function (e) {
@@ -906,6 +1055,246 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     document.querySelectorAll('[data-lang]').forEach(btn => {
       btn.addEventListener('click', () => setTimeout(updateTCO, 50));
+    });
+  }
+
+  // 3. LÓGICA DEL GENERADOR Y VALIDADOR OPENAPI 3.1 + TOKEN BUCKET
+  const oapiDomain = document.getElementById("oapi-domain");
+  const tbBurst = document.getElementById("tb-burst");
+  const tbRefill = document.getElementById("tb-refill");
+  const tbKey = document.getElementById("tb-key");
+  const tbOverflow = document.getElementById("tb-overflow");
+  const tbBurstVal = document.getElementById("tb-burst-val");
+  const tbRefillVal = document.getElementById("tb-refill-val");
+  const tbWindowVal = document.getElementById("tb-window-val");
+  const oapiBadge = document.getElementById("oapi-validation-badge");
+  const oapiOutput = document.getElementById("openapi-yaml-output");
+  const oapiValidationText = document.getElementById("oapi-validation-text");
+  const copyOpenApiBtn = document.getElementById("copy-openapi-btn");
+  const copyOpenApiSuccess = document.getElementById("copy-openapi-success");
+
+  const DOMAIN_TEMPLATES = {
+    orders: {
+      title: "Orders & Checkout PBC API",
+      path: "/v1/orders",
+      opId: "createCheckoutOrder",
+      schemaName: "OrderCreateRequest",
+      reqField: "idempotencyKey",
+      fields: [
+        "          idempotencyKey:",
+        "            type: string",
+        "            format: uuid",
+        "          cartId:",
+        "            type: string",
+        "          currency:",
+        "            type: string",
+        "            enum: [USD, MXN, EUR]"
+      ]
+    },
+    payments: {
+      title: "Payments Tokenization PBC API",
+      path: "/v1/payments/authorize",
+      opId: "authorizeDecoupledPayment",
+      schemaName: "PaymentAuthorizeRequest",
+      reqField: "paymentToken",
+      fields: [
+        "          paymentToken:",
+        "            type: string",
+        "          amountMinorUnits:",
+        "            type: integer",
+        "            minimum: 1",
+        "          pciSaqProfile:",
+        "            type: string",
+        "            const: SAQ-A"
+      ]
+    },
+    inventory: {
+      title: "Inventory Reservation PBC API",
+      path: "/v1/inventory/reserve",
+      opId: "reserveOmnichannelStock",
+      schemaName: "StockReserveRequest",
+      reqField: "sku",
+      fields: [
+        "          sku:",
+        "            type: string",
+        "          warehouseId:",
+        "            type: string",
+        "          quantity:",
+        "            type: integer",
+        "            minimum: 1"
+      ]
+    },
+    identity: {
+      title: "Zero-Trust OAuth2 Token API",
+      path: "/v1/oauth/token",
+      opId: "issueScopedAccessToken",
+      schemaName: "TokenExchangeRequest",
+      reqField: "grantType",
+      fields: [
+        "          grantType:",
+        "            type: string",
+        "            enum: [client_credentials, authorization_code]",
+        "          audience:",
+        "            type: string",
+        "          scope:",
+        "            type: string"
+      ]
+    }
+  };
+
+  function updateOpenApiRateLimit() {
+    if (!oapiDomain || !tbBurst || !tbRefill || !tbKey || !tbOverflow || !oapiOutput) return;
+    const domainKey = oapiDomain.value;
+    const spec = DOMAIN_TEMPLATES[domainKey] || DOMAIN_TEMPLATES.orders;
+    const burst = parseInt(tbBurst.value, 10);
+    const refill = parseInt(tbRefill.value, 10);
+    const keyStrategy = tbKey.value;
+    const overflow = tbOverflow.value;
+    const en = isEnglish();
+
+    const refillSec = (burst / refill).toFixed(1);
+    const retryAfter = Math.max(1, Math.ceil(1 / refill));
+    if (tbBurstVal) tbBurstVal.textContent = burst + " tokens";
+    if (tbRefillVal) tbRefillVal.textContent = refill + " req/s";
+    if (tbWindowVal) tbWindowVal.textContent = refillSec + " s";
+
+    const responseCode = overflow === "async_queue" ? "202" : "429";
+    const responseDesc = overflow === "async_queue"
+      ? "Accepted into Kafka backpressure queue due to Token Bucket saturation"
+      : "Too Many Requests - Token Bucket exhausted (RFC 9457 Problem Details)";
+
+    const yamlLines = [
+      "openapi: 3.1.0",
+      "info:",
+      "  title: " + spec.title,
+      "  version: 1.4.0",
+      "  x-mach-architecture: contract-first",
+      "x-mach-rate-limit:",
+      "  algorithm: token-bucket",
+      "  burstCapacity: " + burst,
+      "  refillRatePerSecond: " + refill,
+      "  fullRefillSeconds: " + refillSec,
+      "  partitionKey: " + keyStrategy,
+      "  overflowStrategy: " + overflow,
+      "  failOpenTimeoutMs: 10",
+      "paths:",
+      "  " + spec.path + ":",
+      "    post:",
+      "      operationId: " + spec.opId,
+      "      parameters:",
+      "        - name: Idempotency-Key",
+      "          in: header",
+      "          required: true",
+      "          schema:",
+      "            type: string",
+      "            format: uuid",
+      "      requestBody:",
+      "        required: true",
+      "        content:",
+      "          application/json:",
+      "            schema:",
+      "              $ref: '#/components/schemas/" + spec.schemaName + "'",
+      "      responses:",
+      "        '200':",
+      "          description: Processed within Token Bucket SLA",
+      "          headers:",
+      "            RateLimit-Limit:",
+      "              schema: { type: integer, example: " + burst + " }",
+      "            RateLimit-Remaining:",
+      "              schema: { type: integer, example: " + Math.max(0, burst - 1) + " }",
+      "            RateLimit-Reset:",
+      "              schema: { type: integer, example: " + Math.ceil(burst / refill) + " }",
+      "        '" + responseCode + "':",
+      "          description: " + responseDesc,
+      "          headers:",
+      "            Retry-After:",
+      "              schema: { type: integer, example: " + retryAfter + " }",
+      "          content:",
+      "            application/problem+json:",
+      "              schema:",
+      "                $ref: '#/components/schemas/ProblemDetails'",
+      "components:",
+      "  schemas:",
+      "    " + spec.schemaName + ":",
+      "      type: object",
+      "      required: [" + spec.reqField + "]",
+      "      properties:",
+      spec.fields.join("\n"),
+      "    ProblemDetails:",
+      "      type: object",
+      "      required: [type, title, status]",
+      "      properties:",
+      "        type: { type: string, format: uri }",
+      "        title: { type: string }",
+      "        status: { type: integer, example: " + responseCode + " }"
+    ];
+
+    oapiOutput.textContent = yamlLines.join("\n");
+
+    const burstToRefillRatio = burst / refill;
+    let statusText = "";
+    let badgeText = "VALID";
+    let badgeClass = "pillar-score-value text-success";
+
+    if (burst < refill) {
+      badgeText = "WARN";
+      badgeClass = "pillar-score-value text-warning";
+      statusText = en
+        ? "Valid OpenAPI 3.1 syntax, but Burst (B) is lower than Refill (R): burst capacity will never absorb concurrent browser sub-requests. Recommended: B >= 2 x R."
+        : "Sintaxis OpenAPI 3.1 válida, pero Burst (B) es menor que Refill (R): no absorberá ráfagas concurrentes de frontends Headless. Recomendado: B >= 2 x R.";
+    } else if (domainKey === "identity" && burst > 250) {
+      badgeText = "WARN";
+      badgeClass = "pillar-score-value text-warning";
+      statusText = en
+        ? "Valid OpenAPI 3.1 contract, though Identity endpoints with Burst > 250 tokens increase credential-stuffing surface. Consider lowering B <= 100."
+        : "Contrato OpenAPI 3.1 válido, aunque un Burst > 250 en Identity amplía la superficie de credential stuffing. Recomendado: B <= 100.";
+    } else if (burstToRefillRatio > 15) {
+      statusText = en
+        ? "Valid OpenAPI 3.1.0 + RFC 9457 contract. Long recovery window (" + refillSec + "s); ensure Redis Lua clock-sync and 10ms fail-open guard."
+        : "Contrato OpenAPI 3.1.0 + RFC 9457 válido. Ventana amplia (" + refillSec + "s); configura Redis Lua TIME y fail-open de 10ms en Gateway.";
+    } else {
+      statusText = en
+        ? "100% Valid OpenAPI 3.1.0 contract with IETF RateLimit headers, Idempotency-Key enforcement, and balanced Token Bucket burst ratio (" + refillSec + "s)."
+        : "Contrato OpenAPI 3.1.0 100% válido con cabeceras IETF RateLimit, Idempotency-Key obligatorio y relación de ráfaga equilibrada (" + refillSec + "s).";
+    }
+
+    if (oapiBadge) {
+      oapiBadge.textContent = badgeText;
+      oapiBadge.className = badgeClass;
+    }
+    if (oapiValidationText) oapiValidationText.textContent = statusText;
+  }
+
+  if (oapiDomain && tbBurst && tbRefill && tbKey && tbOverflow) {
+    [oapiDomain, tbKey, tbOverflow].forEach(el => {
+      el.addEventListener("change", function () {
+        updateOpenApiRateLimit();
+        trackToolEvent("openapi_token_bucket_generator", "change_policy");
+      });
+    });
+    [tbBurst, tbRefill].forEach(el => {
+      el.addEventListener("input", updateOpenApiRateLimit);
+      el.addEventListener("change", () => trackToolEvent("openapi_token_bucket_generator", "adjust_bucket"));
+    });
+    updateOpenApiRateLimit();
+
+    window.addEventListener("storage", function (e) {
+      if (e.key === 'mach_playbook_lang') updateOpenApiRateLimit();
+    });
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+      btn.addEventListener('click', () => setTimeout(updateOpenApiRateLimit, 50));
+    });
+  }
+
+  if (copyOpenApiBtn && oapiOutput) {
+    copyOpenApiBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(oapiOutput.textContent).then(function () {
+        trackToolEvent("openapi_token_bucket_generator", "copy_yaml");
+        if (copyOpenApiSuccess) {
+          copyOpenApiSuccess.classList.remove("d-none");
+          setTimeout(() => copyOpenApiSuccess.classList.add("d-none"), 3000);
+        }
+      });
     });
   }
 });

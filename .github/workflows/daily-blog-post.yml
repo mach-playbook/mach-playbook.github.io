@@ -1,5 +1,8 @@
 name: Autonomous Daily Blog Post Agent
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   # PAUSED 2026-11-10: AdSense "Low value content" / scaled-content remediation.
   # Re-enable only after AdSense approval and with human-curated topics.
@@ -37,7 +40,7 @@ concurrency:
 jobs:
   publish-daily-post:
     name: Generate and Publish Daily Post
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
       contents: write

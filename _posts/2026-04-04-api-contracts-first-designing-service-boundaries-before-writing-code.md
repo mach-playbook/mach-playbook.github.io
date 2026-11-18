@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "API Contracts First: Designing Service Boundaries Before Writing Code"
+seo_title: "API Contracts First: Designing Service Boundaries Before Writing"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Microservices]
-tags: [api-first, architecture, microservices]
+categories: [API Design]
+tags: [api-first, architecture, microservices, cloud-native, security]
 image:
   path: /assets/img/posts/2026-04-04-api-contracts-first-designing-service-boundaries-before-writing-code.png
 mermaid: true

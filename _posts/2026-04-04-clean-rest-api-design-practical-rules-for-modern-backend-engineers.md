@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Clean REST API Design: Practical Rules for Modern Backend Engineers"
+seo_title: "Clean REST API Design: Practical Rules for Backend Engineers"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [API Design, Microservices]
-tags: [api-first, architecture, cloud-native, microservices]
+categories: [API Design]
+tags: [api-first, architecture, cloud-native, microservices, security]
 image:
   path: /assets/img/posts/2026-04-04-clean-rest-api-design-practical-rules-for-modern-backend-engineers.png
 mermaid: true

@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "FinOps para Arquitecturas MACH: Reduccion de Costos Cloud sin Sacrificar Velocidad"
+seo_title: "FinOps para Arquitecturas MACH"
 date: 2026-08-22 09:00:00 -0600
 lang: es
-categories: [Cloud-Native, FinOps]
-tags: [finops, mach, gcp, kubernetes, cloud-cost-optimization, cloud-native, microservices]
+categories: [DevOps & CI/CD]
+tags: [finops, architecture, gcp, kubernetes, cloud-native, microservices]
 image:
   path: /assets/img/posts/2026-08-22-finops-mach-arquitecturas-produccion.png
 ---

@@ -2,10 +2,11 @@
 mermaid: true
 layout: post
 title: "Más allá del Límite de RDS: Sharding y Escalabilidad Horizontal en Bases de Datos SQL Distribuidas"
+seo_title: "Más allá del Límite de RDS: Sharding y Escalabilidad Horizontal en"
 date: 2026-09-14 09:00:00 -0600
 lang: es
-categories: [Arquitectura Cloud, Microservicios]
-tags: [sharding, sql-distribuido, cloud-native, vitess, cockroachdb, escalabilidad, postgresql]
+categories: [Data Engineering]
+tags: [postgresql, cloud-native, ai-engineering, data-engineering, distributed-systems]
 image:
   path: /assets/img/posts/2026-09-14-estrategias-de-sharding-y-escalabilidad-horizontal-en-bases-de-datos-sql-distribuidas.png
 ---

@@ -2,10 +2,11 @@
 lang: en
 layout: post
 title: "Centralized Observability: Distributed Tracing, Logging, and Metrics for Microservices"
+seo_title: "Centralized Observability: Distributed Tracing, Logging, and"
 author: leninmeza
 date: 2026-04-04 00:00:00 -0600
-categories: [DevOps & CI/CD, Cloud-Native]
-tags: [architecture, cloud-native, observability]
+categories: [Security & Observability]
+tags: [architecture, cloud-native, observability, security, microservices]
 image:
   path: /assets/img/posts/2026-04-04-centralized-observability-distributed-tracing-logging-and-metrics-for-microservices.png
 mermaid: true
